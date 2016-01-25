@@ -1205,7 +1205,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	<xsl:param name="parentworkid"/>
 	<xsl:param name="workid" select="concat(position(),'_',$parentworkid)"/>
 	<xsl:choose>
-		<xsl:when test="namespace-uri() and namespace-uri() != 'http://www.w3.org/1999/xhtml'">
+		<xsl:when test="namespace-uri() != '' and namespace-uri() != 'http://www.w3.org/1999/xhtml'">
 			<xsl:element name="{local-name()}" namespace="{namespace-uri()}">
 				<xsl:apply-templates select="@*"/>				
 				<xsl:apply-templates select="node()">
@@ -1227,7 +1227,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 </xsl:template>
 <xsl:template match="@*" priority="-2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:choose>
-		<xsl:when test="namespace-uri() and namespace-uri() != 'http://www.w3.org/1999/xhtml'">
+		<xsl:when test="namespace-uri() != '' and namespace-uri() != 'http://www.w3.org/1999/xhtml'">
 			<xsl:attribute name="{local-name()}" namespace="{namespace-uri()}"><xsl:value-of select="."/></xsl:attribute>
 		</xsl:when>
 		<xsl:otherwise>
