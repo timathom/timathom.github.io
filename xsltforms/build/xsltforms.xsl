@@ -1226,7 +1226,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 	</xsl:choose>
 </xsl:template>
 <xsl:template match="@*" priority="-2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:attribute name="{local-name()}"><xsl:value-of select="."/></xsl:attribute>
+	<!--<xsl:attribute name="{local-name()}"><xsl:value-of select="."/></xsl:attribute>-->
+	<xsl:copy/>
 </xsl:template>
 <xsl:template match="node()" priority="-3" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:param name="appearance" select="@appearance"/>
