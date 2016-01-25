@@ -1200,18 +1200,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 </xsl:template>
 <xsl:template match="xforms:message|ajx:confirm" priority="2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ajx="http://www.ajaxforms.net/2006/ajx" xmlns:xforms="http://www.w3.org/2002/xforms">
 </xsl:template>
-<!--<xsl:template match="*" priority="-2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:param name="appearance" select="@appearance"/>
-	<xsl:param name="parentworkid"/>
-	<xsl:param name="workid" select="concat(position(),'_',$parentworkid)"/>
-	<xsl:element name="{local-name()}">
-		<xsl:apply-templates select="@*"/>
-		<xsl:apply-templates select="node()">
-			<xsl:with-param name="parentworkid" select="$workid"/>
-			<xsl:with-param name="appearance" select="$appearance"/>
-		</xsl:apply-templates>
-	</xsl:element>
-</xsl:template>-->
 <xsl:template match="*" priority="-2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:param name="appearance" select="@appearance"/>
 	<xsl:param name="parentworkid"/>
@@ -1251,6 +1239,18 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 		</xsl:apply-templates>
 	</xsl:copy>
 </xsl:template>
+<!--<xsl:template xmlns:xsl="http://www.w3.org/1999/XSL/Transform" match="node()|@*" priority="-2">
+	<xsl:param name="appearance" select="@appearance"/>
+	<xsl:param name="parentworkid"/>
+	<xsl:param name="workid" select="concat(position(),'_',$parentworkid)"/>
+	<xsl:copy>
+		<xsl:apply-templates select="@*"/>
+		<xsl:apply-templates select="node()">
+			<xsl:with-param name="parentworkid" select="$workid"/>
+			<xsl:with-param name="appearance" select="$appearance"/>
+		</xsl:apply-templates>
+	</xsl:copy>
+</xsl:template>-->
 <xsl:template match="*" mode="nons" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:param name="parentworkid"/>
 	<xsl:param name="workid" select="concat(position(),'_',$parentworkid)"/>
