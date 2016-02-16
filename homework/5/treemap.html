@@ -6,26 +6,28 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: auto;
   position: relative;
-  width: 960px;
+  width: 1200px;
 }
 
 form {
   position: absolute;
   right: 10px;
-  top: 10px;
-}
+  top: 160px;
+} 
 
 .node {
   border: solid 1px white;
-  font: 10px sans-serif;
-  line-height: 12px;
+  font: 12px sans-serif;
+  line-height: 14px;
   overflow: hidden;
   position: absolute;
   text-indent: 2px;
 }
 
 </style>
-<form>
+<h1>U.S. Mortality Statistics for 2004, by Sex, as Classified by the World Health Organization's International Classification of Diseases 10 (ICD10)</h1>
+<p style="font-style:italic;">Cells are labeled by ICD10 classification codes and mortality totals. Hover over a cell to view the textual label for a code.</p>
+<form>  
   <label><input type="radio" name="mode" value="women" checked> Women</label>
   <label><input type="radio" name="mode" value="men"> Men</label>
 </form>
@@ -33,8 +35,8 @@ form {
 <script>
 
 var margin = {top: 40, right: 10, bottom: 10, left: 10},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 1200 - margin.left - margin.right,
+    height = 675 - margin.top - margin.bottom;
 
 var color = d3.scale.category20c();
 
@@ -52,24 +54,33 @@ var div = d3.select("body").append("div")
 
 d3.json("graph.json", function(error, root) {
   if (error) throw error;
-
+  
   var node = div.datum(root).selectAll(".node")
       .data(treemap.nodes)
-      .enter().append("div")
+      .enter().append("div")      
       .attr("class", "node")
+      .attr("title", function(d) { return d.name })      
       .call(position)
-      .style("background", function(d) { return d.children ? color(d.name) : null; })
-      .text(function(d) { return d.children ? null : d.name; });
-      //+ ' (' + d.size.toLocaleString() + ')'
+      .style("background", function(d) { return d.children ? color(d.name) : null; })      
+      .text(function(d) { return d.children ? null : d.name.substr(0, d.name.indexOf(' ')) + ' (' + d.female.toLocaleString() + ')'; });      
+      
   d3.selectAll("input").on("change", function change() {
+    var sex = this.value;
     var value = this.value === "women"
         ? function(d) { return d.female; }
         : function(d) { return d.male; };
-
-    node
+    if (sex === "women") {
+        node
+        .text(function(d) { return d.children ? null : d.name.substr(0, d.name.indexOf(' ')) + ' (' + d.female.toLocaleString() + ')'; });        
+    } else {
+        node
+        .text(function(d) { return d.children ? null : d.name.substr(0, d.name.indexOf(' ')) + ' (' + d.male.toLocaleString() + ')'; });
+    }
+    node        
+        //.text(function(d) {sex === "women" ? d.female : d.male})
         .data(treemap.value(value).nodes)
-      .transition()
-        .duration(1500)
+        .transition()
+        .duration(1000)
         .call(position);
   });
 });
