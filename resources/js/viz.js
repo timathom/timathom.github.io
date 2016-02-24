@@ -1,3 +1,5 @@
+// Adapted from code examples provided in the book D3.js in action, by Elijah Meeks (https://www.manning.com/books/d3-js-in-action) 
+
 function queueD3js(path1, path2) {
     queue().defer(d3.csv, path1).defer(d3.csv, path2).await(function (error, file1, file2) {
         createForceLayout(file1, file2);
