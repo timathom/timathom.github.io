@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<?xml-stylesheet href="../../../xsltforms/build/xsltforms.xsl" type="text/xsl"?>
+<?xsltforms-options debug="no"?>
+<?css-conversion yes?>
+<?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" 
+    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cwb="http://bibfram.es/cwb/"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:marc="http://www.loc.gov/MARC21/slim"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:oa="http://www.w3.org/ns/oa#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:trix="http://www.w3.org/2004/03/trix/trix-1/"
+    xmlns:xf="http://www.w3.org/2002/xforms"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <head>
+        <meta content="application/xhtml+xml; charset=UTF-8"
+            http-equiv="Content-Type" />
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <title>Leaf-cutter ants viz</title>
+        <link rel="stylesheet" type="text/css" href="resources/css/viz.css" />
+        <xf:model id="d3-model">
+            <xf:instance id="slices" xmlns="">
+                <data>
+                    <selection type="xs:string"></selection>
+                    <slices>
+                        <slice4 period="2000-2003">
+                            <nodes min="1" max="12"></nodes>
+                            <edge min="2" max="10"></edge>
+                        </slice4>
+                        <slice3 period="2004-2007">
+                            <nodes min="1" max="18"></nodes>
+                            <edge min="2" max="18"></edge>
+                        </slice3>
+                        <slice2 period="2008-2011">
+                            <nodes min="1" max="67"></nodes>
+                            <edge min="2" max="67"></edge>
+                        </slice2>
+                        <slice1 period="2012-2015">
+                            <nodes min="1" max="35"></nodes>
+                            <edge min="2" max="13"></edge>
+                        </slice1>
+                    </slices>
+                </data>
+            </xf:instance>
+
+
+
+
+
+        </xf:model>
+
+    </head>
+    <body>
+        <div id="wrapper">
+            <h3 class="heading">Co-authorship network graph of researchers
+                studying leaf-cutter ants<xf:output
+                    value="choose(/*/selection[normalize-space(.)], concat(', ', /*/selection), '')"
+                ></xf:output></h3>
+            <p>This dataset was generated from a title search in the Web of
+                Science database for the terms "leaf AND cutt* and ant?" A total
+                of 1315 articles were selected for visualization. Data was
+                preprocessed using the <a
+                    href="https://sci2.cns.iu.edu/user/index.php">Sci2 Tool</a>.
+                The original file was split into four time slices of four years
+                each, from 2000 to 2015. A co-occurrence network graph was
+                extracted for each slice and then exported as a GraphML file.
+                The GraphML files were loaded into a <a href="http://basex.org"
+                    >BaseX</a> XML database and converted into CSV files for use
+                in <a href="https://d3js.org">D3.js</a>. Finally, the D3
+                visualizations were deployed in an XForms instance using the <a
+                    href="https://github.com/AlainCouthures/xsltforms"
+                    >XSLTForms</a> platform.</p>
+            <xf:select1 ref="selection" appearance="full" incremental="true">
+                <xf:label></xf:label>
+                <xf:itemset nodeset="../slices/*">
+                    <xf:label ref="@period"></xf:label>
+                    <xf:value ref="@period"></xf:value>
+
+                </xf:itemset>
+                <xf:action ev:event="xforms-value-changed">
+                    <xf:action if="/*/selection = '2000-2003'">
+                        <xf:unload targetid="subform"></xf:unload>
+                        <xf:load show="embed" targetid="subform"
+                            resource="graph4.xhtml"></xf:load>
+                        <xf:dispatch name="d3" targetid="graph4-model"
+                        ></xf:dispatch>
+                    </xf:action>
+                    <xf:action if="/*/selection = '2004-2007'">
+                        <xf:unload targetid="subform"></xf:unload>
+                        <xf:load show="embed" targetid="subform"
+                            resource="graph3.xhtml"></xf:load>
+                        <xf:dispatch name="d3" targetid="graph3-model"
+                        ></xf:dispatch>
+                    </xf:action>
+                    <xf:action if="/*/selection = '2008-2011'">
+                        <xf:unload targetid="subform"></xf:unload>
+                        <xf:load show="embed" targetid="subform"
+                            resource="graph2.xhtml"></xf:load>
+                        <xf:dispatch name="d3" targetid="graph2-model"
+                        ></xf:dispatch>
+                    </xf:action>
+                    <xf:action if="/*/selection = '2012-2015'">
+                        <xf:unload targetid="subform"></xf:unload>
+                        <xf:load show="embed" targetid="subform"
+                            resource="graph1.xhtml"></xf:load>
+                        <xf:dispatch name="d3" targetid="graph1-model"
+                        ></xf:dispatch>
+                    </xf:action>
+                </xf:action>
+            </xf:select1>
+            <xf:group id="subform"></xf:group>
+            <div id="viz-wrapper">
+                <svg id="viz" xmlns="http://www.w3.org/2000/svg"></svg>
+            </div>
+            <xf:group id="legend-wrapper">
+                <svg id="legend" xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <text x="0" y="40"
+                            style="font-size: 18px; font-weight: 600; fill: black;"
+                            >Legend</text>
+                        <text x="0" y="60"
+                            style="font-size: 12px; font-weight: 600; fill: black;"
+                            >Node size by degree</text>
+                        <text x="180" y="60"
+                            style="font-size: 12px; font-weight: 600; fill: black;"
+                            >Edge weight by number of co-occurrences</text>
+                        <g>
+                            <!-- weight: 35 -->
+                            <circle cx="70" cy="95" r="25"
+                                style="stroke: black; opacity: 1; stroke-width: 2;"></circle>
+                            <text x="95" y="65"
+                                style="font-size: 12px; font-weight: 600; fill: black;"
+                                dy="1em" dx="1em">35</text>
+                        </g>
+                        <g>
+                            <!-- weight: 18 -->
+                            <circle cx="70" cy="105" r="15"
+                                style="stroke: white; opacity: 1; stroke-width: 2;"></circle>
+                            <text x="95" y="85"
+                                style="font-size: 12px; font-weight: 600; fill: black;"
+                                dy="1em" dx="1em">18</text>
+                        </g>
+                        <g>
+                            <!-- weight: 1 -->
+                            <circle cx="70" cy="115" r="5"
+                                style="stroke: white; opacity: 1; stroke-width: 2;"></circle>
+                            <text x="95" y="105"
+                                style="font-size: 12px; font-weight: 600; fill: black;"
+                                dy="1em" dx="1em">1</text>
+                        </g>
+                        <line x1="180" x2="280" y1="70" y2="70"
+                            style="stroke: gray; opacity: 0.8; stroke-width: 2"></line>
+                        <text x="290" y="62"
+                            style="font-size: 12px; font-weight: 600; fill: black;"
+                            dy="1em" dx="1em">2</text>
+                        <line x1="180" x2="280" y1="90" y2="90"
+                            style="stroke: gray; opacity: 0.8; stroke-width: 6.54545"></line>
+                        <text x="290" y="82"
+                            style="font-size: 12px; font-weight: 600; fill: black;"
+                            dy="1em" dx="1em">6</text>
+                        <line x1="180" x2="280" y1="115" y2="115"
+                            style="stroke: gray; opacity: 0.8; stroke-width: 12"></line>
+                        <text x="290" y="108"
+                            style="font-size: 12px; font-weight: 600; fill: black;"
+                            dy="1em" dx="1em">13</text>
+                    </g>
+                </svg>
+            </xf:group>
+            <xf:group id="footer">
+                <p>Questions? Comments? Contact Tim Thompson
+                    (tat2-at-princeton-dot-edu).</p>
+            </xf:group>
+        </div>
+        <script src="../../../resources/js/d3.v3.min.js" type="text/javascript"></script>
+        <script src="../../../resources/js/queue.js" type="text/javascript"></script>
+        <script src="../../../resources/js/viz.js" type="text/javascript"></script>
+    </body>
+</html>

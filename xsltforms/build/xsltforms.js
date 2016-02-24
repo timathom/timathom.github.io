@@ -1,9 +1,10 @@
-/*
-XSLTForms rev.630 (630)
-1.0 pre-release
+/* Rev. 626
 
-Copyright (C) 2016 agenceXML - Alain COUTHURES
+Copyright (C) 2008-2015 agenceXML - Alain COUTHURES
 Contact at : xsltforms@agencexml.com
+
+Copyright (C) 2006 AJAXForms S.L.
+Contact at: info@ajaxforms.com
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
@@ -18,11 +19,18 @@ Lesser General Public License for more details.
 You should have received a copy of the GNU Lesser General Public
 License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+	
 */
+		
+		
+		
+		
+		
 
-"use strict";
 if (XsltForms_domEngine === "") {
 	(function(Fleur) {
+	"use strict";
+
 	Fleur.Node = function() {};
 	Fleur.Node.ELEMENT_NODE = 1;
 	Fleur.Node.ATTRIBUTE_NODE = 2;
@@ -42,6 +50,7 @@ if (XsltForms_domEngine === "") {
 	Fleur.Node.ARRAY_NODE = 131;
 	Fleur.Node.MAP_NODE = 132;
 	Fleur.Node.ENTRY_NODE = 133;
+
 	Fleur.Serializer = function() {};
 	Fleur.Serializer.escapeXML = function(s) {
 		return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -104,6 +113,7 @@ if (XsltForms_domEngine === "") {
 				return s;
 		}
 	};
+
 	Fleur.Serializer.prototype.serializeToString = function(node, mediatype, indent, cdataSectionElements) {
 		var media = mediatype.split(";"), config = {}, param, paramreg = /^\s*(\S*)\s*=\s*(\S*)\s*$/, i = 1, l = media.length, ser;
 		while (i < l) {
@@ -114,20 +124,27 @@ if (XsltForms_domEngine === "") {
 		switch (media[0].replace(/^\s+|\s+$/gm,'')) {
 			case "text/xml":
 			case "application/xml":
-				ser = this._serializeXMLToString(node, indent, "", " " + cdataSectionElements + " ");
+				var ser = this._serializeXMLToString(node, indent, "", " " + cdataSectionElements + " ");
 				if (indent && ser.charAt(ser.length - 1) === "\n") {
 					ser = ser.substr(0, ser.length - 1);
 				}
 				return ser;
 		}
 	};
+
 	Fleur.XMLSerializer = function() {};
 	Fleur.XMLSerializer.prototype = new Fleur.Serializer();
 	Fleur.XMLSerializer.prototype.serializeToString = function(node, indent, cdataSectionElements) {
 		return Fleur.Serializer.prototype.serializeToString.call(this, node, "application/xml", indent, cdataSectionElements);
 	};
+
 	})(typeof exports === 'undefined'? this.Fleur = {}: exports);
 }
+
+	
+		
+		
+		
 var XsltForms_xpathAxis = {
 	ANCESTOR_OR_SELF: 'ancestor-or-self',
 	ANCESTOR: 'ancestor',
@@ -144,14 +161,37 @@ var XsltForms_xpathAxis = {
 	PRECEDING: 'preceding',
 	SELF: 'self'
 };
+
+	
+		
+		
+		
+/*jshint noarg:false, forin:true, noempty:true, eqeqeq:true, evil:true, bitwise:true, loopfunc:true, scripturl:true, strict:true, undef:true, curly:true, browser:true, devel:true, maxerr:100, newcap:true */
+//"use strict";
+/*members */
+/*global ActiveXObject, alert, Document, XDocument, Element, DOMParser, XMLSerializer, XSLTProcessor */
+/*global tinyMCE */
+/*global XMLDocument : true */
+/*global XsltForms_browser : true, Fleur.Node : true, XsltForms_schema : true */
+/*global XsltForms_calendar : true, XsltForms_numberList : true, XsltForms_xmlevents : true */
+/*global XsltForms_abstractAction : true, XsltForms_repeat : true, XsltForms_element : true */
+/*global XsltForms_control : true, XsltForms_xpathCoreFunctions : true, XsltForms_xpathFunctionExceptions : true */
+/*global XsltForms_idManager : true, XsltForms_xpath : true, XsltForms_listener : true */
+/*global XsltForms_typeDefs : true, XsltForms_exprContext : true */
 var XsltForms_globals = {
-	fileVersion: "rev.630",
-	fileVersionNumber: 630,
+
+	fileVersion: "626",
+	fileVersionNumber: 626,
+
 	language: "navigator",
 	debugMode: false,
 	debugButtons: [
 		{label: "Profiler", name: "profiler"}
 		,{label: "Trace Log", name: "tracelog"}
+		/*
+		,{label: "Validator"},
+		,{label: "XPath Evaluator"}
+		*/
 	],
 	cont : 0,
 	ready : false,
@@ -187,6 +227,9 @@ var XsltForms_globals = {
 	componentLoads: [],
 	jslibraries: {},
 	htmlversion: "4",
+
+		
+
 	debugging : function() {
 		if (document.documentElement.childNodes[0].nodeType === 8 || (XsltForms_browser.isIE && document.documentElement.childNodes[0].childNodes[1] && document.documentElement.childNodes[0].childNodes[1].nodeType === 8)) {
 			var body = XsltForms_browser.isXhtml ? document.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "body")[0] : document.getElementsByTagName("body")[0];
@@ -195,7 +238,7 @@ var XsltForms_globals = {
 				dbg.setAttribute("style", "border-bottom: thin solid #888888;");
 				dbg.setAttribute("id", "xsltforms_debug");
 				var img = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "img") : document.createElement("img");
-				img.setAttribute("src", XsltForms_browser.imgROOT+"magnify.png");
+				img.setAttribute("src", XsltForms_browser.ROOT+"magnify.png");
 				img.setAttribute("style", "vertical-align:middle;border:0;");
 				dbg.appendChild(img);
 				var spn = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "span") : document.createElement("span");
@@ -212,7 +255,7 @@ var XsltForms_globals = {
 				a.setAttribute("href", "http://www.w3.org/TR/xforms11/");
 				a.setAttribute("style", "text-decoration:none;");
 				var img2 = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "img") : document.createElement("img");
-				img2.setAttribute("src", XsltForms_browser.imgROOT+"valid-xforms11.png");
+				img2.setAttribute("src", XsltForms_browser.ROOT+"valid-xforms11.png");
 				img2.setAttribute("style", "vertical-align:middle;border:0;");
 				a.appendChild(img2);
 				dbg.appendChild(a);
@@ -220,7 +263,7 @@ var XsltForms_globals = {
 				a2.setAttribute("href", "http://www.agencexml.com/xsltforms");
 				a2.setAttribute("style", "text-decoration:none;");
 				var img3 = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "img") : document.createElement("img");
-				img3.setAttribute("src", XsltForms_browser.imgROOT+"poweredbyXSLTForms.png");
+				img3.setAttribute("src", XsltForms_browser.ROOT+"poweredbyXSLTForms.png");
 				img3.setAttribute("style", "vertical-align:middle;border:0;");
 				a2.appendChild(img3);
 				dbg.appendChild(a2);
@@ -234,7 +277,7 @@ var XsltForms_globals = {
 				a3.setAttribute("style", "text-decoration:none;");
 				a3.setAttribute("href", "#");
 				var img4 = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "img") : document.createElement("img");
-				img4.setAttribute("src", XsltForms_browser.imgROOT+"F1.png");
+				img4.setAttribute("src", XsltForms_browser.ROOT+"F1.png");
 				img4.setAttribute("style", "vertical-align:middle;border:0;");
 				a3.appendChild(img4);
 				dbg.appendChild(a3);
@@ -294,11 +337,6 @@ var XsltForms_globals = {
 				}
 				dbg.appendChild(ifr);
 				body.insertBefore(dbg, body.firstChild);
-				if (!document.getElementById("xsltforms_console")) {
-					var conselt = document.createElement("div");
-					conselt.setAttribute("id", "xsltforms_console");
-					document.getElementsByTagName("body")[0].appendChild(conselt);
-				}
 				document.getElementById("xsltforms_console").style.display = "block";
 			} else {
 				body.removeChild(document.getElementById("xsltforms_debug"));
@@ -306,6 +344,9 @@ var XsltForms_globals = {
 			}
 		}
 	},
+
+		
+
 	xmlrequest : function(method, resource, ser) {
 		if (typeof method !== "string") {
 			return '<error xmlns="">Invalid method "'+method+'"</error>';
@@ -324,7 +365,6 @@ var XsltForms_globals = {
 							XsltForms_browser.debugConsole.write("ERROR: Could not open xsltforms-tracelog " + e.message);
 							return '<error xmlns="">Could not open xsltforms-tracelog "'+e.message+'"</error>';
 						}
-						break;
 					default:
 						var slash = resource.indexOf("/");
 						if (slash === -1 ) {
@@ -368,6 +408,9 @@ var XsltForms_globals = {
 				return '<error xmlns="">Unknown method "'+method+'"</error>';
 		}
 	},
+
+		
+
 	profiling_data : function() {
 		var s = '<xsltforms:dump xmlns:xsltforms="http://www.agencexml.com/xsltforms">';
 		s += '<xsltforms:date>' + XsltForms_browser.i18n.format(new Date(), "yyyy-MM-ddThh:mm:ssz", true) + '</xsltforms:date>';
@@ -451,12 +494,12 @@ var XsltForms_globals = {
 			}
 		}
 		exprtab.sort(function(a,b) { return b.evaltime - a.evaltime; });
-		var topt = 0;
+		var top = 0;
 		s += '<xsltforms:xpaths>';
 		if (exprtab.length > 0) {
 			for (var i = 0; i < exprtab.length && i < 20; i++) {
 				s += '<xsltforms:xpath expr="' + XsltForms_browser.escape(exprtab[i].expr).replace(/\"/g, "&quot;") + '">' + exprtab[i].evaltime + '</xsltforms:xpath>';
-				topt += exprtab[i].evaltime;
+				top += exprtab[i].evaltime;
 			}
 			if (exprtab.length > 20) {
 				var others = 0;
@@ -464,28 +507,31 @@ var XsltForms_globals = {
 					others += exprtab[j].evaltime;
 				}
 				s += '<xsltforms:others count="' + (exprtab.length - 20) + '">' + others + '</xsltforms:others>';
-				topt += others;
+				top += others;
 			}
-			s += '<xsltforms:total>' + topt + '</xsltforms:total>';
+			s += '<xsltforms:total>' + top + '</xsltforms:total>';
 		}
 		s += '</xsltforms:xpaths>';
 		s += '</xsltforms:dump>';
 		return s;
 	},
-	opentab : function(tabname) {
-		var req = XsltForms_browser.openRequest("GET", XsltForms_browser.debugROOT + "xsltforms_" + tabname + (XsltForms_browser.debugROOT === XsltForms_browser.ROOT ? ".xhtml" : ".xml"), false);
+
+		
+
+	opentab : function(name) {
+		var req = XsltForms_browser.openRequest("GET", XsltForms_browser.ROOT + "xsltforms_" + name + ".xhtml", false);
 		if (req.overrideMimeType) {
 			req.overrideMimeType("application/xml");
 		}
 		try {        
 			req.send(null);
 		} catch(e) {
-			alert("File not found: " + XsltForms_browser.debugROOT + "xsltforms_" + tabname + (XsltForms_browser.debugROOT === XsltForms_browser.ROOT ? ".xhtml" : ".xml"));
+			alert("File not found: " + XsltForms_browser.ROOT + "xsltforms_" + name + ".xhtml");
 		}
 		if (req.status === 200 || req.status === 0) {
 			var s = "";
 			try {
-				s = XsltForms_browser.transformText(req.responseText, XsltForms_browser.xslROOT + "xsltforms.xsl", false, "xsltforms_debug", "false", "baseuri", XsltForms_browser.xslROOT);
+				s = XsltForms_browser.transformText(req.responseText, XsltForms_browser.ROOT + "xsltforms.xsl", false, "xsltforms_debug", "false", "baseuri", XsltForms_browser.ROOT);
 			} catch (e) {
 				XsltForms_browser.debugConsole.write("ERROR: Could not get contents of xsltforms_debug - " + e.message);
 			}			
@@ -496,14 +542,17 @@ var XsltForms_globals = {
 			prow.document.write(s);
 			prow.document.close();
 		} else {
-			XsltForms_browser.debugConsole.write("File not found (" + req.status + "): " + XsltForms_browser.ROOT + "xsltforms_" + tabname + ".xhtml");
+			XsltForms_browser.debugConsole.write("File not found (" + req.status + "): " + XsltForms_browser.ROOT + "xsltforms_" + name + ".xhtml");
 		}
 	},
+
+		
+
 	init: function() {
 		XsltForms_browser.setValue(document.getElementById("statusPanel"), XsltForms_browser.i18n.get("status"));
-		XsltForms_globals.htmlversion = XsltForms_browser.i18n.get("html");
+		this.htmlversion = XsltForms_browser.i18n.get("html");
 		var b = XsltForms_browser.isXhtml ? document.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "body")[0] : document.getElementsByTagName("body")[0];
-		XsltForms_globals.body = b;
+		this.body = b;
 		document.onhelp = function(){return false;};
 		window.onhelp = function(){return false;};
 		XsltForms_browser.events.attach(document, "keydown", function(evt) {
@@ -521,45 +570,49 @@ var XsltForms_globals = {
 		}, false);
 		XsltForms_browser.events.attach(b, "click", function(evt) {
 			var target = XsltForms_browser.events.getTarget(evt);
-			var parentElt = target;
-			while (parentElt && parentElt.nodeType === Fleur.Node.ELEMENT_NODE) {
-				if (XsltForms_browser.hasClass(parentElt, "xforms-repeat-item")) {
-					XsltForms_repeat.selectItem(parentElt);
+			var parent = target;
+			while (parent && parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+				if (XsltForms_browser.hasClass(parent, "xforms-repeat-item")) {
+					XsltForms_repeat.selectItem(parent);
 				}
-				parentElt = parentElt.parentNode;
+				parent = parent.parentNode;
 			}
-			parentElt = target;
-			while (parentElt && parentElt.nodeType === Fleur.Node.ELEMENT_NODE) {
-				var xf = parentElt.xfElement;
+			parent = target;
+			while (parent && parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+				var xf = parent.xfElement;
 				if (xf) {
-					if(typeof parentElt.node !== "undefined" && parentElt.node && xf.focus && !XsltForms_browser.getBoolMeta(parentElt.node, "readonly")) {
-						var tname = target.nodeName.toLowerCase();
-						xf.focus(tname === "input" || tname === "textarea", evt);
+					if(typeof parent.node !== "undefined" && parent.node && xf.focus && !XsltForms_browser.getBoolMeta(parent.node, "readonly")) {
+						var name = target.nodeName.toLowerCase();
+						xf.focus(name === "input" || name === "textarea", evt);
 					}
 					if(xf.click && xf.input && !xf.input.disabled) {
 						xf.click(target, evt);
 						break;
 					}
 				}
-				parentElt = parentElt.parentNode;
+				parent = parent.parentNode;
 			}
 		}, false);
 		XsltForms_browser.events.onunload = function() {
 			XsltForms_globals.close();
 		};
-		XsltForms_globals.openAction("XsltForms_globals.init");
-		XsltForms_xmlevents.dispatchList(XsltForms_globals.models, "xforms-model-construct");
-		for (var i = 0, l = XsltForms_globals.componentLoads.length; i < l; i++) {
-			eval(XsltForms_globals.componentLoads[i]);
+		this.openAction("XsltForms_globals.init");
+		XsltForms_xmlevents.dispatchList(this.models, "xforms-model-construct");
+		for (var i = 0, l = this.componentLoads.length; i < l; i++) {
+			eval(this.componentLoads[i]);
 		}
-		XsltForms_globals.refresh();
-		XsltForms_globals.closeAction("XsltForms_globals.init");
-		XsltForms_globals.ready = true;
+		this.refresh();
+		this.closeAction("XsltForms_globals.init");
+		this.ready = true;
 		XsltForms_browser.dialog.hide("statusPanel", false);
 	},
+
+		
+
 	close : function() {
 		if (XsltForms_globals.body) {
 			this.openAction("XsltForms_globals.close");
+			//XsltForms_xmlevents.dispatchList(XsltForms_globals.models, "xforms-model-destruct");
 			for (var i = 0, len = XsltForms_listener.destructs.length; i < len; i++) {
 				XsltForms_listener.destructs[i].callback({target: XsltForms_listener.destructs[i].observer});
 			}
@@ -580,22 +633,36 @@ var XsltForms_globals = {
 			XsltForms_globals.posibleBlur = false;
 		}
 	},
+
+		
+
 	openActions : [],
 	openAction : function(action) {
+		//console.log("openAction(" + action + "): changes = " + this.changes.length + " / cont = " + this.cont);
 		this.openActions.push(action);
 		if (this.cont++ === 0) {
 			XsltForms_browser.debugConsole.clear();
 		}
 	},
+
+		
+
 	closeAction : function(action) {
+		//console.log("closeAction(" + action + "): " + this.changes.length + "/" + this.cont);
 		var lastaction = this.openActions.pop();
+		/*
 		if (lastaction !== action) {
+			alert("Action mismatch: '" + lastaction + "' was expected instead of '" + action + "'");
 		}
+		*/
 		if (this.cont === 1) {
 			this.closeChanges();
 		}
 		this.cont--;
 	},
+
+		
+
 	closeChanges : function(force) {
 		var changes = this.changes;
 		for (var i = 0, len = changes.length; i < len; i++) {
@@ -606,6 +673,7 @@ var XsltForms_globals = {
 				} else {
 					XsltForms_xmlevents.dispatch(change, "xforms-recalculate");
 				}
+			//} else { // Repeat or tree
 			}
 		}
 		if (changes.length > 0 || force) {
@@ -615,19 +683,25 @@ var XsltForms_globals = {
 			}
 		}
 	},
-	error : function(element, evt, message, causeMessage) {
+
+		
+
+	error : function(element, event, message, causeMessage) {
 		XsltForms_browser.dialog.hide("statusPanel", false);
 		XsltForms_browser.setValue(document.getElementById("statusPanel"), message);
 		XsltForms_browser.dialog.show("statusPanel", null, false);
 		if (element) {
-			XsltForms_xmlevents.dispatch(element, evt);
+			XsltForms_xmlevents.dispatch(element, event);
 		}
 		if (causeMessage) {
 			message += " : " + causeMessage;
 		}
 		XsltForms_browser.debugConsole.write("Error: " + message);
-		throw evt;        
+		throw event;        
 	},
+
+		
+
 	refresh : function() {
 		var d1 = new Date();
 		this.building = true;
@@ -651,6 +725,8 @@ var XsltForms_globals = {
 			}
 		}
 		this.building = false;
+		// Throw any gathered binding-errors.
+		//
 		if (this.bindErrMsgs.length) {
 			this.error(this.defaultModel, "xforms-binding-exception", "Binding Errors: \n" + this.bindErrMsgs.join("\n  "));
 			this.bindErrMsgs = [];
@@ -659,6 +735,9 @@ var XsltForms_globals = {
 		this.refreshtime += d2 - d1;
 		this.refreshcount++;
 	},
+
+		
+
 	build : function(element, ctx, selected, varresolver) {
 		if (element.nodeType !== Fleur.Node.ELEMENT_NODE || element.id === "xsltforms_console" || element.hasXFElement === false) {
 			return {ctx: ctx, hasXFElement: false};
@@ -666,6 +745,7 @@ var XsltForms_globals = {
 		var xf = element.xfElement;
 		var hasXFElement = !!xf;
 		if (element.getAttribute("mixedrepeat") === "true") {
+			//ctx = element.node || ctx;
 			selected = element.selected;
 		}
 		if (xf) {
@@ -743,12 +823,18 @@ var XsltForms_globals = {
 		}
 		return {ctx: newctx, hasXFElement: hasXFElement};
 	},
+
+		
+
 	addChange : function(element) {
 		var list = this.building? this.newChanges : this.changes;
 		if (!XsltForms_browser.inArray(element, list)) {
 			list.push(element);
 		}
 	},
+
+		
+
 	dispose : function(element) {
 		if (element.nodeType !== Fleur.Node.ELEMENT_NODE || element.id === "xsltforms_console") {
 			return;
@@ -765,6 +851,9 @@ var XsltForms_globals = {
 			this.dispose(childs[i]);
 		}
 	},
+
+		
+
 	blur : function(direct) {
 		if ((direct || this.posibleBlur) && this.focus) {
 			if (this.focus.element) {
@@ -781,9 +870,13 @@ var XsltForms_globals = {
 			this.focus = null;
 		}
 	},
+
+		
+
 	add32 : function(x, y) {
 		var lsw = (x & 0xFFFF) + (y & 0xFFFF);
 		return ((((x >>> 16) + (y >>> 16) + (lsw >>> 16)) & 0xFFFF)<< 16) | (lsw & 0xFFFF);
+		// return (x + y) & 0xFFFFFFFF;
 	},
 	str2msg : function(str) {
 		var i, msg = {length: str.length, arr: []};
@@ -793,15 +886,15 @@ var XsltForms_globals = {
 		return msg;
 	},
 	crypto : function(msg, algo) {
-		var res, i, t, add32 = XsltForms_globals.add32;
-		var a, b, c, d, e, f, g, h, T, l, bl, W;
+		var res, i, add32 = XsltForms_globals.add32;
 		switch (algo) {
 			case "SHA-1":
-				bl = msg.length * 8;
+				var bl = msg.length * 8;
 				msg.arr[bl >> 5] |= 0x80 << (24 - bl % 32);
 				msg.arr[((bl + 65 >> 9) << 4) + 15] = bl;
-				l = msg.arr.length;
-				W = [];
+				var a, b, c, d, e, T;
+				var l = msg.arr.length;
+				var W = [];
 				res = [0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476, 0xc3d2e1f0];
 				var rotl = function(x, n) {
 					return (x <<  n) | (x >>> (32 - n));
@@ -852,7 +945,7 @@ var XsltForms_globals = {
 				}
 				return {length: 20, arr: res};
 			case "MD5":
-				var n = msg.length;
+				var n = msg.length, t;
 				var cmn = function(q, a, b, x, s, t) {
 					a = add32(add32(a, q), add32(x, t));
 					return add32((a << s) | (a >>> (32 - s)), b);
@@ -870,10 +963,7 @@ var XsltForms_globals = {
 					return cmn(c ^ (b | (~d)), a, b, x, s, t);
 				};
 				var cycle = function (w, t) {
-					a = w[0];
-					b = w[1];
-					c = w[2];
-					d = w[3];
+					var a = w[0], b = w[1], c = w[2], d = w[3];
 					a = f1(a, b, c, d, t[0], 7, -680876936);
 					d = f1(d, a, b, c, t[1], 12, -389564586);
 					c = f1(c, d, a, b, t[2], 17,  606105819);
@@ -973,7 +1063,7 @@ var XsltForms_globals = {
 				}
 				return {length: 16, arr: res};
 			case "SHA-256":
-				bl = msg.length * 8;
+				var bl = msg.length * 8;
 				msg.arr[bl >> 5] |= 0x80 << (24 - bl % 32);
 				msg.arr[((bl + 65 >> 9) << 4) + 15] = bl;
 				var K = [0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
@@ -984,9 +1074,10 @@ var XsltForms_globals = {
 					0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
 					0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
 					0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2];
-				W = [];
+				var W = [];
 				res = [0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19];
-				l = msg.arr.length;
+				var a, b, c, d, e, f, g, h, T;
+				var l = msg.arr.length;
 				for(i = 0; i < l; i += 16){
 					a = res[0];
 					b = res[1];
@@ -1026,25 +1117,27 @@ var XsltForms_globals = {
 				}
 				return {length: 32, arr: res};
 			case "BASE64":
-				var b64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-				msg = msg.replace(/\r\n/g,"\n");
-				var l2b = msg.length;
-				var str = "";
+				str = str.replace(/\r\n/g,"\n");
+				var l2b = str.length;
+				str2 = "";
 				for (i = 0; i < l2b; i++) {
-					var c0 = msg.charCodeAt(i);
-					str += c0 < 128 ? msg.charAt(i) : c0 > 127 && c0 < 2048 ? String.fromCharCode(c0 >> 6 | 192, c0 & 63 | 128) : String.fromCharCode(c0 >> 12 | 224, c0 >> 6 & 63 | 128, c0 & 63 | 128);
+					var c0 = str.charCodeAt(i);
+					str2 += c0 < 128 ? str.charAt(i) : c0 > 127 && c0 < 2048 ? String.fromCharCode(c0 >> 6 | 192, c0 & 63 | 128) : String.fromCharCode(c0 >> 12 | 224, c0 >> 6 & 63 | 128, c0 & 63 | 128);
 				}
-				l2b = str.length;
-				res = "";
+				l2b = str2.length;
+				var res = "";
 				for (i = 0; i < l2b; i += 3) {
-					var c1b = str.charCodeAt(i);
-					var c2b = i + 1 < l2b ? str.charCodeAt(i + 1) : 0;
-					var c3b = i + 2 < l2b ? str.charCodeAt(i + 2) : 0;
+					var c1b = str2.charCodeAt(i);
+					var c2b = i + 1 < l2b ? str2.charCodeAt(i + 1) : 0;
+					var c3b = i + 2 < l2b ? str2.charCodeAt(i + 2) : 0;
 					res += b64.charAt(c1b >> 2) + b64.charAt((c1b & 3) << 4 | c2b >> 4) + (i + 1 < l2b ? b64.charAt((c2b & 15) << 2 | c3b >> 6) : "=") + (i + 2 < l2b ? b64.charAt(c3b & 63) : "=");
 				}
 				return res;
 		}
 	},
+
+		
+
 	hex32 : function(v) {
 		var h = v >>> 16;
 		var l = v & 0xFFFF;
@@ -1071,8 +1164,16 @@ var XsltForms_globals = {
 		return str;
 	}
 };
+
+	
+		
+		
+
 var XsltForms_browser = {
 	jsFileName : "xsltforms.js",
+
+		
+
 	isOpera: navigator.userAgent.match(/\bOpera\b/),
 	isIE: navigator.userAgent.match(/\bMSIE\b/) && !navigator.userAgent.match(/\bOpera\b/),
 	isIE9: navigator.userAgent.match(/\bMSIE\b/) && !navigator.userAgent.match(/\bOpera\b/) && window.addEventListener,
@@ -1102,17 +1203,20 @@ var XsltForms_browser = {
 			}
 		}
 	},
+
+		
+
 	hasClass : function(element, className) {
 		var cn = element.className;
 		var cn2 = typeof cn === "string" ? cn : cn.baseVal;
 		return XsltForms_browser.inArray(className, (cn2 && cn2.split(" ")) || []);
 	},
 	initHover : function(element) {
-		XsltForms_browser.events.attach(element, "mouseover", function(evt) {
-			XsltForms_browser.setClass(XsltForms_browser.events.getTarget(evt), "hover", true);
+		XsltForms_browser.events.attach(element, "mouseover", function(event) {
+			XsltForms_browser.setClass(XsltForms_browser.events.getTarget(event), "hover", true);
 		} );
-		XsltForms_browser.events.attach(element, "mouseout", function(evt) {
-			XsltForms_browser.setClass(XsltForms_browser.events.getTarget(evt), "hover", false);
+		XsltForms_browser.events.attach(element, "mouseout", function(event) {
+			XsltForms_browser.setClass(XsltForms_browser.events.getTarget(event), "hover", false);
 		} );
 	},
 	getEventPos : function(ev) {
@@ -1137,77 +1241,61 @@ var XsltForms_browser = {
 		};
 		return r;
 	},
-	setPos : function(element, left, topy) {
+	setPos : function(element, left, top) {
 		if (element.offsetParent) {
 			var tmp = XsltForms_browser.getAbsolutePos(element.offsetParent);
 			left -= tmp.x;
-			topy -= tmp.y;
+			top -= tmp.y;
 		}
-		element.style.top = topy + "px";
+		element.style.top = top + "px";
 		element.style.left = left + "px";
 	},
-	loadProperties : function(fname, f) {
-		var uri = this.ROOT + fname;
-		var synchr = f === null;
-		var req = XsltForms_browser.openRequest("GET", uri, !synchr);
-		var func = function() {
-			if (!synchr && req.readyState !== 4) {
-				return;
-			}
-			try {
-				if (req.status === 1223) {
-					req.status = 204;
-					req.statusText = "No Content";
-				}
-				if (req.status !== 0 && (req.status < 200 || req.status >= 300)) {
-					return;
-				}
-				var ndoc = XsltForms_browser.createXMLDocument(req.responseText);
-				var n = ndoc.documentElement;
-				while (n) {
-					if (n.nodeName === "properties") {
-						break;
-					}
-					if (n.firstChild) {
-						n = n.firstChild;
-					} else {
-						while (n && !n.nextSibling) {
-							n = n.parentNode;
-						}
-						if (n && n.nextSibling) {
-							n = n.nextSibling;
-						}
-					}
-				}
-				var r = XsltForms_browser.config.ownerDocument.importNode(n, true);
-				XsltForms_browser.config.parentNode.replaceChild(r, XsltForms_browser.config);
-				var inst = document.getElementById(XsltForms_browser.idPf + "instance-config").xfElement;
-				XsltForms_browser.config = inst.doc.documentElement;
-				inst.srcDoc = XsltForms_browser.saveDoc(inst.doc, "application/xml");
-				XsltForms_browser.setDocMeta(inst.doc, "instance", XsltForms_browser.idPf + "instance-config");
-				XsltForms_browser.setDocMeta(inst.doc, "model", XsltForms_browser.idPf + "model-config");
-				XsltForms_globals.language = XsltForms_browser.selectSingleNodeText('language', XsltForms_browser.config);
-			} catch (e) {
-			}
-			if (!synchr) {
-				f();
-			}
-		};
-		if (!synchr) {
-			req.onreadystatechange = func;
-		}
+
+		
+
+	loadProperties : function(name) {
+		var uri = this.ROOT + name;
+		var req = XsltForms_browser.openRequest("GET", uri, false);
 		if (req.overrideMimeType) {
 			req.overrideMimeType("application/xml");
 		}
 		try {        
 			req.send(null);
-			if (synchr) {
-				func();
-			}
 		} catch(e) {
 			alert("File not found: " + uri);
 		}
+		if (req.status === 200 || req.status === 0) {
+			var ndoc = XsltForms_browser.createXMLDocument(req.responseText);
+			var n = ndoc.documentElement;
+			while (n) {
+				if (n.nodeName === "properties") {
+					break;
+				}
+				if (n.firstChild) {
+					n = n.firstChild;
+				} else {
+					while (n && !n.nextSibling) {
+						n = n.parentNode;
+					}
+					if (n && n.nextSibling) {
+						n = n.nextSibling;
+					}
+				}
+			}
+			var r = XsltForms_browser.config.ownerDocument.importNode(n, true);
+			XsltForms_browser.config.parentNode.replaceChild(r, XsltForms_browser.config);
+			var inst = document.getElementById(XsltForms_browser.idPf + "instance-config").xfElement;
+			XsltForms_browser.config = inst.doc.documentElement;
+			inst.srcDoc = XsltForms_browser.saveDoc(inst.doc, "application/xml");
+			XsltForms_browser.setDocMeta(inst.doc, "instance", XsltForms_browser.idPf + "instance-config");
+			XsltForms_browser.setDocMeta(inst.doc, "model", XsltForms_browser.idPf + "model-config");
+			//XMLEvents.dispatch(properties.model, "xforms-rebuild");
+			//xforms.refresh();
+		}
 	},
+
+		
+
 	constructURI : function(uri) {
 		if (uri.match(/^[a-zA-Z0-9+\.\-]+:\/\//)) {
 			return uri;
@@ -1224,23 +1312,30 @@ var XsltForms_browser = {
 		}
 		return href + uri;
 	},
-	createElement : function(type, parentElt, content, className) {
+
+		
+
+	createElement : function(type, parent, content, className) {
 		var el = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", type) : document.createElement(type);
 		if (className) {
 			el.className = className;
 		}
-		if (parentElt) {
-			parentElt.appendChild(el);
+		if (parent) {
+			parent.appendChild(el);
 		}
 		if (content) {
 			el.appendChild(document.createTextNode(content));
 		}
 		return el;
 	},
+
+		
+
 	getWindowSize : function() {
 		var myWidth = 0, myHeight = 0, myOffsetX = 0, myOffsetY = 0, myScrollX = 0, myScrollY = 0;
 		if (!(XsltForms_browser.isIE || XsltForms_browser.isIE11)) {
 			myWidth = document.body ? document.body.clientWidth : document.documentElement.clientWidth;
+			//myHeight = document.body ? document.body.clientHeight : document.documentElement.clientHeight;
 			myHeight = document.documentElement.clientHeight;
 			myOffsetX = document.body ? Math.max(document.documentElement.clientWidth, document.body.clientWidth) : document.documentElement.clientWidth; // body margins ?
 			myOffsetY = document.body ? Math.max(document.documentElement.clientHeight, document.body.clientHeight) : document.documentElement.clientHeight; // body margins ?
@@ -1264,13 +1359,14 @@ var XsltForms_browser = {
 		};
 	}
 };
+
+		
+
 if (XsltForms_browser.isIE || XsltForms_browser.isIE11) {
 	try {
-		var xmlDoc0 = new ActiveXObject("Msxml2.DOMDocument.6.0");
-		if (xmlDoc0) {
-			xmlDoc0 = null;
-			XsltForms_browser.MSXMLver = "6.0";
-		}
+		var xmlDoc = new ActiveXObject("Msxml2.DOMDocument.6.0");
+		xmlDoc = null;
+		XsltForms_browser.MSXMLver = "6.0";
 	} catch(e) {
 		XsltForms_browser.MSXMLver = "3.0";
 	}
@@ -1278,6 +1374,7 @@ if (XsltForms_browser.isIE || XsltForms_browser.isIE11) {
 }
 if (!XsltForms_browser.isIE) {
 	XsltForms_browser.openRequest = function(method, uri, async) {
+		// netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
 		var req = new XMLHttpRequest();
 		try {
 			req.open(method, XsltForms_browser.constructURI(uri), async);
@@ -1325,6 +1422,9 @@ if (!XsltForms_browser.isIE) {
 } else {
 	throw new Error("This browser does not support XHRs(Ajax)! \n Enable Javascript or ActiveX controls (on IE) or lower security restrictions.");
 }
+
+		
+
 if (XsltForms_browser.isIE || XsltForms_browser.isIE11) {
 	XsltForms_browser.transformText = function(xml, xslt, inline) {
 		var xmlDoc = new ActiveXObject("MSXML2.DOMDocument." + XsltForms_browser.MSXMLver);
@@ -1363,6 +1463,14 @@ if (XsltForms_browser.isIE || XsltForms_browser.isIE11) {
 			if (inline) {
 				xsltDoc = parser.parseFromString(xslt, "text/xml");
 			} else {
+				/*
+				xsltDoc = document.implementation.createDocument("","",null);
+				if (xsltDoc.load) {
+					xsltDoc.async = false;
+					xsltDoc.load(xslt);
+				} else {
+				}
+				*/
 				var xhttp = new XMLHttpRequest();
 				xhttp.open("GET", xslt, false);
 				xhttp.send("");
@@ -1404,17 +1512,17 @@ if (XsltForms_browser.isIE || XsltForms_browser.isIE11) {
 			}
 	};
 }
+
+		
+
 XsltForms_browser.scripts = XsltForms_browser.isXhtml ? document.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "script") : document.getElementsByTagName("script");
 for (var __i = 0, __len = XsltForms_browser.scripts.length; __i < __len; __i++) {
 	var __src = XsltForms_browser.scripts[__i].src;
 	if (__src.indexOf(XsltForms_browser.jsFileName) !== -1) {
 		XsltForms_browser.ROOT = __src.replace(XsltForms_browser.jsFileName, "");
-		if (XsltForms_browser.ROOT.indexOf("?") !== -1) {
+		if (XsltForms_browser.ROOT.indexOf("?") != -1) {
 			XsltForms_browser.ROOT = XsltForms_browser.ROOT.substring(0, XsltForms_browser.ROOT.indexOf("?"));
 		}
-		XsltForms_browser.imgROOT = XsltForms_browser.ROOT.substr(XsltForms_browser.ROOT.length - 3, 3) === "js/" ? XsltForms_browser.ROOT + "../img/" : XsltForms_browser.ROOT;
-		XsltForms_browser.xslROOT = XsltForms_browser.ROOT.substr(XsltForms_browser.ROOT.length - 3, 3) === "js/" ? XsltForms_browser.ROOT + "../xsl/" : XsltForms_browser.ROOT;
-		XsltForms_browser.debugROOT = XsltForms_browser.ROOT.substr(XsltForms_browser.ROOT.length - 3, 3) === "js/" ? XsltForms_browser.ROOT + "../debug/" : XsltForms_browser.ROOT;
 		break;
 	}
 }
@@ -1430,6 +1538,9 @@ XsltForms_browser.loadapplet = function() {
 	var body = XsltForms_browser.isXhtml ? document.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "body")[0] : document.getElementsByTagName("body")[0];
 	body.insertBefore(appelt, body.firstChild);
 };
+
+		
+
 XsltForms_browser.IEReadFile = function(fname, encoding, xsdtype, title) {
 	if (document.applets.xsltforms) {
 		return document.applets.xsltforms.readFile(fname, encoding, xsdtype, title) || "";
@@ -1441,6 +1552,9 @@ XsltForms_browser.IEReadFile = function(fname, encoding, xsdtype, title) {
 	}
 	return "";
 };
+
+		
+
 XsltForms_browser.javaReadFile = function(fname, encoding, xsdtype, title) {
 	if (document.applets.xsltforms) {
 		return document.applets.xsltforms.readFile(fname, encoding, xsdtype, title) || "";
@@ -1460,6 +1574,9 @@ XsltForms_browser.javaReadFile = function(fname, encoding, xsdtype, title) {
 	}
 	return "";
 };
+
+		
+
 XsltForms_browser.javaWriteFile = function(fname, encoding, xsdtype, title, content) {
 	if (document.applets.xsltforms) {
 		if (fname === "") {
@@ -1491,12 +1608,19 @@ XsltForms_browser.javaWriteFile = function(fname, encoding, xsdtype, title, cont
 	}
 	return false;
 };
+
+		
+
 XsltForms_browser.readFile = function(fname, encoding, xsdtype, title) {
 	return XsltForms_browser.javaReadFile(fname, encoding, xsdtype, title);
 };
+
+		
+
 XsltForms_browser.writeFile = function(fname, encoding, xsdtype, title, content) {
 	return XsltForms_browser.javaWriteFile(fname, encoding, xsdtype, title, content);
 };
+
 XsltForms_browser.xsltsrc = '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">';
 XsltForms_browser.xsltsrc += '	<xsl:output method="xml" omit-xml-declaration="yes"/>';
 XsltForms_browser.xsltsrc += '	<xsl:template match="@*[starts-with(translate(name(),\'ABCDEFGHIJKLMNOPQRSTUVWXYZ\',\'abcdefghijklmnopqrstuvwxyz\'),\'xsltforms_\')]" priority="1"/>';
@@ -1506,6 +1630,7 @@ XsltForms_browser.xsltsrc += '			<xsl:apply-templates select="@*|node()"/>';
 XsltForms_browser.xsltsrc += '		</xsl:copy>';
 XsltForms_browser.xsltsrc += '	</xsl:template>';
 XsltForms_browser.xsltsrc += '</xsl:stylesheet>';
+
 XsltForms_browser.xsltsrcanyuri = '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">';
 XsltForms_browser.xsltsrcanyuri += '	<xsl:output method="xml" omit-xml-declaration="yes"/>';
 XsltForms_browser.xsltsrcanyuri += '	<xsl:template match="*[(substring-after(@xsltforms_type,\':\') = \'anyURI\' or substring-after(@xsi:type,\':\') = \'anyURI\') and . != \'\']" priority="2">';
@@ -1539,6 +1664,7 @@ XsltForms_browser.xsltsrcanyuri += '			<xsl:apply-templates select="@*|node()"/>
 XsltForms_browser.xsltsrcanyuri += '		</xsl:copy>';
 XsltForms_browser.xsltsrcanyuri += '	</xsl:template>';
 XsltForms_browser.xsltsrcanyuri += '</xsl:stylesheet>';
+
 XsltForms_browser.xsltsrcindent = '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">';
 XsltForms_browser.xsltsrcindent += '	<xsl:output method="xml" omit-xml-declaration="yes"/>';
 XsltForms_browser.xsltsrcindent += '	<xsl:template match="@*[starts-with(translate(name(),\'ABCDEFGHIJKLMNOPQRSTUVWXYZ\',\'abcdefghijklmnopqrstuvwxyz\'),\'xsltforms_\')]" priority="1"/>';
@@ -1563,6 +1689,7 @@ XsltForms_browser.xsltsrcindent += '			<xsl:value-of select="substring($offset,5
 XsltForms_browser.xsltsrcindent += '		</xsl:if>';
 XsltForms_browser.xsltsrcindent += '	</xsl:template>';
 XsltForms_browser.xsltsrcindent += '</xsl:stylesheet>';
+
 XsltForms_browser.xsltsrcrelevant = '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">';
 XsltForms_browser.xsltsrcrelevant += '	<xsl:output method="xml" omit-xml-declaration="yes"/>';
 XsltForms_browser.xsltsrcrelevant += '	<xsl:template match="*[@xsltforms_notrelevant = \'true\']" priority="1"/>';
@@ -1583,6 +1710,7 @@ XsltForms_browser.xsltsrcrelevant += '			<xsl:apply-templates select="@*|node()"
 XsltForms_browser.xsltsrcrelevant += '		</xsl:copy>';
 XsltForms_browser.xsltsrcrelevant += '	</xsl:template>';
 XsltForms_browser.xsltsrcrelevant += '</xsl:stylesheet>';
+
 XsltForms_browser.xsltsrcrelevany = '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">';
 XsltForms_browser.xsltsrcrelevany += '	<xsl:output method="xml" omit-xml-declaration="yes"/>';
 XsltForms_browser.xsltsrcrelevany += '	<xsl:template match="*[@xsltforms_notrelevant = \'true\']" priority="2"/>';
@@ -1618,31 +1746,23 @@ XsltForms_browser.xsltsrcrelevany += '			<xsl:apply-templates select="@*|node()"
 XsltForms_browser.xsltsrcrelevany += '		</xsl:copy>';
 XsltForms_browser.xsltsrcrelevany += '	</xsl:template>';
 XsltForms_browser.xsltsrcrelevany += '</xsl:stylesheet>';
-XsltForms_browser.loadTextNode = function(dest, txt) {
-	if (dest.nodeType === Fleur.Node.ATTRIBUTE_NODE) {
-		dest.value = txt;
-	} else {
-		while (dest.firstChild) {
-			dest.removeChild(dest.firstChild);
-		}
-		dest.appendChild(dest.ownerDocument.createTextNode(txt));
-	}
-};
+
 if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.isIE11)) {
 	XsltForms_browser.createXMLDocument = function(xml) {
 		var d = new ActiveXObject("MSXML2.DOMDocument." + XsltForms_browser.MSXMLver);
 		d.setProperty("SelectionLanguage", "XPath");
 		d.validateOnParse = false;
 		d.setProperty("ProhibitDTD", false);
+		//d.setProperty("SelectionNamespaces", "xmlns:xml='http://www.w3.org/XML/1998/namespace'");
 		d.loadXML(xml);
 		return d;
 	};
-	XsltForms_browser.setAttributeNS = function(node, ns, attrname, value) {
+	XsltForms_browser.setAttributeNS = function(node, ns, name, value) {
 		try {
-			node.setAttributeNode(node.ownerDocument.createNode(Fleur.Node.ATTRIBUTE_NODE, attrname, ns));
-			node.setAttribute(attrname, value);
+			node.setAttributeNode(node.ownerDocument.createNode(Fleur.Node.ATTRIBUTE_NODE, name, ns));
+			node.setAttribute(name, value);
 		} catch (e) {
-			XsltForms_browser.debugConsole.write("ERROR: Could not set @" + (ns !== "" ? "Q{" + ns + "}" : "") + attrname + " with value " + value + " on " + XsltForms_browser.name2string(node));
+			XsltForms_browser.debugConsole.write("ERROR: Could not set @" + (ns !== "" ? "Q{" + ns + "}" : "") + name + " with value " + value + " on " + XsltForms_browser.name2string(node));
 		}
 	};
 	XsltForms_browser.selectSingleNode = function(xpath, node) {
@@ -1652,11 +1772,11 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 			return null;
 		}
 	};
-	XsltForms_browser.selectSingleNodeText = function(xpath, node, defvalue) {
+	XsltForms_browser.selectSingleNodeText = function(xpath, node) {
 		try {
 			return node.selectSingleNode(xpath).text;
 		} catch (e) {
-			return defvalue || "";
+			return "";
 		}
 	};
 	XsltForms_browser.selectNodesLength = function(xpath, node) {
@@ -1676,6 +1796,16 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 	XsltForms_browser.xsltDocRelevantAnyURI.loadXML(XsltForms_browser.xsltsrcrelevany);
 	XsltForms_browser.xsltDocIndent = new ActiveXObject("MSXML2.DOMDocument." + XsltForms_browser.MSXMLver);
 	XsltForms_browser.xsltDocIndent.loadXML(XsltForms_browser.xsltsrcindent);
+	XsltForms_browser.loadTextNode = function(dest, txt) {
+		if (dest.nodeType === Fleur.Node.ATTRIBUTE_NODE) {
+			dest.value = txt;
+		} else {
+			while (dest.firstChild) {
+				dest.removeChild(dest.firstChild);
+			}
+			dest.appendChild(dest.ownerDocument.createTextNode(txt));
+		}
+	};
 	XsltForms_browser.loadNode = function(dest, xml) {
 		var result = new ActiveXObject("MSXML2.DOMDocument." + XsltForms_browser.MSXMLver);
 		result.setProperty("SelectionLanguage", "XPath");
@@ -1779,16 +1909,17 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 			}
 		}
 	};
-	XsltForms_browser.saveDoc = XsltForms_browser.saveNode;
+	XsltForms_browser.saveDoc = function(node, mediatype, relevant, indent, related, cdataSectionElements) {
+	};
 } else {
 	XsltForms_browser.createXMLDocument = function(xml) {
 		return XsltForms_browser.parser.parseFromString(xml, "text/xml");
 	};
-	XsltForms_browser.setAttributeNS = function(node, ns, attrname, value) {
+	XsltForms_browser.setAttributeNS = function(node, ns, name, value) {
 		try {
-			node.setAttributeNS(ns, attrname, value);
+			node.setAttributeNS(ns, name, value);
 		} catch (e) {
-			XsltForms_browser.debugConsole.write("ERROR: Could not set " + (ns !== "" ? "Q{" + ns + "}" : "") + attrname + " with value " + value + " on " + XsltForms_browser.name2string(node));
+			XsltForms_browser.debugConsole.write("ERROR: Could not set " + (ns !== "" ? "Q{" + ns + "}" : "") + name + " with value " + value + " on " + XsltForms_browser.name2string(node));
 		}
 	};
 	XsltForms_browser.selectSingleNode = function(xpath, node) {
@@ -1802,7 +1933,7 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 			return null;
 		}
 	};
-	XsltForms_browser.selectSingleNodeText = function(xpath, node, defvalue) {
+	XsltForms_browser.selectSingleNodeText = function(xpath, node) {
 		try {
 			if (node.evaluate) {
 				return node.evaluate(xpath, node, node.createNSResolver(node.documentElement), XPathResult.ANY_TYPE, null).iterateNext().textContent;
@@ -1817,7 +1948,7 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 					}
 				}
 			}
-			return defvalue || "";
+			return "";
 		}
 	};
 	XsltForms_browser.selectNodesLength = function(xpath, node) {
@@ -1884,6 +2015,23 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 	};
 	try {
 		XsltForms_browser.parser = XsltForms_domEngine === "http://www.agencexml.com/Fleur" ? new Fleur.DOMParser() : new DOMParser();
+		/*
+		XsltForms_browser.xsltDoc = XsltForms_browser.parser.parseFromString(XsltForms_browser.xsltsrc, "text/xml");
+		XsltForms_browser.xsltProcessor = new XSLTProcessor();
+		XsltForms_browser.xsltProcessor.importStylesheet(XsltForms_browser.xsltDoc);
+		XsltForms_browser.xsltDocAnyURI = XsltForms_browser.parser.parseFromString(XsltForms_browser.xsltsrcanyuri, "text/xml");
+		XsltForms_browser.xsltProcessorAnyURI = new XSLTProcessor();
+		XsltForms_browser.xsltProcessorAnyURI.importStylesheet(XsltForms_browser.xsltDocAnyURI);
+		XsltForms_browser.xsltDocRelevant = XsltForms_browser.parser.parseFromString(XsltForms_browser.xsltsrcrelevant, "text/xml");
+		XsltForms_browser.xsltProcessorRelevant = new XSLTProcessor();
+		XsltForms_browser.xsltProcessorRelevant.importStylesheet(XsltForms_browser.xsltDocRelevant);
+		XsltForms_browser.xsltDocRelevantAnyURI = XsltForms_browser.parser.parseFromString(XsltForms_browser.xsltsrcrelevany, "text/xml");
+		XsltForms_browser.xsltProcessorRelevantAnyURI = new XSLTProcessor();
+		XsltForms_browser.xsltProcessorRelevantAnyURI.importStylesheet(XsltForms_browser.xsltDocRelevantAnyURI);
+		XsltForms_browser.xsltDocIndent = XsltForms_browser.parser.parseFromString(XsltForms_browser.xsltsrcindent, "text/xml");
+		XsltForms_browser.xsltProcessorIndent = new XSLTProcessor();
+		XsltForms_browser.xsltProcessorIndent.importStylesheet(XsltForms_browser.xsltDocIndent);
+		*/
 	} catch (xsltforms_e) {
 	}
 	if (XsltForms_domEngine === "") {
@@ -2047,6 +2195,7 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 				}
 				i++;
 			}
+			var i, li;
 			i = 0;
 			li = node.children.length;
 			while (i < li) {
@@ -2128,6 +2277,7 @@ XsltForms_browser.escapeJS = function(text) {
 	}
 	return text;
 };
+
 XsltForms_browser.utf8decode = function (s) {
 	var r = "";
 	for (var i = 0, l = s.length; i < l;) {
@@ -2147,6 +2297,7 @@ XsltForms_browser.utf8decode = function (s) {
 	}
 	return r;
 };
+
 XsltForms_browser.utf8encode = function (s) {
 	s = s.replace(/\r\n/g,"\n");
 	var r = "";
@@ -2156,7 +2307,9 @@ XsltForms_browser.utf8encode = function (s) {
 	}
 	return r;
 };
+
 XsltForms_browser.crc32_arr = [0x00000000, 0x77073096, 0xEE0E612C, 0x990951BA, 0x076DC419, 0x706AF48F, 0xE963A535, 0x9E6495A3, 0x0EDB8832, 0x79DCB8A4, 0xE0D5E91E, 0x97D2D988, 0x09B64C2B, 0x7EB17CBD, 0xE7B82D07, 0x90BF1D91, 0x1DB71064, 0x6AB020F2, 0xF3B97148, 0x84BE41DE, 0x1ADAD47D, 0x6DDDE4EB, 0xF4D4B551, 0x83D385C7, 0x136C9856, 0x646BA8C0, 0xFD62F97A, 0x8A65C9EC, 0x14015C4F, 0x63066CD9, 0xFA0F3D63, 0x8D080DF5, 0x3B6E20C8, 0x4C69105E, 0xD56041E4, 0xA2677172, 0x3C03E4D1, 0x4B04D447, 0xD20D85FD, 0xA50AB56B, 0x35B5A8FA, 0x42B2986C, 0xDBBBC9D6, 0xACBCF940, 0x32D86CE3, 0x45DF5C75, 0xDCD60DCF, 0xABD13D59, 0x26D930AC, 0x51DE003A, 0xC8D75180, 0xBFD06116, 0x21B4F4B5, 0x56B3C423, 0xCFBA9599, 0xB8BDA50F, 0x2802B89E, 0x5F058808, 0xC60CD9B2, 0xB10BE924, 0x2F6F7C87, 0x58684C11, 0xC1611DAB, 0xB6662D3D, 0x76DC4190, 0x01DB7106, 0x98D220BC, 0xEFD5102A, 0x71B18589, 0x06B6B51F, 0x9FBFE4A5, 0xE8B8D433, 0x7807C9A2, 0x0F00F934, 0x9609A88E, 0xE10E9818, 0x7F6A0DBB, 0x086D3D2D, 0x91646C97, 0xE6635C01, 0x6B6B51F4, 0x1C6C6162, 0x856530D8, 0xF262004E, 0x6C0695ED, 0x1B01A57B, 0x8208F4C1, 0xF50FC457, 0x65B0D9C6, 0x12B7E950, 0x8BBEB8EA, 0xFCB9887C, 0x62DD1DDF, 0x15DA2D49, 0x8CD37CF3, 0xFBD44C65, 0x4DB26158, 0x3AB551CE, 0xA3BC0074, 0xD4BB30E2, 0x4ADFA541, 0x3DD895D7, 0xA4D1C46D, 0xD3D6F4FB, 0x4369E96A, 0x346ED9FC, 0xAD678846, 0xDA60B8D0, 0x44042D73, 0x33031DE5, 0xAA0A4C5F, 0xDD0D7CC9, 0x5005713C, 0x270241AA, 0xBE0B1010, 0xC90C2086, 0x5768B525, 0x206F85B3, 0xB966D409, 0xCE61E49F, 0x5EDEF90E, 0x29D9C998, 0xB0D09822, 0xC7D7A8B4, 0x59B33D17, 0x2EB40D81, 0xB7BD5C3B, 0xC0BA6CAD, 0xEDB88320, 0x9ABFB3B6, 0x03B6E20C, 0x74B1D29A, 0xEAD54739, 0x9DD277AF, 0x04DB2615, 0x73DC1683, 0xE3630B12, 0x94643B84, 0x0D6D6A3E, 0x7A6A5AA8, 0xE40ECF0B, 0x9309FF9D, 0x0A00AE27, 0x7D079EB1, 0xF00F9344, 0x8708A3D2, 0x1E01F268, 0x6906C2FE, 0xF762575D, 0x806567CB, 0x196C3671, 0x6E6B06E7, 0xFED41B76, 0x89D32BE0, 0x10DA7A5A, 0x67DD4ACC, 0xF9B9DF6F, 0x8EBEEFF9, 0x17B7BE43, 0x60B08ED5, 0xD6D6A3E8, 0xA1D1937E, 0x38D8C2C4, 0x4FDFF252, 0xD1BB67F1, 0xA6BC5767, 0x3FB506DD, 0x48B2364B, 0xD80D2BDA, 0xAF0A1B4C, 0x36034AF6, 0x41047A60, 0xDF60EFC3, 0xA867DF55, 0x316E8EEF, 0x4669BE79, 0xCB61B38C, 0xBC66831A, 0x256FD2A0, 0x5268E236, 0xCC0C7795, 0xBB0B4703, 0x220216B9, 0x5505262F, 0xC5BA3BBE, 0xB2BD0B28, 0x2BB45A92, 0x5CB36A04, 0xC2D7FFA7, 0xB5D0CF31, 0x2CD99E8B, 0x5BDEAE1D, 0x9B64C2B0, 0xEC63F226, 0x756AA39C, 0x026D930A, 0x9C0906A9, 0xEB0E363F, 0x72076785, 0x05005713, 0x95BF4A82, 0xE2B87A14, 0x7BB12BAE, 0x0CB61B38, 0x92D28E9B, 0xE5D5BE0D, 0x7CDCEFB7, 0x0BDBDF21, 0x86D3D2D4, 0xF1D4E242, 0x68DDB3F8, 0x1FDA836E, 0x81BE16CD, 0xF6B9265B, 0x6FB077E1, 0x18B74777, 0x88085AE6, 0xFF0F6A70, 0x66063BCA, 0x11010B5C, 0x8F659EFF, 0xF862AE69, 0x616BFFD3, 0x166CCF45, 0xA00AE278, 0xD70DD2EE, 0x4E048354, 0x3903B3C2, 0xA7672661, 0xD06016F7, 0x4969474D, 0x3E6E77DB, 0xAED16A4A, 0xD9D65ADC, 0x40DF0B66, 0x37D83BF0, 0xA9BCAE53, 0xDEBB9EC5, 0x47B2CF7F, 0x30B5FFE9, 0xBDBDF21C, 0xCABAC28A, 0x53B39330, 0x24B4A3A6, 0xBAD03605, 0xCDD70693, 0x54DE5729, 0x23D967BF, 0xB3667A2E, 0xC4614AB8, 0x5D681B02, 0x2A6F2B94, 0xB40BBE37, 0xC30C8EA1, 0x5A05DF1B, 0x2D02EF8D];
+
 XsltForms_browser.crc32 = function (s) {
 	var crc = -1;
 	for (var i = 0, l = s.length; i < l; i++) {
@@ -2164,16 +2317,20 @@ XsltForms_browser.crc32 = function (s) {
 	}
 	return crc ^ (-1);
 };
+
 if (XsltForms_domEngine === "") {
 	XsltForms_browser.getMeta = function(node, meta) {
 		return node.nodeType && (node.nodeType === Fleur.Node.ELEMENT_NODE || node.nodeType === Fleur.Node.ATTRIBUTE_NODE) ? node.nodeType === Fleur.Node.ELEMENT_NODE ? node.getAttribute("xsltforms_"+meta) : node.ownerElement ? node.ownerElement.getAttribute("xsltforms_"+(node.localName ? node.localName : node.baseName)+"_"+meta) : node.oldOwnerElement ? node.oldOwnerElement.getAttribute("xsltforms_"+(node.localName ? node.localName : node.baseName)+"_"+meta) : node.selectSingleNode("..").getAttribute("xsltforms_"+(node.localName ? node.localName : node.baseName)+"_"+meta) : null;
 	};
+
 	XsltForms_browser.getDocMeta = function(doc, meta) {
 		return XsltForms_browser.getMeta(doc.documentElement, meta);
 	};
+
 	XsltForms_browser.getBoolMeta = function(node, meta) {
 		return Boolean(node.nodeType === Fleur.Node.ELEMENT_NODE ? node.getAttribute("xsltforms_"+meta) : node.nodeType === Fleur.Node.ATTRIBUTE_NODE ? node.ownerElement ? node.ownerElement.getAttribute("xsltforms_"+(node.localName ? node.localName : node.baseName)+"_"+meta) :  node.selectSingleNode("..").getAttribute("xsltforms_"+(node.localName ? node.localName : node.baseName)+"_"+meta) : false);
 	};
+
 	XsltForms_browser.getType = function(node) {
 		if (node.nodeType === Fleur.Node.ELEMENT_NODE) {
 			var t = node.getAttribute("xsltforms_type");
@@ -2204,6 +2361,7 @@ if (XsltForms_domEngine === "") {
 			}
 		}
 	};
+
 	XsltForms_browser.setMeta = function(node, meta, value) {
 		if (node && node.nodeType && (node.nodeType === Fleur.Node.ELEMENT_NODE || node.nodeType === Fleur.Node.ATTRIBUTE_NODE)) {
 			if (node.nodeType === Fleur.Node.ELEMENT_NODE) {
@@ -2219,9 +2377,11 @@ if (XsltForms_domEngine === "") {
 			}
 		}
 	};
+
 	XsltForms_browser.setDocMeta = function(doc, meta, value) {
 		XsltForms_browser.setMeta(doc.documentElement, meta, value);
 	};
+
 	XsltForms_browser.clearMeta = function(node) {
 		var i = 0, n;
 		if (node && node.nodeType && node.nodeType === Fleur.Node.ELEMENT_NODE) {
@@ -2240,8 +2400,24 @@ if (XsltForms_domEngine === "") {
 					XsltForms_browser.clearMeta(node.children[j]);
 				}
 			}
+		/*
+		} else if (node && node.nodeType && node.nodeType === Fleur.Node.ATTRIBUTE_NODE) {
+			var ownerElement = node.ownerElement? node.ownerElement: node.selectSingleNode("..");
+			if (ownerElement) {
+				var metaprefix = "xsltforms_" + (node.localName ? node.localName : node.baseName) + "_";
+				while (ownerElement.attributes[i]) {
+					n = ownerElement.attributes[i].localName ? ownerElement.attributes[i].localName : ownerElement.attributes[i].baseName;
+					if (n.substr(0, metaprefix.length) === metaprefix) {
+						ownerElement.removeAttribute(n);
+					} else {
+						i++;
+					}
+				}
+			}
+		*/
 		}
 	};
+
 	XsltForms_browser.setBoolMeta = function(node, meta, value) {
 		if (node) {
 			if (value) {
@@ -2267,6 +2443,7 @@ if (XsltForms_domEngine === "") {
 			}
 		}
 	};
+
 	XsltForms_browser.setTrueBoolMeta = function(node, meta) {
 		if (node) {
 			if (node.nodeType === Fleur.Node.ELEMENT_NODE) {
@@ -2280,6 +2457,7 @@ if (XsltForms_domEngine === "") {
 			}
 		}
 	};
+
 	XsltForms_browser.setFalseBoolMeta = function(node, meta) {
 		if (node) {
 			if (node.nodeType === Fleur.Node.ELEMENT_NODE) {
@@ -2293,6 +2471,7 @@ if (XsltForms_domEngine === "") {
 			}
 		}
 	};
+	
 	XsltForms_browser.setType = function(node, value) {
 		if (node) {
 			if (node.nodeType === Fleur.Node.ELEMENT_NODE) {
@@ -2310,10 +2489,13 @@ if (XsltForms_domEngine === "") {
 	XsltForms_browser.getMeta = function(node, meta) {
 		return node.getUserData(meta);
 	};
+
 	XsltForms_browser.getDocMeta = XsltForms_browser.getMeta;
+
 	XsltForms_browser.getBoolMeta = function(node, meta) {
 		return !!node.getUserData(meta);
 	};
+
 	XsltForms_browser.getType = function(node) {
 		var t = node.getUserData("type");
 		if (t && t !== "") {
@@ -2321,10 +2503,13 @@ if (XsltForms_domEngine === "") {
 		}
 		return node.getAttributeNS ? node.getAttributeNS("http://www.w3.org/2001/XMLSchema-instance", "type") : null;
 	};
+
 	XsltForms_browser.setMeta = function(node, meta, value) {
 		node.setUserData(meta, value);
 	};
+
 	XsltForms_browser.setDocMeta = XsltForms_browser.setMeta;
+
 	XsltForms_browser.clearMeta = function(node) {
 		node.clearUserData();
 		if (node.attributes) {
@@ -2333,32 +2518,37 @@ if (XsltForms_domEngine === "") {
 			}
 		}
 		if (node.childNodes) {
-			for (var i2 = 0, n2 = node.childNodes.length; i2 < n2; i2++) {
-				XsltForms_browser.clearMeta(node.childNodes[i2]);
+			for (var i = 0, n = node.childNodes.length; i < n; i++) {
+				XsltForms_browser.clearMeta(node.childNodes[i]);
 			}
 		}
 	};
+
 	XsltForms_browser.setBoolMeta = function(node, meta, value) {
 		if (node) {
 			node.setUserData(meta, value);
 		}
 	};
+
 	XsltForms_browser.setTrueBoolMeta = function(node, meta) {
 		if (node) {
 			node.setUserData(meta, true);
 		}
 	};
+
 	XsltForms_browser.setFalseBoolMeta = function(node, meta) {
 		if (node) {
 			node.setUserData(meta, false);
 		}
 	};
+
 	XsltForms_browser.setType = function(node, value) {
 		if (node) {
 			node.setUserData("type", value);
 		}
 	};
 }
+
 XsltForms_browser.getNil = function(node) {
 	if (node.nodeType === Fleur.Node.ELEMENT_NODE) {
 		if (node.getAttributeNS) {
@@ -2371,6 +2561,7 @@ XsltForms_browser.getNil = function(node) {
 		return false;
 	}
 };
+
 XsltForms_browser.rmValueMeta = function(node, meta, value) {
 	if (node) {
 		var prev = XsltForms_browser.getMeta(node, meta);
@@ -2384,6 +2575,7 @@ XsltForms_browser.rmValueMeta = function(node, meta, value) {
 		}
 	}
 };
+
 XsltForms_browser.addValueMeta = function(node, meta, value) {
 	if (node) {
 		var prev = XsltForms_browser.getMeta(node, meta);
@@ -2397,6 +2589,7 @@ XsltForms_browser.addValueMeta = function(node, meta, value) {
 		}
 	}
 };
+
 XsltForms_browser.inValueMeta = function(node, meta, value) {
 	if (node) {
 		var prev = XsltForms_browser.getMeta(node, meta) + "";
@@ -2405,6 +2598,7 @@ XsltForms_browser.inValueMeta = function(node, meta, value) {
 		return pos !== -1;
 	}
 };
+
 XsltForms_browser.name2string = function(node) {
 	var s = "";
 	if (!node.nodeType) {
@@ -2437,7 +2631,8 @@ XsltForms_browser.name2string = function(node) {
 		case Fleur.Node.SEQUENCE_NODE:
 			return "#sequence";
 	}
-};
+}
+
 if (!XsltForms_browser.isIE && !XsltForms_browser.isIE11) {
 	if (typeof XMLDocument === "undefined") {
 		var XMLDocument = Document;
@@ -2525,12 +2720,12 @@ if (!XsltForms_browser.isIE && !XsltForms_browser.isIE11) {
 	XMLDocument.prototype.selectSingleNode = function(xpath) {
 		return this.selectNodes(xpath, true)[0];
 	};
-	XMLDocument.prototype.createNode = function(t, nodename, ns) {
+	XMLDocument.prototype.createNode = function(t, name, ns) {
 		switch(t) {
 			case Fleur.Node.ELEMENT_NODE:
-				return this.createElementNS(ns, nodename);
+				return this.createElementNS(ns, name);
 			case Fleur.Node.ATTRIBUTE_NODE:
-				return this.createAttributeNS(ns, nodename);
+				return this.createAttributeNS(ns, name);
 			default:
 				return null;
 		}
@@ -2542,6 +2737,9 @@ if (!XsltForms_browser.isIE && !XsltForms_browser.isIE11) {
 		return this.ownerDocument.selectNodes(xpath, true, this);
 	};
 }
+
+		
+
 XsltForms_browser.debugConsole = {
 	element_ : null,
 	doc_ : null,
@@ -2552,6 +2750,9 @@ XsltForms_browser.debugConsole = {
 		this.isInit_ = true;
 		this.time_ = new Date().getTime();
     },
+
+		
+
     write : function(text) {
 		try {
 			if (this.isOpen()) {
@@ -2571,6 +2772,9 @@ XsltForms_browser.debugConsole = {
 		} catch(e) {
 		}
     },
+
+		
+
 	clear : function() {
 		if (this.isOpen()) {
 			while (this.element_.firstChild) {
@@ -2579,6 +2783,9 @@ XsltForms_browser.debugConsole = {
 			this.time_ = new Date().getTime();
 		}
 	},
+
+		
+
 	isOpen : function() {
 		if (!this.isInit_) {
 			this.init_();
@@ -2586,6 +2793,10 @@ XsltForms_browser.debugConsole = {
 		return this.element_;
 	}
 };
+
+
+		
+
 XsltForms_browser.dialog = {
 	openPosition: {},
 	dialogs : [],
@@ -2593,6 +2804,9 @@ XsltForms_browser.dialog = {
 	initzindex : 50,
 	zindex: 0,
 	selectstack : [],
+
+		
+
 	dialogDiv : function(id) {
 		var div = null;
 		if (typeof id !== "string") {
@@ -2610,13 +2824,18 @@ XsltForms_browser.dialog = {
 		}
 		return div;
 		},
-	show : function(div, parentElt, modal) {
+
+		
+
+	show : function(div, parent, modal) {
 			if (!(div = this.dialogDiv(div))) {
 				return;
 			}
+			// Don't reopen the top-dialog.
 			if (this.dialogs[this.dialogs.length - 1] === div) {
 				return;
 			}
+			// Maintain dialogs-array ordered.
 			this.dialogs = XsltForms_browser.removeArrayItem(this.dialogs, div);
 			this.dialogs.push(div);
 			var size;
@@ -2631,12 +2850,12 @@ XsltForms_browser.dialog = {
 				surround.style.top = size.scrollY+"px";
 				surround.style.left = size.scrollX+"px";
 				var surroundresize = function () {
-					var surround2 = document.getElementById("xforms-dialog-surround");
-					var size2 = XsltForms_browser.getWindowSize();
-					surround2.style.height = size2.height+"px";
-					surround2.style.width = size2.width+"px";
-					surround2.style.top = size2.scrollY+"px";
-					surround2.style.left = size2.scrollX+"px";
+					var surround = document.getElementById("xforms-dialog-surround");
+					var size = XsltForms_browser.getWindowSize();
+					surround.style.height = size.height+"px";
+					surround.style.width = size.width+"px";
+					surround.style.top = size.scrollY+"px";
+					surround.style.left = size.scrollX+"px";
 				};
 				window.onscroll = surroundresize;
 				window.onresize = surroundresize;
@@ -2644,15 +2863,18 @@ XsltForms_browser.dialog = {
 			div.style.display = "block";
 			div.style.zIndex = (this.zindex + this.initzindex)*2-1;
 			this.showSelects(div, false, modal);
-			if (parentElt) {
-				var absPos = XsltForms_browser.getAbsolutePos(parentElt);
-				XsltForms_browser.setPos(div, absPos.x, (absPos.y + parentElt.offsetHeight));
+			if (parent) {
+				var absPos = XsltForms_browser.getAbsolutePos(parent);
+				XsltForms_browser.setPos(div, absPos.x, (absPos.y + parent.offsetHeight));
 			} else {
 				size = XsltForms_browser.getWindowSize();
 				var h = size.scrollY + (size.height - div.offsetHeight) / 2;
 				XsltForms_browser.setPos(div, (size.width - div.offsetWidth) / 2, h > 0 ? h : 100);
 			}
 		},
+
+		
+
 	hide : function(div, modal) {
 		if (!(div = this.dialogDiv(div))) {
 			return;
@@ -2673,12 +2895,16 @@ XsltForms_browser.dialog = {
 			} else {
 				this.zindex--;
 				document.getElementById('xforms-dialog-surround').style.zIndex = (this.zindex + this.initzindex)*2-2;
+				// Ensure new top-dialog over modal-surround.
 				if (this.dialogs.length) {
 					this.dialogs[this.dialogs.length - 1].style.zIndex = (this.zindex + this.initzindex)*2-1;
 				}
 			}
 		}
 	},
+
+		
+
 	knownSelect : function(s) {
 		if (XsltForms_browser.isIE6) {
 			for (var i = 0, len = this.zindex; i < len; i++) {
@@ -2691,6 +2917,9 @@ XsltForms_browser.dialog = {
 		}
 		return false;
 	},
+
+		
+
 	showSelects : function(div, value, modal) {
 		if (XsltForms_browser.isIE6) {
 			var selects = XsltForms_browser.isXhtml ? document.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "select") : document.getElementsByTagName("select");
@@ -2741,70 +2970,68 @@ XsltForms_browser.dialog = {
 		}
 	}
 };
+
+
+		
+
 XsltForms_browser.events = {};
+
 if (XsltForms_browser.isIE && !XsltForms_browser.isIE9) {
-	XsltForms_browser.events.attach = function(target, evtname, handler, phase) {
+	XsltForms_browser.events.attach = function(target, name, handler, phase) {
 		var func = function(evt) { 
 			handler.call(window.event.srcElement, evt);
 		};
-		target.attachEvent("on" + evtname, func);
+		target.attachEvent("on" + name, func);
 	};
-	XsltForms_browser.events.detach = function(target, evtname, handler, phase) {
-		target.detachEvent("on" + evtname, handler);
+
+	XsltForms_browser.events.detach = function(target, name, handler, phase) {
+		target.detachEvent("on" + name, handler);
 	};
+
 	XsltForms_browser.events.getTarget = function() {
 		return window.event.srcElement;
 	};
-	XsltForms_browser.events.dispatch = function(target, evtname) {
-		target.fireEvent("on" + evtname, document.createEventObject());
+    
+	XsltForms_browser.events.dispatch = function(target, name) {
+		target.fireEvent("on" + name, document.createEventObject());
 	};
 } else {
-	XsltForms_browser.events.attach = function(target, evtname, handler, phase) {
+	XsltForms_browser.events.attach = function(target, name, handler, phase) {
 		if (target === window && !window.addEventListener) {
 			target = document;
 		}
-		target.addEventListener(evtname, handler, phase);
+		target.addEventListener(name, handler, phase);
 	};
-	XsltForms_browser.events.detach = function(target, evtname, handler, phase) {
+    
+	XsltForms_browser.events.detach = function(target, name, handler, phase) {
 		if (target === window && !window.addEventListener) {
 			target = document;
 		}
-		target.removeEventListener(evtname, handler, phase);
+		target.removeEventListener(name, handler, phase);
 	};
+
 	XsltForms_browser.events.getTarget = function(ev) {
 		return ev.target;
 	};
-	XsltForms_browser.events.dispatch = function(target, evtname) {
-		var evt = document.createEvent("Event");
-		evt.initEvent(evtname, true, true);
-		target.dispatchEvent(evt);
+    
+	XsltForms_browser.events.dispatch = function(target, name) {
+		var event = document.createEvent("Event");
+		event.initEvent(name, true, true);
+		target.dispatchEvent(event);
 	};
 }
+
+
+		
+
 XsltForms_browser.i18n = {
 	messages : null,
 	lang : null,
 	langs : ["cz", "de", "el", "en", "en_us", "es", "fr" , "gl", "ko", "it", "ja", "nb_no", "nl", "nn_no", "pl", "pt", "ro", "ru", "si", "sk", "zh", "zh_cn", "zh_tw"],
-	asyncinit : function(f) {
-		if (XsltForms_globals.language === "navigator" || XsltForms_globals.language !== XsltForms_browser.selectSingleNodeText('language', XsltForms_browser.config)) {
-			var lan = XsltForms_globals.language === "navigator" ? (navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage || "undefined")) : XsltForms_browser.selectSingleNodeText('language', XsltForms_browser.config);
-			lan = lan.replace("-", "_").toLowerCase();
-			var found = XsltForms_browser.inArray(lan, XsltForms_browser.i18n.langs);
-			if (!found) {
-				var ind = lan.indexOf("_");
-				if (ind !== -1) {
-					lan = lan.substring(0, ind);
-				}
-				found = XsltForms_browser.inArray(lan, XsltForms_browser.i18n.langs);
-			}
-			XsltForms_globals.language = "default";
-			if (found) {
-				XsltForms_browser.loadProperties("config_" + lan + ".xsl", f);
-				return;
-			}
-		}
-		f();
-    },
-	get : function(key, defvalue) {
+
+		
+
+	get : function(key) {
 		if (!XsltForms_browser.config || XsltForms_browser.config.nodeName === "dummy") {
 			return "Initializing";
 		}
@@ -2826,8 +3053,11 @@ XsltForms_browser.i18n = {
 				XsltForms_globals.language = "default";
 			}
 		}
-		return XsltForms_browser.selectSingleNodeText(key, XsltForms_browser.config, defvalue);
+		return XsltForms_browser.selectSingleNodeText(key, XsltForms_browser.config);
     },
+
+		
+
 	parse : function(str, pattern, timeonly) {
 		var ret = true;
 		if (!str || str.match("^\\s*$")) {
@@ -2851,6 +3081,9 @@ XsltForms_browser.i18n = {
 		XsltForms_browser.i18n._parse(d, "Seconds", str, pattern, "ss");
 		return ret ? d : str;
 	},
+
+		
+
 	format : function(date, pattern, loc, timeonly) {
 		if (!date) {
 			return "";
@@ -2879,15 +3112,27 @@ XsltForms_browser.i18n = {
 		str = XsltForms_browser.i18n._format(str, (loc ? (o < 0 ? "+" : "-") + XsltForms_browser.zeros(Math.floor(Math.abs(o)/60),2) + ":" + XsltForms_browser.zeros(Math.abs(o) % 60,2) : "Z"), "z");
 		return str;
 	},
+
+		
+
 	parseDate : function(str) {
 		return XsltForms_browser.i18n.parse(str, XsltForms_browser.i18n.get("format.date"));
 	},
+
+		
+
 	formatDate : function(str) {
 		return XsltForms_browser.i18n.format(str, XsltForms_browser.i18n.get("format.date"), true);
 	},
+ 
+		
+
 	formatDateTime : function(str) {
 		return XsltForms_browser.i18n.format(str, XsltForms_browser.i18n.get("format.datetime"), true);
 	},
+ 
+		
+
 	formatNumber : function(number, decimals) {
 		if (isNaN(number)) {
 			return number;
@@ -2899,6 +3144,9 @@ XsltForms_browser.i18n = {
 		var decsep = XsltForms_browser.i18n.get("format.decimal");
 		return (number < 0 ? "-":"") + integer + (decimals > 0? decsep + XsltForms_browser.zeros(decimal, decimals, true) : (decimal? decsep + decimal : ""));
 	},
+
+		
+
 	parseNumber : function(value) {
 		var decsep = XsltForms_browser.i18n.get("format.decimal");
 		if(!value.match("^[\\-+]?([0-9]+(\\" + decsep + "[0-9]*)?|\\" + decsep + "[0-9]+)$")) {
@@ -2947,8 +3195,9 @@ XsltForms_browser.i18n = {
 		}
 	}
 };
-var XsltForms_numberList = function(parentElt, className, input, min, max, minlengh) {
-	this.element = XsltForms_browser.createElement("ul", parentElt, null, className);
+
+XsltForms_numberList = function(parent, className, input, min, max, minlengh) {
+	this.element = XsltForms_browser.createElement("ul", parent, null, className);
 	this.move = 0;
 	this.input = input;
 	this.min = min;
@@ -2957,23 +3206,26 @@ var XsltForms_numberList = function(parentElt, className, input, min, max, minle
 	var list = this;
 	this.createChild("+", function() { list.start(1); }, function() { list.stop(); } );
 	for (var i = 0; i < 7; i++) {
-		this.createChild(" ", function(evt) {
-			list.input.value = XsltForms_browser.events.getTarget(evt).childNodes[0].nodeValue;
+		this.createChild(" ", function(event) {
+			list.input.value = XsltForms_browser.events.getTarget(event).childNodes[0].nodeValue;
 			list.close();
 			XsltForms_browser.events.dispatch(list.input, "change");
 		} );
 	}
 	this.createChild("-", function() { list.start(-1); }, function() { list.stop(); } );
 };
+
 XsltForms_numberList.prototype.show = function() {
 	var input = this.input;
 	this.current = parseInt(input.value, 10);
 	this.refresh();
 	XsltForms_browser.dialog.show(this.element, input, false);
 };
+
 XsltForms_numberList.prototype.close = function() {
 	XsltForms_browser.dialog.hide(this.element, false);
 }; 
+
 XsltForms_numberList.prototype.createChild = function(content, handler, handler2) {
 	var child = XsltForms_browser.createElement("li", this.element, content);
 	XsltForms_browser.initHover(child);
@@ -2984,6 +3236,7 @@ XsltForms_numberList.prototype.createChild = function(content, handler, handler2
 		XsltForms_browser.events.attach(child, "click", handler);
 	}
 };
+
 XsltForms_numberList.prototype.refresh = function()  {
 	var childs = this.element.childNodes;
 	var cur = this.current;
@@ -2992,32 +3245,41 @@ XsltForms_numberList.prototype.refresh = function()  {
 	} else if (cur <= this.min + 3) {
 		cur = this.min + 3;
 	}
-	var topn = cur + 4;
+	var top = cur + 4;
 	for (var i = 1; i < 8; i++) {
 		XsltForms_browser.setClass(childs[i], "hover", false);
-		var str = (topn - i) + "";
+		var str = (top - i) + "";
 		while (str.length < this.minlength) {
 			str = '0' + str;
 		}
 		childs[i].firstChild.nodeValue = str;
 	}
 };
+
 XsltForms_numberList.prototype.start = function(value) {
 	this.move = value;
 	XsltForms_numberList.current = this;
 	this.run();
 };
+    
 XsltForms_numberList.prototype.stop = function() {
 	this.move = 0;
 };
+
 XsltForms_numberList.prototype.run = function() {
 	if ((this.move > 0 && this.current + 3 < this.max) || (this.move < 0 && this.current - 3> this.min)) {
 		this.current += this.move;
 		this.refresh();
+		var list = this;
 		setTimeout(XsltForms_numberList.current.run, 60);
 	}
 };
+
 XsltForms_numberList.current = null;
+
+
+		
+
 XsltForms_browser.forEach = function(object, block) {
 	var args = [];
 	for (var i = 0, len = arguments.length - 2; i < len; i++) {
@@ -3041,6 +3303,10 @@ XsltForms_browser.forEach = function(object, block) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_browser.assert = function(condition, message) {
 	if (!condition && XsltForms_browser.debugConsole.isOpen()) {
 		if (!XsltForms_globals.debugMode) {
@@ -3048,20 +3314,17 @@ XsltForms_browser.assert = function(condition, message) {
 			XsltForms_globals.debugging();
 		}
 		XsltForms_browser.debugConsole.write("Assertion failed: " + message);
-		if (XsltForms_browser.isIE) { // Internet Explorer
+		var callstack = null;
+		if (arguments.caller) { // Internet Explorer
 			this.callstack = [];
 			for (var caller = arguments.caller; caller; caller = caller.caller) {
 				this.callstack.push(caller.name ? caller.name : "<anonymous>");
 			}
 		} else {
 			try {
-				XsltForms_undefined();
-			} catch (e) {
-				if (e.stack) {
-					this.callstack = e.stack.split("\n");
-					this.callstack.shift();
-					this.callstack.shift();
-				}
+				var x; x.y;
+			} catch (exception) {
+				this.callstack = exception.stack.split("\n");
 			}
 		}
 		if (this.callstack) {
@@ -3069,9 +3332,13 @@ XsltForms_browser.assert = function(condition, message) {
 				XsltForms_browser.debugConsole.write("> " + this.callstack[i]);
 			}
 		}
-		throw new Error(message || "Assertion failed");
+		throw message;
 	}
 };
+
+
+		
+
 XsltForms_browser.inArray = function(value, array) {
 	for (var i = 0, len = array.length; i < len; i++) {
 		if (value === array[i]) {
@@ -3080,19 +3347,26 @@ XsltForms_browser.inArray = function(value, array) {
 	}
 	return false;
 };
-XsltForms_browser.zeros = function(value, len, right) {
+
+
+		
+
+XsltForms_browser.zeros = function(value, length, right) {
 	var res = "" + value;
 	if (right) {
-		while (res.length < len) {
+		while (res.length < length) {
 			res = res + "0";
 		}
 	} else {
-		while (res.length < len) {
+		while (res.length < length) {
 			res = "0" + res;
 		}
 	}
 	return res;
 };
+
+		
+		
 XsltForms_browser.getValue = function(node, format, serialize) {
 	XsltForms_browser.assert(node);
 	if (serialize) {
@@ -3107,30 +3381,10 @@ XsltForms_browser.getValue = function(node, format, serialize) {
 	}
 	return value;
 };
-XsltForms_browser.splitNode = function(node, separator, leftTrim, rightTrim) {
-	XsltForms_browser.assert(node);
-	var value = node.text !== undefined ? node.text : node.textContent;
-	var values = value.split(separator);
-	var arr = node.ownerDocument.createArray();
-	for (var i = 0, l = values.length; i < l; i++) {
-		if (leftTrim && rightTrim) {
-			var m = values[i].replace(leftTrim, "").replace(rightTrim, "");
-			if (m !== '') {
-				arr.appendChild(node.ownerDocument.createTextNode(m));
-			}
-		} else {
-			arr.appendChild(node.ownerDocument.createTextNode(values[i]));
-		}
-	}
-	if (node.nodeType === Fleur.Node.TEXT_NODE) {
-		node.parentNode.replaceChild(arr, node);
-	} else {
-		while (node.firstChild) {
-			node.removeChild(node.firstChild);
-		}
-		node.appendChild(arr);
-	}
-};
+
+
+		
+		
 XsltForms_browser.getValueItemsetCopy = function(node) {
 	XsltForms_browser.assert(node);
 	var value = [];
@@ -3139,6 +3393,10 @@ XsltForms_browser.getValueItemsetCopy = function(node) {
 	}
 	return value;
 };
+
+
+		
+
 XsltForms_browser.setValue = function(node, value) {
 	XsltForms_browser.assert(node);
 	if (node.nodeType === Fleur.Node.ATTRIBUTE_NODE) {
@@ -3168,6 +3426,10 @@ XsltForms_browser.setValue = function(node, value) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_browser.run = function(action, element, evt, synch, propagate) {
 	XsltForms_xmlevents.EventContexts.push(evt);
 	if (synch) {
@@ -3190,6 +3452,10 @@ XsltForms_browser.run = function(action, element, evt, synch, propagate) {
 		XsltForms_globals.closeAction("XsltForms_browser.run#2");
 	}
 };
+
+
+		
+
 XsltForms_browser.getId = function(element) {
 	if(element.id) {
 		return element.id;
@@ -3197,9 +3463,17 @@ XsltForms_browser.getId = function(element) {
 		return element.parentNode.parentNode.parentNode.parentNode.id;
 	}
 };
+
+
+		
+
 XsltForms_browser.show = function(el, type, value) {
 	el.parentNode.lastChild.style.display = value? 'inline' : 'none';
 };
+
+
+		
+
 XsltForms_browser.copyArray = function(source, dest) {
 	if( dest ) {
 		for (var i = 0, len = source.length; i < len; i++) {
@@ -3207,6 +3481,10 @@ XsltForms_browser.copyArray = function(source, dest) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_browser.removeArrayItem = function(array, item) {
 	var narr = [];
 	for (var i = 0, len = array.length; i < len; i++) {
@@ -3216,12 +3494,26 @@ XsltForms_browser.removeArrayItem = function(array, item) {
 	}
 	return narr;
 };
+
+
+		
+
 String.prototype.trim = function() {
 	return this.replace(/^\s+|\s+$/, '');
 };
+
+
+		
+
 String.prototype.addslashes = function() {
 	return this.replace(/\\/g,"\\\\").replace(/\'/g,"\\'").replace(/\"/g,"\\\"");
 };
+
+
+	
+		
+		
+		
 function XsltForms_subform(subform, id, eltid) {
 	this.subform = subform;
 	this.id = id;
@@ -3245,7 +3537,11 @@ function XsltForms_subform(subform, id, eltid) {
 	}
 	XsltForms_subform.subforms[id] = this;
 }
+
 XsltForms_subform.subforms = {};
+
+		
+
 XsltForms_subform.prototype.construct = function() {
 	for (var i = 0, len = this.instances.length; i < len; i++) {
 		this.instances[i].construct(this);
@@ -3257,6 +3553,9 @@ XsltForms_subform.prototype.construct = function() {
 	XsltForms_xmlevents.dispatchList(this.models, "xforms-subform-ready");
 	this.ready = true;
 };
+
+		
+
 XsltForms_subform.prototype.dispose = function() {
 	var scriptelt = document.getElementById(this.id + "-script");
 	scriptelt.parentNode.removeChild(scriptelt);
@@ -3306,6 +3605,12 @@ XsltForms_subform.prototype.dispose = function() {
 	}
 	this.listeners = null;
 };
+
+
+	
+		
+		
+		
 function XsltForms_binding(type, xpath, model, bind) {
 	this.type = type;
 	this.bind = bind? bind : null;
@@ -3317,15 +3622,16 @@ function XsltForms_binding(type, xpath, model, bind) {
 	this.model = model? (modelelt ? modelelt.xfElement : model) : null;
 	this.result = null;
 }
+
+
+		
+
 XsltForms_binding.prototype.evaluate = function() {
 	alert("Error");
 };
 XsltForms_binding.prototype.bind_evaluate = function(subform, ctx, varresolver, depsNodes, depsId, depsElements) {
 	var result = null;
 	if( typeof this.model === "string" ) {
-		if (!document.getElementById(this.model)) {
-			return null;
-		}
 		this.model = document.getElementById(this.model).xfElement;
 	}
 	if (this.bind) {
@@ -3357,12 +3663,21 @@ XsltForms_binding.prototype.bind_evaluate = function(subform, ctx, varresolver, 
 	this.result = result;
 	return result;
 };
+
+	
+		
+		
+		
 function XsltForms_mipbinding(type, xpath, model) {
 	this.binding = new XsltForms_binding(type, xpath, model, null);
 	this.nodes = [];
 	this.depsElements = [];
 	this.depsNodes = [];
 }
+
+
+		
+
 XsltForms_mipbinding.prototype.evaluate = function(ctx, node) {
 	var deps = null;
 	var depsN = null;
@@ -3403,6 +3718,7 @@ XsltForms_mipbinding.prototype.evaluate = function(ctx, node) {
 		}
 	}
 	if (build) {
+		// alert("Evaluate \"" + this.binding.xpath.expression + "\"");
 		depsN.length = 0;
 		deps.length = 0;
 		this.nodes[curn].result = this.binding.bind_evaluate(ctx.subform, ctx.node, null, this.nodes[curn].depsN, null, this.nodes[curn].deps);
@@ -3411,6 +3727,9 @@ XsltForms_mipbinding.prototype.evaluate = function(ctx, node) {
 		return this.nodes[curn].result;
 	}
 };
+
+		
+
 XsltForms_mipbinding.prototype.nodedispose_ = function(node) {
 	for (var i = 0, len = this.nodes.length; i < len; i++ ) {
 		if (node === this.nodes[i].node) {
@@ -3420,6 +3739,7 @@ XsltForms_mipbinding.prototype.nodedispose_ = function(node) {
 		}
 	}
 };
+
 XsltForms_mipbinding.nodedispose = function(node) {
 	var bindids = XsltForms_browser.getMeta(node, "bind");
 	if (bindids) {
@@ -3449,6 +3769,11 @@ XsltForms_mipbinding.nodedispose = function(node) {
 		}
 	}
 };
+
+	
+		
+		
+		
 var XsltForms_idManager = {
 	cloneId : function(element) {
 		XsltForms_browser.assert(element && element.id);
@@ -3469,21 +3794,24 @@ var XsltForms_idManager = {
 			for (var i = 0, len = ids.length; i < len; i++) {
 				var element = document.getElementById(ids[i]);
 				if (element) {
-					var parentElt = element.parentNode;
-					while (parentElt.nodeType === Fleur.Node.ELEMENT_NODE) {
-						if (XsltForms_browser.hasClass(parentElt, "xforms-repeat-item")) {
-							if (XsltForms_browser.hasClass(parentElt, "xforms-repeat-item-selected")) {
+					var parent = element.parentNode;
+					while (parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+						if (XsltForms_browser.hasClass(parent, "xforms-repeat-item")) {
+							if (XsltForms_browser.hasClass(parent, "xforms-repeat-item-selected")) {
 								return element;
 							} else {
 								break;
 							}
 						}
-						parentElt = parentElt.parentNode;
+						parent = parent.parentNode;
 					}
 				}
 			}
 		}
 		var res = document.getElementById(id);
+		//if (!res) {
+			//alert("element " + id + " not found");
+		//}
 		return res;
 	},
 	clear : function() {
@@ -3496,28 +3824,34 @@ var XsltForms_idManager = {
 	data : [],
 	index : 0
 };
-function XsltForms_listener(subform, observer, evtTarget, evtname, phase, handler, defaultaction) {
-	if (!observer) {
-		return;
-	}
+
+	
+	
+		
+		
+		
+		
+		
+function XsltForms_listener(subform, observer, evtTarget, name, phase, handler, defaultaction) {
 	phase = phase || "default";
 	if (phase !== "default" && phase !== "capture") {
 		XsltForms_globals.error(XsltForms_globals.defaultModel, "xforms-compute-exception", 
-			"Unknown event-phase(" + phase +") for event(" + evtname + ")"+(observer ? " on element(" + observer.id + ")":"") + "!");
+			"Unknown event-phase(" + phase +") for event(" + name + ")"+(observer ? " on element(" + observer.id + ")":"") + "!");
 		return;
 	}
 	this.subform = subform;
 	this.observer = observer;
 	this.evtTarget = evtTarget;
-	this.name = evtname;
-	this.evtName = document.addEventListener? evtname : "errorupdate";
+	this.name = name;
+	this.evtName = document.addEventListener? name : "errorupdate";
 	this.phase = phase;
 	this.handler = handler;
 	this.defaultaction = defaultaction;
+	XsltForms_browser.assert(observer);
 	if (observer.listeners) {
-		if (evtname === "xforms-subform-ready") {
+		if (name === "xforms-subform-ready") {
 			for (var i = 0, l = observer.listeners.length; i < l; i++) {
-				if (observer.listeners[i].name === evtname) {
+				if (observer.listeners[i].name === name) {
 					return;
 				}
 			}
@@ -3526,63 +3860,61 @@ function XsltForms_listener(subform, observer, evtTarget, evtname, phase, handle
 		observer.listeners = [];
 	}
 	observer.listeners.push(this);
-	this.callback = function(evt) {
+	this.callback = function(event) {
 		if (!document.addEventListener) {
-			evt = evt || window.event;
-			evt.target = evt.srcElement;
-			evt.currentTarget = observer;
-			XsltForms_browser.debugConsole.write("observer:"+observer.id);
-			XsltForms_browser.debugConsole.write("name:"+evtname);
-			XsltForms_browser.debugConsole.write("target:"+evt.target.id);
-			XsltForms_browser.debugConsole.write("trueName:"+evt.trueName);
-			if (evt.trueName && evt.trueName !== evtname) {
+			event = event || window.event;
+			event.target = event.srcElement;
+			event.currentTarget = observer;
+			if (event.trueName && event.trueName !== name) {
 				return;
 			}
-			if (!evt.phase) {
+			if (!event.phase) {
 				if (phase === "capture") {
 					return;
 				}
-			} else if (evt.phase !== phase) {
+			} else if (event.phase !== phase) {
 				return;
 			}
 			if (phase === "capture") {
-				evt.cancelBubble = true;
+				event.cancelBubble = true;
 			}
-			evt.preventDefault = function() {
+			event.preventDefault = function() {
 				this.returnValue = false;
 			};
-			evt.stopPropagation = function() {
+			event.stopPropagation = function() {
 				this.cancelBubble = true;
 				this.stopped      = true;
 			};
 		}
 		var effectiveTarget = true;
-		if (evt.target && evt.target.nodeType === 3) {
-			evt.target = evt.target.parentNode;
+		if (event.target && event.target.nodeType === 3) {
+			event.target = event.target.parentNode;
 		}
-		if (evt.currentTarget && evt.type === "DOMActivate" && (evt.target.nodeName.toUpperCase() === "BUTTON" || evt.target.nodeName.toUpperCase() === "A" || (XsltForms_browser.isChrome && evt.eventPhase === 3 && this.xfElement.controlName === "trigger"))  && !XsltForms_browser.isFF2) {
+		if (event.currentTarget && event.type === "DOMActivate" && (event.target.nodeName.toUpperCase() === "BUTTON" || event.target.nodeName.toUpperCase() === "A" || (XsltForms_browser.isChrome && event.eventPhase === 3 && this.xfElement.controlName === "trigger"))  && !XsltForms_browser.isFF2) {
 			effectiveTarget = false;
 		}
-		if (evt.eventPhase === 3 && evt.target.xfElement && evt.target === evt.currentTarget && !XsltForms_browser.isFF2) {
+//		if (event.eventPhase === 3 && !event.target.xfElement && !XsltForms_browser.isFF2) {
+//			effectiveTarget = false;
+//		}
+		if (event.eventPhase === 3 && event.target.xfElement && event.target === event.currentTarget && !XsltForms_browser.isFF2) {
 			effectiveTarget = false;
 		}
-		if (evtTarget && evt.target !== evtTarget) {
+		if (evtTarget && event.target !== evtTarget) {
 			effectiveTarget = false;
 		}
-		XsltForms_browser.debugConsole.write("effectiveTarget:"+effectiveTarget);
-		if (effectiveTarget && !(typeof UIEvent !== 'undefined' && evt instanceof UIEvent)) {
-			XsltForms_browser.debugConsole.write("Captured event " + evtname + " on <" + evt.target.nodeName +
-				(evt.target.className? " class=\"" + (typeof evt.target.className === "string" ? evt.target.className : evt.target.className.baseVal) + "\"" : "") +
-				(evt.target.id? " id=\"" + evt.target.id + "\"" : "") + "/>");
-			handler.call(evt.target, evt);
+		if (effectiveTarget && !(event instanceof UIEvent)) {
+			XsltForms_browser.debugConsole.write("Captured event " + name + " on <" + event.target.nodeName +
+				(event.target.className? " class=\"" + (typeof event.target.className === "string" ? event.target.className : event.target.className.baseVal) + "\"" : "") +
+				(event.target.id? " id=\"" + event.target.id + "\"" : "") + "/>");
+			handler.call(event.target, event);
 		}
 		if (!defaultaction) {
-			evt.preventDefault();
+			event.preventDefault();
 		}
 		if (!document.addEventListener) {
 			try {
-				evt.preventDefault = null;
-				evt.stopPropagation = null;
+				event.preventDefault = null;
+				event.stopPropagation = null;
 			} catch (e) {}
 		}
 	};
@@ -3591,13 +3923,22 @@ function XsltForms_listener(subform, observer, evtTarget, evtname, phase, handle
 		subform.listeners.push(this);
 	}
 }
+
+
+		
+
 XsltForms_listener.destructs = [];
+
 XsltForms_listener.prototype.attach = function() {
 	XsltForms_browser.events.attach(this.observer, this.evtName, this.callback, this.phase === "capture");
 	if (this.evtName === "xforms-model-destruct") {
 		XsltForms_listener.destructs.push({observer: this.observer, callback: this.callback});
 	}
 };
+
+
+		
+
 XsltForms_listener.prototype.detach = function() {
 	if( this.observer.listeners ) {
 		for (var i = 0, l = this.observer.listeners.length; i < l; i++) {
@@ -3609,19 +3950,40 @@ XsltForms_listener.prototype.detach = function() {
 	}
 	XsltForms_browser.events.detach(this.observer, this.evtName, this.callback, this.phase === "capture");
 };
+
+
+		
+
 XsltForms_listener.prototype.clone = function(element) {
 	return new XsltForms_listener(this.subform, element, this.evtTarget, this.name, this.phase, this.handler);
 };
+
+	
+		
+		
+		
 var XsltForms_xmlevents = {
+
+		
+
     REGISTRY : [],
+
+		
+
 	EventContexts : [],
-	define : function(evtname, bubbles, cancelable, defaultAction) {
-		XsltForms_xmlevents.REGISTRY[evtname] = {
+
+		
+
+	define : function(name, bubbles, cancelable, defaultAction) {
+		XsltForms_xmlevents.REGISTRY[name] = {
 			bubbles:       bubbles,
 			cancelable:    cancelable,
 			defaultAction: defaultAction? defaultAction : function() { }
 		};
 	},
+
+		
+
 	makeEventContext : function(evcontext, type, targetid, bubbles, cancelable) {
 		if (!evcontext) {
 			evcontext = {};
@@ -3629,31 +3991,36 @@ var XsltForms_xmlevents = {
 		if (!evcontext.type) {
 			evcontext.type = type;
 		}
-		try {
-			evcontext.targetid = targetid;
-			evcontext.bubbles = bubbles;
-			evcontext.cancelable = cancelable;
-		} catch (e) {
-		}
+		evcontext.targetid = targetid;
+		evcontext.bubbles = bubbles;
+		evcontext.cancelable = cancelable;
 		return evcontext;
 	}
 };
-XsltForms_xmlevents.dispatchList = function(list, evtname) {
+
+
+		
+
+XsltForms_xmlevents.dispatchList = function(list, name) {
 	for (var id = 0, len = list.length; id < len; id++) {
-		XsltForms_xmlevents.dispatch(list[id], evtname);
+		XsltForms_xmlevents.dispatch(list[id], name);
 	}
 };
-XsltForms_xmlevents.dispatch = function(target, evtname, type, bubbles, cancelable, defaultAction, evcontext) {
+
+
+		
+
+XsltForms_xmlevents.dispatch = function(target, name, type, bubbles, cancelable, defaultAction, evcontext) {
 	if (!target) {
 		XsltForms_browser.debugConsole.write("ERROR: Cannot dispatch event " + name + " as the target is null");
 		return;
 	}
 	target = target.element || target;
 	XsltForms_browser.assert(target && typeof(target.nodeName) !== "undefined");
-	XsltForms_browser.debugConsole.write("Dispatching event " + evtname + " on <" + target.nodeName +
+	XsltForms_browser.debugConsole.write("Dispatching event " + name + " on <" + target.nodeName +
 		(target.className? " class=\"" + (typeof target.className === "string" ? target.className : target.className.baseVal) + "\"" : "") +
 		(target.id? " id=\"" + target.id + "\"" : "") + "/>");
-	var reg = XsltForms_xmlevents.REGISTRY[evtname];
+	var reg = XsltForms_xmlevents.REGISTRY[name];
 	if (reg) {
 		bubbles = reg.bubbles;
 		cancelable = reg.cancelable;
@@ -3662,48 +4029,50 @@ XsltForms_xmlevents.dispatch = function(target, evtname, type, bubbles, cancelab
 	if (!defaultAction) {
 		defaultAction = function() { };
 	}
-	evcontext = XsltForms_xmlevents.makeEventContext(evcontext, evtname, target.id, bubbles, cancelable);
+	evcontext = XsltForms_xmlevents.makeEventContext(evcontext, name, target.id, bubbles, cancelable);
 	XsltForms_xmlevents.EventContexts.push(evcontext);
 	try {
-		var evt, res;
+		var event, res;
 		if (target.dispatchEvent) {
-			evt = document.createEvent("Event");
-			evt.initEvent(evtname, bubbles, cancelable);
-			res = target.dispatchEvent(evt);
-			if ((res && !evt.stopped) || !cancelable) {
-				defaultAction.call(target.xfElement, evt);
+			event = document.createEvent("Event");
+			event.initEvent(name, bubbles, cancelable);
+			res = target.dispatchEvent(event);
+			if ((res && !event.stopped) || !cancelable) {
+				defaultAction.call(target.xfElement, event);
 			}
 		} else {
 			var canceler = null;
+			// Capture phase.
 			var ancestors = [];
 			for (var a = target.parentNode; a; a = a.parentNode) {
 				ancestors.unshift(a);
 			}
 			for (var i = 0, len = ancestors.length; i < len; i++) {
-				evt = document.createEventObject();
-				evt.trueName = evtname;
-				evt.phase = "capture";
-				ancestors[i].fireEvent("onerrorupdate", evt);
-				if (evt.stopped) {
+				event = document.createEventObject();
+				event.trueName = name;
+				event.phase = "capture";
+				ancestors[i].fireEvent("onerrorupdate", event);
+				if (event.stopped) {
 					return;
 				}
 			}
-			evt = document.createEventObject();
-			evt.trueName = evtname;
-			evt.phase = "capture";
-			evt.target = target;
-			target.fireEvent("onerrorupdate" , evt);
+			event = document.createEventObject();
+			event.trueName = name;
+			event.phase = "capture";
+			event.target = target;
+			target.fireEvent("onerrorupdate" , event);
+			// Bubble phase.
 			if (!bubbles) {
-				canceler = new XsltForms_listener(null, target, null, evtname, "default", function(evt) { evt.cancelBubble = true; });
+				canceler = new XsltForms_listener(null, target, null, name, "default", function(event) { event.cancelBubble = true; });
 			}
-			evt = document.createEventObject();
-			evt.trueName = evtname;
-			evt.phase = "default";
-			evt.target = target;
-			res = target.fireEvent("onerrorupdate", evt);
+			event = document.createEventObject();
+			event.trueName = name;
+			event.phase = "default";
+			event.target = target;
+			res = target.fireEvent("onerrorupdate", event);
 			try {
-				if ((res && !evt.stopped) || !cancelable) {
-					defaultAction.call(target.xfElement, evt);
+				if ((res && !event.stopped) || !cancelable) {
+					defaultAction.call(target.xfElement, event);
 				}
 				if (!bubbles) {
 					canceler.detach();
@@ -3712,7 +4081,7 @@ XsltForms_xmlevents.dispatch = function(target, evtname, type, bubbles, cancelab
 			}
 		}
 	} catch (e) {
-		alert("XSLTForms Exception\n--------------------------\n\nError dispatching event '"+evtname+"' :\n\n"+(typeof(e.stack)==="undefined"?"":e.stack)+"\n\n"+(e.name?e.name+(e.message?"\n\n"+e.message:""):e));
+		alert("XSLTForms Exception\n--------------------------\n\nError dispatching event '"+name+"' :\n\n"+(typeof(e.stack)==="undefined"?"":e.stack)+"\n\n"+(e.name?e.name+(e.message?"\n\n"+e.message:""):e));
 	} finally {
 		if (XsltForms_xmlevents.EventContexts[XsltForms_xmlevents.EventContexts.length - 1].rheadsdoc) {
 			XsltForms_xmlevents.EventContexts[XsltForms_xmlevents.EventContexts.length - 1].rheadsdoc = null;
@@ -3723,53 +4092,192 @@ XsltForms_xmlevents.dispatch = function(target, evtname, type, bubbles, cancelab
 		XsltForms_xmlevents.EventContexts.pop();
 	}
 };
-XsltForms_xmlevents.define("xforms-model-construct", true, false, function() { this.construct(); });
+
+
+		
+
+XsltForms_xmlevents.define("xforms-model-construct", true, false, function(event) { this.construct(); });
+
+		
+
 XsltForms_xmlevents.define("xforms-model-construct-done", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-ready", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-model-destruct", true, false);
-XsltForms_xmlevents.define("xforms-rebuild", true, true, function() { this.rebuild(); });
-XsltForms_xmlevents.define("xforms-recalculate", true, true, function() { this.recalculate(); });
-XsltForms_xmlevents.define("xforms-revalidate", true, true, function() { this.revalidate(); });
-XsltForms_xmlevents.define("xforms-reset", true, true, function() { this.reset(); });
-XsltForms_xmlevents.define("xforms-submit", true, true, function() { this.submit(); });
+
+		
+
+XsltForms_xmlevents.define("xforms-rebuild", true, true, function(event) { this.rebuild(); });
+
+		
+
+XsltForms_xmlevents.define("xforms-recalculate", true, true, function(event) { this.recalculate(); });
+
+		
+
+XsltForms_xmlevents.define("xforms-revalidate", true, true, function(event) { this.revalidate(); });
+
+		
+
+XsltForms_xmlevents.define("xforms-reset", true, true, function(event) { this.reset(); });
+
+		
+
+XsltForms_xmlevents.define("xforms-submit", true, true, function(event) { this.submit(); });
+
+		
+
 XsltForms_xmlevents.define("xforms-submit-serialize", true, false);
-XsltForms_xmlevents.define("xforms-refresh", true, true, function() { this.refresh(); });
-XsltForms_xmlevents.define("xforms-focus", true, true, function() { this.focus ? this.focus() : this.element.focus(); } );
+
+		
+
+XsltForms_xmlevents.define("xforms-refresh", true, true, function(event) { this.refresh(); });
+
+		
+
+XsltForms_xmlevents.define("xforms-focus", true, true, function(event) { this.focus ? this.focus() : this.element.focus(); } );
+
+
+		
+
 XsltForms_xmlevents.define("DOMActivate", true,  true);
+
+		
+
 XsltForms_xmlevents.define("DOMFocusIn", true, false);
+
+		
+
 XsltForms_xmlevents.define("DOMFocusOut", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-select", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-deselect", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-value-changed", true, false);
+
+
+		
+
 XsltForms_xmlevents.define("xforms-insert", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-delete", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-valid", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-invalid", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-enabled", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-disabled", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-optional", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-required", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-readonly", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-readwrite", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-in-range", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-out-of-range", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-submit-done", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-submit-error", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-compute-exception", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-binding-exception", true, false);
+
 XsltForms_xmlevents.define("ajx-start", true, true, function(evt) { evt.target.xfElement.start(); });
 XsltForms_xmlevents.define("ajx-stop", true, true, function(evt) { evt.target.xfElement.stop(); });
 XsltForms_xmlevents.define("ajx-time", true, true);
+
+		
+
 XsltForms_xmlevents.define("xforms-dialog-open", true, true, function(evt) { XsltForms_browser.dialog.show(evt.target, null, true); });
+
+		
+
 XsltForms_xmlevents.define("xforms-dialog-close", true, true, function(evt) { XsltForms_browser.dialog.hide(evt.target, true); });
+
+		
+
 XsltForms_xmlevents.define("xforms-load-done", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-load-error", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-unload-done", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-upload-done", true, false);
+
+		
+
 XsltForms_xmlevents.define("xforms-upload-error", true, false);
+
+	
+	
+		
+		
+		
+		
+		
 function ArrayExpr(exprs) {
 	this.exprs = exprs;
 }
+
+
+		
+
 ArrayExpr.prototype.evaluate = function(ctx) {
 	var nodes = [];
 	for (var i = 0, len = this.exprs.length; i < len; i++) {
@@ -3777,11 +4285,20 @@ ArrayExpr.prototype.evaluate = function(ctx) {
 	}
 	return nodes;
 };
+
+	
+		
+		
+		
 function XsltForms_binaryExpr(expr1, op, expr2) {
 	this.expr1 = expr1;
 	this.expr2 = expr2;
 	this.op = op.replace("&gt;", ">").replace("&lt;", "<");
 }
+
+
+		
+
 XsltForms_binaryExpr.prototype.evaluate = function(ctx) {
 	var v1 = this.expr1.evaluate(ctx);
 	var v2 = this.expr2.evaluate(ctx);
@@ -3865,7 +4382,12 @@ XsltForms_binaryExpr.prototype.evaluate = function(ctx) {
 	}
 	return typeof res === "number" ? Math.round(res*1000000)/1000000 : res;
 };
-function XsltForms_exprContext(subform, node, position, nodelist, parentNode, nsresolver, current, varresolver, depsNodes, depsId, depsElements) {
+
+	
+		
+		
+		
+function XsltForms_exprContext(subform, node, position, nodelist, parent, nsresolver, current, varresolver, depsNodes, depsId, depsElements) {
 	this.subform = subform;
 	this.node = node;
 	this.current = current || node;
@@ -3886,27 +4408,43 @@ function XsltForms_exprContext(subform, node, position, nodelist, parentNode, ns
 	}
 	this.position = position || 1;
 	this.nodelist = nodelist || [ node ];
-	this.parent = parentNode;
-	this.root = parentNode ? parentNode.root : node ? node.ownerDocument : null;
+	this.parent = parent;
+	this.root = parent ? parent.root : node ? node.ownerDocument : null;
 	this.nsresolver = nsresolver;
 	this.varresolver = varresolver;
 	this.depsId = depsId;
 	this.initDeps(depsNodes, depsElements);
 }
+
+
+		
+
 XsltForms_exprContext.prototype.clone = function(node, position, nodelist) {
 	return new XsltForms_exprContext(this.subform, node || this.node, 
 		typeof position === "undefined" ? this.position : position,
 		nodelist || this.nodelist, this, this.nsresolver, this.current, this.varresolver,
 		this.depsNodes, this.depsId, this.depsElements);
 };
+
+
+		
+
 XsltForms_exprContext.prototype.setNode = function(node, position) {
 	this.node = node;
 	this.position = position;
 };
+
+
+		
+
 XsltForms_exprContext.prototype.initDeps = function(depsNodes, depsElements) {
 	this.depsNodes = depsNodes;
 	this.depsElements = depsElements;
 };
+
+
+		
+
 XsltForms_exprContext.prototype.addDepNode = function(node) {
 	var deps = this.depsNodes;
 	if (deps && node.nodeType && node.nodeType !== Fleur.Node.DOCUMENT_NODE && (!this.depsId || !XsltForms_browser.inValueMeta(node, "depfor", this.depsId))) { // !inArray(node, deps)) {
@@ -3916,34 +4454,72 @@ XsltForms_exprContext.prototype.addDepNode = function(node) {
 		deps.push(node);
 	}
 };
+
+
+		
+
 XsltForms_exprContext.prototype.addDepElement = function(element) {
 	var deps = this.depsElements;
 	if (deps && !XsltForms_browser.inArray(element, deps)) {
 		deps.push(element);
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_tokenExpr(m) {
 	this.value = m;
 }
+
+
+		
+
 XsltForms_tokenExpr.prototype.evaluate = function() {
 	return XsltForms_globals.stringValue(this.value);
 };
+
+
+		
+
 function XsltForms_unaryMinusExpr(expr) {
 	this.expr = expr;
 }
+
+
+		
+
 XsltForms_unaryMinusExpr.prototype.evaluate = function(ctx) {
 	return -XsltForms_globals.numberValue(this.expr.evaluate(ctx));
 };
+
+
+		
+
 function XsltForms_cteExpr(value) {
 	this.value = XsltForms_browser.isEscaped ? typeof value === "string" ? XsltForms_browser.unescape(value) : value : value;
 }
+
+
+		
+
 XsltForms_cteExpr.prototype.evaluate = function() {
 	return this.value;
 };
+
+	
+		
+		
+		
 function XsltForms_filterExpr(expr, predicate) {
 	this.expr = expr;
 	this.predicate = predicate;
 }
+
+
+		
+
 XsltForms_filterExpr.prototype.evaluate = function(ctx) {
 	var nodes = XsltForms_globals.nodeSetValue(this.expr.evaluate(ctx));
 	for (var i = 0, len = this.predicate.length; i < len; ++i) {
@@ -3959,6 +4535,11 @@ XsltForms_filterExpr.prototype.evaluate = function(ctx) {
 	}
 	return nodes;
 };
+
+	
+		
+		
+		
 function XsltForms_locationExpr(absolute) {
 	this.absolute = absolute;
 	this.steps = [];
@@ -3966,6 +4547,10 @@ function XsltForms_locationExpr(absolute) {
 		this.steps.push(arguments[i]);
 	}
 }
+
+
+		
+
 XsltForms_locationExpr.prototype.evaluate = function(ctx) {
 	var start = (this.absolute && ctx.root )|| !ctx.node ? ctx.root : ctx.node;
 	var m = XsltForms_browser.getDocMeta((start.nodeType === Fleur.Node.DOCUMENT_NODE ? start : start.ownerDocument), "model");
@@ -3980,6 +4565,7 @@ XsltForms_locationExpr.prototype.evaluate = function(ctx) {
 	}
 	return nodes;
 };
+
 XsltForms_locationExpr.prototype.xPathStep = function(nodes, steps, step, input, ctx) {
 	var s = steps[step];
 	var nodelist = s.evaluate(ctx.clone(input));
@@ -3995,23 +4581,42 @@ XsltForms_locationExpr.prototype.xPathStep = function(nodes, steps, step, input,
 		}
 	}
 };
+    
+	
+		
+		
+		
 function XsltForms_nodeTestAny() {
 }
+
+
+		
+
 XsltForms_nodeTestAny.prototype.evaluate = function(node) {
 	var n = node.localName || node.baseName;
     return !n || (n.substr(0, 10) !== "xsltforms_" && node.namespaceURI !== "http://www.w3.org/2000/xmlns/");
 };
-function XsltForms_nodeTestName(prefix, tname) {
+
+	
+		
+		
+
+function XsltForms_nodeTestName(prefix, name) {
     this.prefix = prefix;
-    this.name = tname;
-	this.uppercase = tname.toUpperCase();
-	this.wildcard = tname === "*";
-	this.notwildcard = tname !== "*";
+    this.name = name;
+	this.uppercase = name.toUpperCase();
+	this.wildcard = name === "*";
+	this.notwildcard = name !== "*";
 	this.notwildcardprefix = prefix !== "*";
 	this.hasprefix = prefix && this.notwildcardprefix;
 }
+
+
+		
+
 XsltForms_nodeTestName.prototype.evaluate = function(node, nsresolver, csensitive) {
 	var nodename = node.localName || node.baseName;
+	//console.log("nodeTestName: " + node.nodeType + " " + nodename + " =? " + this.name);
 	if (this.notwildcard && (nodename !== this.name || (csensitive && nodename.toUpperCase() !== this.uppercase))) {
 		return false;
 	}
@@ -4022,23 +4627,50 @@ XsltForms_nodeTestName.prototype.evaluate = function(node, nsresolver, csensitiv
 	return this.hasprefix ? ns === nsresolver.lookupNamespaceURI(this.prefix) :
 		(this.notwildcardprefix ? !ns || ns === "" || ns === nsresolver.lookupNamespaceURI("") : true);
 };
+    
+	
+		
+		
+		
 function XsltForms_nodeTestPI(target) {
 	this.target = target;
 }
+
+
+		
+
 XsltForms_nodeTestPI.prototype.evaluate = function(node) {
 	return node.nodeType === Fleur.Node.PROCESSING_INSTRUCTION_NODE &&
 		(!this.target || node.nodeName === this.target);
 };
+
+	
+		
+		
+		
 function XsltForms_nodeTestType(type) {
 	this.type = type;
 }
+
+
+		
+
 XsltForms_nodeTestType.prototype.evaluate = function(node) {
 	return node.nodeType === this.type;
 };
+	
+	
+		
+		
+		
 function XsltForms_nsResolver() {
 	this.map = {};
 	this.notfound = false;
 }
+
+
+		
+
 XsltForms_nsResolver.prototype.registerAll = function(resolver) {
 	for (var prefix in resolver.map) {
 		if (resolver.map.hasOwnProperty(prefix)) {
@@ -4046,12 +4678,20 @@ XsltForms_nsResolver.prototype.registerAll = function(resolver) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_nsResolver.prototype.register = function(prefix, uri) {
 	this.map[prefix] = uri;
 	if( uri === "notfound" ) {
 		this.notfound = true;
 	}
 };
+
+
+		
+
 XsltForms_nsResolver.prototype.registerNotFound = function(prefix, uri) {
 	if( this.map[prefix] === "notfound" ) {
 		this.map[prefix] = uri;
@@ -4064,13 +4704,26 @@ XsltForms_nsResolver.prototype.registerNotFound = function(prefix, uri) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_nsResolver.prototype.lookupNamespaceURI = function(prefix) {
 	return this.map[prefix];
 };
+
+	
+		
+		
+		
 function XsltForms_pathExpr(filter, rel) {
 	this.filter = filter;
 	this.rel = rel;
 }
+
+
+		
+
 XsltForms_pathExpr.prototype.evaluate = function(ctx) {
 	var nodes = XsltForms_globals.nodeSetValue(this.filter.evaluate(ctx));
 	var nodes1 = [];
@@ -4083,13 +4736,27 @@ XsltForms_pathExpr.prototype.evaluate = function(ctx) {
 	}
 	return nodes1;
 };
+
+	
+		
+		
+		
 function XsltForms_predicateExpr(expr) {
 	this.expr = expr;
 }
+
+
+		
+
 XsltForms_predicateExpr.prototype.evaluate = function(ctx) {
 	var v = this.expr.evaluate(ctx);
 	return typeof v === "number" ? ctx.position === v : XsltForms_globals.booleanValue(v);
 };
+
+	
+		
+		
+		
 function XsltForms_stepExpr(axis, nodetest) {
 	this.axis = axis;
 	this.nodetest = nodetest;
@@ -4098,6 +4765,10 @@ function XsltForms_stepExpr(axis, nodetest) {
 		this.predicates.push(arguments[i]);
 	}
 }
+
+
+		
+
 XsltForms_stepExpr.prototype.evaluate = function(ctx) {
 	var input = ctx.node;
 	var list = [];
@@ -4191,7 +4862,7 @@ XsltForms_stepExpr.prototype.evaluate = function(ctx) {
 			XsltForms_stepExpr.push(ctx, list, input, this.nodetest);
 			break;
 		default :
-			throw new Error({name:'ERROR -- NO SUCH AXIS: ' + this.axis});
+			throw {name:'ERROR -- NO SUCH AXIS: ' + this.axis};
 	}
 	for (var i = 0, len = this.predicates.length; i < len; i++) {
 		var pred = this.predicates[i];
@@ -4207,32 +4878,45 @@ XsltForms_stepExpr.prototype.evaluate = function(ctx) {
 	}
 	return list;
 };
+
 XsltForms_stepExpr.push = function(ctx, list, node, test, csensitive) {
 	if (test.evaluate(node, ctx.nsresolver, csensitive) && !XsltForms_browser.inArray(node, list)) {
 		list[list.length] = node;
 	}
 };
+
 XsltForms_stepExpr.pushList = function(ctx, list, l, test, csensitive) {
 	for (var i = 0, len = l ? l.length : 0; i < len; i++) {
 		XsltForms_stepExpr.push(ctx, list, l[i], test, csensitive);
 	}
 };
+
 XsltForms_stepExpr.pushDescendants = function(ctx, list, node, test) {
 	for (var n = node.firstChild; n; n = n.nextSibling) {
 		XsltForms_stepExpr.push(ctx, list, n, test);
-		XsltForms_stepExpr.pushDescendants(ctx, list, n, test);
+		arguments.callee(ctx, list, n, test);
 	}
 };
+
 XsltForms_stepExpr.pushDescendantsRev = function(ctx, list, node, test) {
 	for (var n = node.lastChild; n; n = n.previousSibling) {
 		XsltForms_stepExpr.push(ctx, list, n, test);
-		XsltForms_stepExpr.pushDescendantsRev(ctx, list, n, test);
+		arguments.callee(ctx, list, n, test);
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_unionExpr(expr1, expr2) {
 	this.expr1 = expr1;
 	this.expr2 = expr2;
 }
+
+
+		
+
 XsltForms_unionExpr.prototype.evaluate = function(ctx) {
 	var nodes1 = XsltForms_globals.nodeSetValue(this.expr1.evaluate(ctx));
 	var nodes2 = XsltForms_globals.nodeSetValue(this.expr2.evaluate(ctx));
@@ -4251,14 +4935,23 @@ XsltForms_unionExpr.prototype.evaluate = function(ctx) {
 	}
 	return nodes1;
 };
-function XsltForms_varRef(vname) {
-	this.name = vname;
+
+	
+		
+		
+		
+function XsltForms_varRef(name) {
+	this.name = name;
 }
+
+
+		
+
 XsltForms_varRef.prototype.evaluate = function(ctx) {
 		if (!ctx.varresolver || !ctx.varresolver[this.name]) {
 			return "";
 		}
-		if (typeof ctx.varresolver[this.name] === "string") {
+		if (typeof ctx.varresolver[this.name] == "string") {
 			var varxf = XsltForms_idManager.find(ctx.varresolver[this.name]).xfElement;
 			for (var i = 0, l = varxf.depsNodesRefresh.length; i < l ; i++) {
 				ctx.addDepNode(varxf.depsNodesRefresh[i]);
@@ -4267,12 +4960,26 @@ XsltForms_varRef.prototype.evaluate = function(ctx) {
 		}
 		return ctx.varresolver[this.name][0];
 };
+
+	
+		
+		
+		
 XsltForms_globals.stringValue = function(value) {
 	return typeof value !== "object"? "" + value : (!value || value.length === 0 ? "" : XsltForms_globals.xmlValue(value[0]));
 };
+
+
+		
+
 XsltForms_globals.booleanValue = function(value) {
 	return typeof value === "undefined" || !value ? false : (typeof value.length !== "undefined"? value.length > 0 : !!value);
 };
+
+
+		
+
+var nbvalcount = 0;
 XsltForms_globals.numberValue = function(value) {
 	if (typeof value === "boolean") {
 		return 'A' - 0;
@@ -4281,9 +4988,20 @@ XsltForms_globals.numberValue = function(value) {
 		return v === '' ? NaN : v - 0;
 	}
 };
+
+
+		
+
 XsltForms_globals.nodeSetValue = function(value) {
+//	if (typeof value !== "object") {
+//		throw {name: this, message: Error().stack};
+//	}
 	return value;
 };
+
+
+		
+
 if (XsltForms_browser.isIE) {
 	XsltForms_globals.xmlValue = function(node) {
 		if (typeof node !== "object") {
@@ -4313,6 +5031,10 @@ if (XsltForms_browser.isIE) {
 		return ret;
 	};
 }
+
+
+		
+
 XsltForms_globals.xmlResolveEntities = function(s) {
 	var parts = XsltForms_globals.stringSplit(s, '&');
 	var ret = parts[0];
@@ -4341,6 +5063,10 @@ XsltForms_globals.xmlResolveEntities = function(s) {
 	}
 	return ret;
 };
+
+
+		
+
 XsltForms_globals.stringSplit = function(s, c) {
 	var a = s.indexOf(c);
 	if (a === -1) {
@@ -4360,6 +5086,11 @@ XsltForms_globals.stringSplit = function(s, c) {
 	}
 	return parts;
 };
+
+	
+		
+		
+		
 function XsltForms_xpath(subform, expression, unordered, compiled, ns) {
 	this.subforms = [];
 	this.subforms[subform] = true;
@@ -4376,20 +5107,30 @@ function XsltForms_xpath(subform, expression, unordered, compiled, ns) {
 	this.compiled.isRoot = true;
 	this.nsresolver = new XsltForms_nsResolver();
 	XsltForms_xpath.expressions[expression] = this;
+	//if (ns.length > 0)  {
 	for (var i = 0, len = ns.length; i < len; i += 2) {
 		this.nsresolver.register(ns[i], ns[i + 1]);
 	}
+	//} else {
+	//	this.nsresolver.register("", "http://www.w3.org/1999/xhtml");
+	//}
 	if (this.nsresolver.notfound) {
 		XsltForms_xpath.notfound = true;
 	}
 	this.evaltime = 0;
 }
+
+
+		
+
 XsltForms_xpath.prototype.evaluate = function() {
 	alert("XPath error");
 };
 XsltForms_xpath.prototype.xpath_evaluate = function(ctx, current, subform, varresolver) {
+	//console.log(this.expression);
 	var d1 = new Date();
 	XsltForms_browser.assert(ctx);
+//	alert("XPath evaluate \""+this.expression+"\"");
 	if (!ctx.node) {
 		ctx = new XsltForms_exprContext(subform, ctx, null, null, null, this.nsresolver, current, varresolver);
 	} else if (!ctx.nsresolver) {
@@ -4415,11 +5156,22 @@ XsltForms_xpath.prototype.xpath_evaluate = function(ctx, current, subform, varre
 		return null;
 	}
 };
+
+
+		
+
 XsltForms_xpath.expressions = {};
 XsltForms_xpath.notfound = false;
+
+
+		
+
 XsltForms_xpath.get = function(str) {
 	return XsltForms_xpath.expressions[str];
 };
+
+		
+
 XsltForms_xpath.create = function(subform, expression, unordered, compiled) {
 	var xp = XsltForms_xpath.get(expression);
 	if (xp) {
@@ -4438,14 +5190,22 @@ XsltForms_xpath.create = function(subform, expression, unordered, compiled) {
 		xp = new XsltForms_xpath(subform, expression, unordered, compiled, ns);
 	}
 };
+
+		
+
 XsltForms_xpath.prototype.dispose = function(subform) {
 	if (subform && this.nbsubforms !== 1) {
 		delete this.subforms[subform];
 		this.nbsubforms--;
 		return;
 	}
+	//this.compiled = null;
+	//this.nsresolver = null;
 	delete XsltForms_xpath.expressions[this.expression];
 };
+
+		
+
 XsltForms_xpath.registerNS = function(prefix, uri) {
 	if (XsltForms_xpath.notfound) {
 		XsltForms_xpath.notfound = false;
@@ -4459,16 +5219,26 @@ XsltForms_xpath.registerNS = function(prefix, uri) {
 		}
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_xpathFunction(acceptContext, defaultTo, returnNodes, body) {
 	this.evaluate = body;
 	this.defaultTo = defaultTo;
 	this.acceptContext = acceptContext;
 	this.returnNodes = returnNodes;
 }
+
 XsltForms_xpathFunction.DEFAULT_NONE = null;
 XsltForms_xpathFunction.DEFAULT_NODE = 0;
 XsltForms_xpathFunction.DEFAULT_NODESET = 1;
 XsltForms_xpathFunction.DEFAULT_STRING = 2;
+
+
+		
+
 XsltForms_xpathFunction.prototype.call = function(context, arguments_) {
 	if (arguments_.length === 0) {
 		switch (this.defaultTo) {
@@ -4492,6 +5262,11 @@ XsltForms_xpathFunction.prototype.call = function(context, arguments_) {
 	}
 	return this.evaluate.apply(null, arguments_);
 };
+
+	
+		
+		
+		
 var XsltForms_mathConstants = {
 	"PI":      "3.14159265358979323846264338327950288419716939937510582",
 	"E":       "2.71828182845904523536028747135266249775724709369995958",
@@ -4501,6 +5276,7 @@ var XsltForms_mathConstants = {
 	"LOG2E":   "1.44269504088896340735992468100189213742664595415298594",
 	"SQRT1_2": "0.707106781186547524400844362104849039284835937688474038"
 };
+
 var XsltForms_xpathFunctionExceptions = {
 	lastInvalidArgumentsNumber : {
 		name : "last() : Invalid number of arguments",
@@ -4814,10 +5590,6 @@ var XsltForms_xpathFunctionExceptions = {
 		name : "lower-case() : Invalid number of arguments",
 		message : "lower-case() function must have one argument exactly"
 	},
-	formatNumberInvalidArgumentsNumber : {
-		name : "format-number() : Invalid number of arguments",
-		message : "format-number() function must have two arguments exactly"
-	},
 	distinctValuesInvalidArgumentsNumber : {
 		name : "distinct-values() : Invalid number of arguments",
 		message : "distinct-values() function must have one argument exactly"
@@ -4863,7 +5635,11 @@ var XsltForms_xpathFunctionExceptions = {
 		message : "encode-for-uri() function must have one argument exactly"
 	}
 };
+		
 var XsltForms_xpathCoreFunctions = {
+
+		
+
 	"http://www.w3.org/2005/xpath-functions node" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx) {
 			if (arguments.length !== 1) {
@@ -4871,6 +5647,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return ctx.current.childNodes;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions comment" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx) {
 			if (arguments.length !== 1) {
@@ -4886,6 +5665,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return result;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions text" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx) {
 			if (arguments.length !== 1) {
@@ -4901,6 +5683,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return result;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions array" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx) {
 			if (arguments.length !== 1) {
@@ -4916,6 +5701,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return result;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions map" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx) {
 			if (arguments.length !== 1) {
@@ -4931,6 +5719,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return result;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions entry" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx) {
 			if (arguments.length !== 1) {
@@ -4944,6 +5735,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return result;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions last" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx) {
 			if (arguments.length !== 1) {
@@ -4951,6 +5745,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return ctx.nodelist.length;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions position" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx) {
 			if (arguments.length !== 1) {
@@ -4958,6 +5755,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return ctx.position;
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms context" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx) {
 			if (arguments.length !== 1) {
@@ -4965,6 +5765,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return [ctx.current];
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions count" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(nodeSet) { 
 			if (arguments.length !== 1) {
@@ -4975,6 +5778,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return nodeSet.length;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions id" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NODE, false,
 		function(context, object, ref) {
 			if (arguments.length !== 2 && arguments.length !== 3) {
@@ -5010,6 +5816,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return result;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions local-name" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODESET, false,
 		function(nodeSet) {
 			if (arguments.length > 1) {
@@ -5023,6 +5832,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return nodeSet.length === 0 ? "" : nodeSet[0].nodeName.replace(/^.*:/, "");
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions namespace-uri" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODESET, false,
 		function(nodeSet) {
 			if (arguments.length > 1) {
@@ -5033,6 +5845,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return nodeSet.length === 0? "" : nodeSet[0].namespaceURI || "";
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions name" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODESET, false,
 		function(nodeSet) {
 			if (arguments.length > 1) {
@@ -5043,6 +5858,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return nodeSet.length === 0? "" : nodeSet[0].nodeName;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions string" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODESET, false,
 		function(object) {
 			if (arguments.length > 1) {
@@ -5050,6 +5868,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_globals.stringValue(object);
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions concat" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function() {
 			if (arguments.length <2) {
@@ -5061,6 +5882,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return string;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions starts-with" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string, prefix) {   
 			if (arguments.length !== 2) {
@@ -5068,6 +5892,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_globals.stringValue(string).indexOf(XsltForms_globals.stringValue(prefix)) === 0;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions ends-with" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string, postfix) {   
 			if (arguments.length !== 2) {
@@ -5077,6 +5904,9 @@ var XsltForms_xpathCoreFunctions = {
 			var p = XsltForms_globals.stringValue(postfix);
 			return s.substr(s.length - p.length, p.length) === p;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions contains" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string, substring) {
 			if (arguments.length !== 2) {
@@ -5084,6 +5914,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_globals.stringValue(string).indexOf(XsltForms_globals.stringValue(substring)) !== -1;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions substring-before" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string, substring) {
 			if (arguments.length !== 2) {
@@ -5092,6 +5925,9 @@ var XsltForms_xpathCoreFunctions = {
 			string = XsltForms_globals.stringValue(string);
 			return string.substring(0, string.indexOf(XsltForms_globals.stringValue(substring)));
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions substring-after" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string, substring) {
 			if (arguments.length !== 2) {
@@ -5102,8 +5938,11 @@ var XsltForms_xpathCoreFunctions = {
 			var index = string.indexOf(substring);
 			return index === -1 ? "" : string.substring(index + substring.length);
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions substring" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
-		function(string, index, len) {
+		function(string, index, length) {
 			if (arguments.length !== 2 && arguments.length !== 3) {
 				throw XsltForms_xpathFunctionExceptions.substringInvalidArgumentsNumber;
 			}
@@ -5112,15 +5951,18 @@ var XsltForms_xpathCoreFunctions = {
 			if (isNaN(index)) {
 				return "";
 			}
-			if (len) {
-				len = Math.round(XsltForms_globals.numberValue(len));
+			if (length) {
+				length = Math.round(XsltForms_globals.numberValue(length));
 				if (index <= 0) {
-					return string.substr(0, index + len - 1);
+					return string.substr(0, index + length - 1);
 				}
-				return string.substr(index - 1, len);
+				return string.substr(index - 1, length);
 			}
 			return string.substr(Math.max(index - 1, 0));
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions compare" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string1, string2) {
 			if (arguments.length !== 2) {
@@ -5130,6 +5972,9 @@ var XsltForms_xpathCoreFunctions = {
 			string2 = XsltForms_globals.stringValue(string2);
 			return (string1 === string2 ? 0 : (string1 > string2 ? 1 : -1));
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions string-length" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_STRING, false,
 		function(string) {
 			if (arguments.length > 1) {
@@ -5137,6 +5982,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_globals.stringValue(string).length;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions normalize-space" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_STRING, false,
 		function(string) {
 			if (arguments.length > 1) {
@@ -5145,6 +5993,9 @@ var XsltForms_xpathCoreFunctions = {
 			return XsltForms_globals.stringValue(string).replace(/^\s+|\s+$/g, "")
 				.replace(/\s+/, " ");
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions translate" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string, from, to) {
 			if (arguments.length !== 3) {
@@ -5160,6 +6011,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return result;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions replace" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string, pattern, replacement) {
 			if (arguments.length !== 3) {
@@ -5168,6 +6022,9 @@ var XsltForms_xpathCoreFunctions = {
 			string = XsltForms_globals.stringValue(string);
 			return string.replace(new RegExp(XsltForms_globals.stringValue(pattern), "g"), XsltForms_globals.stringValue(replacement));
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions boolean" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(object) {
 			if (arguments.length !== 1) {
@@ -5175,6 +6032,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_globals.booleanValue(object);
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions not" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(condition) {
 			if (arguments.length !== 1) {
@@ -5182,6 +6042,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return !XsltForms_globals.booleanValue(condition);
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions true" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function() {
 			if (arguments.length !== 0) {
@@ -5189,6 +6052,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return true;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions false" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function() {
 			if (arguments.length !== 0) {
@@ -5196,6 +6062,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return false;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions lang" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(context, language) {
 			if (arguments.length !== 2) {
@@ -5215,6 +6084,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return false;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions number" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODESET, false,
 		function(object) {
 			if (arguments.length !== 1) {
@@ -5222,6 +6094,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_globals.numberValue(object);
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions sum" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(nodeSet) {
 			if (arguments.length !== 1) {
@@ -5236,6 +6111,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return sum;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions floor" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -5243,6 +6121,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.floor(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions ceiling" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -5250,6 +6131,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.ceil(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions round" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -5257,6 +6141,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.round(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms power" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(x, y) {
 			if (arguments.length !== 2) {
@@ -5264,6 +6151,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.pow(XsltForms_globals.numberValue(x), XsltForms_globals.numberValue(y));
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms random" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function() {
 			if (arguments.length > 1) {
@@ -5271,6 +6161,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.random();
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms boolean-from-string" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string) {
 			if (arguments.length !== 1) {
@@ -5283,6 +6176,9 @@ var XsltForms_xpathCoreFunctions = {
 				default: return false;
 			}
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms if" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, true,
 		function(condition, onTrue, onFalse) {
 			if (arguments.length !== 3) {
@@ -5290,6 +6186,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_globals.booleanValue(condition)? onTrue : onFalse;
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms choose" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, true,
 		function(condition, onTrue, onFalse) {
 			if (arguments.length !== 3) {
@@ -5297,6 +6196,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_globals.booleanValue(condition)? onTrue : onFalse;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions avg" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(nodeSet) {
 			if (arguments.length !== 1) {
@@ -5309,6 +6211,9 @@ var XsltForms_xpathCoreFunctions = {
 			var quant = XsltForms_xpathCoreFunctions['http://www.w3.org/2005/xpath-functions count'].evaluate(nodeSet);
 			return sum / quant;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions min" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function (nodeSet) {
 			if (arguments.length !== 1) {
@@ -5332,6 +6237,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return minimum;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions max" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function (nodeSet) {
 			if (arguments.length !== 1) {
@@ -5355,6 +6263,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return maximum;
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms count-non-empty" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(nodeSet) {
 			if (arguments.length !== 1) {
@@ -5371,6 +6282,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return count;
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms index" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx, id) {
 			if (arguments.length !== 2) {
@@ -5384,6 +6298,9 @@ var XsltForms_xpathCoreFunctions = {
 			ctx.addDepElement(xf);
 			return xf.index;
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms nodeindex" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx, id) {
 			if (arguments.length !== 2) {
@@ -5398,21 +6315,24 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return node? [ node ] : [];
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms property" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
-		function(pname) {
+		function(name) {
 			if (arguments.length !== 1) {
 				throw XsltForms_xpathFunctionExceptions.propertyInvalidArgumentsNumber;
 			}
-			pname = XsltForms_globals.stringValue(pname);
-			switch (pname) {
+			name = XsltForms_globals.stringValue(name);
+			switch (name) {
 				case "version": return "1.1";
 				case "conformance-level": return "full";
 				case "xsltforms:debug-mode": return XsltForms_globals.debugMode ? "on" : "off";
 				case "xsltforms:version": return XsltForms_globals.fileVersion;
 				case "xsltforms:version-number": return ""+XsltForms_globals.fileVersionNumber;
 				default:
-					if (pname.substring(0,4) === "xsl:") {
-						var xslname = pname.substring(4);
+					if (name.substring(0,4) === "xsl:") {
+						var xslname = name.substring(4);
 						var xsltsrc = '<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt">' +
 						'	<xsl:output method="xml"/>' +
 						'	<xsl:template match="/">' +
@@ -5433,12 +6353,15 @@ var XsltForms_xpathCoreFunctions = {
 							}
 						}
 					}
-					if (pname.match("^[" + XsltForms_typeDefs.ctes.i + "][" + XsltForms_typeDefs.ctes.c + "]*$")) {
+					if (name.match("^[" + XsltForms_typeDefs.ctes.i + "][" + XsltForms_typeDefs.ctes.c + "]*$")) {
 						XsltForms_globals.error(XsltForms_globals.defaultModel, "xforms-binding-exception", "Invalid NCNAME");
 					}
 			}
 			return "";
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms seconds" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(duration) {
 			if (arguments.length !== 1) {
@@ -5451,6 +6374,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return NaN;
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms months" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(duration) {
 			if (arguments.length !== 1) {
@@ -5463,23 +6389,26 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return NaN;
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms instance" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, true,
-		 function(ctx, idRef, filename, mediatype) {
+		function(ctx, idRef, filename, mediatype) {
 			if (arguments.length > 4) {
 				throw XsltForms_xpathFunctionExceptions.instanceInvalidArgumentsNumber;
 			}
-			var iname = idRef ? XsltForms_globals.stringValue(idRef) : "";
+			var name = idRef ? XsltForms_globals.stringValue(idRef) : "";
 			var res;
-			if (iname !== "") {
-				var instance = document.getElementById(iname);
+			if (name !== "") {
+				var instance = document.getElementById(name);
 				if (!instance) {
-					throw new Error({name: "instance " + iname + " not found"});
+					throw {name: "instance " + name + " not found"};
 				}
 				if (filename && instance.xfElement.archive) {
 					filename = XsltForms_globals.stringValue(filename);
 					var f = instance.xfElement.archive[filename];
 					if (!f) {
-						throw new Error({name: "file " + filename + " not found in instance " + iname});
+						throw {name: "file " + filename + " not found in instance " + name};
 					}
 					if (!f.doc) {
 						f.doc = XsltForms_browser.createXMLDocument("<dummy/>");
@@ -5497,6 +6426,9 @@ var XsltForms_xpathCoreFunctions = {
 			ctx.addDepNode(res);
 			return [res];
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions subform-instance" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, true,
 		function(ctx) {
 			if (arguments.length > 1) {
@@ -5504,6 +6436,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return [ctx.subform.instances[0].doc.documentElement];
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions subform-context" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, true,
 		function(ctx) {
 			if (arguments.length > 1) {
@@ -5512,6 +6447,9 @@ var XsltForms_xpathCoreFunctions = {
 			var b = document.getElementById(ctx.subform.eltid).xfElement.boundnodes;
 			return b ? [b[0]] : [];
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms now" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function() {
 			if (arguments.length !== 0) {
@@ -5519,6 +6457,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_browser.i18n.format(new Date(), "yyyy-MM-ddThh:mm:ssz", false);
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms local-date" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function() {
 			if (arguments.length !== 0) {
@@ -5526,6 +6467,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_browser.i18n.format(new Date(), "yyyy-MM-ddz", true);
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms local-dateTime" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function() {
 			if (arguments.length !== 0) {
@@ -5533,6 +6477,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_browser.i18n.format(new Date(), "yyyy-MM-ddThh:mm:ssz", true);
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms adjust-dateTime-to-timezone" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string) {
 			if (arguments.length === 0) {
@@ -5558,6 +6505,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_browser.i18n.format(d, "yyyy-MM-ddThh:mm:ssz", true);
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms days-from-date" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string) {
 			if (arguments.length !== 1) {
@@ -5572,6 +6522,9 @@ var XsltForms_xpathCoreFunctions = {
 			var d = new Date(Date.UTC(c[1], c[2]-1, c[3]));
 			return Math.floor(d.getTime()/ 86400000 + 0.000001);
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms days-to-date" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -5585,6 +6538,9 @@ var XsltForms_xpathCoreFunctions = {
 			d.setTime(Math.floor(number + 0.000001) * 86400000);
 			return XsltForms_browser.i18n.format(d, "yyyy-MM-dd", false);
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms seconds-from-dateTime" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string) {
 			if (arguments.length !== 1) {
@@ -5602,6 +6558,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.floor(d.getTime() / 1000 + 0.000001) + (c[7]?c[7]:0);
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms seconds-to-dateTime" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -5615,6 +6574,9 @@ var XsltForms_xpathCoreFunctions = {
 			d.setTime(Math.floor(number + 0.000001) * 1000);
 			return XsltForms_browser.i18n.format(d, "yyyy-MM-ddThh:mm:ssz", false);
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms current" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, true,
 		function(ctx) {
 			if (arguments.length !== 1) {
@@ -5624,6 +6586,9 @@ var XsltForms_xpathCoreFunctions = {
 			ctx.addDepElement(document.getElementById(XsltForms_browser.getDocMeta(ctx.node.nodeType === Fleur.Node.DOCUMENT_NODE ? ctx.node : ctx.node.ownerDocument, "model")).xfElement);
 			return [ctx.current];
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms is-valid" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODESET, false,
 		function(nodeSet) {
 			if (arguments.length !== 1) {
@@ -5638,6 +6603,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return valid;
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms is-card-number" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODESET, false,
 		function(string) {
 			if (arguments.length !== 1) {
@@ -5663,6 +6631,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return sum % 10 === 0;
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms digest" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(str, algo, enco) {
 			if (arguments.length !== 2 && arguments.length !== 3) {
@@ -5670,17 +6641,21 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			algo = XsltForms_globals.stringValue(algo);
 			if (algo !== "SHA-1" && algo !== "MD5" && algo !== "SHA-256" && algo !== "BASE64") {
-				XsltForms_globals.error(XsltForms_globals.defaultModel, "xforms-compute-exception", "Invalid crypting method");
+				XsltForms_globals.error(XsltForms_globals.defaultModel, "xforms-binding-exception", "Invalid crypting method");
 				return "unsupported";
 			}
 			enco = enco ? XsltForms_globals.stringValue(enco) : "base64";
 			if (enco !== "hex" && enco !== "base64") {
-				XsltForms_globals.error(XsltForms_globals.defaultModel, "xforms-compute-exception", "Invalid encoding method");
+				XsltForms_globals.error(XsltForms_globals.defaultModel, "xforms-binding-exception", "Invalid encoding method");
 				return "unsupported";
 			}
 			str = XsltForms_globals.stringValue(str);
 			return XsltForms_globals.encode(XsltForms_globals.crypto(XsltForms_globals.str2msg(str), algo), enco);
 		} ),
+
+		
+
+/*jshint bitwise:false */
 	"http://www.w3.org/2002/xforms hmac" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(key, str, algo, enco) {
 			if (arguments.length !== 3 && arguments.length !== 4) {
@@ -5688,12 +6663,12 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			algo = XsltForms_globals.stringValue(algo);
 			if (algo !== "SHA-1" && algo !== "MD5" && algo !== "SHA-256" && algo !== "BASE64") {
-				XsltForms_globals.error(XsltForms_globals.defaultModel, "xforms-compute-exception", "Invalid crypting method");
+				XsltForms_globals.error(XsltForms_globals.defaultModel, "xforms-binding-exception", "Invalid crypting method");
 				return "unsupported";
 			}
 			enco = enco ? XsltForms_globals.stringValue(enco) : "base64";
 			if (enco !== "hex" && enco !== "base64") {
-				XsltForms_globals.error(XsltForms_globals.defaultModel, "xforms-compute-exception", "Invalid encoding method");
+				XsltForms_globals.error(XsltForms_globals.defaultModel, "xforms-binding-exception", "Invalid encoding method");
 				return "unsupported";
 			}
 			key = XsltForms_globals.stringValue(key);
@@ -5718,6 +6693,10 @@ var XsltForms_xpathCoreFunctions = {
 			a2.arr = ok.concat(a2.arr);
 			return XsltForms_globals.encode(XsltForms_globals.crypto(a2, algo), enco);
 		} ),
+/*jshint bitwise:true */
+
+		
+
 	"http://www.w3.org/2005/xpath-functions upper-case" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODESET, false,
 		function(str) {
 			if (arguments.length !== 1) {
@@ -5726,6 +6705,9 @@ var XsltForms_xpathCoreFunctions = {
 			str = XsltForms_globals.stringValue(str);
 			return str.toUpperCase();
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions lower-case" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODESET, false,
 		function(str) {
 			if (arguments.length !== 1) {
@@ -5734,6 +6716,9 @@ var XsltForms_xpathCoreFunctions = {
 			str = XsltForms_globals.stringValue(str);
 			return str.toLowerCase();
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions distinct-values" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(nodeSet) {
 			if (arguments.length !== 1) {
@@ -5750,220 +6735,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return nodeSet2;
 		} ),
-	"http://www.w3.org/2005/xpath-functions format-number" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODESET, false,
-		function(value, picture) {
-			var i, j, l, l2, pictures, dss, ess, ps, pms, ms, msbefore, psafter, pmsafter, signs, esigns, iipgp, ipgp, mips, prefix, fstart, fpgp, minfps, maxfps, mes, suffix, dsspos, evalue, esign, s0, s;
-			if (arguments.length !== 2) {
-				throw XsltForms_xpathFunctionExceptions.formatNumberInvalidArgumentsNumber;
-			}
-			value = XsltForms_globals.numberValue(value);
-			if( isNaN(value) ) {
-				return XsltForms_browser.i18n.get("format-number.NaN", "NaN");
-			}
-			pictures = picture.split(XsltForms_browser.i18n.get("format-number.pattern-separator-sign", ";"));
-			picture = value < 0 && pictures[1] ? pictures[1] : pictures[0];
-			signs = ".,-%\u2030#0123456789";
-			esigns = ".,e-%\u2030#0123456789";
-			i = 0;
-			l = picture.length;
-			while (i < l && signs.indexOf(picture.charAt(i)) === -1) {
-				i++;
-			}
-			prefix = picture.substring(0, i);
-			dss = ess = ps = pms = false;
-			mips = 0;
-			minfps = 0;
-			maxfps = 0;
-			mes = 0;
-			iipgp = [];
-			ipgp = [];
-			fpgp = [];
-			while (i < l && esigns.indexOf(picture.charAt(i)) !== -1) {
-				switch (picture.charAt(i)) {
-					case ".":
-						dss = true;
-						fstart = i + 1;
-						j = 0;
-						l2 = iipgp.length;
-						while (j < l2) {
-							ipgp[l2 - j - 1] = i - iipgp[j] - 1;
-							j++;
-						}
-						break;
-					case ",":
-						if (dss) {
-							fpgp.push(i - fstart);
-						} else {
-							iipgp.push(i);
-						}
-						break;
-					case "e":
-						ess = true;
-						if (!dss) {
-							j = 0;
-							l2 = iipgp.length;
-							while (j < l2) {
-								ipgp[l2 - j - 1] = i - iipgp[j] - 1;
-								j++;
-							}
-						}
-						break;
-					case "-":
-						ms = true;
-						msbefore = mips === 0;
-						break;
-					case "%":
-						ps = true;
-						psafter = mips !== 0;
-						value *= 100;
-						if (!dss) {
-							j = 0;
-							l2 = iipgp.length;
-							while (j < l2) {
-								ipgp[l2 - j - 1] = i - iipgp[j] - 1;
-								j++;
-							}
-						}
-						break;
-					case "\u2030":
-						pms = true;
-						pmsafter = mips !== 0;
-						value *= 1000;
-						if (!dss) {
-							j = 0;
-							l2 = iipgp.length;
-							while (j < l2) {
-								ipgp[l2 - j - 1] = i - iipgp[j] - 1;
-								j++;
-							}
-						}
-						break;
-					case "0":
-					case "1":
-					case "2":
-					case "3":
-					case "4":
-					case "5":
-					case "6":
-					case "7":
-					case "8":
-					case "9":
-						if (ess) {
-							mes++;
-						} else if (dss) {
-							minfps++;
-							maxfps++;
-						} else {
-							mips++;
-						}
-						break;
-					case "#":
-						if (dss) {
-							maxfps++;
-						}
-						break;
-				}
-				i++;
-			}
-			if (!dss) {
-				if (iipgp.length !== ipgp.length) {
-					j = 0;
-					l2 = iipgp.length;
-					while (j < l2) {
-						ipgp[l2 - j - 1] = i - iipgp[j] - 1;
-						j++;
-					}
-				}
-				if (mips === 0) {
-					mips = 1;
-				}
-			}
-			if (ipgp.length > 1) {
-				j = 1;
-				l2 = ipgp.length;
-				while (j < l2 && ipgp[j] % ipgp[0] === 0) {
-					j++;
-				}
-				if (j === l2) {
-					ipgp = [ipgp[0]];
-				}
-			}
-			if (ipgp.length === 1) {
-				j = 1;
-				while (j < 30) {
-					ipgp[j] = ipgp[j - 1] + ipgp[0];
-					j++;
-				}
-			}
-			suffix = picture.substring(i);
-			if (value === Number.POSITIVE_INFINITY) {
-				return prefix + XsltForms_browser.i18n.get("format-number.infinity", "Infinity") + suffix;
-			} else if (value === Number.NEGATIVE_INFINITY) {
-				return XsltForms_browser.i18n.get("format-number.minus-sign", "-") + prefix + XsltForms_browser.i18n.get("format-number.infinity", "Infinity") + suffix;
-			}
-			if (value < 0 && pictures.length === 1) {
-				prefix = XsltForms_browser.i18n.get("format-number.minus-sign", "-") + prefix;
-			}
-			if (ess) {
-				evalue = Math.floor(Math.log(value) / Math.LN10) + 1 - mips;
-				value /= Math.pow(10, evalue);
-				esign = evalue < 0 ? XsltForms_browser.i18n.get("format-number.minus-sign", "-") : "";
-				evalue = "" + Math.abs(evalue);
-				evalue = esign + ("000000000000000000000000000000").substr(0, Math.max(0, mes - evalue.length)) + evalue;
-			}
-			s0 = Math.abs(value).toFixed(maxfps);
-			if (maxfps === 0 && dss) {
-				s0 += ".";
-			}
-			dsspos = s0.indexOf(".") === -1 ? s0.length : s0.indexOf(".");
-			if (dsspos < mips) {
-				s0 = ("000000000000000000000000000000").substr(0, mips - dsspos) + s0;
-				dsspos = mips;
-			}
-			j = dsspos - 1;
-			s = "";
-			i = 0;
-			l2 = s0.length;
-			while (j >= 0) {
-				s = s0.charAt(j) + s;
-				if (j !== 0 && ipgp[i] === dsspos - j) {
-					s = XsltForms_browser.i18n.get("format-number.grouping-separator-sign", ",") + s;
-					i++;
-				}
-				j--;
-			}
-			if (dss) {
-				s += XsltForms_browser.i18n.get("format-number.decimal-separator-sign", ".");
-				j = dsspos + 1;
-				i = 0;
-				while (j < l2) {
-					s += s0.charAt(j);
-					if (j !== l2 - 1 && fpgp[i] === j - dsspos) {
-						s += XsltForms_browser.i18n.get("format-number.grouping-separator-sign", ",");
-						i++;
-					}
-					j++;
-				}
-			}
-			if (ps) {
-				if (psafter) {
-					s += XsltForms_browser.i18n.get("format-number.percent-sign", "%");
-				} else {
-					s = XsltForms_browser.i18n.get("format-number.percent-sign", "%") + s;
-				}
-			}
-			if (pms) {
-				if (pmsafter) {
-					s += XsltForms_browser.i18n.get("format-number.per-mille-sign", "%");
-				} else {
-					s = XsltForms_browser.i18n.get("format-number.per-mille-sign", "%") + s;
-				}
-			}
-			if (ess) {
-				s += XsltForms_browser.i18n.get("format-number.exponent-separator-sign", "e") + evalue;
-			}
-			return prefix + s + suffix;
-		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms transform" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(nodeSet, xslhref, inline) {
 			if (arguments.length < 3) {
@@ -5981,6 +6755,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return XsltForms_browser.transformText.apply(null, args);
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms serialize" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODE, false,
 		function(nodeSet, mediatype, indent) {
 			if (arguments.length >= 1 && typeof nodeSet !== "object") {
@@ -5991,6 +6768,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return nodeSet.length === 0 ? "" : XsltForms_browser.saveNode(nodeSet[0], mediatype ? XsltForms_globals.stringValue(mediatype) : "application/exml+xml", null, indent === "yes" ? indent : null);
 		} ),
+
+		
+
 	"http://www.w3.org/2002/xforms event" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(attribute) {
 			if (arguments.length !== 1) {
@@ -6004,6 +6784,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return null;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions is-non-empty-array" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NODESET, false,
 		function(nodeset) {
 			if (arguments.length > 1) {
@@ -6014,6 +6797,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return nodeset[0].getAttribute("exsi:maxOccurs") && nodeset[0].getAttribute("xsi:nil") !== "true";
 		} ),
+
+		
+
 	"http://exslt.org/math abs" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -6021,6 +6807,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.abs(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://exslt.org/math acos" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -6028,6 +6817,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.acos(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://exslt.org/math asin" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -6035,6 +6827,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.asin(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://exslt.org/math atan" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -6042,6 +6837,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.atan(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://exslt.org/math atan2" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number1, number2) {
 			if (arguments.length !== 2) {
@@ -6049,6 +6847,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.atan2(XsltForms_globals.numberValue(number1), XsltForms_globals.numberValue(number2));
 		} ),
+
+		
+
 	"http://exslt.org/math constant" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(string, number) {
 			if (arguments.length !== 2) {
@@ -6057,6 +6858,9 @@ var XsltForms_xpathCoreFunctions = {
 			var val = XsltForms_mathConstants[XsltForms_globals.stringValue(string)] || "0";
 			return parseFloat(val.substr(0, XsltForms_globals.numberValue(number)+2));
 		} ),
+
+		
+
 	"http://exslt.org/math cos" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -6064,6 +6868,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.cos(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://exslt.org/math exp" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -6071,6 +6878,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.exp(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://exslt.org/math log" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -6078,6 +6888,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.log(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://exslt.org/math power" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number1, number2) {
 			if (arguments.length !== 2) {
@@ -6085,6 +6898,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.pow(XsltForms_globals.numberValue(number1), XsltForms_globals.numberValue(number2));
 		} ),
+
+		
+
 	"http://exslt.org/math sin" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -6092,6 +6908,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.sin(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://exslt.org/math sqrt" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -6099,6 +6918,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.sqrt(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://exslt.org/math tan" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(number) {
 			if (arguments.length !== 1) {
@@ -6106,6 +6928,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return Math.tan(XsltForms_globals.numberValue(number));
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions alert" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(arg) {
 			if (arguments.length !== 1) {
@@ -6114,6 +6939,9 @@ var XsltForms_xpathCoreFunctions = {
 			alert(XsltForms_globals.stringValue(arg));
 			return arg;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions itext" : new XsltForms_xpathFunction(true, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(ctx, id) {
 			if (arguments.length !== 2) {
@@ -6123,6 +6951,9 @@ var XsltForms_xpathCoreFunctions = {
 			var translation = itext[XsltForms_globals.language] || itext[itext.defaultlang];
 			return translation[id];
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions js-eval" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(arg) {
 			if (arguments.length !== 1) {
@@ -6130,6 +6961,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return eval(XsltForms_globals.stringValue(arg));
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions string-join" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(nodeSet, joinString) { 
 			if (arguments.length !== 1 && arguments.length !== 2) {
@@ -6145,6 +6979,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return strings.join(joinString);
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions encode-for-uri" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(rawString) { 
 			if (arguments.length !== 1) {
@@ -6152,6 +6989,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return encodeURIComponent(XsltForms_globals.stringValue(rawString));
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions fromtostep" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(from, to, step) {
 			var res = [];
@@ -6160,6 +7000,9 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return res;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions tokenize" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function(input, pattern) {
 			var tokens = [];
@@ -6171,11 +7014,15 @@ var XsltForms_xpathCoreFunctions = {
 			}
 			return tokens;
 		} ),
+
+		
+
 	"http://www.w3.org/2005/xpath-functions invalid-id" : new XsltForms_xpathFunction(false, XsltForms_xpathFunction.DEFAULT_NONE, false,
 		function() {
 			return XsltForms_globals.invalid_id_(XsltForms_globals.body);
 		} )
 };
+
 XsltForms_globals.invalid_id_ = function(element) {
 	if (element.nodeType !== Fleur.Node.ELEMENT_NODE || element.id === "xsltforms_console" || element.hasXFElement === false) {
 		return "";
@@ -6211,14 +7058,19 @@ XsltForms_globals.validate_ = function(node) {
 	}
 	return true;
 };
-function XsltForms_functionCallExpr(fname) {
-	this.name = fname;
-	this.func = XsltForms_xpathCoreFunctions[fname];
+
+	
+		
+		
+		
+function XsltForms_functionCallExpr(name) {
+	this.name = name;
+	this.func = XsltForms_xpathCoreFunctions[name];
 	this.xpathfunc = !!this.func;
 	this.args = [];
 	if (!this.xpathfunc) {
 		try {
-			this.func = eval(fname.split(" ")[1]);
+			this.func = eval(name.split(" ")[1]);
 		} catch (e) {
 		 alert(e);
 		}
@@ -6230,6 +7082,10 @@ function XsltForms_functionCallExpr(fname) {
 		this.args.push(arguments[i]);
 	}
 }
+
+
+		
+
 XsltForms_functionCallExpr.prototype.evaluate = function(ctx) {
 	var arguments_ = [];
 	if (this.xpathfunc) {
@@ -6244,24 +7100,45 @@ XsltForms_functionCallExpr.prototype.evaluate = function(ctx) {
 		return this.func.apply(null,arguments_);
 	}
 };
+
+	
+	
+		
+		
+		
+		
+		
 function XsltForms_coreElement() {
 }
-XsltForms_coreElement.prototype.init = function(subform, id, parentElt, className) {
+
+
+		
+
+XsltForms_coreElement.prototype.init = function(subform, id, parent, className) {
 	this.subforms = [];
 	this.subforms[subform] = true;
 	this.nbsubforms = 1;
 	this.subform = subform;
-	parentElt = parentElt? parentElt.element : XsltForms_browser.isXhtml ? document.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "head")[0]: document.getElementsByTagName("head")[0];
-	this.element = XsltForms_browser.createElement("span", parentElt, null, className);
+	parent = parent? parent.element : XsltForms_browser.isXhtml ? document.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "head")[0]: document.getElementsByTagName("head")[0];
+	this.element = XsltForms_browser.createElement("span", parent, null, className);
 	this.element.id = id;
 	this.element.xfElement = this;
 };
+
+
+		
+
 XsltForms_coreElement.prototype.dispose = function() {
 	this.element.xfElement = null;
 	this.element.parentNode.removeChild(this.element);
 	this.element = null;
 	this.model = null;
 };
+
+	
+		
+		
+		
 function XsltForms_model(subform, id, schemas, functions, version) {
 	var found;
 	if (subform.id !== "xsltforms-mainform") {
@@ -6298,8 +7175,8 @@ function XsltForms_model(subform, id, schemas, functions, version) {
 		elt.reset = function() {
 			return this.xfElement.reset();
 		};
-		elt.handleEvent = function(evtname, evcontext) {
-			XsltForms_xmlevents.dispatch(elt, evtname, null, null, null, null, evcontext);
+		elt.handleEvent = function(name, evcontext) {
+			XsltForms_xmlevents.dispatch(elt, name, null, null, null, null, evcontext);
 		};
 	}
 	if (schemas) {
@@ -6333,7 +7210,7 @@ function XsltForms_model(subform, id, schemas, functions, version) {
 			}
 			if (!found) {
 				try {
-					i = eval(fs[j]);
+					var func = eval(fs[j]);
 				} catch (e) {
 					XsltForms_globals.error(this, "xforms-compute-exception", "Function " + fs[j] + "() not found");
 				}
@@ -6350,7 +7227,12 @@ function XsltForms_model(subform, id, schemas, functions, version) {
 		}
 	}
 }
+
 XsltForms_model.prototype = new XsltForms_coreElement();
+
+
+		
+
 XsltForms_model.create = function(subform, id, schemas, functions, version) {
 	var elt = document.getElementById(id);
 	if (elt) {
@@ -6363,13 +7245,23 @@ XsltForms_model.create = function(subform, id, schemas, functions, version) {
 		return new XsltForms_model(subform, id, schemas, functions, version);
 	}
 };
+
+
+		
+
 XsltForms_model.prototype.addInstance = function(instance) {
 	this.instances[instance.element.id] = instance;
 	this.defaultInstance = this.defaultInstance || instance;
 };
+
+		
+
 XsltForms_model.prototype.addBind = function(bind) {
 	this.binds.push(bind);
 };
+
+		
+
 XsltForms_model.prototype.dispose = function(subform) {
 	if (subform && this.nbsubforms !== 1) {
 		this.subforms[subform] = null;
@@ -6388,13 +7280,22 @@ XsltForms_model.prototype.dispose = function(subform) {
 	}
 	XsltForms_coreElement.prototype.dispose.call(this);
 };
+
+		
+
 XsltForms_model.prototype.getInstance = function(id) {
 	return id ? this.instances[id] : this.defaultInstance;
 };
+
+		
+
 XsltForms_model.prototype.getInstanceDocument = function(id) {
 	var instance = this.getInstance(id);
 	return instance? instance.doc : null;
 };
+
+		
+
 XsltForms_model.prototype.findInstance = function(node) {
 	var doc = node.nodeType === Fleur.Node.DOCUMENT_NODE ? node : node.ownerDocument;
 	for (var id in this.instances) {
@@ -6414,6 +7315,10 @@ XsltForms_model.prototype.findInstance = function(node) {
 	}
 	return null;
 };
+
+
+		
+
 XsltForms_model.prototype.construct = function() {
 	if (!XsltForms_globals.ready) {
 		XsltForms_browser.forEach(this.instances, "construct");
@@ -6428,11 +7333,19 @@ XsltForms_model.prototype.construct = function() {
 		window.setTimeout("XsltForms_xmlevents.dispatchList(XsltForms_globals.models, \"xforms-ready\")", 1);
 	}
 };
+
+
+		
+
 XsltForms_model.prototype.reset = function() {
 	XsltForms_browser.forEach(this.instances, "reset");
 	this.setRebuilded(true);
 	XsltForms_globals.addChange(this);
 };
+
+
+		
+
 XsltForms_model.prototype.rebuild = function() {
 	if (XsltForms_globals.ready) {
 		this.setRebuilded(true);
@@ -6444,6 +7357,10 @@ XsltForms_model.prototype.rebuild = function() {
 		this.recalculate();
 	}
 };
+
+
+		
+
 XsltForms_model.prototype.recalculate = function() { 
 	XsltForms_browser.forEach(this.binds, "recalculate");
 	if (XsltForms_globals.ready) {
@@ -6452,14 +7369,27 @@ XsltForms_model.prototype.recalculate = function() {
 		this.revalidate();
 	}
 };
+
+
+		
+
 XsltForms_model.prototype.revalidate = function() {
 	XsltForms_browser.forEach(this.instances, "revalidate");
 	if (XsltForms_globals.ready) {
 		XsltForms_xmlevents.dispatch(this, "xforms-refresh");
 	}
 };
+
+
+		
+
 XsltForms_model.prototype.refresh = function() {
+	// Nada?
 };
+
+
+		
+
 XsltForms_model.prototype.addChange = function(node) {
 	var list = XsltForms_globals.building? this.newNodesChanged : this.nodesChanged;
 	if (!XsltForms_browser.inArray(node, list)) {
@@ -6474,6 +7404,10 @@ XsltForms_model.prototype.addChange = function(node) {
 		node = node.nodeType === Fleur.Node.ENTRY_NODE ? node.ownerMap : node.parentNode;
 	}
 };
+
+
+		
+
 XsltForms_model.prototype.setRebuilded = function(value) {
 	if (XsltForms_globals.building) {
 		this.newRebuilded = value;
@@ -6481,12 +7415,20 @@ XsltForms_model.prototype.setRebuilded = function(value) {
 		this.rebuilded = value;
 	}
 };
+
+		
+
 XsltForms_model.prototype.additext = function(itext) {
 	this.itext = itext;
 	return this;
 };
-function XsltForms_instance(subform, id, model, readonly, mediatype, src, srcDoc) {
-	if (XsltForms_domEngine === "") {
+
+	
+		
+		
+		
+if (XsltForms_domEngine === "") {
+	function XsltForms_instance(subform, id, model, readonly, mediatype, src, srcDoc) {
 		this.init(subform, id, model, "xforms-instance");
 		this.readonly = readonly;
 		var lines = mediatype.split(";");
@@ -6544,7 +7486,9 @@ function XsltForms_instance(subform, id, model, readonly, mediatype, src, srcDoc
 		XsltForms_browser.setDocMeta(this.doc, "model", model.element.id);
 		model.addInstance(this);
 		subform.instances.push(this);
-	} else {
+	}
+} else {
+	function XsltForms_instance(subform, id, model, readonly, mediatype, src, srcDoc) {
 		this.init(subform, id, model, "xforms-instance");
 		this.readonly = readonly;
 		this.mediatype = mediatype;
@@ -6558,7 +7502,12 @@ function XsltForms_instance(subform, id, model, readonly, mediatype, src, srcDoc
 		subform.instances.push(this);
 	}
 }
+
 XsltForms_instance.prototype = new XsltForms_coreElement();
+ 
+
+		
+
 XsltForms_instance.create = function(subform, id, model, readonly, mediatype, src, srcDoc) {
 	var instelt = document.getElementById(id);
 	if (instelt && instelt.xfElement) {
@@ -6570,6 +7519,9 @@ XsltForms_instance.create = function(subform, id, model, readonly, mediatype, sr
 		return new XsltForms_instance(subform, id, model, readonly, mediatype, src, srcDoc);
 	}
 };
+
+		
+
 XsltForms_instance.prototype.dispose = function(subform) {
 	if (subform && this.nbsubforms !== 1) {
 		this.subforms[subform] = null;
@@ -6578,6 +7530,10 @@ XsltForms_instance.prototype.dispose = function(subform) {
 	}
 	XsltForms_coreElement.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_instance.prototype.construct = function(subform) {
 	var ser;
 	if (!XsltForms_globals.ready || (subform && !subform.ready && this.nbsubforms === 1)) {
@@ -6585,7 +7541,7 @@ XsltForms_instance.prototype.construct = function(subform) {
 			if (this.src.substring(0, 8) === "local://") {
 				try {
 					if (typeof(localStorage) === 'undefined') {
-						throw new Error({ message: "local:// not supported" });
+						throw { message: "local:// not supported" };
 					}
 					this.setDoc(window.localStorage.getItem(this.src.substr(8)));
 				} catch(e) {
@@ -6636,7 +7592,7 @@ XsltForms_instance.prototype.construct = function(subform) {
 							}
 							req.send(null);
 							if (req.status !== 0 && (req.status < 200 || req.status >= 300)) {
-								throw new Error({ message: "Request error: " + req.status });
+								throw { message: "Request error: " + req.status };
 							}
 							this.setDocFromReq(req);
 						} catch(e) {
@@ -6650,15 +7606,27 @@ XsltForms_instance.prototype.construct = function(subform) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_instance.prototype.reset = function() {
 	this.setDoc(this.oldDoc, true);
 };
+ 
+
+		
+
 XsltForms_instance.prototype.store = function(isReset) {
 	if (this.oldDoc && !isReset) {
 		this.oldDoc = null;
 	}
 	this.oldDoc = XsltForms_browser.saveDoc(this.doc, this.mediatype);
 };
+
+
+		
+
 if (XsltForms_domEngine === "") {
 	XsltForms_instance.prototype.setDoc = function(xml, isReset, preserveOld) {
 		var instid = XsltForms_browser.getDocMeta(this.doc, "instance");
@@ -6690,15 +7658,18 @@ if (XsltForms_domEngine === "") {
 		}
 	};
 }
+        
+
+		
+
 if (XsltForms_domEngine === "") {
 	XsltForms_instance.prototype.setDocFromReq = function(req, isReset, preserveOld) {
 		var srcDoc = req.responseText;
 		var mediatype = req.getResponseHeader('Content-Type') ? req.getResponseHeader('Content-Type') : this.mediatype;
 		var lines = mediatype.split(";");
-		var i0, len;
 		this.mediatype = lines[0];
-		for (i0 = 1, len = lines.length; i0 < len; i0++) {
-			var vals = lines[i0].split("=");
+		for (var i = 1, len = lines.length; i < len; i++) {
+			var vals = lines[i].split("=");
 			switch (vals[0].replace(/^\s+/g,'').replace(/\s+$/g,'')) {
 				case "header":
 					this.header = vals[1].replace(/^\s+/g,'').replace(/\s+$/g,'') === "present";
@@ -6812,11 +7783,15 @@ if (XsltForms_domEngine === "") {
 		this.setDoc(srcDoc, isReset, preserveOld);
 	};
 }
+
+		
+
 XsltForms_instance.prototype.revalidate = function() {
-	if (!this.readonly && this.doc.documentElement) {
+	if (!this.readonly) {
 		this.validation_(this.doc.documentElement);
 	}
 };
+
 XsltForms_instance.prototype.validation_ = function(node, readonly, notrelevant) {
 	if (!readonly) {
 		readonly = false;
@@ -6848,6 +7823,7 @@ XsltForms_instance.prototype.validation_ = function(node, readonly, notrelevant)
 		}
 	}
 };
+
 XsltForms_instance.prototype.validate_ = function(node, readonly, notrelevant) {
 	var bindids = XsltForms_browser.getMeta(node, "bind");
 	var value = XsltForms_globals.xmlValue(node);
@@ -6893,18 +7869,22 @@ XsltForms_instance.prototype.validate_ = function(node, readonly, notrelevant) {
 		this.setProperty_(node, "notvalid", schtyp && (!schtyp.validate(value) || XsltForms_browser.getBoolMeta(node, "unsafe")));
 	}
 };
+
 XsltForms_instance.prototype.setProperty_ = function (node, property, value) {
 	if (XsltForms_browser.getBoolMeta(node, property) !== value) {
 		XsltForms_browser.setBoolMeta(node, property, value);
 		this.model.addChange(node);   
 	}
 };
+
+		
+
 XsltForms_browser.json2xmlreg = new RegExp("^[A-Za-z_\xC0-\xD6\xD8-\xF6\xF8-\xFF][A-Za-z_\xC0-\xD6\xD8-\xF6\xF8-\xFF\-\.0-9\xB7]*$");
-XsltForms_browser.json2xml = function(eltname, json, root, inarray) {
+XsltForms_browser.json2xml = function(name, json, root, inarray) {
 	var fullname = "";
-	if (eltname === "________" || eltname !== "" && !XsltForms_browser.json2xmlreg.test(eltname)) {
-		fullname = " exml:fullname=\"" + XsltForms_browser.escape(eltname) + "\"";
-		eltname = "________";
+	if (name === "________" || name !== "" && !XsltForms_browser.json2xmlreg.test(name)) {
+		fullname = " exml:fullname=\"" + XsltForms_browser.escape(name) + "\"";
+		name = "________";
 	}
 	var ret = root ? "<exml:anonymous xmlns:exml=\"http://www.agencexml.com/exml\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:exsi=\"http://www.agencexml.com/exi\" xmlns=\"\">" : "";
 	if (json instanceof Array) {
@@ -6912,10 +7892,10 @@ XsltForms_browser.json2xml = function(eltname, json, root, inarray) {
 			ret += "<exml:anonymous exsi:maxOccurs=\"unbounded\">";
 		}
 		if (json.length === 0) {
-			ret += "<" + (eltname === "" ? "exml:anonymous" : eltname) + fullname + " exsi:maxOccurs=\"unbounded\" xsi:nil=\"true\"/>";
+			ret += "<" + (name === "" ? "exml:anonymous" : name) + fullname + " exsi:maxOccurs=\"unbounded\" xsi:nil=\"true\"/>";
 		} else {
 			for (var i = 0, len = json.length; i < len; i++) {
-				ret += XsltForms_browser.json2xml(eltname === "" ? "exml:anonymous" : eltname, json[i], false, true);
+				ret += XsltForms_browser.json2xml(name === "" ? "exml:anonymous" : name, json[i], false, true);
 			}
 		}
 		if (inarray) {
@@ -6939,12 +7919,12 @@ XsltForms_browser.json2xml = function(eltname, json, root, inarray) {
 				}
 				break;
 		}
-		if (eltname === "") {
+		if (name === "") {
 			if (root && xsdtype !== "") {
 				ret = ret.substr(0, ret.length - 1) + xsdtype + ">";
 			}
 		} else {
-			ret += "<"+eltname+fullname+(inarray?" exsi:maxOccurs=\"unbounded\"":"")+xsdtype+">";
+			ret += "<"+name+fullname+(inarray?" exsi:maxOccurs=\"unbounded\"":"")+xsdtype+">";
 		}
 		if (typeof(json) === "object" && !(json instanceof Date)) {
 			for (var m in json) {
@@ -6964,11 +7944,14 @@ XsltForms_browser.json2xml = function(eltname, json, root, inarray) {
 				ret += XsltForms_browser.escape(json);
 			}
 		}
-		ret += eltname === "" ? "" : "</"+eltname+">";
+		ret += name === "" ? "" : "</"+name+">";
 	}
 	ret += root ? "</exml:anonymous>" : "";
 	return ret;
 };
+
+		
+
 XsltForms_browser.node2json = function(node, comma) {
 	var xsdtype, inarray, att, lname, s = "", i, l, lc, t;
 	if (node.nodeType !== Fleur.Node.ELEMENT_NODE) {
@@ -7030,11 +8013,14 @@ XsltForms_browser.node2json = function(node, comma) {
 			}
 			return s + "}" + comma;
 	}
-};
+}
 XsltForms_browser.xml2json = function(s) {
 	var d = XsltForms_browser.createXMLDocument(s);
 	return XsltForms_browser.node2json(d.documentElement, "");
 };
+
+		
+
 var jsoninst = function(json) {
 	XsltForms_browser.jsoninstobj.submission.pending = false;
 	XsltForms_browser.dialog.hide("statusPanel", false);
@@ -7044,6 +8030,9 @@ var jsoninst = function(json) {
 	XsltForms_globals.refresh();
 	document.body.removeChild(document.getElementById("jsoninst"));
 };
+    
+		
+
 XsltForms_browser.vcard2xcard_data = {
 	state: 0,
 	version: "4.0",
@@ -7053,13 +8042,16 @@ XsltForms_browser.vcard2xcard_data = {
 	reg_uri: /^(([^:\/?#]+):)?(\/\/([^\/\?#]*))?([^\?#]*)(\?([^#]*))?(#([^\:#\[\]\@\!\$\&\\'\(\)\*\+\,\;\=]*))?$/,
 	reg_utc_offset: /^[+\-]\d\d(\d\d)?$/
 };
+
 XsltForms_browser.vcard2xcard_escape = function(s) {
 	return s.replace(/&/gm,"&amp;").replace(/</gm,"&lt;").replace(/>/gm,"&gt;").replace(/\\;/gm,";");
 };
+
 XsltForms_browser.vcard2xcard_param = {
 	"PREF":        {fparam: function(value) {return "<integer>" + value + "</integer>";}},
 	"TYPE":        {fparam: function(value) {return "<text>" + XsltForms_browser.vcard2xcard_escape(value) + "</text>";}}
 };
+
 XsltForms_browser.vcard2xcard_prop = {
 	"BEGIN":       {state: 0, fvalue: function(value) {XsltForms_browser.vcard2xcard_data.state = 1; return value.toUpperCase() === "VCARD" ? "<vcard>" : "<'Invalid directive: BEGIN:" + value + "'>";}},
 	"END":         {state: 1, fvalue: function(value) {XsltForms_browser.vcard2xcard_data.state = 0; return value.toUpperCase() === "VCARD" ? "</vcard>" : "<'Invalid directive: END:" + value + "'>";}},
@@ -7101,6 +8093,7 @@ XsltForms_browser.vcard2xcard_prop = {
 	"CALADRURI":   {state: 1, tag: "caladruri", fvalue: function(value) {return "<uri>" + value + "</uri>";}},
 	"CALURI":      {state: 1, tag: "caluri", fvalue: function(value) {return "<uri>" + value + "</uri>";}}
 };
+
 XsltForms_browser.vcard2xcard = function(v) {
 	var s = '<vcards xmlns="urn:ietf:params:xml:ns:vcard-4.0">';
 	var vcards = v.replace(/(\r\n|\n|\r) /gm,"").replace(/^\s+/,"").replace(/\s+$/,"").split("\n");
@@ -7108,18 +8101,18 @@ XsltForms_browser.vcard2xcard = function(v) {
 		var sep = vcards[i].indexOf(":");
 		var before = vcards[i].substring(0, sep);
 		var after = vcards[i].substring(sep + 1);
-		var propnames = before.split(";");
-		var p = XsltForms_browser.vcard2xcard_prop[propnames[0]];
+		var name = before.split(";");
+		var p = XsltForms_browser.vcard2xcard_prop[name[0]];
 		if (p && p.state === XsltForms_browser.vcard2xcard_data.state) {
 			var val = after.replace(/\\n/gm,"\n").replace(/\\,/gm,",");
 			if (p.tag) {
 				s += "<" + p.tag + ">";
 			}
-			if (propnames.length > 1) {
+			if (name.length > 1) {
 				s += "<parameters>";
-				propnames.shift();
-				for (var j = 0, len2 = propnames.length; j < len2;) {
-					var par = propnames[j].split("=");
+				name.shift();
+				for (var j = 0, len2 = name.length; j < len2;) {
+					var par = name[j].split("=");
 					var parname = par[0];
 					var parobj = XsltForms_browser.vcard2xcard_param[parname];
 					if (parobj) {
@@ -7128,7 +8121,7 @@ XsltForms_browser.vcard2xcard = function(v) {
 							s += parobj.fparam(par[1]);
 							j++;
 							if (j < len2) {
-								par = propnames[j].split("=");
+								par = name[j].split("=");
 							} else {
 								break;
 							}
@@ -7148,6 +8141,7 @@ XsltForms_browser.vcard2xcard = function(v) {
 	}
 	return s + "</vcards>";
 };
+
 XsltForms_browser.xml2csv = function(s, sep) {
 	var d = XsltForms_browser.createXMLDocument(s);
 	var n0 = d.documentElement.firstChild;
@@ -7184,6 +8178,7 @@ XsltForms_browser.xml2csv = function(s, sep) {
 	}
 	return r;
 };
+
 XsltForms_browser.csv2xml = function(s, sep, head) {
 	var r = "<exml:anonymous xmlns:exml=\"http://www.agencexml.com/exml\" xmlns:xsi=\"http://www.w3.org/1999/XMLSchema-instance\" xmlns:exsi=\"http://www.agencexml.com/exi\" xmlns=\"\">";
 	s = s.replace(/\r\n/g,"\n").replace(/\r/g,"\n");
@@ -7240,12 +8235,14 @@ XsltForms_browser.csv2xml = function(s, sep, head) {
 	}
 	return r + "</exml:anonymous>";
 };
+
 XsltForms_browser.xsltsharedsrc = '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ss="http://schemas.openxmlformats.org/spreadsheetml/2006/main" version="1.0">';
 XsltForms_browser.xsltsharedsrc += '	<xsl:output method="text"/>';
 XsltForms_browser.xsltsharedsrc += '	<xsl:template match="ss:si">';
 XsltForms_browser.xsltsharedsrc += '		<xsl:value-of select="concat(\'|\',position() - 1,\':\',ss:t)"/>';
 XsltForms_browser.xsltsharedsrc += '	</xsl:template>';
 XsltForms_browser.xsltsharedsrc += '</xsl:stylesheet>';
+
 XsltForms_browser.xsltinlinesrc = '<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:ss="http://schemas.openxmlformats.org/spreadsheetml/2006/main" version="1.0">';
 XsltForms_browser.xsltinlinesrc += '	<xsl:output method="xml" omit-xml-declaration="yes"/>';
 XsltForms_browser.xsltinlinesrc += '	<xsl:param name="shared"/>';
@@ -7264,6 +8261,7 @@ XsltForms_browser.xsltinlinesrc += '			<xsl:apply-templates select="@*|node()"/>
 XsltForms_browser.xsltinlinesrc += '		</xsl:copy>';
 XsltForms_browser.xsltinlinesrc += '	</xsl:template>';
 XsltForms_browser.xsltinlinesrc += '</xsl:stylesheet>';
+
 XsltForms_browser.zip2xml = function(z, mediatype, instid, modid) {
 	var arch = {};
 	var f;
@@ -7315,6 +8313,7 @@ XsltForms_browser.zip2xml = function(z, mediatype, instid, modid) {
 		offset += f.extraFieldsLength;
 		f.fileComment = z.substr(offset, f.fileCommentLength);
 		offset += f.fileCommentLength;
+		//f.dir = f.externalFileAttributes & 0x00000010 ? true : false;
 		var loffset = f.localHeaderOffset + 28;
 		f.lextraFieldsLength = r2(z, loffset);
 		loffset += 2 + f.fileNameLength;
@@ -7348,6 +8347,7 @@ XsltForms_browser.zip2xml = function(z, mediatype, instid, modid) {
 	arch.srcDoc = r;
 	return arch;
 };
+
 XsltForms_browser.xml2zip = function(arch, mediatype) {
 	var z = "";
 	var fn, f;
@@ -7445,15 +8445,20 @@ XsltForms_browser.xml2zip = function(arch, mediatype) {
 		return XsltForms_browser.StringToBinary(z);
 	}
 };
-function XsltForms_bind(subform, id, parentBind, nodeset, type, readonly, required, relevant, calculate, constraint, changed) {
+
+	
+		
+		
+		
+function XsltForms_bind(subform, id, parent, nodeset, type, readonly, required, relevant, calculate, constraint, changed) {
 	if (document.getElementById(id)) {
 		return;
 	}
-	var model = parentBind.model || parentBind;
+	var model = parent.model || parent;
 	if (type === "xsd:ID") {
 		XsltForms_globals.IDstr = nodeset.split('/').pop();
 	}
-	this.init(subform, id, parentBind, "xforms-bind");
+	this.init(subform, id, parent, "xforms-bind");
 	this.model = model;
 	this.type = type ? XsltForms_schema.getType(type) : null;
 	this.nodeset = nodeset;
@@ -7468,20 +8473,26 @@ function XsltForms_bind(subform, id, parentBind, nodeset, type, readonly, requir
 	this.nodes = [];
 	this.binds = [];
 	this.binding = new XsltForms_binding(null, this.nodeset);
-	parentBind.addBind(this);
+	parent.addBind(this);
 	subform.binds.push(this);
 	this.depsId = XsltForms_element.depsId++;
 }
+
 XsltForms_bind.prototype = new XsltForms_coreElement();
+
 XsltForms_bind.prototype.addBind = function(bind) {
 	this.binds.push(bind);
 };
-XsltForms_bind.prototype.clear = function() {
+
+XsltForms_bind.prototype.clear = function(bind) {
 	this.depsNodes.length = 0;
 	this.depsElements.length = 0;
 	this.nodes.length = 0;
 	XsltForms_browser.forEach(this.binds, "clear");
 };
+
+		
+
 XsltForms_bind.prototype.refresh = function(ctx, index) {
 	if (!index) {
 		for (var i = 0, len = this.depsNodes.length; i < len; i++) {
@@ -7507,17 +8518,17 @@ XsltForms_bind.prototype.refresh = function(ctx, index) {
 			if (XsltForms_browser.getMeta(node, "schemaType")) {
 				XsltForms_globals.error(el, "xforms-binding-exception", "Type especified in xsi:type attribute");
 			} else {
-				var typename = this.type.name;
+				var name = this.type.name;
 				var ns = this.type.nsuri;
 				for (var key in XsltForms_schema.prefixes) {
 					if (XsltForms_schema.prefixes.hasOwnProperty(key)) {
 						if (XsltForms_schema.prefixes[key] === ns) {
-							typename = key + ":" + typename;
+							name = key + ":" + name;
 							break;
 						}
 					}
 				}
-				XsltForms_browser.setType(node, typename);
+				XsltForms_browser.setType(node, name);
 			}
 		}
 		for (var j = 0, len1 = el.childNodes.length; j < len1; j++) {
@@ -7525,6 +8536,10 @@ XsltForms_bind.prototype.refresh = function(ctx, index) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_bind.prototype.recalculate = function() {
 	var el = this.element;
 	if (this.calculate) {
@@ -7542,6 +8557,9 @@ XsltForms_bind.prototype.recalculate = function() {
 		el.childNodes[j].xfElement.recalculate();
 	}
 };
+
+		
+
 XsltForms_bind.prototype.propagate = function() {
 	var el = this.element;
 	if (this.changed) {
@@ -7551,6 +8569,7 @@ XsltForms_bind.prototype.propagate = function() {
 			var value = XsltForms_globals.stringValue(this.changed.evaluate(ctx, node));
 			value = XsltForms_schema.getType(XsltForms_browser.getType(node) || "xsd_:string").normalize(value);
 			XsltForms_browser.setValue(node, value);
+			//this.model.addChange(node);
 			XsltForms_browser.debugConsole.write("Propagate " + node.nodeName + " " + value);
 		}
 	}
@@ -7558,6 +8577,11 @@ XsltForms_bind.prototype.propagate = function() {
 		el.childNodes[j].xfElement.propagate();
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_submission(subform, id, model, ref, value, bind, action, method, version, indent,
 			mediatype, encoding, omitXmlDeclaration, cdataSectionElements,
 			replace, targetref, instance, separator, includenamespaceprefixes, validate, relevant,
@@ -7622,11 +8646,19 @@ function XsltForms_submission(subform, id, model, ref, value, bind, action, meth
 	}
 	this.pending = false;
 }
+
 XsltForms_submission.prototype = new XsltForms_coreElement();
-XsltForms_submission.prototype.header = function(nodeset, combine, hname, values) {
-	this.headers.push({nodeset: nodeset, combine: combine, name: hname, values: values});
+
+
+		
+
+XsltForms_submission.prototype.header = function(nodeset, combine, name, values) {
+	this.headers.push({nodeset: nodeset, combine: combine, name: name, values: values});
 	return this;
 };
+
+		
+
 XsltForms_submission.prototype.xml2data = function(node, method) {
 	if (this.mediatype === "application/zip" ||
 	    this.mediatype === "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
@@ -7646,6 +8678,9 @@ XsltForms_submission.prototype.xml2data = function(node, method) {
 	}
 	return ser;
 };
+
+		
+
 XsltForms_submission.prototype.submit = function() {
 	if (this.pending) {
 		XsltForms_globals.openAction("XsltForms_submission.prototype.submit");
@@ -7665,7 +8700,7 @@ XsltForms_submission.prototype.submit = function() {
 	}
 	var method = "post";
 	var subm = this;
-	if (this.method.bind_evaluate) {
+	if(this.method.bind_evaluate) {
 		method = XsltForms_globals.stringValue(this.method.bind_evaluate(this.subform));
 	} else {
 		method = this.method;
@@ -7703,12 +8738,6 @@ XsltForms_submission.prototype.submit = function() {
 		ser = this.xml2data(node, method);
 	}
 	var instance = this.instance;
-	if (instance && !document.getElementById(instance)) {
-		XsltForms_xmlevents.dispatch(this, "xforms-binding-exception");
-		XsltForms_globals.closeAction("XsltForms_submission.prototype.submit");
-		this.pending = false;
-		return;
-	}
 	if ((window.location.href.substr(0, 7) === "file://" && action.substr(0, 7) !== "http://" && method !== "get") || (action.substr(0, 7) === "file://" && (window.location.href.substr(0, 7) !== "file://" || method !== "get")) || action.substr(0, 9) === "opener://" || action.substr(0, 8) === "local://") {
 		if ((window.location.href.substr(0, 7) === "file://" || action.substr(0, 7) === "file://") && method === "put") {
 			if (!XsltForms_browser.writeFile(window.location.href.substr(0, 7) === "file://" ? action : action.substr(7), subm.encoding, "string", "XSLTForms Java Saver", ser)) {
@@ -7866,6 +8895,15 @@ XsltForms_submission.prototype.submit = function() {
 		outForm.submit();
 		XsltForms_globals.closeAction("XsltForms_submission.prototype.submit");
 	} else {
+		/*
+		var cross = false;
+		if (action.match(/^[a-zA-Z0-9+\.\-]+:\/\//)) {
+			var domain = /^([a-zA-Z0-9+\.\-]+:\/\/[^\/]*)/;
+			var sdom = domain.exec(action);
+			var ldom = domain.exec(document.location.href);
+			cross = sdom[0] !== ldom[0];
+		}
+		*/
 		if (this.mediatype === "text/jsonp") {
 			XsltForms_browser.jsoninstobj = {instance: !instance ? (node ? document.getElementById(XsltForms_browser.getDocMeta(node.nodeType === Fleur.Node.DOCUMENT_NODE ? node : node.ownerDocument, "instance")).xfElement : this.model.getInstance()) : document.getElementById(instance).xfElement, submission: this};
 			scriptelt = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "script") : document.createElement("script");
@@ -7877,6 +8915,7 @@ XsltForms_submission.prototype.submit = function() {
 			XsltForms_xmlevents.dispatch(this, "xforms-submit-done");
 			XsltForms_globals.closeAction("XsltForms_submission.prototype.submit");
 		} else {
+			// TODO: Validate binding target is not empty
 			if (!node && (method !== "get" || method !== "delete")) {
 				evcontext["error-type"] = "no-data";
 				this.issueSubmitException_(evcontext, null, null);
@@ -7935,6 +8974,7 @@ XsltForms_submission.prototype.submit = function() {
 							}
 							if( subm.show === "new" ) {
 								if (req.getResponseHeader("Content-Type") === "application/octet-stream;base64") {
+									//window.open("data:application/octet-stream;base64," + resp,"_blank");
 									location.href ="data:application/octet-stream;base64," + resp;
 								} else {
 									var w = window.open("about:blank","_blank");
@@ -7948,9 +8988,11 @@ XsltForms_submission.prototype.submit = function() {
 									document.write(resp);
 									document.close();
 								} else {
+									//document.documentElement.parentNode.replaceChild(req.responseXML.documentElement,document.documentElement);
 									if (resp.indexOf("<?", 0) === 0) {
 										resp = resp.substr(resp.indexOf("?>")+2);
 									}                       
+									//alert(resp);
 									document.documentElement.innerHTML = resp;
 								}
 							}
@@ -8056,7 +9098,15 @@ XsltForms_submission.prototype.submit = function() {
 					}
 					if (req.overrideMimeType) {
 						req.overrideMimeType(acceptValue.split(",")[0].split(";")[0]);
+						/*
+						if (subm.mediatype === "application/zip" || subm.mediatype === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" ) {
+							req.overrideMimeType('text/plain; charset=x-user-defined');
+						} else if (subm.mediatype && subm.mediatype.indexOf("/xml") === -1 && subm.mediatype.indexOf("+xml") === -1) {
+							req.overrideMimeType(subm.mediatype + '; charset=ISO-8859-1');
+						}
+						*/
 					}
+					//req.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2005 00:00:00 GMT");
 					req.send(null);
 				} else {
 					if (method === "urlencoded-post") {
@@ -8064,9 +9114,7 @@ XsltForms_submission.prototype.submit = function() {
 					}
 					req.setRequestHeader("Content-Type", mt);
 					if (media === XsltForms_submission.SOAP_) {
-						if (this.soapAction) {
-							req.setRequestHeader("SOAPAction", this.soapAction);
-						}
+						req.setRequestHeader("SOAPAction", this.soapAction);
 					} else {
 						if (subm.replace === "instance") {
 							req.setRequestHeader("Accept", "application/xml,text/xml");
@@ -8089,7 +9137,12 @@ XsltForms_submission.prototype.submit = function() {
 		}
 	}
 };
+
 XsltForms_submission.SOAP_ = "application/soap+xml";
+
+
+		
+
 XsltForms_submission.requesteventlog = function(evcontext, req) {
 	try {
 		evcontext["response-status-code"] = req.status;
@@ -8102,9 +9155,9 @@ XsltForms_submission.requesteventlog = function(evcontext, req) {
 			for (var i = 0, len = rheads.length; i < len; i++) {
 				var colon = rheads[i].indexOf(":");
 				if (colon !== -1) {
-					var hname = rheads[i].substring(0, colon).replace(/^\s+|\s+$/, "");
+					var name = rheads[i].substring(0, colon).replace(/^\s+|\s+$/, "");
 					var value = rheads[i].substring(colon+1).replace(/^\s+|\s+$/, "");
-					rheaderselts += "<header><name>"+XsltForms_browser.escape(hname)+"</name><value>"+XsltForms_browser.escape(value)+"</value></header>";
+					rheaderselts += "<header><name>"+XsltForms_browser.escape(name)+"</name><value>"+XsltForms_browser.escape(value)+"</value></header>";
 				}
 			}
 		}
@@ -8125,6 +9178,9 @@ XsltForms_submission.requesteventlog = function(evcontext, req) {
 	} catch (e) {
 	}
 };
+
+		
+
 XsltForms_submission.prototype.issueSubmitException_ = function(evcontext, req, ex) {
 	if (ex) {
 		evcontext.message = ex.message || ex;
@@ -8135,6 +9191,9 @@ XsltForms_submission.prototype.issueSubmitException_ = function(evcontext, req, 
 	}
 	XsltForms_xmlevents.dispatch(this, "xforms-submit-error", null, null, null, null, evcontext);
 };
+
+		
+
 XsltForms_submission.toUrl_ = function(node, separator) {
 	var url = "";
 	var val = "";
@@ -8156,6 +9215,10 @@ XsltForms_submission.toUrl_ = function(node, separator) {
 	}
 	return url;
 };
+
+	
+		
+		
 function XsltForms_timer(subform, id, time) {
 	if (document.getElementById(id)) {
 		return;
@@ -8164,15 +9227,19 @@ function XsltForms_timer(subform, id, time) {
 	this.running = false;
 	this.time = time;
 }
+
 XsltForms_timer.prototype = new XsltForms_coreElement();
+
 XsltForms_timer.prototype.start = function() {
 	this.running = true;
 	var timer = this;
 	setTimeout(function() { timer.run(); }, this.time);
 };
+
 XsltForms_timer.prototype.stop = function() {
 	this.running = false;
 };
+
 XsltForms_timer.prototype.run = function() {
 	if (this.running) {
 		var timer = this;
@@ -8182,13 +9249,22 @@ XsltForms_timer.prototype.run = function() {
 		setTimeout(function() { timer.run(); }, this.time);
 	}
 };
+    
+	
+	
+		
+		
+		
+		
 function XsltForms_confirm(subform, id, binding, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.id = id;
 	this.binding = binding;
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_confirm.prototype = new XsltForms_abstractAction();
+
 XsltForms_confirm.prototype.run = function(element, ctx, evt) {
 	var text;
 	if (this.binding) {
@@ -8209,17 +9285,24 @@ XsltForms_confirm.prototype.run = function(element, ctx, evt) {
 		}
 	}
 };
-function XsltForms_setproperty(subform, pname, value, literal, ifexpr, whileexpr, iterateexpr) {
+
+	
+		
+		
+function XsltForms_setproperty(subform, name, value, literal, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
-	this.name = pname;
+	this.name = name;
 	this.value = value;
 	this.literal = literal;
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_setproperty.prototype = new XsltForms_abstractAction();
+
 XsltForms_setproperty.prototype.run = function(element, ctx) {
 	var value = this.literal;
 	if (this.value) {
+		//value = this.value.evaluate(node); // ??? What is node?
 		if (typeof(value) !== "string" && typeof(value.length) !== "undefined") {
 			value = value.length > 0? XsltForms_browser.getValue(value[0]) : "";
 		}
@@ -8229,18 +9312,32 @@ XsltForms_setproperty.prototype.run = function(element, ctx) {
 		XsltForms_browser.debugConsole.write("setproperty " + name + " = " + value);
 	}
 };
+    
+	
+		
+		
+		
 function XsltForms_abstractAction() {
 }
+
+
+		
+
 XsltForms_abstractAction.prototype.init = function(ifexpr, whileexpr, iterateexpr) {
 	this.ifexpr = XsltForms_xpath.get(ifexpr);
 	this.whileexpr = XsltForms_xpath.get(whileexpr);
 	this.iterateexpr = XsltForms_xpath.get(iterateexpr);
 };
+
+
+		
+
 XsltForms_abstractAction.prototype.execute = function(element, ctx, evt) {
 	if (evt.stopped) { return; }
 	if (!ctx) {
 		ctx = element.node || (XsltForms_globals.defaultModel.getInstanceDocument() ? XsltForms_globals.defaultModel.getInstanceDocument().documentElement : null);
 	}
+	// for now, iterate overrides while.
 	if (this.iterateexpr) {
 		if (this.whileexpr) {
 			XsltForms_globals.error(this.element, "xforms-compute-exception", "@iterate cannot be used with @while");
@@ -8259,6 +9356,10 @@ XsltForms_abstractAction.prototype.execute = function(element, ctx, evt) {
 		this.exec_(element, ctx, evt);
 	}
 };
+
+
+		
+
 XsltForms_abstractAction.prototype.exec_ = function(element, ctx, evt) {
 	if (this.ifexpr) {
 		if (XsltForms_globals.booleanValue(this.ifexpr.xpath_evaluate(ctx))) {
@@ -8271,18 +9372,36 @@ XsltForms_abstractAction.prototype.exec_ = function(element, ctx, evt) {
 	}
 	return true;
 };
-XsltForms_abstractAction.prototype.run = function() { };
+
+
+		
+
+XsltForms_abstractAction.prototype.run = function(element, ctx, evt) { };
+
+	
+		
+		
+		
 function XsltForms_action(subform, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.init(ifexpr, whileexpr, iterateexpr);
 	this.childs = [];
 }
+
 XsltForms_action.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_action.prototype.add = function(action) {
 	this.childs.push(action);
 	action.parentAction = this;
 	return this;
 };
+
+
+		
+
 XsltForms_action.prototype.run = function(element, ctx, evt) {
 	var p = element;
 	while (p) {
@@ -8299,30 +9418,34 @@ XsltForms_action.prototype.run = function(element, ctx, evt) {
 	}
 	XsltForms_browser.forEach(this.childs, "execute", element, ctx, evt);
 };
+    
+	
+		
+		
+		
 function XsltForms_delete(subform, nodeset, model, bind, at, context, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.binding = new XsltForms_binding(null, nodeset, model, bind);
+	//this.at = at?XsltForms_xpath.get(at):null;
 	this.at = XsltForms_xpath.get(at);
 	this.context = XsltForms_xpath.get(context);
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_delete.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_delete.prototype.run = function(element, ctx) {
-	var i, len;
 	if (this.context) {
-		ctx = this.context.xpath_evaluate(ctx, null, this.subform)[0];
+		ctx = this.context.xpath_evaluate(this.subform, ctx)[0];
 	}
 	if (!ctx) {
 		return;
 	}
 	var varresolver = this.parentAction ? this.parentAction.varResolver : element.xfElement.varResolver;
 	var nodes = this.binding.bind_evaluate(this.subform, ctx, varresolver);
-	for (i = 0; i < nodes.length; i++) {
-		if (!nodes[i].ownerDocument || nodes[i].ownerDocument.documentElement === nodes[i]) {
-			nodes.splice(i, 1);
-			i--;
-		}
-	}
 	if(this.at) {
 		var index = XsltForms_globals.numberValue(this.at.xpath_evaluate(new XsltForms_exprContext(this.subform, ctx, 1, nodes, null, null, null, varresolver)));
 		if(!nodes[index - 1]) {
@@ -8337,7 +9460,7 @@ XsltForms_delete.prototype.run = function(element, ctx) {
 		instance = model.findInstance(nodes[0]);
 	}
 	var deletedNodes = [];
-	for (i = 0, len = nodes.length; i < len; i++) {
+	for (var i = 0, len = nodes.length; i < len; i++) {
 		var node = nodes[i];
 		XsltForms_mipbinding.nodedispose(node);
 		var repeat = XsltForms_browser.getMeta(node, "repeat");
@@ -8346,6 +9469,7 @@ XsltForms_delete.prototype.run = function(element, ctx) {
 		}
 		if (node.nodeType === Fleur.Node.ATTRIBUTE_NODE) {
 			var oldOwnerElement = node.ownerElement? node.ownerElement: node.selectSingleNode("..");
+			//XsltForms_browser.clearMeta(node);
 			if (oldOwnerElement.removeAttributeNS) {
 				oldOwnerElement.removeAttributeNS(node.namespaceURI, node.nodeName);
 			} else {
@@ -8359,33 +9483,43 @@ XsltForms_delete.prototype.run = function(element, ctx) {
 		}
 		deletedNodes.push(node);
 	}
-	if (deletedNodes.length > 0) {
+	if (nodes.length > 0) {
 		XsltForms_globals.addChange(model);
 		model.setRebuilded(true);
 		var evcontext = {"deleted-nodes": deletedNodes, "delete-location": index};
 		XsltForms_xmlevents.dispatch(instance, "xforms-delete", null, null, null, null, evcontext);
 	}
 };
-function XsltForms_dispatch(subform, evname, target, properties, ifexpr, whileexpr, iterateexpr, delay) {
+    
+	
+		
+		
+		
+function XsltForms_dispatch(subform, name, target, properties, ifexpr, whileexpr, iterateexpr, delay) {
 	this.subform = subform;
-	this.name = evname;
+	this.name = name;
 	this.target = target;
 	this.properties = properties;
 	this.init(ifexpr, whileexpr, iterateexpr);
 	this.delay = delay;
 }
+
 XsltForms_dispatch.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_dispatch.prototype.run = function(element, ctx, evt) {
-	var evname = this.name;
-	if (evname.bind_evaluate) {
-		evname = XsltForms_globals.stringValue(evname.bind_evaluate(this.subform));
+	var name = this.name;
+	if (name.bind_evaluate) {
+		name = XsltForms_globals.stringValue(name.bind_evaluate(this.subform));
 	}
 	var target = this.target;
 	if (target && target.bind_evaluate) {
 		target = XsltForms_globals.stringValue(target.bind_evaluate(this.subform));
 	}
 	if (!target) {
-		switch (evname) {
+		switch (name) {
 			case "xforms-submit":
 				target = document.getElementById(XsltForms_browser.getDocMeta(ctx.ownerDocument, "model")).xfElement.defaultSubmission;
 				break;
@@ -8399,10 +9533,6 @@ XsltForms_dispatch.prototype.run = function(element, ctx, evt) {
 		}
 	} else {
 		target = typeof target === "string"? document.getElementById(target) : target;
-		if (!target && evname.indexOf("xforms-") === 0) {
-			evname = "xforms-binding-exception";
-			target = element;
-		}
 	}
 	var evtctx = {};
 	for (var prop in this.properties) {
@@ -8419,11 +9549,16 @@ XsltForms_dispatch.prototype.run = function(element, ctx, evt) {
 		}
 	}
 	if (delay > 0 ) {
-		window.setTimeout("XsltForms_xmlevents.dispatch(document.getElementById('"+target.id+"'),'"+evname+"')", delay);
+		window.setTimeout("XsltForms_xmlevents.dispatch(document.getElementById('"+target.id+"'),'"+name+"')", delay);
 	} else {
-		XsltForms_xmlevents.dispatch(target, evname, null, null, null, null, evtctx);
+		XsltForms_xmlevents.dispatch(target, name, null, null, null, null, evtctx);
 	}
 };
+    
+	
+		
+		
+		
 function XsltForms_insert(subform, nodeset, model, bind, at, position, origin, context, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.binding = new XsltForms_binding(null, nodeset, model, bind);
@@ -8433,7 +9568,12 @@ function XsltForms_insert(subform, nodeset, model, bind, at, position, origin, c
 	this.position = position;
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_insert.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_insert.prototype.run = function(element, ctx) {
 	var varresolver = this.parentAction ? this.parentAction.varResolver : element.xfElement.varResolver;
 	if (this.context) {
@@ -8449,7 +9589,7 @@ XsltForms_insert.prototype.run = function(element, ctx) {
 	var index = 0;
 	var node = null;
 	var originNodes = [];
-	var parentNode = null;
+	var parent = null;
 	var pos = this.position === "after"? 1 : 0;
 	var res = 0;
 	if (this.origin) {
@@ -8464,29 +9604,29 @@ XsltForms_insert.prototype.run = function(element, ctx) {
 	for(var i = 0, len = originNodes.length; i < len; i += 1) {
 		node = originNodes[i];
 		if (nodes.length === 0) {
-			parentNode = ctx;
+			parent = ctx;
 		} else {
-			parentNode = nodes[0].nodeType === Fleur.Node.DOCUMENT_NODE? nodes[0] : nodes[0].nodeType === Fleur.Node.ATTRIBUTE_NODE? nodes[0].ownerDocument ? nodes[0].ownerDocument : nodes[0].selectSingleNode("..") : nodes[0].parentNode;
-			if (parentNode.nodeType !== Fleur.Node.DOCUMENT_NODE && node.nodeType !== Fleur.Node.ATTRIBUTE_NODE) {
+			parent = nodes[0].nodeType === Fleur.Node.DOCUMENT_NODE? nodes[0] : nodes[0].nodeType === Fleur.Node.ATTRIBUTE_NODE? nodes[0].ownerDocument ? nodes[0].ownerDocument : nodes[0].selectSingleNode("..") : nodes[0].parentNode;
+			if (parent.nodeType !== Fleur.Node.DOCUMENT_NODE && node.nodeType !== Fleur.Node.ATTRIBUTE_NODE) {
 				res = this.at ? Math.round(XsltForms_globals.numberValue(this.at.xpath_evaluate(new XsltForms_exprContext(this.subform, ctx, 1, nodes, null, null, null, varresolver)))) + i - 1: nodes.length - 1;
 				index = isNaN(res)? nodes.length : res + pos;
 			}
 		}
-		XsltForms_browser.debugConsole.write("insert " + node.nodeName + " in " + parentNode.nodeName + " at " + index + " - " + ctx.nodeName);
+		XsltForms_browser.debugConsole.write("insert " + node.nodeName + " in " + parent.nodeName + " at " + index + " - " + ctx.nodeName);
 		var clone = node.cloneNode(true);
 		XsltForms_browser.clearMeta(clone);
 		if (node.nodeType === Fleur.Node.ATTRIBUTE_NODE) {
-			XsltForms_browser.setAttributeNS(parentNode, node.namespaceURI, node.nodeName, node.nodeValue);
+			XsltForms_browser.setAttributeNS(parent, node.namespaceURI, node.nodeName, node.nodeValue);
 		} else {
-			if (parentNode.nodeType === Fleur.Node.DOCUMENT_NODE) {
-				var first = parentNode.documentElement;
-				var prevmodel = XsltForms_browser.getDocMeta(parentNode, "model");
-				var previnst = XsltForms_browser.getDocMeta(parentNode, "instance");
-				parentNode.removeChild(first);
+			if (parent.nodeType === Fleur.Node.DOCUMENT_NODE) {
+				var first = parent.documentElement;
+				var prevmodel = XsltForms_browser.getDocMeta(parent, "model");
+				var previnst = XsltForms_browser.getDocMeta(parent, "instance");
+				parent.removeChild(first);
 				first = null;
-				parentNode.appendChild(clone);
-				XsltForms_browser.setDocMeta(parentNode, "instance", previnst);
-				XsltForms_browser.setDocMeta(parentNode, "model", prevmodel);
+				parent.appendChild(clone);
+				XsltForms_browser.setDocMeta(parent, "instance", previnst);
+				XsltForms_browser.setDocMeta(parent, "model", prevmodel);
 			} else {
 				var nodeAfter;
 				if (index >= nodes.length && nodes.length !== 0) {
@@ -8496,10 +9636,10 @@ XsltForms_insert.prototype.run = function(element, ctx) {
 				}
 				if (nodeAfter) {
 					nodeAfter.parentNode.insertBefore(clone, nodeAfter);
-				} else if (nodes.length === 0 && parentNode.firstChild) {
-					parentNode.insertBefore(clone, parentNode.firstChild);
+				} else if (nodes.length === 0 && parent.firstChild) {
+					parent.insertBefore(clone, parent.firstChild);
 				} else {
-					parentNode.appendChild(clone);
+					parent.appendChild(clone);
 				}
 				var repeat = nodes.length > 0? XsltForms_browser.getMeta(nodes[0], "repeat") : null;
 				nodes.push(clone);
@@ -8509,12 +9649,17 @@ XsltForms_insert.prototype.run = function(element, ctx) {
 			}
 		}
 	}
-	var model = document.getElementById(XsltForms_browser.getDocMeta(parentNode.nodeType === Fleur.Node.DOCUMENT_NODE ? parentNode : parentNode.ownerDocument, "model")).xfElement;
+	var model = document.getElementById(XsltForms_browser.getDocMeta(parent.nodeType === Fleur.Node.DOCUMENT_NODE ? parent : parent.ownerDocument, "model")).xfElement;
 	XsltForms_globals.addChange(model);
 	model.setRebuilded(true);
 	var evcontext = {"inserted-nodes": [clone], "origin-nodes": originNodes, "insert-location-node": index, position: this.position};
-	XsltForms_xmlevents.dispatch(model.findInstance(parentNode), "xforms-insert", null, null, null, null, evcontext);
+	XsltForms_xmlevents.dispatch(model.findInstance(parent), "xforms-insert", null, null, null, null, evcontext);
 };
+    
+	
+		
+		
+		
 function XsltForms_load(subform, binding, resource, show, targetid, instance, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.binding = binding;
@@ -8524,7 +9669,12 @@ function XsltForms_load(subform, binding, resource, show, targetid, instance, if
 	this.instance = instance;
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_load.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_load.prototype.run = function(element, ctx) {
 	var href = this.resource;
 	var node;
@@ -8587,7 +9737,7 @@ XsltForms_load.prototype.run = function(element, ctx) {
 				if (sp.length === 1) {
 					subbody = resp;
 				} else {
-					subjs = "/\* xsltforms-subform-" + subformidx + " " + sp[2] + " xsltforms-subform-" + subformidx + " *\/";
+					subjs = "/* xsltforms-subform-" + subformidx + " " + sp[2] + " xsltforms-subform-" + subformidx + " */";
 					var imain = subjs.indexOf('"xsltforms-mainform"');
 					var targetsubform = targetelt.xfSubform;
 					if (targetsubform) {
@@ -8607,13 +9757,13 @@ XsltForms_load.prototype.run = function(element, ctx) {
 				}
 				targetelt.innerHTML = subbody;
 				targetelt.hasXFElement = null;
-				var parentNode = targetelt.parentNode;
-				while (parentNode) {
-					if (parentNode.hasXFElement !== false) {
+				var parent = targetelt.parentNode;
+				while (parent) {
+					if (parent.hasXFElement !== false) {
 						break;
 					}
-					parentNode.hasXFElement = null;
-					parentNode = parentNode.parentNode;
+					parent.hasXFElement = null;
+					parent = parent.parentNode;
 				}
 				if (sp.length !== 1) {
 					var scriptelt = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "script") : document.createElement("script");
@@ -8660,6 +9810,9 @@ XsltForms_load.prototype.run = function(element, ctx) {
 		}
 	}
 };
+
+		
+
 XsltForms_load.prototype.issueLoadException_ = function(evcontext, req, ex) {
 	if (ex) {
 		evcontext.message = ex.message || ex;
@@ -8670,29 +9823,37 @@ XsltForms_load.prototype.issueLoadException_ = function(evcontext, req, ex) {
 	}
 	XsltForms_xmlevents.dispatch(document.getElementById(this.targetid), "xforms-link-exception", null, null, null, null, evcontext);
 };
+
+		
+
 XsltForms_load.subform = function(resource, targetid, ref) {
 	if (ref) {
-		var parentNode = ref;
-		while (parentNode && parentNode.nodeType === Fleur.Node.ELEMENT_NODE) {
-			if (XsltForms_browser.hasClass(parentNode, "xforms-repeat-item")) {
-				XsltForms_repeat.selectItem(parentNode);
+		var parent = ref;
+		while (parent && parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+			if (XsltForms_browser.hasClass(parent, "xforms-repeat-item")) {
+				XsltForms_repeat.selectItem(parent);
 			}
-			parentNode = parentNode.parentNode;
+			parent = parent.parentNode;
 		}
 	}
 	var targetelt = XsltForms_idManager.find(targetid);
 	var subform = null;
-	parentNode = targetelt;
-	while (parentNode && parentNode.nodeType === Fleur.Node.ELEMENT_NODE) {
-		if (parentNode.xfSubform) {
-			subform = parentNode.xfSubform;
+	parent = targetelt;
+	while (parent && parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+		if (parent.xfSubform) {
+			subform = parent.xfSubform;
 			break;
 		}
-		parentNode = parentNode.parentNode;
+		parent = parent.parentNode;
 	}
 	var a = new XsltForms_load(subform, null, resource, "embed", targetid);
 	a.run();
 };
+
+	
+		
+		
+		
 function XsltForms_message(subform, id, binding, level, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.binding = binding;
@@ -8700,7 +9861,12 @@ function XsltForms_message(subform, id, binding, level, ifexpr, whileexpr, itera
 	this.level = level;
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_message.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_message.prototype.run = function(element, ctx) {
 	var text;
 	if (this.binding) {
@@ -8716,10 +9882,16 @@ XsltForms_message.prototype.run = function(element, ctx) {
 		XsltForms_globals.building = building;
 		text = e.textContent || e.innerText;
 	}
+
 	if (text) {
 		alert(text.trim());
 	}
 };
+    
+	
+		
+		
+		
 function XsltForms_script(subform, binding, stype, script, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.binding = binding;
@@ -8727,7 +9899,12 @@ function XsltForms_script(subform, binding, stype, script, ifexpr, whileexpr, it
 	this.script = script;
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_script.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_script.prototype.run = function(element, ctx) {
 	var script = this.script;
 	switch (this.stype) {
@@ -8759,13 +9936,23 @@ XsltForms_script.prototype.run = function(element, ctx) {
 			break;
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_setindex(subform, repeat, index, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.repeat = repeat;
 	this.index = XsltForms_xpath.get(index);
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_setindex.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_setindex.prototype.run = function(element, ctx) {
 	var repeat = XsltForms_idManager.find(this.repeat);
 	var index = XsltForms_globals.numberValue(this.index.xpath_evaluate(ctx));
@@ -8781,6 +9968,11 @@ XsltForms_setindex.prototype.run = function(element, ctx) {
 		repeat.xfElement.setIndex(index);
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_setnode(subform, binding, value, inout, context, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.binding = binding;
@@ -8789,7 +9981,12 @@ function XsltForms_setnode(subform, binding, value, inout, context, ifexpr, whil
 	this.context = XsltForms_xpath.get(context);
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_setnode.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_setnode.prototype.run = function(element, ctx) {
 	var node = this.binding.bind_evaluate(this.subform, ctx)[0];
 	if (node) {
@@ -8820,15 +10017,25 @@ XsltForms_setnode.prototype.run = function(element, ctx) {
 		XsltForms_globals.closeAction("XsltForms_setnode.prototype.run");
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_setvalue(subform, binding, value, literal, context, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.binding = binding;
 	this.value = value? XsltForms_xpath.get(value) : null;
-	this.literal = literal || "";
+	this.literal = literal;
 	this.context = XsltForms_xpath.get(context);
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_setvalue.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_setvalue.prototype.run = function(element, ctx) {
 	var varresolver = this.parentAction ? this.parentAction.varResolver : element.xfElement.varResolver;
 	var node = this.binding.bind_evaluate(element.xfElement.subform, ctx, varresolver)[0];
@@ -8848,47 +10055,48 @@ XsltForms_setvalue.prototype.run = function(element, ctx) {
 		XsltForms_globals.closeAction("XsltForms_setvalue.prototype.run");
 	}
 };
-function XsltForms_split(subform, binding, separator, leftTrim, rightTrim, context, ifexpr, whileexpr, iterateexpr) {
+
+	
+		
+		
+		
+function XsltForms_setvar(subform, name, binding) {
 	this.subform = subform;
+	this.name = name;
 	this.binding = binding;
-	this.separator = separator;
-	this.leftTrim = leftTrim && leftTrim !== "" ? new RegExp(leftTrim) : null;
-	this.rightTrim = rightTrim && rightTrim !== "" ? new RegExp(rightTrim) : null;
-	this.context = XsltForms_xpath.get(context);
-	this.init(ifexpr, whileexpr, iterateexpr);
 }
-XsltForms_split.prototype = new XsltForms_abstractAction();
-XsltForms_split.prototype.run = function(element, ctx) {
-	var node;
-	var varresolver = this.parentAction ? this.parentAction.varResolver : element.xfElement.varResolver;
-	var nodes = this.binding.bind_evaluate(element.xfElement.subform, ctx, varresolver);
-	if (nodes.length !== 0) {
-		if (this.context) {
-			ctx = this.context.xpath_evaluate(element.xfElement.subform, ctx, null, varresolver)[0];
-		}
-		XsltForms_globals.openAction("XsltForms_split.prototype.run");
-		try {
-			for (var i = 0, l = nodes.length; i < l; i++) {
-				node = nodes[i];
-				XsltForms_browser.splitNode(node, this.separator || ",", this.leftTrim, this.rightTrim);
-				document.getElementById(XsltForms_browser.getDocMeta(node.ownerDocument, "model")).xfElement.addChange(node);
-				XsltForms_browser.debugConsole.write("Split " + XsltForms_browser.name2string(node) + " = '" + XsltForms_browser.getValue(node) + "' with " + this.separator);
-			}
-		} catch (e) {
-			XsltForms_browser.debugConsole.write("ERROR: cannot split on " + XsltForms_browser.name2string(node) + " with " + this.separator + "(context " + XsltForms_browser.name2string(ctx) + ")");
-		}
-		XsltForms_globals.closeAction("XsltForms_split.prototype.run");
-	}
+
+XsltForms_setvar.prototype = new XsltForms_abstractAction();
+
+
+		
+
+XsltForms_setvar.prototype.run = function(element, ctx) {
+	this.parentAction.varResolver[this.name] = [this.binding.bind_evaluate(element.xfElement.subform, ctx, this.parentAction.varResolver)];
 };
+
+	
+		
+		
+		
 function XsltForms_toggle(subform, caseId, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.caseId = caseId;
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_toggle.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_toggle.prototype.run = function(element, ctx) {
 	XsltForms_toggle.toggle(this.caseId, ctx);
 };
+
+
+		
+
 XsltForms_toggle.toggle = function(caseId, ctx) {
 	XsltForms_globals.openAction("XsltForms_toggle.toggle");
 	if (typeof caseId === 'object') {
@@ -8929,12 +10137,22 @@ XsltForms_toggle.toggle = function(caseId, ctx) {
 	}
 	XsltForms_globals.closeAction("XsltForms_toggle.toggle");
 };
+
+	
+		
+		
+		
 function XsltForms_unload(subform, targetid, ifexpr, whileexpr, iterateexpr) {
 	this.subform = subform;
 	this.targetid = targetid;
 	this.init(ifexpr, whileexpr, iterateexpr);
 }
+
 XsltForms_unload.prototype = new XsltForms_abstractAction();
+
+
+		
+
 XsltForms_unload.prototype.run = function(element, ctx) {
 	var targetid = this.targetid || this.subform.eltid;
 	var targetelt = XsltForms_idManager.find(targetid);
@@ -8947,6 +10165,19 @@ XsltForms_unload.prototype.run = function(element, ctx) {
 		targetelt = targetelt.children[targetelt.children.length - 1];
 	}
 	targetelt.innerHTML = "";
+	/*
+	var node = targetelt.firstChild;
+	alert("avant " + (node.remove? "remove" : "removeChild"));
+	while (node = targetelt.firstChild) {
+		if (node.remove) {
+			node.remove();
+		} else {
+			targetelt.removeChild(node);
+		}
+		node = null;
+	}
+	alert("après");
+	*/
 	targetelt.hasXFElement = null;
 	XsltForms_browser.setClass(targetelt, "xforms-subform-loaded", false);
 	if (targetxf) {
@@ -8954,29 +10185,39 @@ XsltForms_unload.prototype.run = function(element, ctx) {
 	}
 	XsltForms_browser.debugConsole.write("unload-done");
 };
+
+		
+
 XsltForms_unload.subform = function(targetid, ref) {
 	if (ref) {
-		var parentNode = ref;
-		while (parentNode && parentNode.nodeType === Fleur.Node.ELEMENT_NODE) {
-			if (XsltForms_browser.hasClass(parentNode, "xforms-repeat-item")) {
-				XsltForms_repeat.selectItem(parentNode);
+		var parent = ref;
+		while (parent && parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+			if (XsltForms_browser.hasClass(parent, "xforms-repeat-item")) {
+				XsltForms_repeat.selectItem(parent);
 			}
-			parentNode = parentNode.parentNode;
+			parent = parent.parentNode;
 		}
 	}
 	var targetelt = XsltForms_idManager.find(targetid);
 	var subform = null;
-	parentNode = targetelt;
-	while (parentNode && parentNode.nodeType === Fleur.Node.ELEMENT_NODE) {
-		if (parentNode.xfSubform) {
-			subform = parentNode.xfSubform;
+	parent = targetelt;
+	while (parent && parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+		if (parent.xfSubform) {
+			subform = parent.xfSubform;
 			break;
 		}
-		parentNode = parentNode.parentNode;
+		parent = parent.parentNode;
 	}
 	var a = new XsltForms_unload(subform, targetid);
 	a.run();
 };
+
+	
+	
+		
+		
+		
+		
 function XsltForms_tree(subform, id, binding) {
 	this.init(subform, id);
 	this.binding = binding;
@@ -8984,12 +10225,15 @@ function XsltForms_tree(subform, id, binding) {
 	this.root = XsltForms_browser.isXhtml ? this.element.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "ul")[0] : this.element.getElementsByTagName("ul")[0];
 	this.label = this.root.firstChild.cloneNode(true);
 }
+
 XsltForms_tree.prototype = new XsltForms_element();
+
 XsltForms_tree.prototype.dispose = function() {
 	this.root = null;
 	this.selected = null;
 	XsltForms_element.prototype.dispose.call(this);
 };
+
 XsltForms_tree.prototype.build_ = function(ctx) {
 	var node = this.evaluateBinding(this.binding, ctx)[0];
 	if (node) {
@@ -9000,6 +10244,7 @@ XsltForms_tree.prototype.build_ = function(ctx) {
 		}
 	}
 };
+
 XsltForms_tree.prototype.select = function(item) {
 	var changed = true;
 	var init = !!this.selected;
@@ -9022,6 +10267,7 @@ XsltForms_tree.prototype.select = function(item) {
 		XsltForms_globals.closeAction();
 	}
 };
+
 XsltForms_tree.prototype.click = function(target) {
 	if (target.className === "xforms-tree-item-button") {
 		var ul = target.nextSibling.nextSibling;
@@ -9032,18 +10278,19 @@ XsltForms_tree.prototype.click = function(target) {
 		this.select(target.parentNode);
 	}
 };
-XsltForms_tree.prototype.buildTree = function(parentNode, index, node, nodes) {
+
+XsltForms_tree.prototype.buildTree = function(parent, index, node, nodes) {
 	var li = null;
 	var ul = null;
 	var childs = node.childNodes;
 	var nochild = childs.length === 0;
 	nodes.push(node);
-	if (parentNode.childNodes.length < index + 1) {
+	if (parent.childNodes.length < index + 1) {
 		li = this.label.cloneNode(true);
-		parentNode.appendChild(li);
+		parent.appendChild(li);
 		XsltForms_repeat.initClone(li);
 	} else {
-		li = parentNode.childNodes[index];
+		li = parent.childNodes[index];
 		var last = li.lastChild;
 		if (last.nodeName.toLowerCase() === "ul") {
 			ul = last;
@@ -9072,11 +10319,22 @@ XsltForms_tree.prototype.buildTree = function(parentNode, index, node, nodes) {
 		}
 	}
 };
+
 XsltForms_tree.prototype.refresh = function() {
 };
+    
+	
+		
+		
+		
 function XsltForms_element() {
 }
+
+
+		
+
 XsltForms_element.depsId = 0;
+
 XsltForms_element.prototype.init = function(subform, id) {
 	this.subform = subform;
 	this.element = document.getElementById(id);
@@ -9106,6 +10364,10 @@ XsltForms_element.prototype.init = function(subform, id) {
 		p = p.parentNode;
 	}
 };
+
+
+		
+
 XsltForms_element.prototype.dispose = function() {
 	if(this.element) {
 		this.element.xfElement = null;
@@ -9132,6 +10394,10 @@ XsltForms_element.prototype.dispose = function() {
 		}
 	}   
 };
+
+
+		
+
 XsltForms_element.prototype.build = function(ctx, varresolver) {
 	if (this.hasBinding) {
 		var deps = this.depsElements;
@@ -9184,6 +10450,9 @@ XsltForms_element.prototype.build = function(ctx, varresolver) {
 		this.element.node = ctx;
 	}
 };
+
+		
+
 XsltForms_element.prototype.evaluateBinding = function(binding, ctx, varresolver) {
 	this.boundnodes = null;
 	var errmsg = null;
@@ -9200,12 +10469,15 @@ XsltForms_element.prototype.evaluateBinding = function(binding, ctx, varresolver
 		if (this.boundnodes || this.boundnodes === "") {
 			return this.boundnodes;
 		}
+		// A 'null' binding means bind-ID was not found.
 		errmsg = "non-existent bind-ID("+ binding.bind + ") on element(" + this.element.id + ")!";
 	} else {
 		errmsg = "no binding defined for element("+ this.element.id + ")!";
 	}
 	XsltForms_browser.assert(errmsg);
 	if (XsltForms_globals.building && XsltForms_globals.debugMode) {
+		//
+		// Do not fail here, to keep on searching for more errors.
 		XsltForms_globals.bindErrMsgs.push(errmsg);
 		XsltForms_xmlevents.dispatch(this.element, "xforms-binding-exception");
 		this.nodes = [];
@@ -9214,21 +10486,41 @@ XsltForms_element.prototype.evaluateBinding = function(binding, ctx, varresolver
 	}
 	return this.boundnodes;
 };
+
+	
+		
+		
+		
 function XsltForms_control() {
 	this.isControl = true;
 }
+
 XsltForms_control.prototype = new XsltForms_element();
+
+
+		
+
 XsltForms_control.prototype.initFocus = function(element, principal) {
 	if (principal) {
 		this.focusControl = element;
 	}
 	XsltForms_browser.events.attach(element, "focus", XsltForms_control.focusHandler);
+	//XsltForms_browser.events.attach(element, "mousein", XsltForms_control.focusHandler);
 	XsltForms_browser.events.attach(element, "blur", XsltForms_control.blurHandler);
+	//XsltForms_browser.events.attach(element, "mouseout", XsltForms_control.blurHandler);
 };
+
+
+		
+
 XsltForms_control.prototype.dispose = function() {
 	this.focusControl = null;
 	XsltForms_element.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_control.prototype.focus = function(focusEvent, evcontext) {
 	if (this.isOutput) {
 		return;
@@ -9239,12 +10531,12 @@ XsltForms_control.prototype.focus = function(focusEvent, evcontext) {
 		XsltForms_globals.focus = this;
 		XsltForms_browser.setClass(this.element, "xforms-focus", true);
 		XsltForms_browser.setClass(this.element, "xforms-disabled", false);
-		var parentNode = this.element.parentNode;
-		while (parentNode.nodeType === Fleur.Node.ELEMENT_NODE) {
-			if (typeof parentNode.node !== "undefined" && XsltForms_browser.hasClass(parentNode, "xforms-repeat-item")) {
-				XsltForms_repeat.selectItem(parentNode);
+		var parent = this.element.parentNode;
+		while (parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+			if (typeof parent.node !== "undefined" && XsltForms_browser.hasClass(parent, "xforms-repeat-item")) {
+				XsltForms_repeat.selectItem(parent);
 			}
-			parentNode = parentNode.parentNode;
+			parent = parent.parentNode;
 		}
 		XsltForms_xmlevents.dispatch(XsltForms_globals.focus, "DOMFocusIn", null, null, null, null, evcontext);
 		XsltForms_globals.closeAction("XsltForms_control.prototype.focus");
@@ -9256,14 +10548,14 @@ XsltForms_control.prototype.focus = function(focusEvent, evcontext) {
 	XsltForms_globals.posibleBlur = false;
 	if (fcontrol && !focusEvent) {
 		var control = this.focusControl;
-		var cname = control.nodeName.toLowerCase();
+		var name = control.nodeName.toLowerCase();
 		try {
 			control.focus();
 			control.focus();
 		} catch (e) {
 			XsltForms_browser.debugConsole.write("ERROR: Could not focus on element " + control);
 		}
-		if (cname === "input" || cname === "textarea") {
+		if (name === "input" || name === "textarea") {
 			try {
 				control.select();
 			} catch (e) {
@@ -9271,6 +10563,10 @@ XsltForms_control.prototype.focus = function(focusEvent, evcontext) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_control.prototype.build_ = function(ctx, varresolver) {
 	var result = this.evaluateBinding(this.binding, ctx, varresolver);
 	if (typeof result === "object") {
@@ -9288,6 +10584,10 @@ XsltForms_control.prototype.build_ = function(ctx, varresolver) {
 		this.outputValue = result;
 	}
 };
+
+
+		
+
 XsltForms_control.prototype.refresh = function() {
 	if (this.controlName === "var") {
 		return;
@@ -9339,6 +10639,10 @@ XsltForms_control.prototype.refresh = function() {
 	}
 	this.nodeChanged = false;
 };
+
+
+		
+
 XsltForms_control.prototype.eventDispatch = function(onTrue, onFalse, value) {
 	if ((!this.nodeChanged || XsltForms_globals.ready) && !this.isTrigger) {
 		XsltForms_xmlevents.dispatch(this.element, (value? onTrue : onFalse));
@@ -9346,6 +10650,10 @@ XsltForms_control.prototype.eventDispatch = function(onTrue, onFalse, value) {
 	XsltForms_browser.setClass(this.element, onTrue, value);
 	XsltForms_browser.setClass(this.element, onFalse, !value);
 };
+
+
+		
+
 XsltForms_control.prototype.changeProp = function(node, prop, onTrue, onFalse, changed, nvalue) {
 	var value = (prop === "notvalid" && nvalue === "" && !XsltForms_globals.validationError) ? false : XsltForms_browser.getBoolMeta(node, prop);
 	if (changed || value !== this[prop]) {
@@ -9356,6 +10664,10 @@ XsltForms_control.prototype.changeProp = function(node, prop, onTrue, onFalse, c
 		}
 	}
 };
+
+
+		
+
 XsltForms_control.prototype.valueChanged = function(value, force) {
 	var node = this.element.node;
 	var model = document.getElementById(XsltForms_browser.getDocMeta(node.ownerDocument, "model")).xfElement;
@@ -9396,6 +10708,10 @@ XsltForms_control.prototype.valueChanged = function(value, force) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_control.getXFElement = function(element) {
 	var xf = null;
 	while (!xf && element) {
@@ -9407,6 +10723,10 @@ XsltForms_control.getXFElement = function(element) {
 	}
 	return xf;
 };
+
+
+		
+
 XsltForms_control.focusHandler = function() {
 	var xf = XsltForms_control.getXFElement(this);
 	if (XsltForms_globals.focus !== xf) {
@@ -9415,12 +10735,22 @@ XsltForms_control.focusHandler = function() {
 		XsltForms_globals.posibleBlur = false;
 	}
 };
+
+
+		
+
 XsltForms_control.blurHandler = function() {
 	if (XsltForms_control.getXFElement(this) === XsltForms_globals.focus) {
 		XsltForms_globals.posibleBlur = true;
+		//setTimeout(function(){XsltForms_globals.blur();}, 200);
 		XsltForms_globals.blur();
 	}
 };
+    
+	
+		
+		
+		
 function XsltForms_avt(subform, id, attrname, binding) {
 	this.init(subform, id);
 	this.attrname = attrname;
@@ -9431,19 +10761,40 @@ function XsltForms_avt(subform, id, attrname, binding) {
 		this.element.setAttribute(this.attrname, "");
 	}
 }
+
 XsltForms_avt.prototype = new XsltForms_control();
+
+
+		
+
 XsltForms_avt.prototype.clone = function(id) { 
 	return new XsltForms_avt(this.subform, id, this.attrname, this.binding);
 };
+
+
+		
+
 XsltForms_avt.prototype.dispose = function() {
 	XsltForms_control.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_avt.prototype.setValue = function(value) {
 	this.element.setAttribute(this.attrname, value);
 };
+
+		
+
 XsltForms_avt.prototype.getValue = function(value) {
 	return this.element.getAttribute(this.attrname);
 };
+
+	
+		
+		
+		
 function XsltForms_component(subform, id, valoff, binding, href) {
 	XsltForms_globals.counters.component++;
 	this.init(subform, id);
@@ -9462,8 +10813,10 @@ function XsltForms_component(subform, id, valoff, binding, href) {
 	if (this.binding && this.binding.type) {
 		XsltForms_browser.setClass(this.element, "xforms-disabled", false);
 	}
+	//this.subformid = "xsltforms-subform-" + XsltForms_globals.nbsubforms;
 	var req = null;
 	var method = "get";
+	// var evcontext = {"method": method, "resource-uri": href};
 	try {
 		req = XsltForms_browser.openRequest(method, href, false);
 		XsltForms_browser.debugConsole.write("Load Component " + href);
@@ -9484,7 +10837,7 @@ function XsltForms_component(subform, id, valoff, binding, href) {
 		if (sp.length === 1) {
 			subbody = resp;
 		} else {
-			subjs = "";
+			subjs = "/* xsltforms-subform-" + XsltForms_globals.nbsubforms + " " + sp[2] + " xsltforms-subform-" + XsltForms_globals.nbsubforms + " */";
 			var imain = subjs.indexOf('"xsltforms-mainform"');
 			var targetsubform = targetelt.xfSubform;
 			if (targetsubform) {
@@ -9505,13 +10858,13 @@ function XsltForms_component(subform, id, valoff, binding, href) {
 		}
 		targetelt.innerHTML = subbody;
 		targetelt.hasXFElement = null;
-		var parentNode = targetelt.parentNode;
-		while (parentNode) {
-			if (parentNode.hasXFElement !== false) {
+		var parent = targetelt.parentNode;
+		while (parent) {
+			if (parent.hasXFElement !== false) {
 				break;
 			}
-			parentNode.hasXFElement = null;
-			parentNode = parentNode.parentNode;
+			parent.hasXFElement = null;
+			parent = parent.parentNode;
 		}
 		if (sp.length !== 1) {
 			XsltForms_globals.componentLoads.push(subjs);
@@ -9524,19 +10877,41 @@ function XsltForms_component(subform, id, valoff, binding, href) {
 		XsltForms_browser.debugConsole.write(e2.message || e2);
 	}
 }
+
 XsltForms_component.prototype = new XsltForms_control();
+
+
+		
+
 XsltForms_component.prototype.clone = function(id) { 
 	return new XsltForms_component(this.subform, id, this.valoff, this.binding, this.resource);
 };
+
+
+		
+
 XsltForms_component.prototype.dispose = function() {
 	this.valueElement = null;
 	XsltForms_globals.counters.component--;
 	XsltForms_control.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_component.prototype.blur = function () { };
+
+
+		
+
 XsltForms_component.prototype.setValue = function(value) {
 	XsltForms_browser.forEach(this.valueElement.children[0].xfElement.subform.binds, "propagate");
 };
+
+	
+		
+		
+		
 function XsltForms_group(subform, id, binding, casebinding) {
 	XsltForms_globals.counters.group++;
 	this.init(subform, id);
@@ -9549,14 +10924,27 @@ function XsltForms_group(subform, id, binding, casebinding) {
 	}
 	this.casebinding = casebinding;
 }
+
 XsltForms_group.prototype = new XsltForms_element();
+
+
+		
+
 XsltForms_group.prototype.dispose = function() {
 	XsltForms_globals.counters.group--;
 	XsltForms_element.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_group.prototype.clone = function(id) { 
 	return new XsltForms_group(this.subform, id, this.binding, this.casebinding);
 };
+
+
+		
+
 XsltForms_group.prototype.build_ = function(ctx) {
 	var nodes = this.evaluateBinding(this.binding, ctx);
 	this.element.node = nodes[0];
@@ -9568,6 +10956,10 @@ XsltForms_group.prototype.build_ = function(ctx) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_group.prototype.refresh = function() {
 	var element = this.element;
 	var disabled = !element.node || XsltForms_browser.getBoolMeta(element.node, "notrelevant");
@@ -9584,6 +10976,11 @@ XsltForms_group.prototype.refresh = function() {
 		XsltForms_browser.setClass(tab, "xforms-disabled", disabled);
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_input(subform, id, valoff, itype, binding, inputmode, incremental, delay, mediatype, aidButton, clone) {
 	XsltForms_globals.counters.input++;
 	this.init(subform, id);
@@ -9611,10 +11008,19 @@ function XsltForms_input(subform, id, valoff, itype, binding, inputmode, increme
 		this.initFocus(this.aidButton);
 	}
 }
+
 XsltForms_input.prototype = new XsltForms_control();
+
+
+		
+
 XsltForms_input.prototype.clone = function(id) { 
 	return new XsltForms_input(this.subform, id, this.valoff, this.itype, this.binding, this.inputmode, this.incremental, this.delay, this.mediatype, this.bolAidButton, true);
 };
+
+
+		
+
 XsltForms_input.prototype.dispose = function() {
 	if (this.mediatype === "application/xhtml+xml" && this.type.rte) {
 		switch(this.type.rte.toLowerCase()) {
@@ -9627,6 +11033,7 @@ XsltForms_input.prototype.dispose = function() {
 						tinyMCE.editors[this.cell.children[1].id].remove();
 					}
 				} catch(e) {
+					//alert(e);
 				}
 				break;
 			case "ckeditor":
@@ -9641,11 +11048,14 @@ XsltForms_input.prototype.dispose = function() {
 	XsltForms_globals.counters.input--;
 	XsltForms_control.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_input.prototype.initInput = function(type) {
 	var cell = this.cell;
 	var input = cell.children[0];
 	var tclass = type["class"];
-	var initinfo;
 	if (input.type === "password") {
 		this.type = XsltForms_schema.getType("xsd_:string");
 		this.initEvents(input, true);
@@ -9657,6 +11067,7 @@ XsltForms_input.prototype.initInput = function(type) {
 					input.id = this.element.id + "_textarea";
 					XsltForms_browser.debugConsole.write(input.id+": init="+XsltForms_globals.tinyMCEinit);
 					if (!XsltForms_globals.tinyMCEinit || XsltForms_globals.jslibraries["http://www.tinymce.com"].substr(0, 2) !== "3.") {
+						var initinfo;
 						eval("initinfo = " + (type.appinfo ? type.appinfo.replace(/(\r\n|\n|\r)/gm, " ") : "{}"));
 						initinfo.mode = "none";
 						if (!XsltForms_globals.jslibraries["http://www.tinymce.com"] || XsltForms_globals.jslibraries["http://www.tinymce.com"].substr(0, 2) === "3.") {
@@ -9676,7 +11087,7 @@ XsltForms_input.prototype.initInput = function(type) {
 							};
 						} else {
 							initinfo.setup = function(ed) {
-								ed.on("KeyUp", function() {
+								ed.on("KeyUp", function(ed) {
 									XsltForms_control.getXFElement(document.getElementById(this.id)).valueChanged(this.getContent() || "");
 								});
 								ed.on("Change", function(ed) {
@@ -9696,13 +11107,14 @@ XsltForms_input.prototype.initInput = function(type) {
 						XsltForms_globals.tinyMCEinit = true;
 					}
 					tinyMCE.execCommand("mceAddControl", true, input.id);
+					//this.editor = new tinymce.Editor(input.id, initinfo, tinymce.EditorManager);
 					break;
 				case "ckeditor":
 					input.id = this.element.id + "_textarea";
 					if (!CKEDITOR.replace) {
 						alert("CKEditor is not compatible with XHTML mode.");
 					}
-					initinfo = "";
+					var initinfo;
 					eval("initinfo = " + (type.appinfo ? type.appinfo.replace(/(\r\n|\n|\r)/gm, " ") : "{}"));
 					this.rte = CKEDITOR.replace(input.id, initinfo);
 					var eltRefresh = function(evt) {
@@ -9778,9 +11190,9 @@ XsltForms_input.prototype.initInput = function(type) {
 			} else {
 				input.removeAttribute("maxLength");
 			}
-			var tlength = type.getDisplayLength();
-			if (tlength) { 
-				input.size = tlength;
+			var length = type.getDisplayLength();
+			if (length) { 
+				input.size = length;
 			} else { 
 				input.removeAttribute("size");
 			}
@@ -9789,6 +11201,10 @@ XsltForms_input.prototype.initInput = function(type) {
 	this.initFocus(input, true);
 	this.input = input;
 };
+
+
+		
+
 XsltForms_input.prototype.setValue = function(value) {
 	var node = this.element.node;
 	var type = node ? XsltForms_schema.getType(XsltForms_browser.getType(node) || "xsd_:string") : XsltForms_schema.getType("xsd_:string");
@@ -9796,6 +11212,10 @@ XsltForms_input.prototype.setValue = function(value) {
 		this.initInput(type);
 		this.changeReadonly();
 	}
+//	XsltForms_browser.debugConsole.write(this.input.id+": setValue("+value+")");
+//	if (this.type.rte && this.type.rte.toLowerCase() === "tinymce" && tinymce.get(this.input.id) === undefined) {
+//		XsltForms_browser.debugConsole.write(this.input.id+" is undefined");
+//	}
 	if (type["class"] === "boolean") {
 		this.input.checked = value === "true";
 	} else if (this.type.rte && this.type.rte.toLowerCase() === "tinymce" && tinymce.get(this.input.id) && (!XsltForms_globals.jslibraries["http://www.tinymce.com"] || XsltForms_globals.jslibraries["http://www.tinymce.com"].substr(0, 2) === "3." ? tinymce.get(this.input.id).getContent() : tinymce.get(this.input.id).contentDocument.body.innerHTML) !== value) {
@@ -9820,6 +11240,7 @@ XsltForms_input.prototype.setValue = function(value) {
 			XsltForms_browser.debugConsole.write(this.input.id+".value = '"+this.input.value+"'");
 			this.input.value = value || "";
 			this.rte.setData(value);
+			//this.input.value = this.rte.getData() || "";
 		}
 	} else if (this.input.type.substr(0, 4) === "date") {
 		if (this.input.value !== XsltForms_browser.getValue(node).substr(0, 15)) {
@@ -9829,6 +11250,10 @@ XsltForms_input.prototype.setValue = function(value) {
 		this.input.value = value || "";
 	}
 };
+
+
+		
+
 XsltForms_input.prototype.changeReadonly = function() {
 	var node = this.element.node;
 	var type = node ? XsltForms_schema.getType(XsltForms_browser.getType(node) || "xsd_:string") : XsltForms_schema.getType("xsd_:string");
@@ -9842,6 +11267,10 @@ XsltForms_input.prototype.changeReadonly = function() {
 		}
 	}
 };
+
+
+		
+
 XsltForms_input.prototype.initEvents = function(input, canActivate) {
 	var changeEventName = "keyup";
 	if (XsltForms_browser.isEdge || (XsltForms_globals.htmlversion === "5" && (XsltForms_browser.isChrome || XsltForms_browser.isOpera || XsltForms_browser.isSafari))) {
@@ -9864,6 +11293,10 @@ XsltForms_input.prototype.initEvents = function(input, canActivate) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_input.prototype.blur = function(target) {
 	XsltForms_globals.focus = null;
 	var input = this.input;
@@ -9885,6 +11318,10 @@ XsltForms_input.prototype.blur = function(target) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_input.prototype.click = function(target) {
 	if (target === this.aidButton) {
 		XsltForms_globals.openAction("XsltForms_input.prototype.click#1");
@@ -9899,13 +11336,25 @@ XsltForms_input.prototype.click = function(target) {
 		XsltForms_calendar.show(target.previousSibling, this.type["class"] === "datetime"? XsltForms_calendar.SECONDS : XsltForms_calendar.ONLY_DATE);
 	}
 };
+
+
+		
+
 XsltForms_input.keyUpInputMode = function() {
 	var xf = XsltForms_control.getXFElement(this);
 	this.value = xf.inputmode(this.value);
 };
+
+
+		
+
 XsltForms_input.keyDownActivate = function(a) {
 	this.keyDownCode = a.keyCode;
 };
+
+
+		
+
 XsltForms_input.keyPressActivate = function(a) {
 	this.keyPressCode = a.keyCode;
 	if (a.keyCode === 13) {
@@ -9917,6 +11366,10 @@ XsltForms_input.keyPressActivate = function(a) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_input.keyUpActivate = function(a) {
 	var xf = XsltForms_control.getXFElement(this);
 	if (a.keyCode === 13 && (this.keyDownCode === 13 || this.keyPressCode === 13)) {
@@ -9927,6 +11380,10 @@ XsltForms_input.keyUpActivate = function(a) {
 	}
 	this.keyDownCode = this.keyPressCode = null;
 };
+
+
+		
+
 XsltForms_input.keyUpIncrementalActivate = function(a) {
 	var xf = XsltForms_control.getXFElement(this);
 	if (a.keyCode === 13 && (this.keyDownCode === 13 || this.keyPressCode === 13)) {
@@ -9954,12 +11411,20 @@ XsltForms_input.keyUpIncrementalActivate = function(a) {
 	}
 	this.keyDownCode = this.keyPressCode = null;
 };
+
+
+		
+
 XsltForms_input.inputActivate = function(a) {
 	var xf = XsltForms_control.getXFElement(this);
 	XsltForms_globals.openAction("XsltForms_input.inputActivate#1");
 	xf.valueChanged(this.value || "");
 	XsltForms_globals.closeAction("XsltForms_input.inputActivate#1");
 };
+
+
+		
+
 XsltForms_input.keyUpIncremental = function() {
 	var xf = XsltForms_control.getXFElement(this);
 	if (xf.delay && xf.delay > 0) {
@@ -9979,6 +11444,10 @@ XsltForms_input.keyUpIncremental = function() {
 		XsltForms_globals.closeAction("XsltForms_input.keyUpIncremental#2");
 	}
 };
+
+
+		
+
 XsltForms_input.InputMode = {
 	lowerCase : function(value) { return value.toLowerCase(); },
 	upperCase : function(value) { return value.toUpperCase(); },
@@ -9999,6 +11468,11 @@ XsltForms_input.InputMode = {
 		}
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_item(subform, id, bindingL, bindingV) {
 	XsltForms_globals.counters.item++;
 	this.init(subform, id);
@@ -10019,16 +11493,29 @@ function XsltForms_item(subform, id, bindingL, bindingV) {
 		this.label = XsltForms_browser.isXhtml ? element.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "label")[0] : element.getElementsByTagName("label")[0];
 	}
 }
+
 XsltForms_item.prototype = new XsltForms_element();
+
+
+		
+
 XsltForms_item.prototype.clone = function(id) { 
 	return new XsltForms_item(this.subform, id, this.bindingL, this.bindingV);
 };
+
+
+		
+
 XsltForms_item.prototype.dispose = function() {
 	this.input = null;
 	this.label = null;
 	XsltForms_globals.counters.item--;
 	XsltForms_element.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_item.prototype.build_ = function(ctx) {
 	var result, element = this.element;
 	var xf = element.parentNode.xfElement;
@@ -10060,6 +11547,10 @@ XsltForms_item.prototype.build_ = function(ctx) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_item.prototype.refresh = function() {
 	var element = this.element;
 	XsltForms_browser.setClass(element, "xforms-disabled", false);
@@ -10093,6 +11584,10 @@ XsltForms_item.prototype.refresh = function() {
 		}
 	}
 };
+
+
+		
+
 XsltForms_item.prototype.click = function (target) {
 	var input = this.input;
 	if (input) {
@@ -10102,6 +11597,11 @@ XsltForms_item.prototype.click = function (target) {
 		}
 	}
 };
+    
+	
+		
+		
+		
 function XsltForms_itemset(subform, id, nodesetBinding, labelBinding, valueBinding, copyBinding) {
 	XsltForms_globals.counters.itemset++;
 	this.init(subform, id);
@@ -10112,7 +11612,12 @@ function XsltForms_itemset(subform, id, nodesetBinding, labelBinding, valueBindi
 	this.copyBinding = copyBinding;
 	this.hasBinding = true;
 }
+
 XsltForms_itemset.prototype = new XsltForms_element();
+
+
+		
+
 XsltForms_itemset.prototype.build_ = function(ctx) {
 	if (this.element.getAttribute("cloned")) {
 		return;
@@ -10120,16 +11625,15 @@ XsltForms_itemset.prototype.build_ = function(ctx) {
 	this.nodes = this.evaluateBinding(this.nodesetBinding, ctx);
 	var next = this.element;
 	var parentNode = next.parentNode;
-	var l = this.nodes.length;
+	var length = this.nodes.length;
 	var oldNode = next;
 	var listeners = next.listeners;
-	var cont = 1;
-	while (next) {
+	for (var cont = 1; true;) {
 		next = next.nextSibling;
 		if (next) {
 			if (next.nodeType === Fleur.Node.ELEMENT_NODE) {
 				if (next.getAttribute("cloned")) {
-					if (cont >= l) {
+					if (cont >= length) {
 						next.listeners = null;
 						parentNode.removeChild(next);
 						next = oldNode;
@@ -10145,7 +11649,7 @@ XsltForms_itemset.prototype.build_ = function(ctx) {
 				next = n;
 			}
 		} else {
-			for (var i = cont; i < l; i++) {
+			for (var i = cont; i < length; i++) {
 				var node = this.element.cloneNode(true);
 				node.setAttribute("cloned", "true");
 				XsltForms_idManager.cloneId(node);
@@ -10161,7 +11665,7 @@ XsltForms_itemset.prototype.build_ = function(ctx) {
 			break;
 		}
 	}
-	if (l > 0) {
+	if (length > 0) {
 		this.element.node = this.nodes[0];
 		this.refresh_(this.element, 0);
 	} else {
@@ -10169,23 +11673,39 @@ XsltForms_itemset.prototype.build_ = function(ctx) {
 		this.element.text = "\xA0";
 	}
 };
+
+
+		
+
 XsltForms_itemset.prototype.refresh = function() {
-	var parentNode = this.element.parentNode;
+	var parent = this.element.parentNode;
 	var i = 0;
-	while (parentNode.childNodes[i] !== this.element) {
+	while (parent.childNodes[i] !== this.element) {
 		i++;
 	}
 	for (var j = 0, len = this.nodes.length; j < len || j === 0; j++) {
-		XsltForms_browser.setClass(parentNode.childNodes[i+j], "xforms-disabled", this.nodes.length === 0);
+		XsltForms_browser.setClass(parent.childNodes[i+j], "xforms-disabled", this.nodes.length === 0);
 	}
 };
+
+
+		
+
 XsltForms_itemset.prototype.clone = function(id) {
 	return new XsltForms_itemset(this.subform, id, this.nodesetBinding, this.labelBinding, this.valueBinding, this.copyBinding);
 };
+
+
+		
+
 XsltForms_itemset.prototype.dispose = function() {
 	XsltForms_globals.counters.itemset--;
 	XsltForms_element.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_itemset.prototype.refresh_ = function(element, cont) {
 	var result, ctx = this.nodes[cont], nodeLabel, nodeValue;
 	result = this.evaluateBinding(this.labelBinding, ctx);
@@ -10221,6 +11741,11 @@ XsltForms_itemset.prototype.refresh_ = function(element, cont) {
 		}
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_label(subform, id, binding) {
 	XsltForms_globals.counters.label++;
 	this.init(subform, id);
@@ -10230,24 +11755,46 @@ function XsltForms_label(subform, id, binding) {
 		this.binding = binding;
 	}
 }
+
 XsltForms_label.prototype = new XsltForms_element();
+
+
+		
+
 XsltForms_label.prototype.clone = function(id) { 
 	return new XsltForms_label(this.subform, id, this.binding);
 };
+
+
+		
+
 XsltForms_label.prototype.dispose = function() {
 	XsltForms_globals.counters.label--;
 	XsltForms_element.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_label.prototype.build_ = function(ctx) {
 	var nodes = this.evaluateBinding(this.binding, ctx);
 	this.element.node = nodes[0];
 	this.depsNodesRefresh.push(nodes[0]);
 };
+
+
+		
+
 XsltForms_label.prototype.refresh = function() {
 	var node = this.element.node;
 	var value = node? XsltForms_browser.getValue(node, true) : "";
 	XsltForms_browser.setValue(this.element.getAttributeNode("label") ? this.element.getAttributeNode("label") : this.element, value);
 };
+    
+	
+		
+		
+		
 function XsltForms_output(subform, id, valoff, binding, mediatype) {
 	XsltForms_globals.counters.output++;
 	this.init(subform, id);
@@ -10273,102 +11820,89 @@ function XsltForms_output(subform, id, valoff, binding, mediatype) {
 		XsltForms_browser.setClass(this.element, "xforms-disabled", false);
 	}
 }
+
 XsltForms_output.prototype = new XsltForms_control();
+
+
+		
+
 XsltForms_output.prototype.clone = function(id) { 
 	return new XsltForms_output(this.subform, id, this.valoff, this.binding, this.mediatype);
 };
+
+
+		
+
 XsltForms_output.prototype.dispose = function() {
 	this.valueElement = null;
 	XsltForms_globals.counters.output--;
 	XsltForms_control.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_output.prototype.setValue = function(value) {
 	var element = this.valueElement;
-	var mediatype = this.mediatype;
-	var i, li;
-	if (mediatype && mediatype.bind_evaluate) {
-		mediatype = XsltForms_globals.stringValue(mediatype.bind_evaluate(this.subform, this.boundnodes[0]));
-	}
-	if (!mediatype || mediatype.indexOf("image/") !== 0 || mediatype === "image/svg+xml") {
-		if (element.nodeName.toLowerCase() === "img") {
-			var spanelt = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "span") : document.createElement("span");
-			i = 0;
-			li = element.attributes.length;
-			while (i < li) {
-				spanelt.setAttribute(element.attributes[i].name, element.attributes[i].value);
-				i++;
+	if (element.nodeName.toLowerCase() === "span" || element.nodeName.toLowerCase() === "tspan" || element.nodeName.toLowerCase() === "label") {
+		if (this.mediatype === "application/xhtml+xml") {
+			while (element.firstChild) {
+				element.removeChild(element.firstChild);
 			}
-			element.parentNode.replaceChild(spanelt, element);
-			element = spanelt;
-		}
-		if (element.nodeName.toLowerCase() === "span" || element.nodeName.toLowerCase() === "tspan" || element.nodeName.toLowerCase() === "label") {
-			if (mediatype === "application/xhtml+xml") {
-				while (element.firstChild) {
-					element.removeChild(element.firstChild);
-				}
-				if (value) {
-					element.innerHTML = value;
-				}
-			} else if (mediatype === "image/svg+xml") {
-				while (element.firstChild) {
-					element.removeChild(element.firstChild);
-				}
-				if (XsltForms_browser.isIE && !XsltForms_browser.isIE9) {
-					var xamlScript = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "script") : document.createElement("script");
-					xamlScript.setAttribute("type", "text/xaml");
-					xamlScript.setAttribute("id", this.element.id+"-xaml");
-					xamlScript.text = XsltForms_browser.transformText(value, XsltForms_browser.ROOT + "svg2xaml.xsl", false, "width", element.currentStyle.width, "height", element.currentStyle.height);
-					element.appendChild(xamlScript);
-					var xamlObject = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "object") : document.createElement("object");
-					xamlObject.setAttribute("width", element.currentStyle.width+"px");
-					xamlObject.setAttribute("height", element.currentStyle.height+"px");
-					xamlObject.setAttribute("type", "application/x-silverlight");
-					xamlObject.setAttribute("style", "min-width: " + element.currentStyle.width+"px");
-					var xamlParamSource = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "param") : document.createElement("param");
-					xamlParamSource.setAttribute("name", "source");
-					xamlParamSource.setAttribute("value", "#"+this.element.id+"-xaml");
-					xamlObject.appendChild(xamlParamSource);
-					var xamlParamOnload = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "param") : document.createElement("param");
-					xamlParamOnload.setAttribute("name", "onload");
-					xamlParamOnload.setAttribute("value", "onLoaded");
-					xamlObject.appendChild(xamlParamOnload);
-					var xamlParamIswindowless = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "param") : document.createElement("param");
-					xamlParamIswindowless.setAttribute("name", "iswindowless");
-					xamlParamIswindowless.setAttribute("value", "true");
-					xamlObject.appendChild(xamlParamIswindowless);
-					element.appendChild(xamlObject);
-				} else if (XsltForms_browser.isXhtml) {
-					var cs = window.getComputedStyle(element, null);
-					XDocument.parse(value, element);
-					element.firstChild.setAttribute("width", cs.getPropertyValue("min-width"));
-					element.firstChild.setAttribute("height", cs.getPropertyValue("min-height"));
-				} else {
-					var svgObject = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "object") : document.createElement("object");
-					svgObject.setAttribute("type", "image/svg+xml");
-					svgObject.setAttribute("data", "data:image/svg+xml,"+ value);
-					element.appendChild(svgObject);
-				}
+			if (value) {
+				element.innerHTML = value;
+			}
+		} else if (this.mediatype === "image/svg+xml") {
+			while (element.firstChild) {
+				element.removeChild(element.firstChild);
+			}
+			if (XsltForms_browser.isIE && !XsltForms_browser.isIE9) {
+				var xamlScript = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "script") : document.createElement("script");
+				xamlScript.setAttribute("type", "text/xaml");
+				xamlScript.setAttribute("id", this.element.id+"-xaml");
+				xamlScript.text = XsltForms_browser.transformText(value, XsltForms_browser.ROOT + "svg2xaml.xsl", false, "width", element.currentStyle.width, "height", element.currentStyle.height);
+				element.appendChild(xamlScript);
+				var xamlObject = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "object") : document.createElement("object");
+				xamlObject.setAttribute("width", element.currentStyle.width+"px");
+				xamlObject.setAttribute("height", element.currentStyle.height+"px");
+				xamlObject.setAttribute("type", "application/x-silverlight");
+				xamlObject.setAttribute("style", "min-width: " + element.currentStyle.width+"px");
+				//xamlObject.setAttribute("style", "min-width: " + xamlScript.text.substring(xamlScript.text.indexOf('<Canvas Width="')+15,xamlScript.text.indexOf('" Height="')) + "px");
+				var xamlParamSource = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "param") : document.createElement("param");
+				xamlParamSource.setAttribute("name", "source");
+				xamlParamSource.setAttribute("value", "#"+this.element.id+"-xaml");
+				xamlObject.appendChild(xamlParamSource);
+				var xamlParamOnload = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "param") : document.createElement("param");
+				xamlParamOnload.setAttribute("name", "onload");
+				xamlParamOnload.setAttribute("value", "onLoaded");
+				xamlObject.appendChild(xamlParamOnload);
+				var xamlParamIswindowless = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "param") : document.createElement("param");
+				xamlParamIswindowless.setAttribute("name", "iswindowless");
+				xamlParamIswindowless.setAttribute("value", "true");
+				xamlObject.appendChild(xamlParamIswindowless);
+				element.appendChild(xamlObject);
+			} else if (XsltForms_browser.isXhtml) {
+				var cs = window.getComputedStyle(element, null);
+				XDocument.parse(value, element);
+				element.firstChild.setAttribute("width", cs.getPropertyValue("min-width"));
+				element.firstChild.setAttribute("height", cs.getPropertyValue("min-height"));
 			} else {
-				XsltForms_browser.setValue(element, value);
+				var svgObject = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "object") : document.createElement("object");
+				svgObject.setAttribute("type", "image/svg+xml");
+				svgObject.setAttribute("data", "data:image/svg+xml,"+ value);
+				//svgObject.setAttribute("height", "400px");
+				element.appendChild(svgObject);
 			}
 		} else {
 			XsltForms_browser.setValue(element, value);
 		}
 	} else {
-		if (element.nodeName.toLowerCase() === "span" || element.nodeName.toLowerCase() === "tspan" || element.nodeName.toLowerCase() === "label") {
-			var imgelt = XsltForms_browser.isXhtml ? document.createElementNS("http://www.w3.org/1999/xhtml", "img") : document.createElement("img");
-			i = 0;
-			li = element.attributes.length;
-			while (i < li) {
-				imgelt.setAttribute(element.attributes[i].name, element.attributes[i].value);
-				i++;
-			}
-			element.parentNode.replaceChild(imgelt, element);
-			element = imgelt;
-		}
 		element.src = value;
 	}
 };
+
+		
+
 XsltForms_output.prototype.getValue = function(format) {
 	var element = this.valueElement;
 	if (element.nodeName.toLowerCase() === "span") {
@@ -10384,6 +11918,11 @@ XsltForms_output.prototype.getValue = function(format) {
 		return value;
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_range(subform, id, valoff, binding, incremental, start, end, step, aidButton, clone) {
 	XsltForms_globals.counters.upload++;
 	this.init(subform, id);
@@ -10406,27 +11945,27 @@ function XsltForms_range(subform, id, valoff, binding, incremental, start, end, 
 	this.initFocus(this.cell.children[0], true);
 	XsltForms_browser.events.attach(this.rail, "focus", function(evt) {
 		var target = XsltForms_browser.events.getTarget(evt);
-		var parentNode = target;
-		while (parentNode && parentNode.nodeType === Fleur.Node.ELEMENT_NODE) {
-			var xf = parentNode.xfElement;
+		var parent = target;
+		while (parent && parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+			var xf = parent.xfElement;
 			if (xf) {
 				alert("rail_focus "+xf.element.id);
 				break;
 			}
-			parentNode = parentNode.parentNode;
+			parent = parent.parentNode;
 		}
 	} );
 	XsltForms_browser.events.attach(this.rail, "mousedown", function(evt) {
 		var target = XsltForms_browser.events.getTarget(evt);
-		var parentNode = target;
-		while (parentNode && parentNode.nodeType === Fleur.Node.ELEMENT_NODE) {
+		var parent = target;
+		while (parent && parent.nodeType === Fleur.Node.ELEMENT_NODE) {
 			var xf = parent.xfElement;
 			if (xf) {
 				var newPos = XsltForms_browser.getEventPos(evt).x + (window.pageLeft !== undefined ? window.pageLeft : (document.documentElement && document.documentElement.scrollLeft !== undefined) ? document.documentElement.scrollLeft : document.body.scrollLeft);
-				parentNode = xf.rail;
-				while (parentNode) {
-					newPos -= parentNode.offsetLeft;
-					parentNode = parentNode.offsetParent;
+				parent = xf.rail;
+				while (parent) {
+					newPos -= parent.offsetLeft;
+					parent = parent.offsetParent;
 				}
 				var node = xf.element.node;
 				var value = Math.round(newPos / xf.rail.clientWidth * (xf.end - xf.start) / xf.step) * xf.step + xf.start;
@@ -10445,32 +11984,32 @@ function XsltForms_range(subform, id, valoff, binding, incremental, start, end, 
 				}
 				break;
 			}
-			parentNode = parentNode.parentNode;
+			parent = parent.parentNode;
 		}
 	} );
 	XsltForms_browser.events.attach(this.cursor, "mousedown", function(evt) {
-		var target0 = XsltForms_browser.events.getTarget(evt);
-		var parentNode0 = target0;
-		while (parentNode0 && parentNode0.nodeType === Fleur.Node.ELEMENT_NODE) {
-			var xf0 = parentNode0.xfElement;
-			if (xf0) {
-				xf0.offset = XsltForms_browser.getEventPos(evt).x + (window.pageLeft !== undefined ? window.pageLeft : (document.documentElement && document.documentElement.scrollLeft !== undefined) ? document.documentElement.scrollLeft : document.body.scrollLeft);
-				parentNode0 = xf0.cursor;
-				while (parentNode0) {
-					xf0.offset -= parentNode0.offsetLeft;
-					parentNode0 = parentNode0.offsetParent;
+		var target = XsltForms_browser.events.getTarget(evt);
+		var parent = target;
+		while (parent && parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+			var xf = parent.xfElement;
+			if (xf) {
+				xf.offset = XsltForms_browser.getEventPos(evt).x + (window.pageLeft !== undefined ? window.pageLeft : (document.documentElement && document.documentElement.scrollLeft !== undefined) ? document.documentElement.scrollLeft : document.body.scrollLeft);
+				parent = xf.cursor;
+				while (parent) {
+					xf.offset -= parent.offsetLeft;
+					parent = parent.offsetParent;
 				}
 				document.onmousemove = function(evt) {
 					var target = XsltForms_browser.isIE ? document.activeElement : XsltForms_browser.events.getTarget(evt);
-					var parentNode = target;
-					while (parentNode && parentNode.nodeType === Fleur.Node.ELEMENT_NODE) {
-						var xf = parentNode.xfElement;
+					var parent = target;
+					while (parent && parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+						var xf = parent.xfElement;
 						if (xf) {
 							var newPos = XsltForms_browser.getEventPos(evt).x - xf.offset + (window.pageLeft !== undefined ? window.pageLeft : (document.documentElement && document.documentElement.scrollLeft !== undefined) ? document.documentElement.scrollLeft : document.body.scrollLeft);
-							parentNode = xf.rail;
-							while (parentNode) {
-								newPos -= parentNode.offsetLeft;
-								parentNode = parentNode.offsetParent;
+							parent = xf.rail;
+							while (parent) {
+								newPos -= parent.offsetLeft;
+								parent = parent.offsetParent;
 							}
 							var node = xf.element.node;
 							var value = Math.round(newPos / xf.rail.clientWidth * (xf.end - xf.start) / xf.step) * xf.step + xf.start;
@@ -10490,19 +12029,19 @@ function XsltForms_range(subform, id, valoff, binding, incremental, start, end, 
 							}
 							break;
 						}
-						parentNode = parentNode.parentNode;
+						parent = parent.parentNode;
 					}
 				};
 				document.onmouseup = function() {
 					document.onmousemove = null;
 					document.onmouseup = null;
 				};
-				if (!document.activeElement || !document.activeElement !== xf0.cursor) {
-					xf0.cursor.focus();
+				if (!document.activeElement || !document.activeElement !== xf.cursor) {
+					xf.cursor.focus();
 				}
 				break;
 			}
-			parentNode0 = parentNode0.parentNode;
+			parent = parent.parentNode;
 		}
 		if (typeof evt.stopPropagation === "function") {
 			evt.stopPropagation();
@@ -10519,15 +12058,28 @@ function XsltForms_range(subform, id, valoff, binding, incremental, start, end, 
 		this.initFocus(this.aidButton);
 	}
 }
+
 XsltForms_range.prototype = new XsltForms_control();
+
+
+		
+
 XsltForms_range.prototype.clone = function(id) { 
 	return new XsltForms_range(this.subform, id, this.valoff, this.binding, this.incremental, this.start, this.end, this.step, this.bolAidButton, true);
 };
+
+
+		
+
 XsltForms_range.prototype.dispose = function() {
 	this.cell = null;
 	XsltForms_globals.counters.range--;
 	XsltForms_control.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_range.prototype.setValue = function(value) {
 	this.outputvalue.innerHTML = value;
 	var node = this.element.node;
@@ -10540,6 +12092,10 @@ XsltForms_range.prototype.setValue = function(value) {
 		this.cursor.style.left = Math.round(this.rail.clientWidth * (this.value - this.start) / (this.end - this.start)) + "px";
 	}
 };
+
+
+		
+
 XsltForms_range.prototype.blur = function(target) {
 	XsltForms_globals.focus = null;
 	if (!this.incremental) {
@@ -10547,7 +12103,13 @@ XsltForms_range.prototype.blur = function(target) {
 		this.valueChanged(this.value);
 	}
 };
-function XsltForms_repeat(subform, id, nbsiblings, binding) {
+
+
+	
+		
+		
+		
+function XsltForms_repeat(subform, id, nbsiblings, binding, clone) {
 	XsltForms_globals.counters.repeat++;
 	this.init(subform, id);
 	this.controlName = "repeat";
@@ -10560,16 +12122,23 @@ function XsltForms_repeat(subform, id, nbsiblings, binding) {
 	this.root = XsltForms_browser.hasClass(el, "xforms-control")? el.lastChild : el;
 	this.isItemset = XsltForms_browser.hasClass(el, "xforms-itemset");
 }
+
 XsltForms_repeat.prototype = new XsltForms_element();
+
+
+		
+
 XsltForms_repeat.prototype.dispose = function() {
 	this.root = null;
 	XsltForms_globals.counters.repeat--;
 	XsltForms_element.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_repeat.prototype.setIndex = function(index) {
-	if (this.nodes.length === 0) {
-		this.index = 0;
-	} else if (this.index !== index) {
+	if (this.index !== index) {
 		var node = this.nodes[index - 1];
 		if (node) {    
 			XsltForms_globals.openAction("XsltForms_repeat.prototype.setIndex");
@@ -10581,6 +12150,10 @@ XsltForms_repeat.prototype.setIndex = function(index) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_repeat.prototype.deleteNode = function(node) {
 	var newNodes = [];
 	var nodes = this.nodes;
@@ -10592,6 +12165,10 @@ XsltForms_repeat.prototype.deleteNode = function(node) {
 	this.nodes = newNodes;
 	this.setIndex(this.index === nodes.length? this.index - 1 : this.index);
 };
+
+
+		
+
 XsltForms_repeat.prototype.insertNode = function(node, nodeAfter) {
 	var nodes = this.nodes;
 	if (nodeAfter) {
@@ -10611,6 +12188,10 @@ XsltForms_repeat.prototype.insertNode = function(node, nodeAfter) {
 		this.setIndex(nodes.length);
 	}
 };
+
+
+		
+
 XsltForms_repeat.prototype.build_ = function(ctx) {
 	var nodes0 = this.evaluateBinding(this.binding, ctx);
 	var nodes = [];
@@ -10709,19 +12290,16 @@ XsltForms_repeat.prototype.build_ = function(ctx) {
 		}
 	}
 	this.element.node = nodes[0];
-	if (this.element.node) {
-		if (this.index !== 1) {
-			this.index = 1;
-			XsltForms_globals.addChange(this);
-			XsltForms_globals.addChange(this.element.node.ownerDocument.model);
-		}
-	} else {
-		this.index = 0;
-		if (XsltForms_globals.ready) {
-			XsltForms_globals.addChange(this);
-		}
+	if (this.index !== 1) {
+		this.index = 1;
+		XsltForms_globals.addChange(this);
+		XsltForms_globals.addChange(this.element.node.ownerDocument.model);
 	}
 };
+
+
+		
+
 XsltForms_repeat.prototype.refresh = function(selected) {
 	var empty = this.nodes.length === 0;
 	if (this.nbsiblings !== 0) {
@@ -10745,9 +12323,17 @@ XsltForms_repeat.prototype.refresh = function(selected) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_repeat.prototype.clone = function(id) { 
 	return new XsltForms_repeat(this.subform, id, this.nbsiblings, this.binding, true);
 };
+
+
+		
+
 XsltForms_repeat.initClone = function(element, inputids) {
 	if ("LABEL" === element.nodeName.toUpperCase() && element.getAttribute("for") !== "") {
 		if (inputids.ids[element.getAttribute("for")]) {
@@ -10795,6 +12381,7 @@ XsltForms_repeat.initClone = function(element, inputids) {
 		}
 		return;
 	}
+	//var oldinputids = {ids: inputids.ids.slice(0), fors: inputids.fors.slice(0)};
 	var next = element.firstChild;
 	while (next) {
 		var child = next;
@@ -10806,6 +12393,10 @@ XsltForms_repeat.initClone = function(element, inputids) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_repeat.forceOldId = function(element) {
 	var id = element.id;
 	if (id) {
@@ -10821,6 +12412,10 @@ XsltForms_repeat.forceOldId = function(element) {
 		XsltForms_repeat.forceOldId(child);
 	}
 };
+
+
+		
+
 XsltForms_repeat.selectItem = function(element) {
 	var par = element.parentNode;
 	if (par) {
@@ -10847,10 +12442,15 @@ XsltForms_repeat.selectItem = function(element) {
 		}
 	}
 };
+
+	
+		
+		
+		
 function XsltForms_select(subform, id, min, max, full, binding, incremental, clone) {
 	XsltForms_globals.counters.select++;
 	this.init(subform, id);
-	this.controlName = max === 1 ? "select1": "select";
+	this.controlName = max === 1? "select1": "select";
 	this.binding = binding;
 	this.min = min;
 	this.max = max;
@@ -10870,16 +12470,29 @@ function XsltForms_select(subform, id, min, max, full, binding, incremental, clo
 		}
 	}
 }
+
 XsltForms_select.prototype = new XsltForms_control();
+
+
+		
+
 XsltForms_select.prototype.clone = function(id) { 
 	return new XsltForms_select(this.subform, id, this.min, this.max, this.full, this.binding, this.incremental, true);
 };
+
+
+		
+
 XsltForms_select.prototype.dispose = function() {
 	this.select = null;
 	this.selectedOptions = null;
 	XsltForms_globals.counters.select--;
 	XsltForms_control.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_select.prototype.focusFirst = function() {
 	var input = XsltForms_browser.isXhtml ? this.element.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "input")[0] : this.element.getElementsByTagName("input")[0];
 	input.focus();
@@ -10887,8 +12500,11 @@ XsltForms_select.prototype.focusFirst = function() {
 		input.focus();
 	}
 };
+
+
+		
+
 XsltForms_select.prototype.setValue = function(value) {
-	var optvalue;
 	if (!this.full && (!value || value === "")) {
 		this.selectedOptions = [];
 		if (this.select.options[0] && this.select.options[0].value !== "\xA0") {
@@ -10905,17 +12521,18 @@ XsltForms_select.prototype.setValue = function(value) {
 		}
 	} else {
 		if (!this.full && this.select.firstChild && this.select.firstChild.value === "\xA0" && !(this.min === 0 && this.max === 1)) {
+			//this.select.removeChild(this.select.firstChild);
 			this.select.remove(0);
 		}
-		var vals = value ? value instanceof Array ? value : (this.max !== 1? value.split(XsltForms_globals.valuesSeparator) : [value]) : [""];
-		var list = this.full ? (XsltForms_browser.isXhtml ? this.element.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "input") : this.element.getElementsByTagName("input")) : this.select.options;
+		var vals = value? value instanceof Array ? value : (this.max !== 1? value.split(XsltForms_globals.valuesSeparator) : [value]) : [""];
+		var list = this.full? (XsltForms_browser.isXhtml ? this.element.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "input") : this.element.getElementsByTagName("input")) : this.select.options;
 		var well = true;
 		var schtyp = XsltForms_schema.getType(XsltForms_browser.getType(this.element.node) || "xsd_:string");
 		for (var i = 0, len = vals.length; well && i < len; i++) {
 			var val = vals[i];
 			var found = false;
 			for (var j = 0, len1 = list.length; !found && j < len1; j++) {
-				optvalue = list[j].value;
+				var optvalue = list[j].value;
 				if (schtyp.format) {
 					try { optvalue = schtyp.format(optvalue); } catch(e) { }
 				}
@@ -10945,7 +12562,7 @@ XsltForms_select.prototype.setValue = function(value) {
 			this.selectedOptions = [];
 			for (var k = 0, len3 = list.length; k < len3; k++) {
 				item = list[k];
-				optvalue = item.value;
+				var optvalue = item.value;
 				if (schtyp.format) {
 					try { optvalue = schtyp.format(optvalue); } catch(e) { }
 				}
@@ -10961,6 +12578,10 @@ XsltForms_select.prototype.setValue = function(value) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_select.prototype.changeReadonly = function() {
 	if (this.full) {
 		var list = XsltForms_browser.isXhtml ? this.element.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "input") : this.element.getElementsByTagName("input");
@@ -10973,6 +12594,10 @@ XsltForms_select.prototype.changeReadonly = function() {
 		}
 	}
 };
+
+
+		
+
 XsltForms_select.prototype.itemClick = function(value) {
 	var inputs = XsltForms_browser.isXhtml ? this.element.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "input") : this.element.getElementsByTagName("input");
 	var input;
@@ -11031,6 +12656,10 @@ XsltForms_select.prototype.itemClick = function(value) {
 	}
 	XsltForms_globals.closeAction("XsltForms_select.prototype.itemClick");
 };
+
+
+		
+
 XsltForms_select.prototype.blur = function(evt) {
 	if (this.value) {
 		XsltForms_globals.openAction("XsltForms_select.prototype.blur");
@@ -11039,6 +12668,10 @@ XsltForms_select.prototype.blur = function(evt) {
 		this.value = null;
 	}
 };
+
+
+		
+
 XsltForms_select.normalChange = function(evt) {
 	var xf = XsltForms_control.getXFElement(this);
 	var news = [];
@@ -11086,6 +12719,10 @@ XsltForms_select.normalChange = function(evt) {
 	xf.selectedOptions = news;
 	XsltForms_globals.closeAction("XsltForms_select.normalChange");
 };
+
+
+		
+
 XsltForms_select.incrementalChange = function(evt) {
 	var xf = XsltForms_control.getXFElement(this);
 	XsltForms_globals.openAction("XsltForms_select.incrementalChange");
@@ -11093,6 +12730,10 @@ XsltForms_select.incrementalChange = function(evt) {
 	xf.valueChanged(xf.value);
 	XsltForms_globals.closeAction("XsltForms_select.incrementalChange");
 };
+
+
+		
+
 XsltForms_select.incrementalChangeKeyup = function(evt) {
 	if (evt.keyCode !== 9 && evt.keyCode !== 17) {
 		var xf = XsltForms_control.getXFElement(this);
@@ -11102,6 +12743,10 @@ XsltForms_select.incrementalChangeKeyup = function(evt) {
 		XsltForms_globals.closeAction("XsltForms_select.incrementalChangeKeyup");
 	}
 };
+
+
+		
+
 XsltForms_select.prototype.getSelected = function() {
 	var s = this.selectedOptions;
 	if (!s) {
@@ -11115,7 +12760,12 @@ XsltForms_select.prototype.getSelected = function() {
 	}
 	return s;
 };
-function XsltForms_trigger(subform, id, binding) {
+
+	
+		
+		
+		
+function XsltForms_trigger(subform, id, binding, clone) {
 	XsltForms_globals.counters.trigger++;
 	this.init(subform, id);
 	this.controlName = "trigger";
@@ -11135,24 +12785,54 @@ function XsltForms_trigger(subform, id, binding) {
 	this.input = button;
 	this.initFocus(button);
 }
+
 XsltForms_trigger.prototype = new XsltForms_control();
+
+
+		
+
 XsltForms_trigger.prototype.setValue = function () { };
+
+
+		
+
 XsltForms_trigger.prototype.changeReadonly = function() {
 	this.input.disabled = this.readonly;
 };
+
+
+		
+
 XsltForms_trigger.prototype.clone = function (id) {
 	return new XsltForms_trigger(this.subform, id, this.binding, true);
 };
+
+
+		
+
 XsltForms_trigger.prototype.dispose = function() {
 	XsltForms_globals.counters.trigger--;
 	XsltForms_element.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_trigger.prototype.click = function (target, evcontext) {
 	XsltForms_globals.openAction("XsltForms_trigger.prototype.click");
 	XsltForms_xmlevents.dispatch(this, "DOMActivate", null, null, null, null, evcontext);
 	XsltForms_globals.closeAction("XsltForms_trigger.prototype.click");
 };
+
+
+		
+
 XsltForms_trigger.prototype.blur = function () { };
+
+	
+		
+		
+		
 function XsltForms_upload(subform, id, valoff, binding, incremental, filename, mediatype, aidButton, clone) {
 	XsltForms_globals.counters.upload++;
 	this.init(subform, id);
@@ -11164,6 +12844,9 @@ function XsltForms_upload(subform, id, valoff, binding, incremental, filename, m
 	this.valoff = valoff;
 	this.cell = cells[valoff];
 	this.input = this.cell.children[0];
+	//if (this.input.nodeName.toLowerCase() === "form") {
+	//	this.input = this.input.children[0];
+	//}
 	this.isClone = clone;
 	this.hasBinding = true;
 	this.bolAidButton = aidButton;
@@ -11179,24 +12862,44 @@ function XsltForms_upload(subform, id, valoff, binding, incremental, filename, m
 		this.initFocus(this.aidButton);
 	}
 }
+
 XsltForms_upload.prototype = new XsltForms_control();
+
 XsltForms_upload.contents = {};
+
+
+		
+
 XsltForms_upload.prototype.resource = function(resource) {
 	this.resource = resource;
 	return this;
 };
-XsltForms_upload.prototype.header = function(nodeset, combine, fname, values) {
-	this.headers.push({nodeset: nodeset, combine: combine, name: fname, values: values});
+
+		
+
+XsltForms_upload.prototype.header = function(nodeset, combine, name, values) {
+	this.headers.push({nodeset: nodeset, combine: combine, name: name, values: values});
 	return this;
 };
+
+		
+
 XsltForms_upload.prototype.clone = function(id) { 
 	return new XsltForms_upload(this.subform, id, this.valoff, this.binding, this.incremental, this.filename, this.mediatype, this.bolAidButton, true);
 };
+
+
+		
+
 XsltForms_upload.prototype.dispose = function() {
 	this.cell = null;
 	XsltForms_globals.counters.upload--;
 	XsltForms_control.prototype.dispose.call(this);
 };
+
+
+		
+
 XsltForms_upload.prototype.setValue = function(value) {
 	var node = this.element.node;
 	this.type = node ? XsltForms_schema.getType(XsltForms_browser.getType(node) || "xsd_:string") : XsltForms_schema.getType("xsd_:string");
@@ -11217,8 +12920,8 @@ XsltForms_upload.prototype.setValue = function(value) {
 					if (uploadctl.uploadbtn) {
 						uploadctl.uploadbtn.disabled = true;
 						uploadctl.uploadbtn.onclick = function() {
-							var uploadctl1 = XsltForms_control.getXFElement(this);
-							uploadctl1.uploader.start();
+							var uploadctl = XsltForms_control.getXFElement(this);
+							uploadctl.uploader.start();
 							return false;
 						};
 					}
@@ -11239,7 +12942,7 @@ XsltForms_upload.prototype.setValue = function(value) {
 						uploadctl.uploadbtn.disabled = false;
 					}
 				},
-				BeforeUpload: function(up) {
+				BeforeUpload: function(up, file) {
 					var uploadctl = XsltForms_control.getXFElement(up.getOption("browse_button")[0]);
 					var resource;
 					if (uploadctl.resource.bind_evaluate) {
@@ -11289,7 +12992,7 @@ XsltForms_upload.prototype.setValue = function(value) {
 						up.setOption("headers", upheaders);
 					}
 				},
-				UploadComplete: function(up) {
+				UploadComplete: function(up, files) {
 					var uploadctl = XsltForms_control.getXFElement(up.getOption("browse_button")[0]);
 					if (uploadctl.uploadbtn) {
 						uploadctl.uploadbtn.disabled = true;
@@ -11326,6 +13029,10 @@ XsltForms_upload.prototype.setValue = function(value) {
 		}
 	}
 };
+
+
+		
+
 XsltForms_upload.prototype.blur = function(target) {
 	XsltForms_globals.focus = null;
 	if (!this.incremental) {
@@ -11333,13 +13040,17 @@ XsltForms_upload.prototype.blur = function(target) {
 		this.valueChanged(this.value);
 	}
 };
+
+
+		
+
 XsltForms_upload.prototype.directclick = function() {
 	if (window.FileReader) {
 		return true;
 	}
 	if (this.type.nsuri !== "http://www.w3.org/2001/XMLSchema" || (this.type.name !== "anyURI" && this.type.name !== "string" && this.type.name !== "base64Binary" && this.type.name !== "hexBinary")) {
 		alert("Unexpected type for upload control: " + this.type.nsuri + " " + this.type.name);
-		throw new Error("Error");
+		throw "Error";
 	} else {
 		var filename = "unselected";
 		var content = XsltForms_browser.readFile("", "ISO-8859-1", this.type.name, "XSLTForms Java Upload");
@@ -11376,10 +13087,14 @@ XsltForms_upload.prototype.directclick = function() {
 	}
 	return false;
 };
+
+
+		
+
 XsltForms_upload.prototype.change = function() {
 	if (this.type.nsuri !== "http://www.w3.org/2001/XMLSchema" || (this.type.name !== "anyURI" && this.type.name !== "string" && this.type.name !== "base64Binary" && this.type.name !== "hexBinary")) {
 		alert("Unexpected type for upload control: " + this.type.nsuri + " " + this.type.name);
-		throw new Error("Error");
+		throw "Error";
 	} else {
 		var filename = "unselected";
 		var content = "";
@@ -11478,27 +13193,48 @@ XsltForms_upload.prototype.change = function() {
 		}
 	}
 };
-function XsltForms_var(subform, id, vname, binding) {
+
+
+	
+		
+		
+		
+function XsltForms_var(subform, id, name, binding) {
 	XsltForms_globals.counters.xvar++;
 	this.init(subform, id);
 	if (!this.element.parentNode.varScope) {
 		this.element.parentNode.varScope = {};
 	}
-	this.element.parentNode.varScope[vname] = id;
+	this.element.parentNode.varScope[name] = id;
 	this.controlName = "var";
-	this.name = vname;
+	this.name = name;
 	this.hasBinding = true;
 	this.binding = binding;
 	this.isOutput = true;
 }
+
 XsltForms_var.prototype = new XsltForms_control();
+
+
+		
+
 XsltForms_var.prototype.clone = function(id) { 
 	return new XsltForms_var(this.subform, id, this.name, this.binding);
 };
+
+
+		
+
 XsltForms_var.prototype.dispose = function() {
 	XsltForms_globals.counters.xvar--;
 	XsltForms_control.prototype.dispose.call(this);
 };
+
+
+	
+		
+		
+		
 function XsltForms_calendar() {
 	var body = XsltForms_browser.isXhtml ? document.getElementsByTagNameNS("http://www.w3.org/1999/xhtml", "body")[0] : document.getElementsByTagName("body")[0];
 	this.element = XsltForms_browser.createElement("table", body, null, "calendar");
@@ -11523,10 +13259,10 @@ function XsltForms_calendar() {
 	XsltForms_browser.events.attach(this.inputYear, "change", function() {
 		XsltForms_calendar.INSTANCE.refresh();
 	} );
-	var closeElt = XsltForms_browser.createElement("button", title, "X");
-	closeElt.setAttribute("type", "button");
-	closeElt.setAttribute("title", "Close");
-	XsltForms_browser.events.attach(closeElt, "click", function() {
+	var close = XsltForms_browser.createElement("button", title, "X");
+	close.setAttribute("type", "button");
+	close.setAttribute("title", "Close");
+	XsltForms_browser.events.attach(close, "click", function() {
 		XsltForms_calendar.close();
 	} );
 	var trDays = XsltForms_browser.createElement("tr", tHead, null, "names");
@@ -11536,8 +13272,8 @@ function XsltForms_calendar() {
 		this.createElement(trDays, "name", XsltForms_browser.i18n.get("calendar.day" + ind));
 	}
 	this.tBody = XsltForms_browser.createElement("tbody", this.element);
-	var handler = function(evt) {
-		var value = XsltForms_browser.events.getTarget(evt).childNodes[0].nodeValue;
+	var handler = function(event) {
+		var value = XsltForms_browser.events.getTarget(event).childNodes[0].nodeValue;
 		var cal = XsltForms_calendar.INSTANCE;
 		if (value !== "") {
 			cal.day = value;
@@ -11589,9 +13325,17 @@ function XsltForms_calendar() {
 	this.minList = new XsltForms_numberList(tdFoot, "calendarList", this.inputMin, 0, 59, 2);
 	this.secList = new XsltForms_numberList(tdFoot, "calendarList", this.inputSec, 0, 59, 2);
 }
+
+
+		
+
 XsltForms_calendar.prototype.today = function() {
 	this.refreshControls(new Date());
 };
+
+
+		
+
 XsltForms_calendar.prototype.refreshControls = function(date) {
 	this.day = date.getDate();
 	this.selectMonth.value = date.getMonth();
@@ -11603,6 +13347,10 @@ XsltForms_calendar.prototype.refreshControls = function(date) {
 	}
 	this.refresh();
 };
+
+
+		
+
 XsltForms_calendar.prototype.refresh = function() {
 	var firstDay = this.getFirstDay();
 	var daysOfMonth = this.getDaysOfMonth();
@@ -11623,6 +13371,10 @@ XsltForms_calendar.prototype.refresh = function() {
 		}
 	}
 };
+
+
+		
+
 XsltForms_calendar.prototype.getFirstDay = function() {
 	var date = new Date();
 	date.setDate(1);
@@ -11632,6 +13384,10 @@ XsltForms_calendar.prototype.getFirstDay = function() {
 	var d = date.getDay();
 	return (d + (6 - ini)) % 7;
 };
+
+
+		
+
 XsltForms_calendar.prototype.getDaysOfMonth = function() {
 	var year = parseInt(this.inputYear.value, 10);
 	var month = parseInt(this.selectMonth.value, 10);
@@ -11640,6 +13396,10 @@ XsltForms_calendar.prototype.getDaysOfMonth = function() {
 	}
 	return XsltForms_calendar.daysOfMonth[this.selectMonth.value];
 };
+
+
+		
+
 XsltForms_calendar.prototype.createElement = function(parent, className, text, colspan, handler) {
 	var element = XsltForms_browser.createElement("td", parent, text, className);
 	if (colspan > 1) {
@@ -11651,11 +13411,17 @@ XsltForms_calendar.prototype.createElement = function(parent, className, text, c
 	}
 	return element;
 };
+
 XsltForms_calendar.daysOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
 XsltForms_calendar.ONLY_DATE = 0;
 XsltForms_calendar.HOURS = 1;
 XsltForms_calendar.MINUTES = 2;
 XsltForms_calendar.SECONDS = 3;
+
+
+		
+
 XsltForms_calendar.show = function(input, type) {
 	var cal = XsltForms_calendar.INSTANCE;
 	if (!cal) {
@@ -11682,23 +13448,47 @@ XsltForms_calendar.show = function(input, type) {
 	}
 	XsltForms_browser.dialog.show(cal.element, input, false);
 };
+
+
+		
+
 XsltForms_calendar.close = function() {
 	var cal = XsltForms_calendar.INSTANCE;
 	cal.yearList.close();
 	XsltForms_browser.dialog.hide(cal.element, false);
 };
+    
+	
+	
+		
+		
+		
+		
+		
 function XsltForms_type() {
 }
+
+
+		
+
 XsltForms_type.prototype.setSchema = function(schema) {
 	this.schema = schema;
 	return this;
 };
-XsltForms_type.prototype.setName = function(tname) {
-	this.name = tname;
+
+
+		
+
+XsltForms_type.prototype.setName = function(name) {
+	this.name = name;
 	this.nsuri = this.schema.ns;
-	this.schema.types[tname] = this;
+	this.schema.types[name] = this;
 	return this;
 };
+
+
+		
+
 XsltForms_type.prototype.canonicalValue = function(value) {
 	value = value.toString();
 	switch (this.whiteSpace) {
@@ -11709,15 +13499,29 @@ XsltForms_type.prototype.canonicalValue = function(value) {
 			value = value.replace(/[\t\r\n ]+/g, " ").replace(/^\s+|\s+$/g, "");
 			break;
 	}
+
 	return value;
 };
+
+
+		
+
 XsltForms_type.prototype.getMaxLength = function() {
 	return this.maxLength ? this.maxLength : (this.length ? this.length : (this.totalDigits ? this.totalDigits + 1 : null));
 };
+
+
+		
+
 XsltForms_type.prototype.getDisplayLength = function() {
 	return this.displayLength;
 };
-function XsltForms_schema(subform, ns, sname, prefixes) {
+    
+	
+		
+		
+		
+function XsltForms_schema(subform, ns, name, prefixes) {
 	if (XsltForms_schema.all[ns]) {
 		XsltForms_globals.error(XsltForms_globals.defaultModel, "xforms-link-exception", "More than one schema with the same namespace declaration");
 		return;
@@ -11726,7 +13530,7 @@ function XsltForms_schema(subform, ns, sname, prefixes) {
 		return XsltForms_schema.all["http://www.w3.org/2002/xforms"];
 	}
 	this.subform = subform;
-	this.name = sname;
+	this.name = name;
 	this.ns = ns;
 	this.types = {};
 	this.prefixes = prefixes || {};
@@ -11735,53 +13539,76 @@ function XsltForms_schema(subform, ns, sname, prefixes) {
 		subform.schemas.push(this);
 	}
 }
+
+
+		
+
 XsltForms_schema.prototype.dispose = function(subform) {
 	XsltForms_schema.all[this.ns] = null;
 	this.types = null;
 	this.prefixes = null;
 };
+
+		
+
 XsltForms_schema.all = {};
-XsltForms_schema.prototype.getType = function(tname) {
-	if (tname.indexOf(":") !== -1) {
-		var res = tname.split(":");
+
+
+		
+
+XsltForms_schema.prototype.getType = function(name) {
+	if (name.indexOf(":") !== -1) {
+		var res = name.split(":");
 		var prefix = res[0];
 		var ns = this.prefixes[prefix];
 		if (ns) {
 			return XsltForms_schema.getTypeNS(ns, res[1]);
 		}
-		return XsltForms_schema.getType(tname);
+		return XsltForms_schema.getType(name);
 	}
-	var type = this.types[tname];
+	var type = this.types[name];
 	if (!type) {
-		alert("Type " + tname + " not defined");
-		throw new Error("Error");
+		alert("Type " + name + " not defined");
+		throw "Error";
 	}
 	return type;
 };
-XsltForms_schema.getType = function(tname) {
-	tname = tname || "xsd:string";
-	var res = tname.split(":");
+
+
+		
+
+XsltForms_schema.getType = function(name) {
+	name = name || "xsd:string";
+	var res = name.split(":");
 	if (typeof(res[1]) === "undefined") {
 		return XsltForms_schema.getTypeNS(XsltForms_schema.prefixes.xforms, res[0]);
 	} else {
 		return XsltForms_schema.getTypeNS(XsltForms_schema.prefixes[res[0]], res[1]);
 	}
 };
-XsltForms_schema.getTypeNS = function(ns, tname) {
+
+
+		
+
+XsltForms_schema.getTypeNS = function(ns, name) {
 	var schema = XsltForms_schema.all[ns];
 	if (!schema) {
-		alert("Schema for namespace " + ns + " not defined for type " + tname);
-		throw new Error("Error");
+		alert("Schema for namespace " + ns + " not defined for type " + name);
+		throw "Error";
 	}
-	var type = schema.types[tname];	
+	var type = schema.types[name];	
 	if (!type) {
 		if (XsltForms_globals.debugMode) {
-			alert("Type " + tname + " not defined in namespace " + ns);
+			alert("Type " + name + " not defined in namespace " + ns);
 		}
 		type = XsltForms_schema.getTypeNS("http://www.w3.org/2001/XMLSchema", "string");
 	}
 	return type;
 };
+
+
+		
+
 XsltForms_schema.get = function(subform, ns) {
 	var schema = XsltForms_schema.all[ns];
 	if (!schema) {
@@ -11789,6 +13616,10 @@ XsltForms_schema.get = function(subform, ns) {
 	}
 	return schema;
 };
+
+
+		
+
 XsltForms_schema.prefixes = {
 	"xsd_" : "http://www.w3.org/2001/XMLSchema",
 	"xsd" : "http://www.w3.org/2001/XMLSchema",
@@ -11800,13 +13631,27 @@ XsltForms_schema.prefixes = {
 	"rte" : "http://www.agencexml.com/xsltforms/rte",
 	"dcterms" : "http://purl.org/dc/terms/"
 };
+
+
+		
+
 XsltForms_schema.registerPrefix = function(prefix, namespace) {
 	this.prefixes[prefix] = namespace;
 };
+    
+	
+		
+		
+		
 function XsltForms_atomicType() {
 	this.patterns = [];
 }
+
 XsltForms_atomicType.prototype = new XsltForms_type();
+
+
+		
+
 XsltForms_atomicType.prototype.setBase = function(base) {
 	var baseType = typeof base === "string"? this.schema.getType(base) : base;
 	for (var id in baseType)  {
@@ -11823,6 +13668,10 @@ XsltForms_atomicType.prototype.setBase = function(base) {
 	this.basename = baseType.name;
 	return this;
 };
+
+
+		
+
 XsltForms_atomicType.prototype.hasBase = function(base) {
 	var baseType = XsltForms_schema.getType(base);
 	var curType = this;
@@ -11837,26 +13686,33 @@ XsltForms_atomicType.prototype.hasBase = function(base) {
 	}
 	return true;
 };
-XsltForms_atomicType.prototype.put = function(tname, value) {
-	if (tname === "base") {
+
+
+		
+
+XsltForms_atomicType.prototype.put = function(name, value) {
+	if (name === "base") {
 		this.setBase(value);
-	} else if (tname === "pattern") {
+	} else if (name === "pattern") {
 		XsltForms_browser.copyArray([value], this.patterns);
-	} else if (tname === "enumeration") {
+	} else if (name === "length") {
+		this.length = parseInt(value, 10);
+	} else if (name === "enumeration") {
 		if (!this.enumeration) {
 			this.enumeration = [];
 		}
 		this.enumeration.push(value);
 	} else {
-		if (tname === "length" || tname === "minLength" || tname === "maxLength" || tname === "fractionDigits" || tname === "totalDigits") {
-			value = parseInt(value, 10);
-		} else if (tname === "minInclusive" || tname === "maxInclusive") {
-			value = parseFloat(value);
-		}
-		this[tname] = value;
+		this[name] = value;
 	}
+	
 	return this;
 };
+
+
+		
+
+/** If valid return canonicalValue else null*/
 XsltForms_atomicType.prototype.validate = function (value) {
 	value = this.canonicalValue(value);
 	for (var i = 0, len = this.patterns.length; i < len; i++) {
@@ -11908,6 +13764,10 @@ XsltForms_atomicType.prototype.validate = function (value) {
 	}
 	return true;
 };
+
+
+		
+
 XsltForms_atomicType.prototype.normalize = function (value) {
 	if (typeof this.fractionDigits === "number") {
 		var number = parseFloat(value);
@@ -11929,14 +13789,28 @@ XsltForms_atomicType.prototype.normalize = function (value) {
 	}
 	return value;
 };
+    
+	
+		
+		
+		
 function XsltForms_listType() {
 	this.whiteSpace = "collapse";
 }
+
 XsltForms_listType.prototype = new XsltForms_type();
+
+
+		
+
 XsltForms_listType.prototype.setItemType = function(itemType) {
 	this.itemType = typeof itemType === "string"? this.schema.getType(itemType) : itemType;
 	return this;
 };
+
+
+		
+
 XsltForms_listType.prototype.validate = function(value) {
 	var l = 0, items = this.itemType.canonicalValue.call(this, value).split(" ");
 	for (var i = 0, len = items.length; i < len; i++) {
@@ -11954,6 +13828,10 @@ XsltForms_listType.prototype.validate = function(value) {
 	}
 	return true;
 };
+
+
+		
+
 XsltForms_listType.prototype.canonicalValue = function(value) {
 	var items = this.itemType.canonicalValue(value).split(" ");
 	var cvalue = "";
@@ -11963,21 +13841,39 @@ XsltForms_listType.prototype.canonicalValue = function(value) {
 	}
 	return cvalue;
 };
+
+	
+		
+		
+		
 function XsltForms_unionType(memberTypes) {
 	this.baseTypes = [];
 	this.memberTypes = memberTypes ? memberTypes.split(" ") : [];
 }
+
 XsltForms_unionType.prototype = new XsltForms_type();
+
+
+		
+
 XsltForms_unionType.prototype.addType = function(type) {
 	this.baseTypes.push(typeof type === "string"? this.schema.getType(type) : type);
 	return this;
 };
+
+
+		
+
 XsltForms_unionType.prototype.addTypes = function() {
 	for (var i = 0, len = this.memberTypes.length; i < len; i++ ) {
 		this.baseTypes.push(this.schema.getType(this.memberTypes[i]));
 	}
 	return this;
 };
+
+
+		
+
 XsltForms_unionType.prototype.validate = function (value) {
 	for (var i = 0, len = this.baseTypes.length; i < len; ++i) {
 		if (this.baseTypes[i].validate(value)) {
@@ -11986,13 +13882,24 @@ XsltForms_unionType.prototype.validate = function (value) {
 	}
 	return false;
 };
+    
+	
+		
+		
+		
 var XsltForms_typeDefs = {
+
+		
+
 	initAll : function() {
 		this.init("http://www.w3.org/2001/XMLSchema", this.Default);
 		this.init("http://www.w3.org/2002/xforms", this.XForms);
 		this.init("http://www.agencexml.com/xsltforms", this.XSLTForms);
 		this.init("http://purl.org/dc/terms/", this.DublinCore);
 	},
+
+		
+
 	init : function(ns, list) {
 		var schema = XsltForms_schema.get(null, ns);
 		for (var id in list) {
@@ -12018,16 +13925,29 @@ var XsltForms_typeDefs = {
 		c : "A-Za-z_\\xC0-\\xD6\\xD8-\\xF6\\xF8-\\xFF\\-\\.0-9\\xB7"
 	}
 };
+
+
+		
+
 XsltForms_typeDefs.Default = {
+
+		
+
 	"string" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"whiteSpace" : "preserve"
 	},
+
+		
+
 	"boolean" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^(true|false|0|1)$" ],
 		"class" : "boolean"
 	},
+
+		
+
 	"decimal" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^[\\-+]?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)$" ],
@@ -12039,16 +13959,25 @@ XsltForms_typeDefs.Default = {
 			return XsltForms_browser.i18n.parseNumber(value);
 		}
 	},
+
+		
+
 	"float" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^(([\\-+]?([0-9]+(\\.[0-9]*)?)|(\\.[0-9]+))([eE][\\-+]?[0-9]+)?|-?INF|NaN)$" ],
 		"class" : "number"
 	},
+
+		
+
 	"double" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^(([\\-+]?([0-9]+(\\.[0-9]*)?)|(\\.[0-9]+))([eE][-+]?[0-9]+)?|-?INF|NaN)$" ],
 		"class" : "number"
 	},
+
+		
+
 	"dateTime" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^([12][0-9]{3})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?(Z|[+\\-]([01][0-9]|2[0-3]):[0-5][0-9])?$" ],
@@ -12066,6 +13995,9 @@ XsltForms_typeDefs.Default = {
 			return XsltForms_browser.i18n.format(XsltForms_browser.i18n.parse(value), "yyyy-MM-ddThh:mm:ss", true);
 		}
 	},
+
+		
+
 	"date" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^([12][0-9]{3})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])(Z|[+\\-]([01][0-9]|2[0-3]):[0-5][0-9])?$" ],
@@ -12083,6 +14015,9 @@ XsltForms_typeDefs.Default = {
 			return XsltForms_browser.i18n.format(XsltForms_browser.i18n.parseDate(value), "yyyy-MM-dd", true);
 		}
 	},
+
+		
+
 	"time" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^([01][0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9](\\.[0-9]+)?(Z|[+\\-]([01][0-9]|2[0-3]):[0-5][0-9])?)?$" ],
@@ -12104,156 +14039,255 @@ XsltForms_typeDefs.Default = {
 			}
 		}
 	},
+
+		
+
 	"duration" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^-?P(?!$)([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T(?!$)([0-9]+H)?([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?)?$" ]
 	},
+
+		
+
 	"gDay" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^---(0[1-9]|[12][0-9]|3[01])$" ]
 	},
+
+		
+
 	"gMonth" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^--(0[1-9]|1[012])$" ]
 	},
+
+		
+
 	"gMonthDay" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^--(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$" ]
 	},
+
+		
+
 	"gYear" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^([\\-+]?([0-9]{4}|[1-9][0-9]{4,}))?$" ]
 	},
+
+		
+
 	"gYearMonth" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^([12][0-9]{3})-(0[1-9]|1[012])$" ]
 	},
+
+		
+
 	"integer" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:decimal",
 		"fractionDigits" : 0
 	},
+
+		
+
 	"nonPositiveInteger" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:integer",
 		"patterns" : [ "^(-[0-9]+|0)$" ]
 	},
+
+		
+
 	"nonNegativeInteger" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:integer",
 		"patterns" : [ "^\\+?[0-9]+$" ]
 	},
+
+		
+
 	"negativeInteger" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:integer",
 		"patterns" : [ "^-0*[1-9][0-9]*$" ]
 	},
+
+		
+
 	"positiveInteger" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:integer",
 		"patterns" : [ "^\\+?0*[1-9][0-9]*$" ]
 	},
+
+		
+
 	"byte" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:integer",
 		"minInclusive" : -128,
 		"maxInclusive" : 127
 	},
+
+		
+
 	"short" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:integer",
 		"minInclusive" : -32768,
 		"maxInclusive" : 32767
 	},
+
+		
+
 	"int" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:integer",
 		"minInclusive" : -2147483648,
 		"maxInclusive" : 2147483647
 },
+
+		
+
 	"long" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:integer",
 		"minInclusive" : -9223372036854775808,
 		"maxInclusive" : 9223372036854775807
 },
+
+		
+
 	"unsignedByte" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:nonNegativeInteger",
 		"maxInclusive" : 255
 	},
+
+		
+
 	"unsignedShort" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:nonNegativeInteger",
 		"maxInclusive" : 65535
 	},
+
+		
+
 	"unsignedInt" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:nonNegativeInteger",
 		"maxInclusive" : 4294967295
 	},
+
+		
+
 	"unsignedLong" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:nonNegativeInteger",
 		"maxInclusive" : 18446744073709551615
 },
+
+		
+
 	"normalizedString" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"whiteSpace" : "replace"
 	},
+
+		
+
 	"token" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"whiteSpace" : "collapse"
 	},
+
+		
+
 	"language" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:token",
 		"patterns" : [ "^[a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*$" ]
 	},
+
+		
+
 	"anyURI" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:token",
 		"patterns" : [ "^(([^ :\\/?#]+):\\/\\/)?[^ \\/\\?#]+([^ \\?#]*)(\\?([^ #]*))?(#([^ \\:#\\[\\]\\@\\!\\$\\&\\\\'\\(\\)\\*\\+\\,\\;\\=]*))?$" ]
 	},
+
+		
+
 	"Name" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:token",
 		"patterns" : [ "^[" + XsltForms_typeDefs.ctes.i + ":][" + XsltForms_typeDefs.ctes.c + ":]*$" ]
 	},
+
+		
+
 	"NCName" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:token",
 		"patterns" : [ "^[" + XsltForms_typeDefs.ctes.i + "][" + XsltForms_typeDefs.ctes.c + "]*$" ]
 	},
+
+		
+
 	"QName" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:token",
 		"patterns" : [ "^(([a-zA-Z][0-9a-zA-Z+\\-\\.]*:)?/{0,2}[0-9a-zA-Z;/?:@&=+$\\.\\>> -_!~*'()%]+)?(>> #[0-9a-zA-Z;/?:@&=+$\\.\\-_!~*'()%]+)?:[" + XsltForms_typeDefs.ctes.i + "][" + XsltForms_typeDefs.ctes.c + "]*$" ]
 	},
+
+		
+
 	"ID" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:NCName"
 	},
+
+		
+
 	"IDREF" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"base" : "xsd_:NCName"
 	},
+
+		
+
 	"IDREFS" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^[" + XsltForms_typeDefs.ctes.i + "][" + XsltForms_typeDefs.ctes.c + "]*( +[" + XsltForms_typeDefs.ctes.i + "][" + XsltForms_typeDefs.ctes.c + "]*)*$" ]
 	},
+
+		
+
 	"NMTOKEN" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^[" + XsltForms_typeDefs.ctes.c + "]+$" ]
 	},
+
+		
+
 	"NMTOKENS" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^[" + XsltForms_typeDefs.ctes.c + "]+( [" + XsltForms_typeDefs.ctes.c + "]+)*$" ]
 	},
+
+		
+
 	"base64Binary" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^[a-zA-Z0-9+/=]+$" ]
 	},
+
+		
+
 	"hexBinary" : {
 		"nsuri" : "http://www.w3.org/2001/XMLSchema",
 		"patterns" : [ "^[0-9A-Fa-f]+$" ],
@@ -12265,16 +14299,29 @@ XsltForms_typeDefs.Default = {
 		}
 	}
 };
+
+
+		
+
 XsltForms_typeDefs.XForms = {
+
+		
+
 	"string" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"whiteSpace" : "preserve"
 	},
+
+		
+
 	"boolean" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^(true|false|0|1)?$" ],
 		"class" : "boolean"
 	},
+
+		
+
 	"decimal" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^([\\-+]?([0-9]+(\\.[0-9]*)?|\\.[0-9]+))?$" ],
@@ -12286,16 +14333,25 @@ XsltForms_typeDefs.XForms = {
 			return XsltForms_browser.i18n.parseNumber(value);
 		}
 	},
+
+		
+
 	"float" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^((([\\-+]?([0-9]+(\\.[0-9]*)?)|(\\.[0-9]+))([eE][\\-+]?[0-9]+)?|-?INF|NaN))?$" ],
 		"class" : "number"
 	},
+
+		
+
 	"double" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^((([\\-+]?([0-9]+(\\.[0-9]*)?)|(\\.[0-9]+))([eE][-+]?[0-9]+)?|-?INF|NaN))?$" ],
 		"class" : "number"
 	},
+
+		
+
 	"dateTime" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^(([12][0-9]{3})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\\.[0-9]+)?(Z|[+\\-]([01][0-9]|2[0-3]):[0-5][0-9])?)?$" ],
@@ -12313,6 +14369,9 @@ XsltForms_typeDefs.XForms = {
 			return XsltForms_browser.i18n.format(XsltForms_browser.i18n.parse(value), "yyyy-MM-ddThh:mm:ss", true);
 		}
 	},
+
+		
+
 	"date" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^(([12][0-9]{3})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])(Z|[+\\-]([01][0-9]|2[0-3]):[0-5][0-9])?)?$" ],
@@ -12330,6 +14389,9 @@ XsltForms_typeDefs.XForms = {
 			return XsltForms_browser.i18n.format(XsltForms_browser.i18n.parseDate(value), "yyyy-MM-dd", true);
 		}
 	},
+
+		
+
 	"time" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^(([01][0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9](\\.[0-9]+)?(Z|[+\\-]([01][0-9]|2[0-3]):[0-5][0-9])?)?)?$" ],
@@ -12351,164 +14413,269 @@ XsltForms_typeDefs.XForms = {
 			}
 		}
 	},
+
+		
+
 	"duration" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^(-?P(?!$)([0-9]+Y)?([0-9]+M)?([0-9]+D)?(T(?!$)([0-9]+H)?([0-9]+M)?([0-9]+(\\.[0-9]+)?S)?)?)?$" ]
 	},
+
+		
+
 	"dayTimeDuration" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^(-?P([0-9]+D(T([0-9]+(H([0-9]+(M([0-9]+(\\.[0-9]*)?S|\\.[0-9]+S)?|(\\.[0-9]*)?S)|(\\.[0-9]*)?S)?|M([0-9]+(\\.[0-9]*)?S|\\.[0-9]+S)?|(\\.[0-9]*)?S)|\\.[0-9]+S))?|T([0-9]+(H([0-9]+(M([0-9]+(\\.[0-9]*)?S|\\.[0-9]+S)?|(\\.[0-9]*)?S)|(\\.[0-9]*)?S)?|M([0-9]+(\\.[0-9]*)?S|\\.[0-9]+S)?|(\\.[0-9]*)?S)|\\.[0-9]+S)))?$" ]
 	},
+
+		
+
 	"yearMonthDuration" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^(-?P[0-9]+(Y([0-9]+M)?|M))?$" ]
 	},
+
+		
+
 	"gDay" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^(---(0[1-9]|[12][0-9]|3[01]))?$" ]
 	},
+
+		
+
 	"gMonth" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^(--(0[1-9]|1[012]))?$" ]
 	},
+
+		
+
 	"gMonthDay" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^(--(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01]))?$" ]
 	},
+
+		
+
 	"gYear" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^([\\-+]?([0-9]{4}|[1-9][0-9]{4,}))?$" ]
 	},
+
+		
+
 	"gYearMonth" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^(([12][0-9]{3})-(0[1-9]|1[012]))?$" ]
 	},
+
+		
+
 	"integer" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:decimal",
 		"fractionDigits" : 0
 	},
+
+		
+
 	"nonPositiveInteger" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:integer",
 		"patterns" : [ "^((-[0-9]+|0))?$" ]
 	},
+
+		
+
 	"nonNegativeInteger" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:integer",
 		"patterns" : [ "^(\\+?[0-9]+)?$" ]
 	},
+
+		
+
 	"negativeInteger" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:integer",
 		"patterns" : [ "^(-[0-9]+)?$" ]
 	},
+
+		
+
 	"positiveInteger" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:integer",
 		"patterns" : [ "^(\\+?0*[1-9][0-9]*)?$" ]
 	},
+
+		
+
 	"byte" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:integer",
 		"minInclusive" : -128,
 		"maxInclusive" : 127
 	},
+
+		
+
 	"short" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:integer",
 		"minInclusive" : -32768,
 		"maxInclusive" : 32767
 	},
+
+		
+
 	"int" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:integer",
 		"minInclusive" : -2147483648,
 		"maxInclusive" : 2147483647
 	},
+
+		
+
 	"long" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:integer",
 		"minInclusive" : -9223372036854775808,
 		"maxInclusive" : 9223372036854775807
 	},
+
+		
+
 	"unsignedByte" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:nonNegativeInteger",
 		"maxInclusive" : 255
 	},
+
+		
+
 	"unsignedShort" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:nonNegativeInteger",
 		"maxInclusive" : 65535
 	},
+
+		
+
 	"unsignedInt" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:nonNegativeInteger",
 		"maxInclusive" : 4294967295
 	},
+
+		
+
 	"unsignedLong" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:nonNegativeInteger",
 		"maxInclusive" : 18446744073709551615
 	},
+
+		
+
 	"normalizedString" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"whiteSpace" : "replace"
 	},
+
+		
+
 	"token" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"whiteSpace" : "collapse"
 	},
+
+		
+
 	"language" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:token",
 		"patterns" : [ "^([a-zA-Z]{1,8}(-[a-zA-Z0-9]{1,8})*)?$" ]
 	},
+
+		
+
 	"anyURI" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:token",
 		"patterns" : [ "^((([a-zA-Z][0-9a-zA-Z+\\-\\.]*:)?/{0,2}[0-9a-zA-Z;/?:@&=+$\\.\\>> -_!~*'()%]+)?(>> #[0-9a-zA-Z;/?:@&=+$\\.\\-_!~*'()%]+)?)?$" ]
 	},
+
+		
+
 	"Name" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:token",
 		"patterns" : [ "^([" + XsltForms_typeDefs.ctes.i + ":][" + XsltForms_typeDefs.ctes.c + ":]*)?$" ]
 	},
+
+		
+
 	"NCName" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:token",
 		"patterns" : [ "^([" + XsltForms_typeDefs.ctes.i + "][" + XsltForms_typeDefs.ctes.c + "]*)?$" ]
 	},
+
+		
+
 	"QName" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:token",
 		"patterns" : [ "^((([a-zA-Z][0-9a-zA-Z+\\-\\.]*:)?/{0,2}[0-9a-zA-Z;/?:@&=+$\\.\\>> -_!~*'()%]+)?(>> #[0-9a-zA-Z;/?:@&=+$\\.\\-_!~*'()%]+)?:[" + XsltForms_typeDefs.ctes.i + "][" + XsltForms_typeDefs.ctes.c + "]*)?$" ]
 	},
+
+		
+
 	"ID" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:NCName"
 	},
+
+		
+
 	"IDREF" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:NCName"
 	},
+
+		
+
 	"IDREFS" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^([" + XsltForms_typeDefs.ctes.i + "][" + XsltForms_typeDefs.ctes.c + "]+( +[" + XsltForms_typeDefs.ctes.i + "][" + XsltForms_typeDefs.ctes.c + "]*)*)?$" ]
 	},
+
+		
+
 	"NMTOKEN" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^[" + XsltForms_typeDefs.ctes.c + "]*$" ]
 	},
+
+		
+
 	"NMTOKENS" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^([" + XsltForms_typeDefs.ctes.c + "]+( [" + XsltForms_typeDefs.ctes.c + "]+)*)?$" ]
 	},
+
+		
+
 	"base64Binary" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^[a-zA-Z0-9+/]*$" ]
 	},
+
+		
+
 	"hexBinary" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"patterns" : [ "^[0-9A-Fa-f]*$" ],
@@ -12519,23 +14686,35 @@ XsltForms_typeDefs.XForms = {
 			return value.toUpperCase();
 		}
 	},
+
+		
+
 	"email" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xsd_:string",
 		"whiteSpace" : "collapse",
 		"patterns" : [ "^([A-Za-z0-9!#-'\\*\\+\\-/=\\?\\^_`\\{-~]+(\\.[A-Za-z0-9!#-'\\*\\+\\-/=\\?\\^_`\\{-~]+)*@[A-Za-z0-9!#-'\\*\\+\\-/=\\?\\^_`\\{-~]+(\\.[A-Za-z0-9!#-'\\*\\+\\-/=\\?\\^_`\\{-~]+)*)?$" ]
 	},
+
+		
+
 	"card-number" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xsd_:string",
 		"patterns" : [ "^[0-9]*$" ]
 	},
+
+		
+
 	"url" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xsd_:string",
 		"whiteSpace" : "collapse",
 		"patterns" : [ "^(ht|f)tp(s?)://([a-z0-9]*:[a-z0-9]*@)?([a-z0-9.]*\\.[a-z]{2,7})$" ]
 	},
+
+		
+
 	"amount" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xforms:decimal",
@@ -12543,12 +14722,21 @@ XsltForms_typeDefs.XForms = {
 			return XsltForms_browser.i18n.formatNumber(value, 2);
 		}
 	},
+
+		
+
 	"HTMLFragment" : {
 		"nsuri" : "http://www.w3.org/2002/xforms",
 		"base" : "xsd_:string"
 	}
 };
+
+		
+
 XsltForms_typeDefs.XSLTForms = {
+
+		
+
 	"shortDate" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"patterns" : [ "^(([12][0-9]{3})(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01]))?$" ],
@@ -12561,95 +14749,156 @@ XsltForms_typeDefs.XSLTForms = {
 			return XsltForms_browser.i18n.format(XsltForms_browser.i18n.parse(value), "yyyyMMdd", true);
 		}
 	},
+
+		
+
 	"decimal" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"patterns" : [ "^[\\-+]?\\(*[\\-+]?([0-9]+(\\.[0-9]*)?|\\.[0-9]+)(([+-/]|\\*)\\(*([0-9]+(\\.[0-9]*)?|\\.[0-9]+)\\)*)*$" ],
 		"class" : "number",
 		"eval" : "xsd:decimal"
 	},
+
+		
+
 	"float" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:float"
 	},
+
+		
+
 	"double" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:double"
 	},
+
+		
+
 	"integer" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:integer"
 	},
+
+		
+
 	"nonPositiveInteger" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:nonPositiveInteger"
 	},
+
+		
+
 	"nonNegativeInteger" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:nonNegativeInteger"
 	},
+
+		
+
 	"negativeInteger" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:negativeInteger"
 	},
+
+		
+
 	"positiveInteger" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:positiveInteger"
 	},
+
+		
+
 	"byte" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:byte"
 	},
+
+		
+
 	"short" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:short"
 	},
+
+		
+
 	"int" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:int"
 	},
+
+		
+
 	"long" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:long"
 	},
+
+		
+
 	"unsignedByte" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:unsignedByte"
 	},
+
+		
+
 	"unsignedShort" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:unsignedShort"
 	},
+
+		
+
 	"unsignedInt" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:unsignedInt"
 	},
+
+		
+
 	"unsignedLong" : {
 		"nsuri" : "http://www.agencexml.com/xsltforms",
 		"base" : "xsltforms:decimal",
 		"eval" : "xsd:unsignedLong"
 	}
 };
+
+		
+
 XsltForms_typeDefs.DublinCore = {
+
+		
+
 	"W3CDTF" : {
 		"nsuri" : "http://purl.org/dc/terms/",
 		"base" : "xsd_:dateTime"
 	}
 };
+
 XsltForms_typeDefs.initAll();
+
+	
+	
+		
+		
+
 if (typeof xsltforms_d0 === "undefined") {
 	(function () {
 		var initelts = document.getElementsByTagName("script");
@@ -12699,25 +14948,25 @@ if (typeof xsltforms_d0 === "undefined") {
 			document.getElementsByTagName("body")[0].appendChild(conselt);
 			XsltForms_browser.dialog.show('statusPanel');
 			if (!(document.documentElement.childNodes[0].nodeType === 8 || (XsltForms_browser.isIE && document.documentElement.childNodes[0].childNodes[1] && document.documentElement.childNodes[0].childNodes[1].nodeType === 8))) {
-				var comment = document.createComment("HTML elements and Javascript instructions generated by XSLTForms rev.630 (630) - Copyright (C) 2016 <agenceXML> - Alain COUTHURES - http://www.agencexml.com");
+				var comment = document.createComment("HTML elements and Javascript instructions generated by XSLTForms r" + XsltForms_globals.fileVersion + " - Copyright (C) 2008-2012 <agenceXML> - Alain COUTHURES - http://www.agencexml.com");
 				document.documentElement.insertBefore(comment, document.documentElement.firstChild);
 			}
-			var initelts2 = document.getElementsByTagName("script");
-			var elts2 = [];
-			var i2, l2;
-			for (i2 = 0, l2 = initelts2.length; i2 < l2; i2++) {
-				elts2[i2] = initelts2[i2];
+			var initelts = document.getElementsByTagName("script");
+			var elts = [];
+			var i, l;
+			for (i = 0, l = initelts.length; i < l; i++) {
+				elts[i] = initelts[i];
 			}
-			initelts2 = null;
+			initelts = null;
 			var res;
-			for (i2 = 0, l2 = elts2.length; i2 < l2; i2++) {
-				if (elts2[i].type === "text/xforms") {
+			for (i = 0, l = elts.length; i < l; i++) {
+				if (elts[i].type === "text/xforms") {
 					var dbefore = new Date();
-					res = XsltForms_browser.transformText('<html xmlns="http://www.w3.org/1999/xhtml"><body>' + elts2[i2].text + '</body></html>', root + "xsltforms.xsl", false);
+					res = XsltForms_browser.transformText('<html xmlns="http://www.w3.org/1999/xhtml"><body>' + elts[i].text + '</body></html>', root + "xsltforms.xsl", false);
 					var dafter = new Date();
 					XsltForms_globals.transformtime = dafter - dbefore;
 					var sp = XsltForms_globals.stringSplit(res, "XsltForms_MagicSeparator");
-					var mainjs = "xsltforms_d0 = new Date();  }";
+					var mainjs = "xsltforms_d0 = new Date(); /* xsltforms-mainform " + sp[1] + sp[2] + " xsltforms-mainform */ }";
 					newelt = document.createElement("script");
 					newelt.setAttribute("id", "xsltforms-generated-script");
 					newelt.setAttribute("type", "text/javascript");
@@ -12727,9 +14976,11 @@ if (typeof xsltforms_d0 === "undefined") {
 						var scripttxt = document.createTextNode(mainjs);
 						newelt.appendChild(scripttxt);
 					}
+					//var panel = document.getElementById("statusPanel");
+					//panel.parentNode.removeChild(panel);
 					document.getElementsByTagName("body")[0].appendChild(newelt);
 					var subbody = "<!-- xsltforms-mainform " + sp[4] + " xsltforms-mainform -->";
-					elts2[i2].outerHTML = subbody;
+					elts[i].outerHTML = subbody;
 				}
 			}
 		};
@@ -12748,3 +14999,6 @@ if (typeof xsltforms_d0 === "undefined") {
 		}
 	})();
 }
+
+	
+	
