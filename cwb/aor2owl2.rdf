@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xo="http://rhizomik.net/redefer/xsl/xsd2owl-functions.xsl"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:aor="http://libserv6.princeton.edu/aor#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Transcription">
+        <rdfs:label xml:lang="en-us">Transcription</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Page">
+        <rdfs:label xml:lang="en-us">Page</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Annotation">
+        <rdfs:label xml:lang="en-us">Annotation</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Marginalia">
+        <rdfs:label xml:lang="en-us">Marginalia</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Language">
+        <rdfs:label xml:lang="en-us">Language</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Position">
+        <rdfs:label xml:lang="en-us">Position</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Marginalia_text">
+        <rdfs:label xml:lang="en-us">MarginaliaText</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Person">
+        <rdfs:label xml:lang="en-us">Person</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Book">
+        <rdfs:label xml:lang="en-us">Book</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Location">
+        <rdfs:label xml:lang="en-us">Location</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#X-ref">
+        <rdfs:label xml:lang="en-us">X-ref</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Emphasis">
+        <rdfs:label xml:lang="en-us">Emphasis</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Internal_ref">
+        <rdfs:label xml:lang="en-us">InternalRef</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Target">
+        <rdfs:label xml:lang="en-us">Target</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Translation">
+        <rdfs:label xml:lang="en-us">Translation</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Underline">
+        <rdfs:label xml:lang="en-us">Underline</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Symbol">
+        <rdfs:label xml:lang="en-us">Symbol</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Mark">
+        <rdfs:label xml:lang="en-us">Mark</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Numeral">
+        <rdfs:label xml:lang="en-us">Numeral</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Errata">
+        <rdfs:label xml:lang="en-us">Errata</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://libserv6.princeton.edu/aor#Drawing">
+        <rdfs:label xml:lang="en-us">Drawing</rdfs:label>
+        <skos:editorialNote xml:lang="en"/>
+        <rdfs:comment xml:lang="en-us"/>
+    </owl:Class>
+</root>
