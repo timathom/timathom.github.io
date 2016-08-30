@@ -14,7 +14,7 @@ setParams({
         /*
             Default state of the "use lens" button
         */
-    zoomLevel : 0,
+    zoomLevel : -1,
         /*
             Default zoom level. At zoom = 0, the graph should fill a 800x700px zone
          */
