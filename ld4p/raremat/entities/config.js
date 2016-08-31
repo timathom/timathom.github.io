@@ -23,7 +23,7 @@ setParams({
             False for curved edges, true for straight edges
             this setting can't be changed from the User Interface
         */
-    edgeWidthFactor : 1,
+    edgeWidthFactor : 3,
         /*
             Change this parameter for wider or narrower edges
             this setting can't be changed from the User Interface
