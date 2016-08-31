@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gexf xmlns="http://www.gexf.net/1.3" version="1.3" xmlns:viz="http://www.gexf.net/1.3/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.3 http://www.gexf.net/1.3/gexf.xsd">
-  <meta lastmodifieddate="2016-08-30">
+  <meta lastmodifieddate="2016-08-31">
     <creator>Gephi 0.9</creator>
     <description></description>
   </meta>
@@ -33,9 +33,15 @@
       <attribute id="componentnumber" title="Component ID" type="integer">
         <default>0</default>
       </attribute>
+      <attribute id="clustering" title="Clustering Coefficient" type="double">
+        <default>0.0</default>
+      </attribute>
+      <attribute id="triangles" title="Number of triangles" type="integer">
+        <default>0</default>
+      </attribute>
     </attributes>
     <nodes>
-      <node id="http://example.org/UseCase41" label=" Note on significant contents">
+      <node id="http://example.org/UseCase41" label=" Note on significant contents (use case)">
         <attvalues>
           <attvalue for="degree" value="1"></attvalue>
           <attvalue for="weighted degree" value="1.0"></attvalue>
@@ -43,12 +49,14 @@
           <attvalue for="closnesscentrality" value="0.2620320855614973"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.2906462585034012"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.0033630947008251597"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.003363094700825159"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="-498.197" y="291.78522"></viz:position>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="-929.38654" y="-42.897743"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/AccessPolicy" label="Access policy">
@@ -60,30 +68,34 @@
           <attvalue for="harmonicclosnesscentrality" value="0.3163265306122447"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0058256580464124096"></attvalue>
           <attvalue for="modularity_class" value="0"></attvalue>
-          <attvalue for="pageranks" value="0.0100850543939872"></attvalue>
+          <attvalue for="pageranks" value="0.010085054393987202"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="259.06442" y="-957.63135"></viz:position>
-        <viz:color r="0" g="189" b="148"></viz:color>
+        <viz:size value="12.6090765"></viz:size>
+        <viz:position x="579.82764" y="831.9923"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
       </node>
-      <node id="http://example.org/UseCase26" label="Access restriction">
+      <node id="http://example.org/UseCase26" label="Access restriction (use case)">
         <attvalues>
           <attvalue for="degree" value="4"></attvalue>
           <attvalue for="weighted degree" value="4.0"></attvalue>
           <attvalue for="eccentricity" value="6.0"></attvalue>
           <attvalue for="closnesscentrality" value="0.2722222222222222"></attvalue>
-          <attvalue for="harmonicclosnesscentrality" value="0.3178571428571427"></attvalue>
+          <attvalue for="harmonicclosnesscentrality" value="0.31785714285714267"></attvalue>
           <attvalue for="betweenesscentrality" value="0.006744328088821606"></attvalue>
           <attvalue for="modularity_class" value="0"></attvalue>
           <attvalue for="pageranks" value="0.009910022294647654"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="171.25046" y="-877.7214"></viz:position>
-        <viz:color r="0" g="189" b="148"></viz:color>
+        <viz:size value="12.705125"></viz:size>
+        <viz:position x="330.7051" y="797.4045"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
       </node>
-      <node id="http://example.org/UseCase29" label="Accompanying/inserted material">
+      <node id="http://example.org/UseCase29" label="Accompanying/inserted material (use case)">
         <attvalues>
           <attvalue for="degree" value="4"></attvalue>
           <attvalue for="weighted degree" value="4.0"></attvalue>
@@ -91,15 +103,17 @@
           <attvalue for="closnesscentrality" value="0.33447098976109213"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.38095238095238093"></attvalue>
           <attvalue for="betweenesscentrality" value="0.005946318768411977"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.009220772726861223"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.00922077272686122"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.16666666666666666"></attvalue>
+          <attvalue for="triangles" value="1"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="-302.3291" y="230.39978"></viz:position>
+        <viz:size value="12.621692"></viz:size>
+        <viz:position x="-416.3469" y="29.815994"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
-      <node id="http://example.org/UseCase30" label="Actions taken or to be taken">
+      <node id="http://example.org/UseCase30" label="Actions taken or to be taken (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -107,15 +121,17 @@
           <attvalue for="closnesscentrality" value="0.2677595628415301"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3017006802721087"></attvalue>
           <attvalue for="betweenesscentrality" value="6.607184530602113E-4"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
           <attvalue for="pageranks" value="0.0055357882632763745"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="342.0565" y="-736.2481"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="12.069078"></viz:size>
+        <viz:position x="337.02142" y="587.9338"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase40" label="Additional physical details note (instance level)">
+      <node id="http://example.org/UseCase40" label="Additional physical details note (instance level) (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -123,13 +139,15 @@
           <attvalue for="closnesscentrality" value="0.2792022792022792"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3124149659863944"></attvalue>
           <attvalue for="betweenesscentrality" value="0.006612242698189512"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
           <attvalue for="pageranks" value="0.005901539430648635"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-469.9821" y="-360.97916"></viz:position>
-        <viz:color r="115" g="192" b="0"></viz:color>
+        <viz:size value="12.691315"></viz:size>
+        <viz:position x="-568.45856" y="726.0811"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/AdminMetadata" label="Administrative metadata">
         <attvalues>
@@ -139,13 +157,15 @@
           <attvalue for="closnesscentrality" value="0.35379061371841153"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.42857142857142866"></attvalue>
           <attvalue for="betweenesscentrality" value="0.11552523281582826"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
           <attvalue for="pageranks" value="0.02702968494107716"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="30.782608"></viz:size>
-        <viz:position x="215.71886" y="-475.71924"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="24.07825"></viz:size>
+        <viz:position x="120.47253" y="491.65872"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Agent" label="Agent">
         <attvalues>
@@ -155,13 +175,15 @@
           <attvalue for="closnesscentrality" value="0.3333333333333333"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.40816326530612246"></attvalue>
           <attvalue for="betweenesscentrality" value="0.13202221820815097"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.029343526300170623"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="29.217392"></viz:size>
-        <viz:position x="400.36533" y="509.27548"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="25.803022"></viz:size>
+        <viz:position x="-13.589034" y="-466.26794"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/AgentEntities" label="Agent entities">
         <attvalues>
@@ -171,15 +193,17 @@
           <attvalue for="closnesscentrality" value="0.25654450261780104"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.29781341107871706"></attvalue>
           <attvalue for="betweenesscentrality" value="0.02619047619047619"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.010637450976627827"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="473.4628" y="999.2215"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="14.7382345"></viz:size>
+        <viz:position x="-62.06505" y="-963.6681"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase31" label="Agent of action taken or to be taken">
+      <node id="http://example.org/UseCase31" label="Agent of action taken or to be taken (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -187,15 +211,17 @@
           <attvalue for="closnesscentrality" value="0.2677595628415301"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3017006802721087"></attvalue>
           <attvalue for="betweenesscentrality" value="6.607184530602113E-4"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
           <attvalue for="pageranks" value="0.0055357882632763745"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="404.6065" y="-701.1298"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="12.069078"></viz:size>
+        <viz:position x="438.70587" y="692.13934"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase5" label="Altered work">
+      <node id="http://example.org/UseCase5" label="Altered work (use case)">
         <attvalues>
           <attvalue for="degree" value="3"></attvalue>
           <attvalue for="weighted degree" value="3.0"></attvalue>
@@ -203,12 +229,14 @@
           <attvalue for="closnesscentrality" value="0.32450331125827814"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3659863945578231"></attvalue>
           <attvalue for="betweenesscentrality" value="0.002556408348798584"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.007066789218227007"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.007066789218227006"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="-310.11838" y="-43.605053"></viz:position>
+        <viz:size value="12.267275"></viz:size>
+        <viz:position x="-308.60422" y="169.46935"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Annotation" label="Annotation">
@@ -222,12 +250,14 @@
           <attvalue for="modularity_class" value="3"></attvalue>
           <attvalue for="pageranks" value="0.012880396771125555"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="-248.49243" y="1068.7697"></viz:position>
-        <viz:color r="255" g="85" b="132"></viz:color>
+        <viz:size value="14.550517"></viz:size>
+        <viz:position x="-746.47485" y="-865.1494"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
       </node>
-      <node id="http://example.org/UseCase3" label="Annotations">
+      <node id="http://example.org/UseCase3" label="Annotations (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -238,10 +268,12 @@
           <attvalue for="modularity_class" value="3"></attvalue>
           <attvalue for="pageranks" value="0.006131673775726718"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-231.18889" y="801.04504"></viz:position>
-        <viz:color r="255" g="85" b="132"></viz:color>
+        <viz:size value="12.055046"></viz:size>
+        <viz:position x="-656.6566" y="-561.3956"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
       </node>
       <node id="http://example.org/Arrangement" label="Arrangement">
         <attvalues>
@@ -251,15 +283,17 @@
           <attvalue for="closnesscentrality" value="0.296969696969697"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3341836734693876"></attvalue>
           <attvalue for="betweenesscentrality" value="0.005401415141514152"></attvalue>
-          <attvalue for="modularity_class" value="4"></attvalue>
-          <attvalue for="pageranks" value="0.008066299659030026"></attvalue>
+          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="pageranks" value="0.008066299659030024"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.3333333333333333"></attvalue>
+          <attvalue for="triangles" value="1"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="325.54663" y="93.574"></viz:position>
-        <viz:color r="211" g="179" b="176"></viz:color>
+        <viz:size value="12.564722"></viz:size>
+        <viz:position x="-657.9487" y="-106.85119"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
       </node>
-      <node id="http://example.org/UseCase9" label="Association of an item with a particular event">
+      <node id="http://example.org/UseCase9" label="Association of an item with a particular event (use case)">
         <attvalues>
           <attvalue for="degree" value="4"></attvalue>
           <attvalue for="weighted degree" value="4.0"></attvalue>
@@ -267,15 +301,17 @@
           <attvalue for="closnesscentrality" value="0.3726235741444867"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.4159863945578233"></attvalue>
           <attvalue for="betweenesscentrality" value="0.019564493320464726"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
+          <attvalue for="modularity_class" value="5"></attvalue>
           <attvalue for="pageranks" value="0.009246217755928331"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.3333333333333333"></attvalue>
+          <attvalue for="triangles" value="2"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="185.75278" y="-102.88993"></viz:position>
+        <viz:size value="14.045483"></viz:size>
+        <viz:position x="218.75339" y="101.39506"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
-      <node id="http://example.org/UseCase25" label="Bibliographic citation(s)">
+      <node id="http://example.org/UseCase25" label="Bibliographic citation(s) (use case)">
         <attvalues>
           <attvalue for="degree" value="1"></attvalue>
           <attvalue for="weighted degree" value="1.0"></attvalue>
@@ -283,15 +319,17 @@
           <attvalue for="closnesscentrality" value="0.19797979797979798"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.2173833819241982"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
+          <attvalue for="modularity_class" value="2"></attvalue>
           <attvalue for="pageranks" value="0.005067563387885309"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="-1419.182" y="-751.9553"></viz:position>
-        <viz:color r="76" g="70" b="62"></viz:color>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="-953.9096" y="1601.4402"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
       </node>
-      <node id="http://example.org/UseCase35" label="Bibliographic details/history">
+      <node id="http://example.org/UseCase35" label="Bibliographic details/history (use case)">
         <attvalues>
           <attvalue for="degree" value="3"></attvalue>
           <attvalue for="weighted degree" value="3.0"></attvalue>
@@ -299,15 +337,17 @@
           <attvalue for="closnesscentrality" value="0.32450331125827814"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3659863945578231"></attvalue>
           <attvalue for="betweenesscentrality" value="0.002556408348798584"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.007066789218227008"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.007066789218227006"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="-517.4665" y="-11.375115"></viz:position>
+        <viz:size value="12.267275"></viz:size>
+        <viz:position x="-507.8199" y="318.25772"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
-      <node id="http://example.org/UseCase42" label="Bibliographic history note">
+      <node id="http://example.org/UseCase42" label="Bibliographic history note (use case)">
         <attvalues>
           <attvalue for="degree" value="3"></attvalue>
           <attvalue for="weighted degree" value="3.0"></attvalue>
@@ -315,12 +355,14 @@
           <attvalue for="closnesscentrality" value="0.32450331125827814"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3659863945578231"></attvalue>
           <attvalue for="betweenesscentrality" value="0.002556408348798584"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.007066789218227007"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.0070667892182270054"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="-414.83105" y="83.214294"></viz:position>
+        <viz:size value="12.267275"></viz:size>
+        <viz:position x="-449.53763" y="203.70699"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Binding" label="Binding">
@@ -331,15 +373,17 @@
           <attvalue for="closnesscentrality" value="0.32996632996632996"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.36547619047619034"></attvalue>
           <attvalue for="betweenesscentrality" value="0.025435593558248183"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
           <attvalue for="pageranks" value="0.008476811412081993"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="585.58875" y="201.05469"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="14.65931"></viz:size>
+        <viz:position x="221.53004" y="-235.31491"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
       </node>
-      <node id="http://example.org/UseCase11" label="Binding descriptions and binder">
+      <node id="http://example.org/UseCase11" label="Binding descriptions and binder (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -347,13 +391,15 @@
           <attvalue for="closnesscentrality" value="0.27605633802816903"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.30935374149659844"></attvalue>
           <attvalue for="betweenesscentrality" value="0.004755390181393308"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
           <attvalue for="pageranks" value="0.006180612181458019"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="701.6306" y="472.94632"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="12.49718"></viz:size>
+        <viz:position x="285.2113" y="-556.9123"></viz:position>
+        <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/Bookplate" label="Bookplate">
         <attvalues>
@@ -363,15 +409,17 @@
           <attvalue for="closnesscentrality" value="0.33220338983050846"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3722789115646258"></attvalue>
           <attvalue for="betweenesscentrality" value="0.03369026445370442"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.010265618083862966"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="482.86404" y="266.934"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="15.522343"></viz:size>
+        <viz:position x="139.26004" y="-270.95712"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase16" label="Bound-withs">
+      <node id="http://example.org/UseCase16" label="Bound-withs (use case)">
         <attvalues>
           <attvalue for="degree" value="3"></attvalue>
           <attvalue for="weighted degree" value="3.0"></attvalue>
@@ -379,12 +427,14 @@
           <attvalue for="closnesscentrality" value="0.32450331125827814"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3659863945578231"></attvalue>
           <attvalue for="betweenesscentrality" value="0.002556408348798584"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.007066789218227008"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.007066789218227006"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="-219.9132" y="50.87954"></viz:position>
+        <viz:size value="12.267275"></viz:size>
+        <viz:position x="-154.78317" y="238.21683"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Chronology" label="Chronology">
@@ -395,13 +445,15 @@
           <attvalue for="closnesscentrality" value="0.2808022922636103"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3176870748299318"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0012766671903346471"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
           <attvalue for="pageranks" value="0.005649847147996244"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-375.37402" y="-701.2207"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="12.133476"></viz:size>
+        <viz:position x="-234.71124" y="957.2792"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Citation" label="Citation">
         <attvalues>
@@ -411,15 +463,17 @@
           <attvalue for="closnesscentrality" value="0.24623115577889448"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.28241010689990265"></attvalue>
           <attvalue for="betweenesscentrality" value="0.03821782178217822"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
+          <attvalue for="modularity_class" value="2"></attvalue>
           <attvalue for="pageranks" value="0.012563559084768885"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="-1117.121" y="-682.3934"></viz:position>
-        <viz:color r="76" g="70" b="62"></viz:color>
+        <viz:size value="15.995702"></viz:size>
+        <viz:position x="-837.0186" y="1313.8971"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
       </node>
-      <node id="http://example.org/UseCase39" label="Collecting area that unites distinct collections">
+      <node id="http://example.org/UseCase39" label="Collecting area that unites distinct collections (use case)">
         <attvalues>
           <attvalue for="degree" value="1"></attvalue>
           <attvalue for="weighted degree" value="1.0"></attvalue>
@@ -427,13 +481,15 @@
           <attvalue for="closnesscentrality" value="0.24873096446700507"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.270408163265306"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="4"></attvalue>
-          <attvalue for="pageranks" value="0.0036278166014175554"></attvalue>
+          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="pageranks" value="0.0036278166014175545"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="552.54767" y="-314.36124"></viz:position>
-        <viz:color r="211" g="179" b="176"></viz:color>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="-951.91235" y="239.71219"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Collection" label="Collection">
         <attvalues>
@@ -443,13 +499,15 @@
           <attvalue for="closnesscentrality" value="0.32996632996632996"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.38010204081632637"></attvalue>
           <attvalue for="betweenesscentrality" value="0.03996686810600671"></attvalue>
-          <attvalue for="modularity_class" value="4"></attvalue>
+          <attvalue for="modularity_class" value="5"></attvalue>
           <attvalue for="pageranks" value="0.014951572052422177"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="21.391304"></viz:size>
-        <viz:position x="284.05777" y="-144.20155"></viz:position>
-        <viz:color r="211" g="179" b="176"></viz:color>
+        <viz:size value="16.178566"></viz:size>
+        <viz:position x="-629.56226" y="167.22476"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Component" label="Component">
         <attvalues>
@@ -459,15 +517,17 @@
           <attvalue for="closnesscentrality" value="0.2613333333333333"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.31122448979591827"></attvalue>
           <attvalue for="betweenesscentrality" value="0.05900240408656249"></attvalue>
-          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
           <attvalue for="pageranks" value="0.018758459065249637"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="19.826086"></viz:size>
-        <viz:position x="1158.1824" y="-233.04591"></viz:position>
+        <viz:size value="18.168747"></viz:size>
+        <viz:position x="961.45886" y="-85.01501"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
-      <node id="http://example.org/UseCase23" label="Component-level resource description">
+      <node id="http://example.org/UseCase23" label="Component-level resource description (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -475,12 +535,14 @@
           <attvalue for="closnesscentrality" value="0.3202614379084967"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.35782312925170073"></attvalue>
           <attvalue for="betweenesscentrality" value="0.049668591774376034"></attvalue>
-          <attvalue for="modularity_class" value="8"></attvalue>
-          <attvalue for="pageranks" value="0.0065822067230606775"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
+          <attvalue for="pageranks" value="0.006582206723060677"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="634.73975" y="-176.36446"></viz:position>
+        <viz:size value="17.192888"></viz:size>
+        <viz:position x="553.6877" y="35.902763"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/Condition" label="Condition">
@@ -490,16 +552,18 @@
           <attvalue for="eccentricity" value="6.0"></attvalue>
           <attvalue for="closnesscentrality" value="0.2684931506849315"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3042517006802719"></attvalue>
-          <attvalue for="betweenesscentrality" value="0.00902996408937003"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.009029964089370032"></attvalue>
           <attvalue for="modularity_class" value="0"></attvalue>
           <attvalue for="pageranks" value="0.006161349312689855"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="670.16034" y="-471.594"></viz:position>
-        <viz:color r="0" g="189" b="148"></viz:color>
+        <viz:size value="12.94409"></viz:size>
+        <viz:position x="639.587" y="267.0236"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
       </node>
-      <node id="http://example.org/UseCase14" label="Contact Info for Related Collections/Items">
+      <node id="http://example.org/UseCase14" label="Contact Info for Related Collections/Items (use case)">
         <attvalues>
           <attvalue for="degree" value="5"></attvalue>
           <attvalue for="weighted degree" value="5.0"></attvalue>
@@ -507,13 +571,15 @@
           <attvalue for="closnesscentrality" value="0.36981132075471695"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.4180272108843539"></attvalue>
           <attvalue for="betweenesscentrality" value="0.06316898991371712"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
-          <attvalue for="pageranks" value="0.012071868713405962"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
+          <attvalue for="pageranks" value="0.01207186871340596"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="19.826086"></viz:size>
-        <viz:position x="313.06503" y="-62.02604"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="18.604366"></viz:size>
+        <viz:position x="-49.76455" y="136.16089"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/ContactInformation" label="Contact information">
         <attvalues>
@@ -523,13 +589,15 @@
           <attvalue for="closnesscentrality" value="0.30434782608695654"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3360544217687073"></attvalue>
           <attvalue for="betweenesscentrality" value="0.005093262593149465"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
           <attvalue for="pageranks" value="0.005590693527719957"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="51.484253" y="-411.3296"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="12.532504"></viz:size>
+        <viz:position x="-54.6604" y="521.0828"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Container" label="Container">
         <attvalues>
@@ -539,15 +607,17 @@
           <attvalue for="closnesscentrality" value="0.2677595628415301"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.30102040816326514"></attvalue>
           <attvalue for="betweenesscentrality" value="0.005450816715626424"></attvalue>
-          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
           <attvalue for="pageranks" value="0.006303839890910934"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="743.946" y="-353.4531"></viz:position>
+        <viz:size value="12.569887"></viz:size>
+        <viz:position x="611.4164" y="203.55418"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
-      <node id="http://example.org/UseCase12" label="Containers">
+      <node id="http://example.org/UseCase12" label="Containers (use case)">
         <attvalues>
           <attvalue for="degree" value="3"></attvalue>
           <attvalue for="weighted degree" value="3.0"></attvalue>
@@ -555,15 +625,17 @@
           <attvalue for="closnesscentrality" value="0.32996632996632996"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.37074829931972786"></attvalue>
           <attvalue for="betweenesscentrality" value="0.02279359183015517"></attvalue>
-          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
           <attvalue for="pageranks" value="0.008182824681158215"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="392.20267" y="-347.62152"></viz:position>
+        <viz:size value="14.383087"></viz:size>
+        <viz:position x="262.46304" y="334.0251"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
-      <node id="http://example.org/UseCase2" label="Contextualizing provenance">
+      <node id="http://example.org/UseCase2" label="Contextualizing provenance (use case)">
         <attvalues>
           <attvalue for="degree" value="4"></attvalue>
           <attvalue for="weighted degree" value="4.0"></attvalue>
@@ -571,15 +643,17 @@
           <attvalue for="closnesscentrality" value="0.2824207492795389"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.32891156462585014"></attvalue>
           <attvalue for="betweenesscentrality" value="0.008961378892853618"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
-          <attvalue for="pageranks" value="0.010194972598784921"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
+          <attvalue for="pageranks" value="0.010194972598784918"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="461.27878" y="436.96133"></viz:position>
-        <viz:color r="76" g="70" b="62"></viz:color>
+        <viz:size value="12.936919"></viz:size>
+        <viz:position x="86.99035" y="-430.58322"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase15" label="Copy number">
+      <node id="http://example.org/UseCase15" label="Copy number (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -587,13 +661,15 @@
           <attvalue for="closnesscentrality" value="0.31921824104234525"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.35340136054421767"></attvalue>
           <attvalue for="betweenesscentrality" value="0.010802608832311801"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
+          <attvalue for="modularity_class" value="2"></attvalue>
           <attvalue for="pageranks" value="0.006184647478593251"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-429.1225" y="-285.63266"></viz:position>
-        <viz:color r="76" g="70" b="62"></viz:color>
+        <viz:size value="13.129421"></viz:size>
+        <viz:position x="-501.3582" y="533.03564"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/CopyNumber" label="Copy number">
         <attvalues>
@@ -603,13 +679,15 @@
           <attvalue for="closnesscentrality" value="0.27146814404432135"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3015306122448977"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0019306930693069307"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
+          <attvalue for="modularity_class" value="2"></attvalue>
           <attvalue for="pageranks" value="0.006575382672357926"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-744.5478" y="-423.31964"></viz:position>
-        <viz:color r="76" g="70" b="62"></viz:color>
+        <viz:size value="12.201856"></viz:size>
+        <viz:position x="-732.10455" y="776.46185"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/CorporateBody" label="Corporate body">
         <attvalues>
@@ -619,13 +697,15 @@
           <attvalue for="closnesscentrality" value="0.2506393861892583"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.2797862001943633"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.0037771607902201167"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="673.0766" y="729.21924"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="113.419945" y="-817.5291"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/CustodialHistory" label="Custodial history">
         <attvalues>
@@ -635,15 +715,17 @@
           <attvalue for="closnesscentrality" value="0.3161290322580645"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3613945578231292"></attvalue>
           <attvalue for="betweenesscentrality" value="0.021021772822361028"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.012694741919289154"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="19.826086"></viz:size>
-        <viz:position x="308.99393" y="393.96487"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="14.197842"></viz:size>
+        <viz:position x="-10.953015" y="-306.2138"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase43" label="Custodial history note">
+      <node id="http://example.org/UseCase43" label="Custodial history note (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -651,13 +733,15 @@
           <attvalue for="closnesscentrality" value="0.31715210355987056"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3547619047619048"></attvalue>
           <attvalue for="betweenesscentrality" value="0.00488559521174199"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.005549072152212631"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="129.84895" y="266.80682"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="12.510793"></viz:size>
+        <viz:position x="-15.566412" y="-113.51821"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/Date" label="Date">
         <attvalues>
@@ -670,12 +754,14 @@
           <attvalue for="modularity_class" value="5"></attvalue>
           <attvalue for="pageranks" value="0.005633844953622831"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-5.1444016" y="437.32272"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="12.318478"></viz:size>
+        <viz:position x="-382.36707" y="-310.66638"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
       </node>
-      <node id="http://example.org/UseCase32" label="Date of action taken or to be taken">
+      <node id="http://example.org/UseCase32" label="Date of action taken or to be taken (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -683,15 +769,17 @@
           <attvalue for="closnesscentrality" value="0.2677595628415301"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3017006802721087"></attvalue>
           <attvalue for="betweenesscentrality" value="6.607184530602113E-4"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
           <attvalue for="pageranks" value="0.0055357882632763745"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="216.8855" y="-765.6652"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="12.069078"></viz:size>
+        <viz:position x="278.2373" y="760.2917"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase7" label="Discarded accompanying material">
+      <node id="http://example.org/UseCase7" label="Discarded accompanying material (use case)">
         <attvalues>
           <attvalue for="degree" value="5"></attvalue>
           <attvalue for="weighted degree" value="5.0"></attvalue>
@@ -699,15 +787,17 @@
           <attvalue for="closnesscentrality" value="0.362962962962963"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.41258503401360563"></attvalue>
           <attvalue for="betweenesscentrality" value="0.00883715001031492"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.011085218720695322"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.01108521872069532"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.4"></attvalue>
+          <attvalue for="triangles" value="4"></attvalue>
         </attvalues>
-        <viz:size value="19.826086"></viz:size>
-        <viz:position x="-111.54277" y="194.23773"></viz:position>
+        <viz:size value="12.923931"></viz:size>
+        <viz:position x="-231.28334" y="-6.6255355"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
-      <node id="http://example.org/UseCase6" label="Embedded Work IDs, Instance IDs">
+      <node id="http://example.org/UseCase6" label="Embedded Work IDs, Instance IDs (use case)">
         <attvalues>
           <attvalue for="degree" value="3"></attvalue>
           <attvalue for="weighted degree" value="3.0"></attvalue>
@@ -715,15 +805,17 @@
           <attvalue for="closnesscentrality" value="0.2978723404255319"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.34030612244897945"></attvalue>
           <attvalue for="betweenesscentrality" value="0.010034796399747588"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.007624489540140294"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.007624489540140293"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="-486.82626" y="-137.69705"></viz:position>
+        <viz:size value="13.049146"></viz:size>
+        <viz:position x="-666.12665" y="493.28738"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
-      <node id="http://example.org/UseCase10" label="English Short Title Catalogue and Other Links">
+      <node id="http://example.org/UseCase10" label="English Short Title Catalogue and Other Links (use case)">
         <attvalues>
           <attvalue for="degree" value="1"></attvalue>
           <attvalue for="weighted degree" value="1.0"></attvalue>
@@ -731,13 +823,15 @@
           <attvalue for="closnesscentrality" value="0.19797979797979798"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.2173833819241982"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
+          <attvalue for="modularity_class" value="2"></attvalue>
           <attvalue for="pageranks" value="0.005067563387885309"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="-1373.7927" y="-858.1162"></viz:position>
-        <viz:color r="76" g="70" b="62"></viz:color>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="-1042.4025" y="1545.4224"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/Enumeration" label="Enumeration">
         <attvalues>
@@ -747,13 +841,15 @@
           <attvalue for="closnesscentrality" value="0.2808022922636103"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3176870748299318"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0012766671903346471"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
           <attvalue for="pageranks" value="0.005649847147996244"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-286.73804" y="-791.6554"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="12.133476"></viz:size>
+        <viz:position x="-90.82092" y="989.48"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Event" label="Event">
         <attvalues>
@@ -763,12 +859,14 @@
           <attvalue for="closnesscentrality" value="0.3202614379084967"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3596938775510203"></attvalue>
           <attvalue for="betweenesscentrality" value="0.009923315852059042"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
+          <attvalue for="modularity_class" value="5"></attvalue>
           <attvalue for="pageranks" value="0.009762919387919084"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.16666666666666666"></attvalue>
+          <attvalue for="triangles" value="1"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="251.17651" y="298.4357"></viz:position>
+        <viz:size value="13.03749"></viz:size>
+        <viz:position x="-84.57296" y="-220.82253"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Family" label="Family">
@@ -779,13 +877,15 @@
           <attvalue for="closnesscentrality" value="0.2506393861892583"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.2797862001943633"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.0037771607902201167"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="588.33325" y="793.3966"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="189.17856" y="-757.3079"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/Fingerprint" label="Fingerprint">
         <attvalues>
@@ -795,15 +895,17 @@
           <attvalue for="closnesscentrality" value="0.27146814404432135"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3015306122448977"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0019306930693069307"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
+          <attvalue for="modularity_class" value="2"></attvalue>
           <attvalue for="pageranks" value="0.006575382672357926"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-767.5801" y="-308.83377"></viz:position>
-        <viz:color r="76" g="70" b="62"></viz:color>
+        <viz:size value="12.201856"></viz:size>
+        <viz:position x="-668.31506" y="876.5021"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
       </node>
-      <node id="http://example.org/UseCase37" label="Fingerprints">
+      <node id="http://example.org/UseCase37" label="Fingerprints (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -811,15 +913,17 @@
           <attvalue for="closnesscentrality" value="0.31921824104234525"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.35340136054421767"></attvalue>
           <attvalue for="betweenesscentrality" value="0.010802608832311801"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
+          <attvalue for="modularity_class" value="2"></attvalue>
           <attvalue for="pageranks" value="0.006184647478593251"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-474.0933" y="-214.56927"></viz:position>
-        <viz:color r="76" g="70" b="62"></viz:color>
+        <viz:size value="13.129421"></viz:size>
+        <viz:position x="-430.22406" y="604.3089"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
       </node>
-      <node id="http://example.org/UseCase4" label="Help for Cryptic Annotations">
+      <node id="http://example.org/UseCase4" label="Help for Cryptic Annotations (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -830,10 +934,12 @@
           <attvalue for="modularity_class" value="3"></attvalue>
           <attvalue for="pageranks" value="0.006131673775726718"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-307.81506" y="727.7506"></viz:position>
-        <viz:color r="255" g="85" b="132"></viz:color>
+        <viz:size value="12.055046"></viz:size>
+        <viz:position x="-733.88916" y="-484.2147"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
       </node>
       <node id="http://example.org/Identifier" label="Identifier">
         <attvalues>
@@ -843,13 +949,15 @@
           <attvalue for="closnesscentrality" value="0.32131147540983607"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.38010204081632654"></attvalue>
           <attvalue for="betweenesscentrality" value="0.09716187791575608"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
-          <attvalue for="pageranks" value="0.020083967983267212"></attvalue>
+          <attvalue for="modularity_class" value="2"></attvalue>
+          <attvalue for="pageranks" value="0.02008396798326721"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="22.95652"></viz:size>
-        <viz:position x="-620.9446" y="-464.82962"></viz:position>
-        <viz:color r="76" g="70" b="62"></viz:color>
+        <viz:size value="22.158348"></viz:size>
+        <viz:position x="-530.7994" y="843.38684"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/Illustration" label="Illustration">
         <attvalues>
@@ -859,13 +967,33 @@
           <attvalue for="closnesscentrality" value="0.22121896162528218"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.2486637512147715"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
           <attvalue for="pageranks" value="0.003987234431235884"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="1143.1573" y="-33.568848"></viz:position>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="847.29663" y="-274.8078"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
+      </node>
+      <node id="http://example.org/UseCase34" label="Immediate source of acquisition (use case)">
+        <attvalues>
+          <attvalue for="degree" value="3"></attvalue>
+          <attvalue for="weighted degree" value="3.0"></attvalue>
+          <attvalue for="eccentricity" value="6.0"></attvalue>
+          <attvalue for="closnesscentrality" value="0.2996941896024465"></attvalue>
+          <attvalue for="harmonicclosnesscentrality" value="0.344047619047619"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.022154705303833913"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
+          <attvalue for="pageranks" value="0.008244124820110912"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="14.316291"></viz:size>
+        <viz:position x="323.09235" y="-77.76158"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/ImmediateSourceOfAcquisition" label="Immediate source of acquisition">
         <attvalues>
@@ -875,31 +1003,17 @@
           <attvalue for="closnesscentrality" value="0.2684931506849315"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.29659863945578213"></attvalue>
           <attvalue for="betweenesscentrality" value="9.768976897689768E-4"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.00600221008134244"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="556.29224" y="331.89444"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="12.102136"></viz:size>
+        <viz:position x="298.281" y="-378.9967"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase34" label="Immediate source of acquisition">
-        <attvalues>
-          <attvalue for="degree" value="3"></attvalue>
-          <attvalue for="weighted degree" value="3.0"></attvalue>
-          <attvalue for="eccentricity" value="6.0"></attvalue>
-          <attvalue for="closnesscentrality" value="0.2996941896024465"></attvalue>
-          <attvalue for="harmonicclosnesscentrality" value="0.344047619047619"></attvalue>
-          <attvalue for="betweenesscentrality" value="0.022154705303833913"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
-          <attvalue for="pageranks" value="0.008244124820110912"></attvalue>
-          <attvalue for="componentnumber" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="403.6297" y="58.449497"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
-      </node>
-      <node id="http://example.org/UseCase24" label="In-house processing &amp; tracking data">
+      <node id="http://example.org/UseCase24" label="In-house processing &amp; tracking data (use case)">
         <attvalues>
           <attvalue for="degree" value="4"></attvalue>
           <attvalue for="weighted degree" value="4.0"></attvalue>
@@ -907,13 +1021,15 @@
           <attvalue for="closnesscentrality" value="0.33676975945017185"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.383843537414966"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0145171536435741"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
-          <attvalue for="pageranks" value="0.009483811290118844"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
+          <attvalue for="pageranks" value="0.009483811290118846"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="-112.291534" y="-443.60486"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="13.517779"></viz:size>
+        <viz:position x="84.04236" y="458.72095"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Inscription" label="Inscription">
         <attvalues>
@@ -926,10 +1042,12 @@
           <attvalue for="modularity_class" value="3"></attvalue>
           <attvalue for="pageranks" value="0.0039776902670925025"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="-42.96835" y="1129.9293"></viz:position>
-        <viz:color r="255" g="85" b="132"></viz:color>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="-688.9856" y="-918.659"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
       </node>
       <node id="http://example.org/Insertion" label="Insertion">
         <attvalues>
@@ -942,10 +1060,12 @@
           <attvalue for="modularity_class" value="3"></attvalue>
           <attvalue for="pageranks" value="0.017736958911240785"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.09523809523809523"></attvalue>
+          <attvalue for="triangles" value="2"></attvalue>
         </attvalues>
-        <viz:size value="22.95652"></viz:size>
-        <viz:position x="-167.42072" y="506.30307"></viz:position>
-        <viz:color r="255" g="85" b="132"></viz:color>
+        <viz:size value="19.424614"></viz:size>
+        <viz:position x="-510.38528" y="-287.317"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
       </node>
       <node id="http://example.org/Instance" label="Instance">
         <attvalues>
@@ -955,12 +1075,14 @@
           <attvalue for="closnesscentrality" value="0.36162361623616235"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.4389455782312926"></attvalue>
           <attvalue for="betweenesscentrality" value="0.05892545671923428"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.027845720892512672"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.027845720892512665"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.02564102564102564"></attvalue>
+          <attvalue for="triangles" value="2"></attvalue>
         </attvalues>
-        <viz:size value="32.347824"></viz:size>
-        <viz:position x="-221.42282" y="-71.87134"></viz:position>
+        <viz:size value="18.160702"></viz:size>
+        <viz:position x="-206.20927" y="286.03287"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Item" label="Item">
@@ -971,12 +1093,14 @@
           <attvalue for="closnesscentrality" value="0.4434389140271493"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.5425170068027213"></attvalue>
           <attvalue for="betweenesscentrality" value="0.34433037481020506"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
           <attvalue for="pageranks" value="0.05087990577624084"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.019762845849802372"></attvalue>
+          <attvalue for="triangles" value="5"></attvalue>
         </attvalues>
         <viz:size value="48.0"></viz:size>
-        <viz:position x="-17.70159" y="-134.82715"></viz:position>
+        <viz:position x="-79.97255" y="268.19717"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Label" label="Label">
@@ -987,12 +1111,14 @@
           <attvalue for="closnesscentrality" value="0.2076271186440678"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.23146258503401346"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
           <attvalue for="pageranks" value="0.00470051445715936"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="1446.7854" y="-380.25"></viz:position>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="1271.6997" y="-164.70186"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/Leaf" label="Leaf">
@@ -1003,15 +1129,17 @@
           <attvalue for="closnesscentrality" value="0.2076271186440678"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.23146258503401346"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
           <attvalue for="pageranks" value="0.00470051445715936"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="1489.2494" y="-299.3549"></viz:position>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="1267.6671" y="-64.813835"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
-      <node id="http://example.org/UseCase8" label="Letters of transmittal">
+      <node id="http://example.org/UseCase8" label="Letters of transmittal (use case)">
         <attvalues>
           <attvalue for="degree" value="6"></attvalue>
           <attvalue for="weighted degree" value="6.0"></attvalue>
@@ -1019,12 +1147,14 @@
           <attvalue for="closnesscentrality" value="0.3951612903225806"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.4425170068027214"></attvalue>
           <attvalue for="betweenesscentrality" value="0.08700134005799398"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.013286646944636679"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.013286646944636677"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.2"></attvalue>
+          <attvalue for="triangles" value="3"></attvalue>
         </attvalues>
-        <viz:size value="21.391304"></viz:size>
-        <viz:position x="-154.44302" y="-183.95438"></viz:position>
+        <viz:size value="21.096054"></viz:size>
+        <viz:position x="-392.3511" y="388.86722"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/ManagementEntities" label="Management entities">
@@ -1035,13 +1165,15 @@
           <attvalue for="closnesscentrality" value="0.3223684210526316"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.41241496598639477"></attvalue>
           <attvalue for="betweenesscentrality" value="0.10045249624725544"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
-          <attvalue for="pageranks" value="0.02870030492452335"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
+          <attvalue for="pageranks" value="0.028700304924523343"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="30.782608"></viz:size>
-        <viz:position x="-190.18071" y="-627.71185"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="22.502384"></viz:size>
+        <viz:position x="-147.37556" y="794.4405"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Marking" label="Marking">
         <attvalues>
@@ -1054,12 +1186,14 @@
           <attvalue for="modularity_class" value="3"></attvalue>
           <attvalue for="pageranks" value="0.020329653566212885"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="22.95652"></viz:size>
-        <viz:position x="-48.88124" y="763.98724"></viz:position>
-        <viz:color r="255" g="85" b="132"></viz:color>
+        <viz:size value="20.630152"></viz:size>
+        <viz:position x="-471.76553" y="-596.1264"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
       </node>
-      <node id="http://example.org/UseCase33" label="Material acted upon">
+      <node id="http://example.org/UseCase33" label="Material acted upon (use case)">
         <attvalues>
           <attvalue for="degree" value="5"></attvalue>
           <attvalue for="weighted degree" value="5.0"></attvalue>
@@ -1067,15 +1201,17 @@
           <attvalue for="closnesscentrality" value="0.34265734265734266"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.39404761904761915"></attvalue>
           <attvalue for="betweenesscentrality" value="0.028134516167273693"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
-          <attvalue for="pageranks" value="0.011673908286072012"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
+          <attvalue for="pageranks" value="0.01167390828607201"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="19.826086"></viz:size>
-        <viz:position x="185.90251" y="-379.3101"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="14.941484"></viz:size>
+        <viz:position x="-146.05975" y="423.13293"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase19" label="Meta-annotations">
+      <node id="http://example.org/UseCase19" label="Meta-annotations (use case)">
         <attvalues>
           <attvalue for="degree" value="1"></attvalue>
           <attvalue for="weighted degree" value="1.0"></attvalue>
@@ -1086,10 +1222,12 @@
           <attvalue for="modularity_class" value="3"></attvalue>
           <attvalue for="pageranks" value="0.004245026214410805"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="-368.32922" y="1385.3616"></viz:position>
-        <viz:color r="255" g="85" b="132"></viz:color>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="-957.0209" y="-1122.513"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
       </node>
       <node id="http://example.org/Motivation" label="Motivation">
         <attvalues>
@@ -1099,13 +1237,15 @@
           <attvalue for="closnesscentrality" value="0.26063829787234044"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.2995140913508259"></attvalue>
           <attvalue for="betweenesscentrality" value="0.005067609508203567"></attvalue>
-          <attvalue for="modularity_class" value="3"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.006351472760278889"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="279.84564" y="852.78394"></viz:position>
-        <viz:color r="255" g="85" b="132"></viz:color>
+        <viz:size value="12.529822"></viz:size>
+        <viz:position x="-173.34622" y="-749.0094"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/Note" label="Note">
         <attvalues>
@@ -1115,29 +1255,15 @@
           <attvalue for="closnesscentrality" value="0.259946949602122"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.30131195335276945"></attvalue>
           <attvalue for="betweenesscentrality" value="0.00376498723227781"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
           <attvalue for="pageranks" value="0.00604665651886685"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-474.94543" y="-655.38196"></viz:position>
-        <viz:color r="115" g="192" b="0"></viz:color>
-      </node>
-      <node id="http://example.org/UseCase36" label="Numbering peculiarities">
-        <attvalues>
-          <attvalue for="degree" value="5"></attvalue>
-          <attvalue for="weighted degree" value="5.0"></attvalue>
-          <attvalue for="eccentricity" value="5.0"></attvalue>
-          <attvalue for="closnesscentrality" value="0.3277591973244147"></attvalue>
-          <attvalue for="harmonicclosnesscentrality" value="0.3778911564625851"></attvalue>
-          <attvalue for="betweenesscentrality" value="0.033584458518684475"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
-          <attvalue for="pageranks" value="0.012419818415271549"></attvalue>
-          <attvalue for="componentnumber" value="0"></attvalue>
-        </attvalues>
-        <viz:size value="19.826086"></viz:size>
-        <viz:position x="-272.70166" y="-479.52768"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="12.393632"></viz:size>
+        <viz:position x="-378.8869" y="925.32196"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/NumberingPeculiarities" label="Numbering peculiarities">
         <attvalues>
@@ -1147,15 +1273,35 @@
           <attvalue for="closnesscentrality" value="0.2808022922636103"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3176870748299318"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0012766671903346471"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
           <attvalue for="pageranks" value="0.005649847147996244"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-386.6464" y="-758.4618"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="12.133476"></viz:size>
+        <viz:position x="-204.0426" y="1022.604"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase13" label="Original Shelf Order; Physical Location; Former Call Numbers">
+      <node id="http://example.org/UseCase36" label="Numbering peculiarities (use case)">
+        <attvalues>
+          <attvalue for="degree" value="5"></attvalue>
+          <attvalue for="weighted degree" value="5.0"></attvalue>
+          <attvalue for="eccentricity" value="5.0"></attvalue>
+          <attvalue for="closnesscentrality" value="0.3277591973244147"></attvalue>
+          <attvalue for="harmonicclosnesscentrality" value="0.3778911564625851"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.033584458518684475"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
+          <attvalue for="pageranks" value="0.012419818415271545"></attvalue>
+          <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
+        </attvalues>
+        <viz:size value="15.51128"></viz:size>
+        <viz:position x="-362.82523" y="679.91406"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
+      </node>
+      <node id="http://example.org/UseCase13" label="Original Shelf Order; Physical Location; Former Call Numbers (use case)">
         <attvalues>
           <attvalue for="degree" value="3"></attvalue>
           <attvalue for="weighted degree" value="3.0"></attvalue>
@@ -1163,13 +1309,15 @@
           <attvalue for="closnesscentrality" value="0.3072100313479624"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.34523809523809496"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0010038253825382538"></attvalue>
-          <attvalue for="modularity_class" value="4"></attvalue>
+          <attvalue for="modularity_class" value="5"></attvalue>
           <attvalue for="pageranks" value="0.007699897379293098"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.6666666666666666"></attvalue>
+          <attvalue for="triangles" value="2"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="336.37454" y="18.784044"></viz:position>
-        <viz:color r="211" g="179" b="176"></viz:color>
+        <viz:size value="12.104951"></viz:size>
+        <viz:position x="-623.6359" y="65.708176"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Page" label="Page">
         <attvalues>
@@ -1179,15 +1327,17 @@
           <attvalue for="closnesscentrality" value="0.2076271186440678"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.23146258503401346"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
           <attvalue for="pageranks" value="0.00470051445715936"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="1482.2737" y="-208.2065"></viz:position>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="1230.5513" y="-255.88145"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
-      <node id="http://example.org/UseCase22" label="Parsing data within annotations">
+      <node id="http://example.org/UseCase22" label="Parsing data within annotations (use case)">
         <attvalues>
           <attvalue for="degree" value="5"></attvalue>
           <attvalue for="weighted degree" value="5.0"></attvalue>
@@ -1198,10 +1348,12 @@
           <attvalue for="modularity_class" value="5"></attvalue>
           <attvalue for="pageranks" value="0.013308690331422426"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="19.826086"></viz:size>
-        <viz:position x="81.8458" y="472.95816"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="15.12863"></viz:size>
+        <viz:position x="-301.56064" y="-342.8603"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Person" label="Person">
         <attvalues>
@@ -1211,13 +1363,15 @@
           <attvalue for="closnesscentrality" value="0.2045929018789144"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.22599611273080647"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.004521178856298407"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="620.77673" y="1298.7783"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="-14.630954" y="-1292.0989"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/PhysicalCharacteristicEntities" label="Physical characteristic entities">
         <attvalues>
@@ -1227,12 +1381,14 @@
           <attvalue for="closnesscentrality" value="0.2832369942196532"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3476190476190476"></attvalue>
           <attvalue for="betweenesscentrality" value="0.06418755238376285"></attvalue>
-          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
           <attvalue for="pageranks" value="0.023352861806695144"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="24.52174"></viz:size>
-        <viz:position x="869.77136" y="-139.01201"></viz:position>
+        <viz:size value="18.710857"></viz:size>
+        <viz:position x="608.9976" y="-129.32408"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/PhysicalLocation" label="Physical location">
@@ -1243,13 +1399,15 @@
           <attvalue for="closnesscentrality" value="0.33447098976109213"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.379421768707483"></attvalue>
           <attvalue for="betweenesscentrality" value="0.024379231274795177"></attvalue>
-          <attvalue for="modularity_class" value="4"></attvalue>
+          <attvalue for="modularity_class" value="5"></attvalue>
           <attvalue for="pageranks" value="0.009599586366192982"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.16666666666666666"></attvalue>
+          <attvalue for="triangles" value="1"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="-10.188053" y="-246.14336"></viz:position>
-        <viz:color r="211" g="179" b="176"></viz:color>
+        <viz:size value="14.548867"></viz:size>
+        <viz:position x="-123.811226" y="354.20938"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Policy" label="Policy">
         <attvalues>
@@ -1262,10 +1420,12 @@
           <attvalue for="modularity_class" value="0"></attvalue>
           <attvalue for="pageranks" value="0.010327304932511511"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="44.552692" y="-1021.288"></viz:position>
-        <viz:color r="0" g="189" b="148"></viz:color>
+        <viz:size value="13.347428"></viz:size>
+        <viz:position x="339.88394" y="960.79767"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/PreservationEvent" label="Preservation event">
         <attvalues>
@@ -1275,13 +1435,15 @@
           <attvalue for="closnesscentrality" value="0.29607250755287007"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.35238095238095224"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0199129317985404"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
           <attvalue for="pageranks" value="0.014892713931988478"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="21.391304"></viz:size>
-        <viz:position x="206.92819" y="-623.8654"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="14.081912"></viz:size>
+        <viz:position x="133.39288" y="619.4075"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/ProvenanceEntities" label="Provenance entities">
         <attvalues>
@@ -1290,16 +1452,18 @@
           <attvalue for="eccentricity" value="5.0"></attvalue>
           <attvalue for="closnesscentrality" value="0.4152542372881356"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.4969387755102045"></attvalue>
-          <attvalue for="betweenesscentrality" value="0.2244170432113717"></attvalue>
-          <attvalue for="modularity_class" value="4"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.22441704321137165"></attvalue>
+          <attvalue for="modularity_class" value="5"></attvalue>
           <attvalue for="pageranks" value="0.035109992775376506"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.08333333333333333"></attvalue>
+          <attvalue for="triangles" value="10"></attvalue>
         </attvalues>
-        <viz:size value="37.04348"></viz:size>
-        <viz:position x="100.281624" y="162.03542"></viz:position>
-        <viz:color r="211" g="179" b="176"></viz:color>
+        <viz:size value="35.46297"></viz:size>
+        <viz:position x="-356.69928" y="-74.58627"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
       </node>
-      <node id="http://example.org/UseCase1" label="Provenance tracing (persons, institutions, bookplates)">
+      <node id="http://example.org/UseCase1" label="Provenance tracing (persons, institutions, bookplates) (use case)">
         <attvalues>
           <attvalue for="degree" value="4"></attvalue>
           <attvalue for="weighted degree" value="4.0"></attvalue>
@@ -1307,13 +1471,15 @@
           <attvalue for="closnesscentrality" value="0.29429429429429427"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3435374149659863"></attvalue>
           <attvalue for="betweenesscentrality" value="0.021286566173486447"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.010588602514445475"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="282.01242" y="587.44586"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="14.225527"></viz:size>
+        <viz:position x="-135.37094" y="-520.2795"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/Purpose" label="Purpose">
         <attvalues>
@@ -1323,13 +1489,15 @@
           <attvalue for="closnesscentrality" value="0.23728813559322035"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.2673712342079688"></attvalue>
           <attvalue for="betweenesscentrality" value="0.002508250825082508"></attvalue>
-          <attvalue for="modularity_class" value="5"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.007095490826357178"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="252.56265" y="1160.8157"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="12.262239"></viz:size>
+        <viz:position x="-304.48718" y="-1068.1298"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/RelationEntities" label="Relation entities">
         <attvalues>
@@ -1339,15 +1507,17 @@
           <attvalue for="closnesscentrality" value="0.3310810810810811"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.37789115646258503"></attvalue>
           <attvalue for="betweenesscentrality" value="0.008665926935054299"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.009186310140322907"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.009186310140322906"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="-13.662882" y="-31.846136"></viz:position>
+        <viz:size value="12.906029"></viz:size>
+        <viz:position x="-446.94806" y="272.21524"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
-      <node id="http://example.org/UseCase28" label="Restriction on use">
+      <node id="http://example.org/UseCase28" label="Restriction on use (use case)">
         <attvalues>
           <attvalue for="degree" value="4"></attvalue>
           <attvalue for="weighted degree" value="4.0"></attvalue>
@@ -1358,10 +1528,12 @@
           <attvalue for="modularity_class" value="0"></attvalue>
           <attvalue for="pageranks" value="0.009910022294647654"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="90.47068" y="-849.30066"></viz:position>
-        <viz:color r="0" g="189" b="148"></viz:color>
+        <viz:size value="12.705125"></viz:size>
+        <viz:position x="207.21227" y="866.7491"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/RetentionPolicy" label="Retention policy">
         <attvalues>
@@ -1374,10 +1546,12 @@
           <attvalue for="modularity_class" value="0"></attvalue>
           <attvalue for="pageranks" value="0.005876265747235911"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="308.7162" y="-1038.7543"></viz:position>
-        <viz:color r="0" g="189" b="148"></viz:color>
+        <viz:size value="12.222559"></viz:size>
+        <viz:position x="649.6176" y="888.3036"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/RightsMetadata" label="Rights metadata">
         <attvalues>
@@ -1390,10 +1564,12 @@
           <attvalue for="modularity_class" value="0"></attvalue>
           <attvalue for="pageranks" value="0.007748760258489359"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="-59.661667" y="-947.1481"></viz:position>
-        <viz:color r="0" g="189" b="148"></viz:color>
+        <viz:size value="12.295345"></viz:size>
+        <viz:position x="185.1378" y="997.4296"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/Rubrication" label="Rubrication">
         <attvalues>
@@ -1403,15 +1579,17 @@
           <attvalue for="closnesscentrality" value="0.2808022922636103"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3142857142857141"></attvalue>
           <attvalue for="betweenesscentrality" value="0.006473285559577808"></attvalue>
-          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="modularity_class" value="6"></attvalue>
           <attvalue for="pageranks" value="0.006007077955658916"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="595.46826" y="91.19033"></viz:position>
+        <viz:size value="12.676786"></viz:size>
+        <viz:position x="274.07742" y="-161.44006"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
-      <node id="http://example.org/UseCase17" label="Rubrication, illumination, other hand coloring">
+      <node id="http://example.org/UseCase17" label="Rubrication, illumination, other hand coloring (use case)">
         <attvalues>
           <attvalue for="degree" value="5"></attvalue>
           <attvalue for="weighted degree" value="5.0"></attvalue>
@@ -1419,12 +1597,14 @@
           <attvalue for="closnesscentrality" value="0.35766423357664234"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.4069727891156463"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0520598343703401"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.011890753792571382"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.011890753792571379"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="19.826086"></viz:size>
-        <viz:position x="303.0839" y="129.60426"></viz:position>
+        <viz:size value="17.442894"></viz:size>
+        <viz:position x="43.794327" y="-42.36609"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Seal" label="Seal">
@@ -1438,10 +1618,12 @@
           <attvalue for="modularity_class" value="3"></attvalue>
           <attvalue for="pageranks" value="0.0039776902670925025"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="-146.97319" y="1097.1995"></viz:position>
-        <viz:color r="255" g="85" b="132"></viz:color>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="-596.1911" y="-951.0517"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
       </node>
       <node id="http://example.org/ShelfMark" label="Shelf mark">
         <attvalues>
@@ -1451,13 +1633,15 @@
           <attvalue for="closnesscentrality" value="0.24378109452736318"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.26880466472303194"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0"></attvalue>
-          <attvalue for="modularity_class" value="6"></attvalue>
-          <attvalue for="pageranks" value="0.003947688267136259"></attvalue>
+          <attvalue for="modularity_class" value="2"></attvalue>
+          <attvalue for="pageranks" value="0.003947688267136258"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="-922.437" y="-614.1121"></viz:position>
-        <viz:color r="76" g="70" b="62"></viz:color>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="-746.2469" y="1130.6122"></viz:position>
+        <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/Signature" label="Signature">
         <attvalues>
@@ -1470,12 +1654,14 @@
           <attvalue for="modularity_class" value="8"></attvalue>
           <attvalue for="pageranks" value="0.006623386304365417"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="810.82886" y="-223.76648"></viz:position>
-        <viz:color r="255" g="136" b="5"></viz:color>
+        <viz:size value="12.237302"></viz:size>
+        <viz:position x="656.63745" y="-0.24302357"></viz:position>
+        <viz:color r="115" g="192" b="0"></viz:color>
       </node>
-      <node id="http://example.org/UseCase44" label="Signatures">
+      <node id="http://example.org/UseCase44" label="Signatures (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -1486,12 +1672,14 @@
           <attvalue for="modularity_class" value="8"></attvalue>
           <attvalue for="pageranks" value="0.006207197712869474"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="446.1649" y="-212.85786"></viz:position>
-        <viz:color r="255" g="136" b="5"></viz:color>
+        <viz:size value="13.36723"></viz:size>
+        <viz:position x="338.99466" y="171.35959"></viz:position>
+        <viz:color r="115" g="192" b="0"></viz:color>
       </node>
-      <node id="http://example.org/UseCase18" label="Special features or imperfections of the copy being described">
+      <node id="http://example.org/UseCase18" label="Special features or imperfections of the copy being described (use case)">
         <attvalues>
           <attvalue for="degree" value="5"></attvalue>
           <attvalue for="weighted degree" value="5.0"></attvalue>
@@ -1500,12 +1688,14 @@
           <attvalue for="harmonicclosnesscentrality" value="0.380952380952381"></attvalue>
           <attvalue for="betweenesscentrality" value="0.05897340190866869"></attvalue>
           <attvalue for="modularity_class" value="0"></attvalue>
-          <attvalue for="pageranks" value="0.012797935900383615"></attvalue>
+          <attvalue for="pageranks" value="0.012797935900383616"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="19.826086"></viz:size>
-        <viz:position x="294.17725" y="-664.24634"></viz:position>
-        <viz:color r="0" g="189" b="148"></viz:color>
+        <viz:size value="18.165714"></viz:size>
+        <viz:position x="503.1674" y="553.4153"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/Status" label="Status">
         <attvalues>
@@ -1514,16 +1704,18 @@
           <attvalue for="eccentricity" value="6.0"></attvalue>
           <attvalue for="closnesscentrality" value="0.2857142857142857"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.3272108843537413"></attvalue>
-          <attvalue for="betweenesscentrality" value="0.0026467795059718193"></attvalue>
-          <attvalue for="modularity_class" value="2"></attvalue>
-          <attvalue for="pageranks" value="0.007536878650360569"></attvalue>
+          <attvalue for="betweenesscentrality" value="0.0026467795059718197"></attvalue>
+          <attvalue for="modularity_class" value="4"></attvalue>
+          <attvalue for="pageranks" value="0.0075368786503605695"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="16.695652"></viz:size>
-        <viz:position x="-31.782875" y="-595.3999"></viz:position>
-        <viz:color r="0" g="196" b="255"></viz:color>
+        <viz:size value="12.276723"></viz:size>
+        <viz:position x="-51.13806" y="647.85126"></viz:position>
+        <viz:color r="223" g="137" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase38" label="Sub-groups of materials within a collection">
+      <node id="http://example.org/UseCase38" label="Sub-groups of materials within a collection (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -1531,15 +1723,17 @@
           <attvalue for="closnesscentrality" value="0.2506393861892583"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.27891156462585015"></attvalue>
           <attvalue for="betweenesscentrality" value="5.39299982629842E-4"></attvalue>
-          <attvalue for="modularity_class" value="4"></attvalue>
+          <attvalue for="modularity_class" value="5"></attvalue>
           <attvalue for="pageranks" value="0.005914074942218413"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="553.96216" y="-22.204844"></viz:position>
-        <viz:color r="211" g="179" b="176"></viz:color>
+        <viz:size value="12.056384"></viz:size>
+        <viz:position x="-1026.4209" y="101.9694"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
       </node>
-      <node id="http://example.org/UseCase21" label="Taxonomy of annotation motivations/purposes">
+      <node id="http://example.org/UseCase21" label="Taxonomy of annotation motivations/purposes (use case)">
         <attvalues>
           <attvalue for="degree" value="4"></attvalue>
           <attvalue for="weighted degree" value="4.0"></attvalue>
@@ -1547,15 +1741,17 @@
           <attvalue for="closnesscentrality" value="0.2784090909090909"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.32176870748299297"></attvalue>
           <attvalue for="betweenesscentrality" value="0.02334375907226351"></attvalue>
-          <attvalue for="modularity_class" value="3"></attvalue>
+          <attvalue for="modularity_class" value="1"></attvalue>
           <attvalue for="pageranks" value="0.012113699640455455"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="8.443576" y="937.6302"></viz:position>
-        <viz:color r="255" g="85" b="132"></viz:color>
+        <viz:size value="14.440608"></viz:size>
+        <viz:position x="-511.18387" y="-781.659"></viz:position>
+        <viz:color r="0" g="196" b="255"></viz:color>
       </node>
-      <node id="http://example.org/UseCase20" label="Taxonomy of annotation types">
+      <node id="http://example.org/UseCase20" label="Taxonomy of annotation types (use case)">
         <attvalues>
           <attvalue for="degree" value="2"></attvalue>
           <attvalue for="weighted degree" value="2.0"></attvalue>
@@ -1566,12 +1762,14 @@
           <attvalue for="modularity_class" value="3"></attvalue>
           <attvalue for="pageranks" value="0.00639900972304502"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="15.130435"></viz:size>
-        <viz:position x="-333.2973" y="869.7848"></viz:position>
-        <viz:color r="255" g="85" b="132"></viz:color>
+        <viz:size value="12.40887"></viz:size>
+        <viz:position x="-795.82227" y="-632.6288"></viz:position>
+        <viz:color r="211" g="179" b="176"></viz:color>
       </node>
-      <node id="http://example.org/UseCase27" label="Transcription vs. Access point">
+      <node id="http://example.org/UseCase27" label="Transcription vs. Access point (use case)">
         <attvalues>
           <attvalue for="degree" value="0"></attvalue>
           <attvalue for="weighted degree" value="0.0"></attvalue>
@@ -1582,9 +1780,11 @@
           <attvalue for="modularity_class" value="9"></attvalue>
           <attvalue for="pageranks" value="0.0015082956793216553"></attvalue>
           <attvalue for="componentnumber" value="2"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
         <viz:size value="12.0"></viz:size>
-        <viz:position x="-1324.0757" y="21.648819"></viz:position>
+        <viz:position x="1112.6113" y="-749.3002"></viz:position>
         <viz:color r="192" g="192" b="192"></viz:color>
       </node>
       <node id="http://example.org/UsePolicy" label="Use policy">
@@ -1596,12 +1796,14 @@
           <attvalue for="harmonicclosnesscentrality" value="0.3163265306122447"></attvalue>
           <attvalue for="betweenesscentrality" value="0.0058256580464124096"></attvalue>
           <attvalue for="modularity_class" value="0"></attvalue>
-          <attvalue for="pageranks" value="0.0100850543939872"></attvalue>
+          <attvalue for="pageranks" value="0.010085054393987202"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="18.26087"></viz:size>
-        <viz:position x="197.93657" y="-994.12177"></viz:position>
-        <viz:color r="0" g="189" b="148"></viz:color>
+        <viz:size value="12.6090765"></viz:size>
+        <viz:position x="449.97928" y="924.4651"></viz:position>
+        <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/Work" label="Work">
         <attvalues>
@@ -1611,12 +1813,14 @@
           <attvalue for="closnesscentrality" value="0.35379061371841153"></attvalue>
           <attvalue for="harmonicclosnesscentrality" value="0.43129251700680277"></attvalue>
           <attvalue for="betweenesscentrality" value="0.06641081336759157"></attvalue>
-          <attvalue for="modularity_class" value="1"></attvalue>
-          <attvalue for="pageranks" value="0.02834749835607646"></attvalue>
+          <attvalue for="modularity_class" value="8"></attvalue>
+          <attvalue for="pageranks" value="0.028347498356076452"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.02564102564102564"></attvalue>
+          <attvalue for="triangles" value="2"></attvalue>
         </attvalues>
-        <viz:size value="32.347824"></viz:size>
-        <viz:position x="-180.85446" y="115.44529"></viz:position>
+        <viz:size value="18.9433"></viz:size>
+        <viz:position x="-395.4197" y="98.52021"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Place" label="http://example.org/Place">
@@ -1630,66 +1834,68 @@
           <attvalue for="modularity_class" value="5"></attvalue>
           <attvalue for="pageranks" value="0.0037693989597887313"></attvalue>
           <attvalue for="componentnumber" value="0"></attvalue>
+          <attvalue for="clustering" value="0.0"></attvalue>
+          <attvalue for="triangles" value="0"></attvalue>
         </attvalues>
-        <viz:size value="13.565217"></viz:size>
-        <viz:position x="131.59363" y="799.7253"></viz:position>
-        <viz:color r="223" g="137" b="255"></viz:color>
+        <viz:size value="12.0"></viz:size>
+        <viz:position x="-317.68558" y="-668.3475"></viz:position>
+        <viz:color r="76" g="70" b="62"></viz:color>
       </node>
     </nodes>
     <edges>
       <edge id="e11" source="http://example.org/UseCase41" target="http://example.org/Work"></edge>
       <edge id="e21" source="http://example.org/AccessPolicy" target="http://example.org/Policy"></edge>
-      <edge id="e31" source="http://example.org/UseCase26" target="http://example.org/AdminMetadata"></edge>
-      <edge id="e32" source="http://example.org/UseCase26" target="http://example.org/RightsMetadata"></edge>
-      <edge id="e33" source="http://example.org/UseCase26" target="http://example.org/UsePolicy"></edge>
-      <edge id="e34" source="http://example.org/UseCase26" target="http://example.org/AccessPolicy"></edge>
-      <edge id="e41" source="http://example.org/UseCase29" target="http://example.org/Instance"></edge>
-      <edge id="e42" source="http://example.org/UseCase29" target="http://example.org/Work"></edge>
+      <edge id="e31" source="http://example.org/UseCase26" target="http://example.org/AccessPolicy"></edge>
+      <edge id="e32" source="http://example.org/UseCase26" target="http://example.org/UsePolicy"></edge>
+      <edge id="e33" source="http://example.org/UseCase26" target="http://example.org/AdminMetadata"></edge>
+      <edge id="e34" source="http://example.org/UseCase26" target="http://example.org/RightsMetadata"></edge>
+      <edge id="e41" source="http://example.org/UseCase29" target="http://example.org/Item"></edge>
+      <edge id="e42" source="http://example.org/UseCase29" target="http://example.org/Instance"></edge>
       <edge id="e43" source="http://example.org/UseCase29" target="http://example.org/Insertion"></edge>
-      <edge id="e44" source="http://example.org/UseCase29" target="http://example.org/Item"></edge>
+      <edge id="e44" source="http://example.org/UseCase29" target="http://example.org/Work"></edge>
       <edge id="e51" source="http://example.org/UseCase30" target="http://example.org/PreservationEvent"></edge>
       <edge id="e52" source="http://example.org/UseCase30" target="http://example.org/AdminMetadata"></edge>
-      <edge id="e61" source="http://example.org/UseCase40" target="http://example.org/Instance"></edge>
-      <edge id="e62" source="http://example.org/UseCase40" target="http://example.org/Note"></edge>
+      <edge id="e61" source="http://example.org/UseCase40" target="http://example.org/Note"></edge>
+      <edge id="e62" source="http://example.org/UseCase40" target="http://example.org/Instance"></edge>
       <edge id="e71" source="http://example.org/AdminMetadata" target="http://example.org/ManagementEntities"></edge>
       <edge id="e81" source="http://example.org/Agent" target="http://example.org/AgentEntities"></edge>
-      <edge id="e91" source="http://example.org/UseCase31" target="http://example.org/AdminMetadata"></edge>
-      <edge id="e92" source="http://example.org/UseCase31" target="http://example.org/PreservationEvent"></edge>
-      <edge id="e101" source="http://example.org/UseCase5" target="http://example.org/Item"></edge>
-      <edge id="e102" source="http://example.org/UseCase5" target="http://example.org/Instance"></edge>
-      <edge id="e103" source="http://example.org/UseCase5" target="http://example.org/Work"></edge>
+      <edge id="e91" source="http://example.org/UseCase31" target="http://example.org/PreservationEvent"></edge>
+      <edge id="e92" source="http://example.org/UseCase31" target="http://example.org/AdminMetadata"></edge>
+      <edge id="e101" source="http://example.org/UseCase5" target="http://example.org/Work"></edge>
+      <edge id="e102" source="http://example.org/UseCase5" target="http://example.org/Item"></edge>
+      <edge id="e103" source="http://example.org/UseCase5" target="http://example.org/Instance"></edge>
       <edge id="e111" source="http://example.org/Annotation" target="http://example.org/Marking"></edge>
       <edge id="e121" source="http://example.org/UseCase3" target="http://example.org/Insertion"></edge>
       <edge id="e122" source="http://example.org/UseCase3" target="http://example.org/Marking"></edge>
       <edge id="e131" source="http://example.org/Arrangement" target="http://example.org/ProvenanceEntities"></edge>
-      <edge id="e141" source="http://example.org/UseCase9" target="http://example.org/Event"></edge>
+      <edge id="e141" source="http://example.org/UseCase9" target="http://example.org/AdminMetadata"></edge>
       <edge id="e142" source="http://example.org/UseCase9" target="http://example.org/ProvenanceEntities"></edge>
-      <edge id="e143" source="http://example.org/UseCase9" target="http://example.org/AdminMetadata"></edge>
+      <edge id="e143" source="http://example.org/UseCase9" target="http://example.org/Event"></edge>
       <edge id="e144" source="http://example.org/UseCase9" target="http://example.org/Item"></edge>
       <edge id="e151" source="http://example.org/UseCase25" target="http://example.org/Citation"></edge>
-      <edge id="e161" source="http://example.org/UseCase35" target="http://example.org/Work"></edge>
+      <edge id="e161" source="http://example.org/UseCase35" target="http://example.org/Instance"></edge>
       <edge id="e162" source="http://example.org/UseCase35" target="http://example.org/Item"></edge>
-      <edge id="e163" source="http://example.org/UseCase35" target="http://example.org/Instance"></edge>
+      <edge id="e163" source="http://example.org/UseCase35" target="http://example.org/Work"></edge>
       <edge id="e171" source="http://example.org/UseCase42" target="http://example.org/Item"></edge>
-      <edge id="e172" source="http://example.org/UseCase42" target="http://example.org/Work"></edge>
-      <edge id="e173" source="http://example.org/UseCase42" target="http://example.org/Instance"></edge>
-      <edge id="e181" source="http://example.org/Binding" target="http://example.org/ProvenanceEntities"></edge>
-      <edge id="e182" source="http://example.org/Binding" target="http://example.org/PhysicalCharacteristicEntities"></edge>
-      <edge id="e191" source="http://example.org/UseCase11" target="http://example.org/Binding"></edge>
-      <edge id="e192" source="http://example.org/UseCase11" target="http://example.org/Agent"></edge>
+      <edge id="e172" source="http://example.org/UseCase42" target="http://example.org/Instance"></edge>
+      <edge id="e173" source="http://example.org/UseCase42" target="http://example.org/Work"></edge>
+      <edge id="e181" source="http://example.org/Binding" target="http://example.org/PhysicalCharacteristicEntities"></edge>
+      <edge id="e182" source="http://example.org/Binding" target="http://example.org/ProvenanceEntities"></edge>
+      <edge id="e191" source="http://example.org/UseCase11" target="http://example.org/Agent"></edge>
+      <edge id="e192" source="http://example.org/UseCase11" target="http://example.org/Binding"></edge>
       <edge id="e201" source="http://example.org/Bookplate" target="http://example.org/PhysicalCharacteristicEntities"></edge>
       <edge id="e202" source="http://example.org/Bookplate" target="http://example.org/ProvenanceEntities"></edge>
-      <edge id="e211" source="http://example.org/UseCase16" target="http://example.org/Work"></edge>
+      <edge id="e211" source="http://example.org/UseCase16" target="http://example.org/Instance"></edge>
       <edge id="e212" source="http://example.org/UseCase16" target="http://example.org/Item"></edge>
-      <edge id="e213" source="http://example.org/UseCase16" target="http://example.org/Instance"></edge>
+      <edge id="e213" source="http://example.org/UseCase16" target="http://example.org/Work"></edge>
       <edge id="e221" source="http://example.org/Chronology" target="http://example.org/ManagementEntities"></edge>
       <edge id="e231" source="http://example.org/Citation" target="http://example.org/Identifier"></edge>
       <edge id="e241" source="http://example.org/UseCase39" target="http://example.org/Collection"></edge>
-      <edge id="e251" source="http://example.org/Collection" target="http://example.org/ProvenanceEntities"></edge>
-      <edge id="e252" source="http://example.org/Collection" target="http://example.org/RelationEntities"></edge>
+      <edge id="e251" source="http://example.org/Collection" target="http://example.org/RelationEntities"></edge>
+      <edge id="e252" source="http://example.org/Collection" target="http://example.org/ProvenanceEntities"></edge>
       <edge id="e261" source="http://example.org/Component" target="http://example.org/PhysicalCharacteristicEntities"></edge>
-      <edge id="e271" source="http://example.org/UseCase23" target="http://example.org/Component"></edge>
-      <edge id="e272" source="http://example.org/UseCase23" target="http://example.org/Item"></edge>
+      <edge id="e271" source="http://example.org/UseCase23" target="http://example.org/Item"></edge>
+      <edge id="e272" source="http://example.org/UseCase23" target="http://example.org/Component"></edge>
       <edge id="e281" source="http://example.org/Condition" target="http://example.org/PhysicalCharacteristicEntities"></edge>
       <edge id="e291" source="http://example.org/UseCase14" target="http://example.org/Collection"></edge>
       <edge id="e292" source="http://example.org/UseCase14" target="http://example.org/AdminMetadata"></edge>
@@ -1701,12 +1907,12 @@
       <edge id="e321" source="http://example.org/UseCase12" target="http://example.org/Container"></edge>
       <edge id="e322" source="http://example.org/UseCase12" target="http://example.org/PreservationEvent"></edge>
       <edge id="e323" source="http://example.org/UseCase12" target="http://example.org/Item"></edge>
-      <edge id="e331" source="http://example.org/UseCase2" target="http://example.org/CustodialHistory"></edge>
-      <edge id="e332" source="http://example.org/UseCase2" target="http://example.org/Agent"></edge>
-      <edge id="e333" source="http://example.org/UseCase2" target="http://example.org/Event"></edge>
-      <edge id="e334" source="http://example.org/UseCase2" target="http://example.org/Bookplate"></edge>
-      <edge id="e341" source="http://example.org/UseCase15" target="http://example.org/Item"></edge>
-      <edge id="e342" source="http://example.org/UseCase15" target="http://example.org/CopyNumber"></edge>
+      <edge id="e331" source="http://example.org/UseCase2" target="http://example.org/Agent"></edge>
+      <edge id="e332" source="http://example.org/UseCase2" target="http://example.org/Event"></edge>
+      <edge id="e333" source="http://example.org/UseCase2" target="http://example.org/Bookplate"></edge>
+      <edge id="e334" source="http://example.org/UseCase2" target="http://example.org/CustodialHistory"></edge>
+      <edge id="e341" source="http://example.org/UseCase15" target="http://example.org/CopyNumber"></edge>
+      <edge id="e342" source="http://example.org/UseCase15" target="http://example.org/Item"></edge>
       <edge id="e351" source="http://example.org/CopyNumber" target="http://example.org/Identifier"></edge>
       <edge id="e361" source="http://example.org/CorporateBody" target="http://example.org/Agent"></edge>
       <edge id="e371" source="http://example.org/CustodialHistory" target="http://example.org/ProvenanceEntities"></edge>
@@ -1716,32 +1922,32 @@
       <edge id="e401" source="http://example.org/UseCase32" target="http://example.org/AdminMetadata"></edge>
       <edge id="e402" source="http://example.org/UseCase32" target="http://example.org/PreservationEvent"></edge>
       <edge id="e411" source="http://example.org/UseCase7" target="http://example.org/Insertion"></edge>
-      <edge id="e412" source="http://example.org/UseCase7" target="http://example.org/ProvenanceEntities"></edge>
-      <edge id="e413" source="http://example.org/UseCase7" target="http://example.org/Work"></edge>
-      <edge id="e414" source="http://example.org/UseCase7" target="http://example.org/Instance"></edge>
-      <edge id="e415" source="http://example.org/UseCase7" target="http://example.org/Item"></edge>
-      <edge id="e421" source="http://example.org/UseCase6" target="http://example.org/Work"></edge>
-      <edge id="e422" source="http://example.org/UseCase6" target="http://example.org/Identifier"></edge>
+      <edge id="e412" source="http://example.org/UseCase7" target="http://example.org/Work"></edge>
+      <edge id="e413" source="http://example.org/UseCase7" target="http://example.org/ProvenanceEntities"></edge>
+      <edge id="e414" source="http://example.org/UseCase7" target="http://example.org/Item"></edge>
+      <edge id="e415" source="http://example.org/UseCase7" target="http://example.org/Instance"></edge>
+      <edge id="e421" source="http://example.org/UseCase6" target="http://example.org/Identifier"></edge>
+      <edge id="e422" source="http://example.org/UseCase6" target="http://example.org/Work"></edge>
       <edge id="e423" source="http://example.org/UseCase6" target="http://example.org/Instance"></edge>
       <edge id="e431" source="http://example.org/UseCase10" target="http://example.org/Citation"></edge>
       <edge id="e441" source="http://example.org/Enumeration" target="http://example.org/ManagementEntities"></edge>
       <edge id="e451" source="http://example.org/Event" target="http://example.org/ProvenanceEntities"></edge>
       <edge id="e461" source="http://example.org/Family" target="http://example.org/Agent"></edge>
       <edge id="e471" source="http://example.org/Fingerprint" target="http://example.org/Identifier"></edge>
-      <edge id="e481" source="http://example.org/UseCase37" target="http://example.org/Item"></edge>
-      <edge id="e482" source="http://example.org/UseCase37" target="http://example.org/Fingerprint"></edge>
+      <edge id="e481" source="http://example.org/UseCase37" target="http://example.org/Fingerprint"></edge>
+      <edge id="e482" source="http://example.org/UseCase37" target="http://example.org/Item"></edge>
       <edge id="e491" source="http://example.org/UseCase4" target="http://example.org/Marking"></edge>
       <edge id="e492" source="http://example.org/UseCase4" target="http://example.org/Insertion"></edge>
       <edge id="e501" source="http://example.org/Identifier" target="http://example.org/ManagementEntities"></edge>
       <edge id="e511" source="http://example.org/Illustration" target="http://example.org/PhysicalCharacteristicEntities"></edge>
-      <edge id="e521" source="http://example.org/ImmediateSourceOfAcquisition" target="http://example.org/CustodialHistory"></edge>
-      <edge id="e531" source="http://example.org/UseCase34" target="http://example.org/Agent"></edge>
-      <edge id="e532" source="http://example.org/UseCase34" target="http://example.org/AdminMetadata"></edge>
-      <edge id="e533" source="http://example.org/UseCase34" target="http://example.org/ImmediateSourceOfAcquisition"></edge>
-      <edge id="e541" source="http://example.org/UseCase24" target="http://example.org/AdminMetadata"></edge>
-      <edge id="e542" source="http://example.org/UseCase24" target="http://example.org/Item"></edge>
+      <edge id="e521" source="http://example.org/UseCase34" target="http://example.org/ImmediateSourceOfAcquisition"></edge>
+      <edge id="e522" source="http://example.org/UseCase34" target="http://example.org/Agent"></edge>
+      <edge id="e523" source="http://example.org/UseCase34" target="http://example.org/AdminMetadata"></edge>
+      <edge id="e531" source="http://example.org/ImmediateSourceOfAcquisition" target="http://example.org/CustodialHistory"></edge>
+      <edge id="e541" source="http://example.org/UseCase24" target="http://example.org/PhysicalLocation"></edge>
+      <edge id="e542" source="http://example.org/UseCase24" target="http://example.org/AdminMetadata"></edge>
       <edge id="e543" source="http://example.org/UseCase24" target="http://example.org/Status"></edge>
-      <edge id="e544" source="http://example.org/UseCase24" target="http://example.org/PhysicalLocation"></edge>
+      <edge id="e544" source="http://example.org/UseCase24" target="http://example.org/Item"></edge>
       <edge id="e551" source="http://example.org/Inscription" target="http://example.org/Marking"></edge>
       <edge id="e561" source="http://example.org/Insertion" target="http://example.org/Item"></edge>
       <edge id="e571" source="http://example.org/Instance" target="http://example.org/RelationEntities"></edge>
@@ -1750,80 +1956,80 @@
       <edge id="e582" source="http://example.org/Item" target="http://example.org/ProvenanceEntities"></edge>
       <edge id="e591" source="http://example.org/Label" target="http://example.org/Component"></edge>
       <edge id="e601" source="http://example.org/Leaf" target="http://example.org/Component"></edge>
-      <edge id="e611" source="http://example.org/UseCase8" target="http://example.org/Instance"></edge>
-      <edge id="e612" source="http://example.org/UseCase8" target="http://example.org/ProvenanceEntities"></edge>
-      <edge id="e613" source="http://example.org/UseCase8" target="http://example.org/Item"></edge>
-      <edge id="e614" source="http://example.org/UseCase8" target="http://example.org/Identifier"></edge>
-      <edge id="e615" source="http://example.org/UseCase8" target="http://example.org/AdminMetadata"></edge>
-      <edge id="e616" source="http://example.org/UseCase8" target="http://example.org/Work"></edge>
+      <edge id="e611" source="http://example.org/UseCase8" target="http://example.org/ProvenanceEntities"></edge>
+      <edge id="e612" source="http://example.org/UseCase8" target="http://example.org/Identifier"></edge>
+      <edge id="e613" source="http://example.org/UseCase8" target="http://example.org/Work"></edge>
+      <edge id="e614" source="http://example.org/UseCase8" target="http://example.org/AdminMetadata"></edge>
+      <edge id="e615" source="http://example.org/UseCase8" target="http://example.org/Item"></edge>
+      <edge id="e616" source="http://example.org/UseCase8" target="http://example.org/Instance"></edge>
       <edge id="e621" source="http://example.org/Marking" target="http://example.org/ProvenanceEntities"></edge>
-      <edge id="e631" source="http://example.org/UseCase33" target="http://example.org/Item"></edge>
-      <edge id="e632" source="http://example.org/UseCase33" target="http://example.org/AdminMetadata"></edge>
+      <edge id="e631" source="http://example.org/UseCase33" target="http://example.org/Collection"></edge>
+      <edge id="e632" source="http://example.org/UseCase33" target="http://example.org/PreservationEvent"></edge>
       <edge id="e633" source="http://example.org/UseCase33" target="http://example.org/Status"></edge>
-      <edge id="e634" source="http://example.org/UseCase33" target="http://example.org/Collection"></edge>
-      <edge id="e635" source="http://example.org/UseCase33" target="http://example.org/PreservationEvent"></edge>
+      <edge id="e634" source="http://example.org/UseCase33" target="http://example.org/AdminMetadata"></edge>
+      <edge id="e635" source="http://example.org/UseCase33" target="http://example.org/Item"></edge>
       <edge id="e641" source="http://example.org/UseCase19" target="http://example.org/Annotation"></edge>
       <edge id="e651" source="http://example.org/Motivation" target="http://example.org/Agent"></edge>
       <edge id="e661" source="http://example.org/Note" target="http://example.org/ManagementEntities"></edge>
-      <edge id="e671" source="http://example.org/UseCase36" target="http://example.org/Item"></edge>
-      <edge id="e672" source="http://example.org/UseCase36" target="http://example.org/Chronology"></edge>
-      <edge id="e673" source="http://example.org/UseCase36" target="http://example.org/Enumeration"></edge>
-      <edge id="e674" source="http://example.org/UseCase36" target="http://example.org/Instance"></edge>
-      <edge id="e675" source="http://example.org/UseCase36" target="http://example.org/NumberingPeculiarities"></edge>
-      <edge id="e681" source="http://example.org/NumberingPeculiarities" target="http://example.org/ManagementEntities"></edge>
+      <edge id="e671" source="http://example.org/NumberingPeculiarities" target="http://example.org/ManagementEntities"></edge>
+      <edge id="e681" source="http://example.org/UseCase36" target="http://example.org/NumberingPeculiarities"></edge>
+      <edge id="e682" source="http://example.org/UseCase36" target="http://example.org/Instance"></edge>
+      <edge id="e683" source="http://example.org/UseCase36" target="http://example.org/Item"></edge>
+      <edge id="e684" source="http://example.org/UseCase36" target="http://example.org/Chronology"></edge>
+      <edge id="e685" source="http://example.org/UseCase36" target="http://example.org/Enumeration"></edge>
       <edge id="e691" source="http://example.org/UseCase13" target="http://example.org/PhysicalLocation"></edge>
-      <edge id="e692" source="http://example.org/UseCase13" target="http://example.org/Arrangement"></edge>
-      <edge id="e693" source="http://example.org/UseCase13" target="http://example.org/ProvenanceEntities"></edge>
+      <edge id="e692" source="http://example.org/UseCase13" target="http://example.org/ProvenanceEntities"></edge>
+      <edge id="e693" source="http://example.org/UseCase13" target="http://example.org/Arrangement"></edge>
       <edge id="e701" source="http://example.org/Page" target="http://example.org/Component"></edge>
-      <edge id="e711" source="http://example.org/UseCase22" target="http://example.org/Work"></edge>
+      <edge id="e711" source="http://example.org/UseCase22" target="http://example.org/Place"></edge>
       <edge id="e712" source="http://example.org/UseCase22" target="http://example.org/Agent"></edge>
-      <edge id="e713" source="http://example.org/UseCase22" target="http://example.org/Date"></edge>
+      <edge id="e713" source="http://example.org/UseCase22" target="http://example.org/Work"></edge>
       <edge id="e714" source="http://example.org/UseCase22" target="http://example.org/Event"></edge>
-      <edge id="e715" source="http://example.org/UseCase22" target="http://example.org/Place"></edge>
+      <edge id="e715" source="http://example.org/UseCase22" target="http://example.org/Date"></edge>
       <edge id="e721" source="http://example.org/Person" target="http://example.org/AgentEntities"></edge>
-      <edge id="e731" source="http://example.org/PhysicalLocation" target="http://example.org/ProvenanceEntities"></edge>
-      <edge id="e732" source="http://example.org/PhysicalLocation" target="http://example.org/ManagementEntities"></edge>
+      <edge id="e731" source="http://example.org/PhysicalLocation" target="http://example.org/ManagementEntities"></edge>
+      <edge id="e732" source="http://example.org/PhysicalLocation" target="http://example.org/ProvenanceEntities"></edge>
       <edge id="e741" source="http://example.org/Policy" target="http://example.org/ManagementEntities"></edge>
       <edge id="e751" source="http://example.org/PreservationEvent" target="http://example.org/ManagementEntities"></edge>
-      <edge id="e761" source="http://example.org/UseCase1" target="http://example.org/Agent"></edge>
-      <edge id="e762" source="http://example.org/UseCase1" target="http://example.org/CustodialHistory"></edge>
-      <edge id="e763" source="http://example.org/UseCase1" target="http://example.org/Bookplate"></edge>
+      <edge id="e761" source="http://example.org/UseCase1" target="http://example.org/CustodialHistory"></edge>
+      <edge id="e762" source="http://example.org/UseCase1" target="http://example.org/Bookplate"></edge>
+      <edge id="e763" source="http://example.org/UseCase1" target="http://example.org/Agent"></edge>
       <edge id="e764" source="http://example.org/UseCase1" target="http://example.org/Marking"></edge>
       <edge id="e771" source="http://example.org/Purpose" target="http://example.org/AgentEntities"></edge>
       <edge id="e781" source="http://example.org/UseCase28" target="http://example.org/AdminMetadata"></edge>
-      <edge id="e782" source="http://example.org/UseCase28" target="http://example.org/AccessPolicy"></edge>
-      <edge id="e783" source="http://example.org/UseCase28" target="http://example.org/RightsMetadata"></edge>
-      <edge id="e784" source="http://example.org/UseCase28" target="http://example.org/UsePolicy"></edge>
+      <edge id="e782" source="http://example.org/UseCase28" target="http://example.org/UsePolicy"></edge>
+      <edge id="e783" source="http://example.org/UseCase28" target="http://example.org/AccessPolicy"></edge>
+      <edge id="e784" source="http://example.org/UseCase28" target="http://example.org/RightsMetadata"></edge>
       <edge id="e791" source="http://example.org/RetentionPolicy" target="http://example.org/Policy"></edge>
       <edge id="e801" source="http://example.org/RightsMetadata" target="http://example.org/ManagementEntities"></edge>
       <edge id="e811" source="http://example.org/Rubrication" target="http://example.org/PhysicalCharacteristicEntities"></edge>
-      <edge id="e821" source="http://example.org/UseCase17" target="http://example.org/Item"></edge>
+      <edge id="e821" source="http://example.org/UseCase17" target="http://example.org/Rubrication"></edge>
       <edge id="e822" source="http://example.org/UseCase17" target="http://example.org/Instance"></edge>
-      <edge id="e823" source="http://example.org/UseCase17" target="http://example.org/Work"></edge>
-      <edge id="e824" source="http://example.org/UseCase17" target="http://example.org/Rubrication"></edge>
-      <edge id="e825" source="http://example.org/UseCase17" target="http://example.org/Agent"></edge>
+      <edge id="e823" source="http://example.org/UseCase17" target="http://example.org/Item"></edge>
+      <edge id="e824" source="http://example.org/UseCase17" target="http://example.org/Agent"></edge>
+      <edge id="e825" source="http://example.org/UseCase17" target="http://example.org/Work"></edge>
       <edge id="e831" source="http://example.org/Seal" target="http://example.org/Marking"></edge>
       <edge id="e841" source="http://example.org/ShelfMark" target="http://example.org/Identifier"></edge>
       <edge id="e851" source="http://example.org/Signature" target="http://example.org/PhysicalCharacteristicEntities"></edge>
       <edge id="e861" source="http://example.org/UseCase44" target="http://example.org/Item"></edge>
       <edge id="e862" source="http://example.org/UseCase44" target="http://example.org/Signature"></edge>
-      <edge id="e871" source="http://example.org/UseCase18" target="http://example.org/UsePolicy"></edge>
-      <edge id="e872" source="http://example.org/UseCase18" target="http://example.org/Condition"></edge>
-      <edge id="e873" source="http://example.org/UseCase18" target="http://example.org/RetentionPolicy"></edge>
-      <edge id="e874" source="http://example.org/UseCase18" target="http://example.org/Item"></edge>
-      <edge id="e875" source="http://example.org/UseCase18" target="http://example.org/AccessPolicy"></edge>
+      <edge id="e871" source="http://example.org/UseCase18" target="http://example.org/Item"></edge>
+      <edge id="e872" source="http://example.org/UseCase18" target="http://example.org/AccessPolicy"></edge>
+      <edge id="e873" source="http://example.org/UseCase18" target="http://example.org/Condition"></edge>
+      <edge id="e874" source="http://example.org/UseCase18" target="http://example.org/RetentionPolicy"></edge>
+      <edge id="e875" source="http://example.org/UseCase18" target="http://example.org/UsePolicy"></edge>
       <edge id="e881" source="http://example.org/Status" target="http://example.org/ManagementEntities"></edge>
-      <edge id="e891" source="http://example.org/UseCase38" target="http://example.org/Collection"></edge>
-      <edge id="e892" source="http://example.org/UseCase38" target="http://example.org/Arrangement"></edge>
+      <edge id="e891" source="http://example.org/UseCase38" target="http://example.org/Arrangement"></edge>
+      <edge id="e892" source="http://example.org/UseCase38" target="http://example.org/Collection"></edge>
       <edge id="e901" source="http://example.org/UseCase21" target="http://example.org/Annotation"></edge>
-      <edge id="e902" source="http://example.org/UseCase21" target="http://example.org/Motivation"></edge>
+      <edge id="e902" source="http://example.org/UseCase21" target="http://example.org/Purpose"></edge>
       <edge id="e903" source="http://example.org/UseCase21" target="http://example.org/Insertion"></edge>
-      <edge id="e904" source="http://example.org/UseCase21" target="http://example.org/Purpose"></edge>
-      <edge id="e911" source="http://example.org/UseCase20" target="http://example.org/Annotation"></edge>
-      <edge id="e912" source="http://example.org/UseCase20" target="http://example.org/Insertion"></edge>
-      <edge id="e931" source="http://example.org/UsePolicy" target="http://example.org/Policy"></edge>
-      <edge id="e941" source="http://example.org/Work" target="http://example.org/ProvenanceEntities"></edge>
-      <edge id="e942" source="http://example.org/Work" target="http://example.org/RelationEntities"></edge>
+      <edge id="e904" source="http://example.org/UseCase21" target="http://example.org/Motivation"></edge>
+      <edge id="e911" source="http://example.org/UseCase20" target="http://example.org/Insertion"></edge>
+      <edge id="e912" source="http://example.org/UseCase20" target="http://example.org/Annotation"></edge>
+      <edge id="e921" source="http://example.org/UsePolicy" target="http://example.org/Policy"></edge>
+      <edge id="e931" source="http://example.org/Work" target="http://example.org/RelationEntities"></edge>
+      <edge id="e932" source="http://example.org/Work" target="http://example.org/ProvenanceEntities"></edge>
     </edges>
   </graph>
 </gexf>
