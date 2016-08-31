@@ -60,7 +60,7 @@
           <attvalue for="eigencentrality" value="0.08919636532610083"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="37.890842" y="-296.9124"></viz:position>
+        <viz:position x="-105.81243" y="-191.82721"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/AccessPolicy" label="Access policy">
@@ -79,7 +79,7 @@
           <attvalue for="eigencentrality" value="0.08442401946611981"></attvalue>
         </attvalues>
         <viz:size value="8.671336"></viz:size>
-        <viz:position x="-887.9009" y="434.7492"></viz:position>
+        <viz:position x="-55.2968" y="534.4933"></viz:position>
         <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/UseCase26" label="Access restriction (use case)">
@@ -98,7 +98,7 @@
           <attvalue for="eigencentrality" value="0.10704292118410826"></attvalue>
         </attvalues>
         <viz:size value="8.757671"></viz:size>
-        <viz:position x="-816.7264" y="656.627"></viz:position>
+        <viz:position x="-38.426582" y="465.84943"></viz:position>
         <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/UseCase29" label="Accompanying/inserted material (use case)">
@@ -117,7 +117,7 @@
           <attvalue for="eigencentrality" value="0.3646906279534521"></attvalue>
         </attvalues>
         <viz:size value="8.727626"></viz:size>
-        <viz:position x="226.91286" y="-117.60397"></viz:position>
+        <viz:position x="4.8633156" y="-94.2754"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase30" label="Actions taken or to be taken (use case)">
@@ -136,7 +136,7 @@
           <attvalue for="eigencentrality" value="0.08647758329790932"></attvalue>
         </attvalues>
         <viz:size value="8.073006"></viz:size>
-        <viz:position x="-657.9531" y="733.26135"></viz:position>
+        <viz:position x="106.95728" y="424.5385"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/UseCase40" label="Additional physical details note (instance level) (use case)">
@@ -155,7 +155,7 @@
           <attvalue for="eigencentrality" value="0.10213695536164363"></attvalue>
         </attvalues>
         <viz:size value="8.761438"></viz:size>
-        <viz:position x="-864.4153" y="-48.887123"></viz:position>
+        <viz:position x="-214.84056" y="128.71007"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/AdminMetadata" label="Administrative metadata">
@@ -174,7 +174,7 @@
           <attvalue for="eigencentrality" value="0.3893533391497604"></attvalue>
         </attvalues>
         <viz:size value="21.055967"></viz:size>
-        <viz:position x="-413.45316" y="556.5036"></viz:position>
+        <viz:position x="48.21989" y="284.3895"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Agent" label="Agent">
@@ -193,7 +193,7 @@
           <attvalue for="eigencentrality" value="0.23147211527006542"></attvalue>
         </attvalues>
         <viz:size value="22.066097"></viz:size>
-        <viz:position x="512.9367" y="382.37402"></viz:position>
+        <viz:position x="345.23718" y="-96.05272"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/AgentEntities" label="Agent entities">
@@ -212,7 +212,7 @@
           <attvalue for="eigencentrality" value="0.051905943577642104"></attvalue>
         </attvalues>
         <viz:size value="9.840333"></viz:size>
-        <viz:position x="913.4809" y="313.4581"></viz:position>
+        <viz:position x="396.53937" y="-336.59467"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/UseCase31" label="Agent of action taken or to be taken (use case)">
@@ -231,7 +231,7 @@
           <attvalue for="eigencentrality" value="0.08647758329790932"></attvalue>
         </attvalues>
         <viz:size value="8.073006"></viz:size>
-        <viz:position x="-638.9597" y="800.18774"></viz:position>
+        <viz:position x="26.500992" y="439.11963"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/UseCase5" label="Altered work (use case)">
@@ -250,7 +250,7 @@
           <attvalue for="eigencentrality" value="0.3200912841821078"></attvalue>
         </attvalues>
         <viz:size value="8.292197"></viz:size>
-        <viz:position x="-114.54756" y="-224.27032"></viz:position>
+        <viz:position x="-53.840206" y="-45.318382"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Annotation" label="Annotation">
@@ -269,7 +269,7 @@
           <attvalue for="eigencentrality" value="0.0578930380844044"></attvalue>
         </attvalues>
         <viz:size value="10.86928"></viz:size>
-        <viz:position x="1063.3834" y="-191.62698"></viz:position>
+        <viz:position x="152.32323" y="-522.5355"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/UseCase3" label="Annotations (use case)">
@@ -288,7 +288,7 @@
           <attvalue for="eigencentrality" value="0.07459709494487468"></attvalue>
         </attvalues>
         <viz:size value="8.060179"></viz:size>
-        <viz:position x="658.2558" y="-297.2918"></viz:position>
+        <viz:position x="73.2114" y="-368.0361"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Arrangement" label="Arrangement">
@@ -307,7 +307,7 @@
           <attvalue for="eigencentrality" value="0.14588301950203375"></attvalue>
         </attvalues>
         <viz:size value="8.618136"></viz:size>
-        <viz:position x="137.41368" y="562.786"></viz:position>
+        <viz:position x="246.38074" y="35.01189"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/UseCase9" label="Association of an item with a particular event (use case)">
@@ -326,7 +326,7 @@
           <attvalue for="eigencentrality" value="0.34184787243077025"></attvalue>
         </attvalues>
         <viz:size value="10.244887"></viz:size>
-        <viz:position x="-128.22789" y="273.82816"></viz:position>
+        <viz:position x="122.518616" y="102.532234"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/UseCase25" label="Bibliographic citation(s) (use case)">
@@ -345,7 +345,7 @@
           <attvalue for="eigencentrality" value="0.008528119502678344"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="-1704.5087" y="-345.06772"></viz:position>
+        <viz:position x="-735.4949" y="180.47385"></viz:position>
         <viz:color r="211" g="179" b="176"></viz:color>
       </node>
       <node id="http://example.org/UseCase35" label="Bibliographic details/history (use case)">
@@ -364,7 +364,7 @@
           <attvalue for="eigencentrality" value="0.3200912841821078"></attvalue>
         </attvalues>
         <viz:size value="8.292197"></viz:size>
-        <viz:position x="-57.670567" y="-153.63803"></viz:position>
+        <viz:position x="-29.451107" y="-14.127414"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase42" label="Bibliographic history note (use case)">
@@ -383,7 +383,7 @@
           <attvalue for="eigencentrality" value="0.3200912841821078"></attvalue>
         </attvalues>
         <viz:size value="8.292197"></viz:size>
-        <viz:position x="-307.98853" y="-190.07088"></viz:position>
+        <viz:position x="-78.61059" y="-20.475264"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Binding" label="Binding">
@@ -402,7 +402,7 @@
           <attvalue for="eigencentrality" value="0.14387990485845575"></attvalue>
         </attvalues>
         <viz:size value="10.893219"></viz:size>
-        <viz:position x="257.367" y="-189.34373"></viz:position>
+        <viz:position x="371.7123" y="69.23841"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase11" label="Binding descriptions and binder (use case)">
@@ -421,7 +421,7 @@
           <attvalue for="eigencentrality" value="0.06166605705245833"></attvalue>
         </attvalues>
         <viz:size value="8.507843"></viz:size>
-        <viz:position x="494.6152" y="74.37067"></viz:position>
+        <viz:position x="475.86923" y="-27.540226"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/Bookplate" label="Bookplate">
@@ -440,7 +440,7 @@
           <attvalue for="eigencentrality" value="0.1750583786621327"></attvalue>
         </attvalues>
         <viz:size value="11.798693"></viz:size>
-        <viz:position x="321.5231" y="-75.29768"></viz:position>
+        <viz:position x="336.36496" y="14.534667"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase16" label="Bound-withs (use case)">
@@ -459,7 +459,7 @@
           <attvalue for="eigencentrality" value="0.32009128418210775"></attvalue>
         </attvalues>
         <viz:size value="8.292197"></viz:size>
-        <viz:position x="-437.34885" y="-117.597534"></viz:position>
+        <viz:position x="-74.52725" y="15.696259"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Chronology" label="Chronology">
@@ -478,7 +478,7 @@
           <attvalue for="eigencentrality" value="0.08555672900647429"></attvalue>
         </attvalues>
         <viz:size value="8.14623"></viz:size>
-        <viz:position x="-870.5903" y="273.82623"></viz:position>
+        <viz:position x="-225.9409" y="334.464"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Citation" label="Citation">
@@ -497,7 +497,7 @@
           <attvalue for="eigencentrality" value="0.03672767766891377"></attvalue>
         </attvalues>
         <viz:size value="12.368298"></viz:size>
-        <viz:position x="-1392.1748" y="-292.5573"></viz:position>
+        <viz:position x="-584.0177" y="144.4476"></viz:position>
         <viz:color r="211" g="179" b="176"></viz:color>
       </node>
       <node id="http://example.org/UseCase39" label="Collecting area that unites distinct collections (use case)">
@@ -516,7 +516,7 @@
           <attvalue for="eigencentrality" value="0.038681851144558625"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="-69.1607" y="919.5899"></viz:position>
+        <viz:position x="348.576" y="210.21643"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/Collection" label="Collection">
@@ -535,7 +535,7 @@
           <attvalue for="eigencentrality" value="0.2634246117680058"></attvalue>
         </attvalues>
         <viz:size value="12.554399"></viz:size>
-        <viz:position x="-82.34406" y="528.9154"></viz:position>
+        <viz:position x="198.54938" y="134.02208"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/Component" label="Component">
@@ -554,7 +554,7 @@
           <attvalue for="eigencentrality" value="0.056616777412421514"></attvalue>
         </attvalues>
         <viz:size value="14.744919"></viz:size>
-        <viz:position x="-53.94602" y="-971.9659"></viz:position>
+        <viz:position x="535.3504" y="385.62"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/UseCase23" label="Component-level resource description (use case)">
@@ -573,7 +573,7 @@
           <attvalue for="eigencentrality" value="0.15275301982041448"></attvalue>
         </attvalues>
         <viz:size value="13.729797"></viz:size>
-        <viz:position x="-152.10649" y="-561.17896"></viz:position>
+        <viz:position x="301.1617" y="259.9185"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/Condition" label="Condition">
@@ -592,7 +592,7 @@
           <attvalue for="eigencentrality" value="0.051507469728960545"></attvalue>
         </attvalues>
         <viz:size value="9.033068"></viz:size>
-        <viz:position x="-426.23755" y="-268.53055"></viz:position>
+        <viz:position x="264.72015" y="392.0247"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/UseCase14" label="Contact Info for Related Collections/Items (use case)">
@@ -611,7 +611,7 @@
           <attvalue for="eigencentrality" value="0.29291672999637886"></attvalue>
         </attvalues>
         <viz:size value="14.950319"></viz:size>
-        <viz:position x="-45.623566" y="384.27365"></viz:position>
+        <viz:position x="155.7525" y="123.352005"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/ContactInformation" label="Contact information">
@@ -630,7 +630,7 @@
           <attvalue for="eigencentrality" value="0.08941285012674972"></attvalue>
         </attvalues>
         <viz:size value="8.553621"></viz:size>
-        <viz:position x="-477.42746" y="498.56116"></viz:position>
+        <viz:position x="3.6889682" y="244.54466"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/Container" label="Container">
@@ -649,7 +649,7 @@
           <attvalue for="eigencentrality" value="0.047974099707883175"></attvalue>
         </attvalues>
         <viz:size value="8.623972"></viz:size>
-        <viz:position x="-289.43906" y="-337.70016"></viz:position>
+        <viz:position x="318.97668" y="346.39664"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/UseCase12" label="Containers (use case)">
@@ -668,7 +668,7 @@
           <attvalue for="eigencentrality" value="0.17610468825490197"></attvalue>
         </attvalues>
         <viz:size value="10.629191"></viz:size>
-        <viz:position x="-419.80658" y="60.47455"></viz:position>
+        <viz:position x="148.88197" y="285.06326"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/UseCase2" label="Contextualizing provenance (use case)">
@@ -687,7 +687,7 @@
           <attvalue for="eigencentrality" value="0.12642029143567654"></attvalue>
         </attvalues>
         <viz:size value="8.966555"></viz:size>
-        <viz:position x="427.41498" y="235.48921"></viz:position>
+        <viz:position x="368.2225" y="-75.20476"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/CopyNumber" label="Copy number">
@@ -706,7 +706,7 @@
           <attvalue for="eigencentrality" value="0.051951109695751715"></attvalue>
         </attvalues>
         <viz:size value="8.220678"></viz:size>
-        <viz:position x="-843.8778" y="-381.56204"></viz:position>
+        <viz:position x="-363.09177" y="84.38011"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase15" label="Copy number (use case)">
@@ -725,7 +725,7 @@
           <attvalue for="eigencentrality" value="0.14973392047091746"></attvalue>
         </attvalues>
         <viz:size value="9.234738"></viz:size>
-        <viz:position x="-568.43787" y="-305.36353"></viz:position>
+        <viz:position x="-193.00912" y="83.9066"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/CorporateBody" label="Corporate body">
@@ -744,7 +744,7 @@
           <attvalue for="eigencentrality" value="0.03912301942207219"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="743.264" y="597.0155"></viz:position>
+        <viz:position x="523.3391" y="-134.62024"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/CustodialHistory" label="Custodial history">
@@ -763,7 +763,7 @@
           <attvalue for="eigencentrality" value="0.18702348865625645"></attvalue>
         </attvalues>
         <viz:size value="10.404308"></viz:size>
-        <viz:position x="384.58768" y="309.82407"></viz:position>
+        <viz:position x="280.32175" y="-85.10046"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase43" label="Custodial history note (use case)">
@@ -782,7 +782,7 @@
           <attvalue for="eigencentrality" value="0.169065075906517"></attvalue>
         </attvalues>
         <viz:size value="8.5633135"></viz:size>
-        <viz:position x="264.8603" y="134.37012"></viz:position>
+        <viz:position x="150.87624" y="-54.68244"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/Date" label="Date">
@@ -801,7 +801,7 @@
           <attvalue for="eigencentrality" value="0.13963911161951445"></attvalue>
         </attvalues>
         <viz:size value="8.348125"></viz:size>
-        <viz:position x="294.84296" y="432.8422"></viz:position>
+        <viz:position x="151.462" y="-169.66519"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/UseCase32" label="Date of action taken or to be taken (use case)">
@@ -820,7 +820,7 @@
           <attvalue for="eigencentrality" value="0.08647758329790932"></attvalue>
         </attvalues>
         <viz:size value="8.073006"></viz:size>
-        <viz:position x="-458.04428" y="765.9601"></viz:position>
+        <viz:position x="74.10693" y="449.8272"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/UseCase7" label="Discarded accompanying material (use case)">
@@ -839,7 +839,7 @@
           <attvalue for="eigencentrality" value="0.47560542668420924"></attvalue>
         </attvalues>
         <viz:size value="9.100772"></viz:size>
-        <viz:position x="120.50297" y="-39.89314"></viz:position>
+        <viz:position x="49.76561" y="-73.82866"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase6" label="Embedded Work IDs, Instance IDs (use case)">
@@ -858,7 +858,7 @@
           <attvalue for="eigencentrality" value="0.20994701410567737"></attvalue>
         </attvalues>
         <viz:size value="9.122727"></viz:size>
-        <viz:position x="-455.0551" y="-83.080414"></viz:position>
+        <viz:position x="-173.29678" y="3.2572782"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase10" label="English Short Title Catalogue and Other Links (use case)">
@@ -877,7 +877,7 @@
           <attvalue for="eigencentrality" value="0.008528119502678344"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="-1664.5532" y="-452.87256"></viz:position>
+        <viz:position x="-737.9456" y="122.78426"></viz:position>
         <viz:color r="211" g="179" b="176"></viz:color>
       </node>
       <node id="http://example.org/Enumeration" label="Enumeration">
@@ -896,7 +896,7 @@
           <attvalue for="eigencentrality" value="0.08555672900647429"></attvalue>
         </attvalues>
         <viz:size value="8.14623"></viz:size>
-        <viz:position x="-936.0255" y="218.63438"></viz:position>
+        <viz:position x="-259.49435" y="316.50146"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Event" label="Event">
@@ -915,7 +915,7 @@
           <attvalue for="eigencentrality" value="0.2090032366231376"></attvalue>
         </attvalues>
         <viz:size value="9.125465"></viz:size>
-        <viz:position x="144.21432" y="313.67123"></viz:position>
+        <viz:position x="231.25029" y="-47.201576"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/Family" label="Family">
@@ -934,7 +934,7 @@
           <attvalue for="eigencentrality" value="0.03912301942207219"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="675.74896" y="683.8039"></viz:position>
+        <viz:position x="507.93027" y="-179.13673"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/Fingerprint" label="Fingerprint">
@@ -953,7 +953,7 @@
           <attvalue for="eigencentrality" value="0.051951109695751715"></attvalue>
         </attvalues>
         <viz:size value="8.220678"></viz:size>
-        <viz:position x="-919.3029" y="-315.482"></viz:position>
+        <viz:position x="-351.6135" y="28.633915"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase37" label="Fingerprints (use case)">
@@ -972,7 +972,7 @@
           <attvalue for="eigencentrality" value="0.14973392047091746"></attvalue>
         </attvalues>
         <viz:size value="9.234738"></viz:size>
-        <viz:position x="-613.22894" y="-235.65857"></viz:position>
+        <viz:position x="-192.03595" y="40.225853"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase4" label="Help for Cryptic Annotations (use case)">
@@ -991,7 +991,7 @@
           <attvalue for="eigencentrality" value="0.07459709494487468"></attvalue>
         </attvalues>
         <viz:size value="8.060179"></viz:size>
-        <viz:position x="680.08246" y="-225.75246"></viz:position>
+        <viz:position x="111.9808" y="-376.80743"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Identifier" label="Identifier">
@@ -1010,7 +1010,7 @@
           <attvalue for="eigencentrality" value="0.18235513014917606"></attvalue>
         </attvalues>
         <viz:size value="19.105911"></viz:size>
-        <viz:position x="-888.81506" y="-115.63886"></viz:position>
+        <viz:position x="-313.36057" y="132.33191"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Illustration" label="Illustration">
@@ -1029,7 +1029,7 @@
           <attvalue for="eigencentrality" value="0.02160084951002222"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="108.202705" y="-805.124"></viz:position>
+        <viz:position x="571.68066" y="296.79962"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/UseCase34" label="Immediate source of acquisition (use case)">
@@ -1048,7 +1048,7 @@
           <attvalue for="eigencentrality" value="0.10815087745457652"></attvalue>
         </attvalues>
         <viz:size value="10.425791"></viz:size>
-        <viz:position x="36.215195" y="597.6356"></viz:position>
+        <viz:position x="253.101" y="97.062836"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/ImmediateSourceOfAcquisition" label="Immediate source of acquisition">
@@ -1067,7 +1067,7 @@
           <attvalue for="eigencentrality" value="0.047440734838946674"></attvalue>
         </attvalues>
         <viz:size value="8.111659"></viz:size>
-        <viz:position x="288.62628" y="669.2834"></viz:position>
+        <viz:position x="377.91943" y="-3.3504841"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase24" label="In-house processing &amp; tracking data (use case)">
@@ -1086,7 +1086,7 @@
           <attvalue for="eigencentrality" value="0.2528763961834007"></attvalue>
         </attvalues>
         <viz:size value="9.670879"></viz:size>
-        <viz:position x="-419.0431" y="310.08972"></viz:position>
+        <viz:position x="-24.727243" y="216.45605"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Inscription" label="Inscription">
@@ -1105,7 +1105,7 @@
           <attvalue for="eigencentrality" value="0.02999775117353026"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="1033.01" y="-104.88741"></viz:position>
+        <viz:position x="192.03166" y="-498.35263"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Insertion" label="Insertion">
@@ -1124,7 +1124,7 @@
           <attvalue for="eigencentrality" value="0.304771408756381"></attvalue>
         </attvalues>
         <viz:size value="17.143219"></viz:size>
-        <viz:position x="430.4108" y="-150.98679"></viz:position>
+        <viz:position x="81.39521" y="-232.51938"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Instance" label="Instance">
@@ -1143,7 +1143,7 @@
           <attvalue for="eigencentrality" value="0.6608186340441017"></attvalue>
         </attvalues>
         <viz:size value="14.687753"></viz:size>
-        <viz:position x="-349.8221" y="-6.7464294"></viz:position>
+        <viz:position x="-34.131004" y="31.036983"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Item" label="Item">
@@ -1162,7 +1162,7 @@
           <attvalue for="eigencentrality" value="1.0"></attvalue>
         </attvalues>
         <viz:size value="48.0"></viz:size>
-        <viz:position x="-221.64545" y="-6.5954123"></viz:position>
+        <viz:position x="37.678036" y="83.28142"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Label" label="Label">
@@ -1181,7 +1181,7 @@
           <attvalue for="eigencentrality" value="0.012628418058891276"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="57.404137" y="-1273.7784"></viz:position>
+        <viz:position x="637.495" y="513.0071"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/Leaf" label="Leaf">
@@ -1200,7 +1200,7 @@
           <attvalue for="eigencentrality" value="0.012628418058891276"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="-136.61287" y="-1281.842"></viz:position>
+        <viz:position x="691.3255" y="435.10977"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/UseCase8" label="Letters of transmittal (use case)">
@@ -1219,7 +1219,7 @@
           <attvalue for="eigencentrality" value="0.5209554095112195"></attvalue>
         </attvalues>
         <viz:size value="17.999477"></viz:size>
-        <viz:position x="-353.37628" y="111.54867"></viz:position>
+        <viz:position x="-53.125942" y="96.023315"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/ManagementEntities" label="Management entities">
@@ -1238,7 +1238,7 @@
           <attvalue for="eigencentrality" value="0.27100911371572467"></attvalue>
         </attvalues>
         <viz:size value="19.401783"></viz:size>
-        <viz:position x="-747.2724" y="348.46558"></viz:position>
+        <viz:position x="-135.02786" y="303.41025"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/Marking" label="Marking">
@@ -1257,7 +1257,7 @@
           <attvalue for="eigencentrality" value="0.1825324206302796"></attvalue>
         </attvalues>
         <viz:size value="17.715778"></viz:size>
-        <viz:position x="688.74475" y="-71.73025"></viz:position>
+        <viz:position x="184.82806" y="-329.0474"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/UseCase33" label="Material acted upon (use case)">
@@ -1276,7 +1276,7 @@
           <attvalue for="eigencentrality" value="0.28541110652273644"></attvalue>
         </attvalues>
         <viz:size value="11.231679"></viz:size>
-        <viz:position x="-364.66998" y="418.1596"></viz:position>
+        <viz:position x="63.937405" y="238.30539"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/UseCase19" label="Meta-annotations (use case)">
@@ -1295,7 +1295,7 @@
           <attvalue for="eigencentrality" value="0.012210914899413599"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="1361.9541" y="-318.43423"></viz:position>
+        <viz:position x="147.59474" y="-688.4434"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Motivation" label="Motivation">
@@ -1314,7 +1314,7 @@
           <attvalue for="eigencentrality" value="0.024612322200370032"></attvalue>
         </attvalues>
         <viz:size value="8.171908"></viz:size>
-        <viz:position x="1249.1199" y="203.31989"></viz:position>
+        <viz:position x="358.21594" y="-482.17108"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/Note" label="Note">
@@ -1333,7 +1333,7 @@
           <attvalue for="eigencentrality" value="0.061508119617325184"></attvalue>
         </attvalues>
         <viz:size value="8.430338"></viz:size>
-        <viz:position x="-892.13477" y="45.99955"></viz:position>
+        <viz:position x="-281.8052" y="246.08778"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/UseCase36" label="Numbering peculiarities (use case)">
@@ -1352,7 +1352,7 @@
           <attvalue for="eigencentrality" value="0.2742233219439532"></attvalue>
         </attvalues>
         <viz:size value="11.868724"></viz:size>
-        <viz:position x="-990.39026" y="77.71886"></viz:position>
+        <viz:position x="-147.24228" y="200.40958"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/NumberingPeculiarities" label="Numbering peculiarities">
@@ -1371,7 +1371,7 @@
           <attvalue for="eigencentrality" value="0.08555672900647429"></attvalue>
         </attvalues>
         <viz:size value="8.14623"></viz:size>
-        <viz:position x="-872.60913" y="185.27155"></viz:position>
+        <viz:position x="-244.068" y="284.67786"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/UseCase13" label="Original Shelf Order; Physical Location; Former Call Numbers (use case)">
@@ -1390,7 +1390,7 @@
           <attvalue for="eigencentrality" value="0.16556049782881999"></attvalue>
         </attvalues>
         <viz:size value="8.1147375"></viz:size>
-        <viz:position x="54.80723" y="466.12732"></viz:position>
+        <viz:position x="135.50655" y="62.54682"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/Page" label="Page">
@@ -1409,7 +1409,7 @@
           <attvalue for="eigencentrality" value="0.012628418058891276"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="-38.596657" y="-1301.486"></viz:position>
+        <viz:position x="674.0346" y="476.2848"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/UseCase22" label="Parsing data within annotations (use case)">
@@ -1428,7 +1428,7 @@
           <attvalue for="eigencentrality" value="0.18576279648841768"></attvalue>
         </attvalues>
         <viz:size value="11.341462"></viz:size>
-        <viz:position x="251.70479" y="346.1553"></viz:position>
+        <viz:position x="202.94649" y="-157.26956"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/Person" label="Person">
@@ -1447,7 +1447,7 @@
           <attvalue for="eigencentrality" value="0.03912301942207219"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="765.00836" y="521.6923"></viz:position>
+        <viz:position x="476.65225" y="-213.42966"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/PhysicalCharacteristicEntities" label="Physical characteristic entities">
@@ -1466,7 +1466,7 @@
           <attvalue for="eigencentrality" value="0.10924748758915029"></attvalue>
         </attvalues>
         <viz:size value="15.247612"></viz:size>
-        <viz:position x="-4.895898" y="-484.51727"></viz:position>
+        <viz:position x="411.5291" y="243.95308"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/PhysicalLocation" label="Physical location">
@@ -1485,7 +1485,7 @@
           <attvalue for="eigencentrality" value="0.21832384315062955"></attvalue>
         </attvalues>
         <viz:size value="10.788851"></viz:size>
-        <viz:position x="-316.09607" y="349.04468"></viz:position>
+        <viz:position x="15.748437" y="148.181"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/Policy" label="Policy">
@@ -1504,7 +1504,7 @@
           <attvalue for="eigencentrality" value="0.08671577039486673"></attvalue>
         </attvalues>
         <viz:size value="9.473074"></viz:size>
-        <viz:position x="-1075.121" y="404.82034"></viz:position>
+        <viz:position x="-116.33643" y="511.60916"></viz:position>
         <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/PreservationEvent" label="Preservation event">
@@ -1523,7 +1523,7 @@
           <attvalue for="eigencentrality" value="0.15828136747219274"></attvalue>
         </attvalues>
         <viz:size value="10.2809725"></viz:size>
-        <viz:position x="-611.0083" y="527.53296"></viz:position>
+        <viz:position x="29.64076" y="363.398"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/ProvenanceEntities" label="Provenance entities">
@@ -1542,7 +1542,7 @@
           <attvalue for="eigencentrality" value="0.7841779985314773"></attvalue>
         </attvalues>
         <viz:size value="33.745003"></viz:size>
-        <viz:position x="-18.266476" y="203.09927"></viz:position>
+        <viz:position x="145.22969" y="-15.529895"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/UseCase1" label="Provenance tracing (persons, institutions, bookplates) (use case)">
@@ -1561,7 +1561,7 @@
           <attvalue for="eigencentrality" value="0.1255785655839785"></attvalue>
         </attvalues>
         <viz:size value="10.545179"></viz:size>
-        <viz:position x="697.4812" y="170.19135"></viz:position>
+        <viz:position x="305.90503" y="-176.68"></viz:position>
         <viz:color r="0" g="196" b="255"></viz:color>
       </node>
       <node id="http://example.org/Purpose" label="Purpose">
@@ -1580,7 +1580,7 @@
           <attvalue for="eigencentrality" value="0.024612322200370032"></attvalue>
         </attvalues>
         <viz:size value="8.171908"></viz:size>
-        <viz:position x="1106.3447" y="234.42502"></viz:position>
+        <viz:position x="384.09436" y="-462.99417"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/RelationEntities" label="Relation entities">
@@ -1599,7 +1599,7 @@
           <attvalue for="eigencentrality" value="0.35877313532666644"></attvalue>
         </attvalues>
         <viz:size value="8.991845"></viz:size>
-        <viz:position x="-167.26515" y="231.99179"></viz:position>
+        <viz:position x="64.8138" y="42.108047"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/UseCase28" label="Restriction on use (use case)">
@@ -1618,7 +1618,7 @@
           <attvalue for="eigencentrality" value="0.10704292118410823"></attvalue>
         </attvalues>
         <viz:size value="8.757671"></viz:size>
-        <viz:position x="-806.9114" y="587.619"></viz:position>
+        <viz:position x="-63.531788" y="454.2476"></viz:position>
         <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/RetentionPolicy" label="Retention policy">
@@ -1637,7 +1637,7 @@
           <attvalue for="eigencentrality" value="0.04651104545060858"></attvalue>
         </attvalues>
         <viz:size value="8.247085"></viz:size>
-        <viz:position x="-1142.0438" y="251.2613"></viz:position>
+        <viz:position x="-15.17587" y="578.8339"></viz:position>
         <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/RightsMetadata" label="Rights metadata">
@@ -1656,7 +1656,7 @@
           <attvalue for="eigencentrality" value="0.08385629878678273"></attvalue>
         </attvalues>
         <viz:size value="8.322886"></viz:size>
-        <viz:position x="-989.5101" y="622.28156"></viz:position>
+        <viz:position x="-153.22276" y="458.3777"></viz:position>
         <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/Rubrication" label="Rubrication">
@@ -1675,7 +1675,7 @@
           <attvalue for="eigencentrality" value="0.07408473404694746"></attvalue>
         </attvalues>
         <viz:size value="8.715377"></viz:size>
-        <viz:position x="176.91736" y="-344.68817"></viz:position>
+        <viz:position x="339.98907" y="137.69666"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/UseCase17" label="Rubrication, illumination, other hand coloring (use case)">
@@ -1694,7 +1694,7 @@
           <attvalue for="eigencentrality" value="0.3718569570912401"></attvalue>
         </attvalues>
         <viz:size value="13.640797"></viz:size>
-        <viz:position x="218.65257" y="25.090664"></viz:position>
+        <viz:position x="165.81989" y="15.137731"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Seal" label="Seal">
@@ -1713,7 +1713,7 @@
           <attvalue for="eigencentrality" value="0.02999775117353026"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="988.98846" y="-294.50873"></viz:position>
+        <viz:position x="242.45602" y="-498.29965"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/ShelfMark" label="Shelf mark">
@@ -1732,7 +1732,7 @@
           <attvalue for="eigencentrality" value="0.029980331685092874"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="-1185.7959" y="-236.49547"></viz:position>
+        <viz:position x="-480.2021" y="139.79085"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Signature" label="Signature">
@@ -1751,7 +1751,7 @@
           <attvalue for="eigencentrality" value="0.043513621617425065"></attvalue>
         </attvalues>
         <viz:size value="8.260373"></viz:size>
-        <viz:position x="-115.07608" y="-706.01874"></viz:position>
+        <viz:position x="376.09738" y="319.56213"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/UseCase44" label="Signatures (use case)">
@@ -1770,7 +1770,7 @@
           <attvalue for="eigencentrality" value="0.14894265825089148"></attvalue>
         </attvalues>
         <viz:size value="9.508599"></viz:size>
-        <viz:position x="-199.91968" y="-446.8342"></viz:position>
+        <viz:position x="219.34625" y="234.485"></viz:position>
         <viz:color r="255" g="136" b="5"></viz:color>
       </node>
       <node id="http://example.org/UseCase18" label="Special features or imperfections of the copy being described (use case)">
@@ -1789,7 +1789,7 @@
           <attvalue for="eigencentrality" value="0.19103655038534337"></attvalue>
         </attvalues>
         <viz:size value="14.795103"></viz:size>
-        <viz:position x="-757.7479" y="149.51086"></viz:position>
+        <viz:position x="54.476246" y="402.23706"></viz:position>
         <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/Status" label="Status">
@@ -1808,7 +1808,7 @@
           <attvalue for="eigencentrality" value="0.12504191734273024"></attvalue>
         </attvalues>
         <viz:size value="8.30314"></viz:size>
-        <viz:position x="-699.6147" y="449.77493"></viz:position>
+        <viz:position x="-59.200573" y="304.9529"></viz:position>
         <viz:color r="115" g="192" b="0"></viz:color>
       </node>
       <node id="http://example.org/UseCase38" label="Sub-groups of materials within a collection (use case)">
@@ -1827,7 +1827,7 @@
           <attvalue for="eigencentrality" value="0.06067182105275185"></attvalue>
         </attvalues>
         <viz:size value="8.060451"></viz:size>
-        <viz:position x="93.998276" y="836.8417"></viz:position>
+        <viz:position x="319.58398" y="106.681465"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
       <node id="http://example.org/UseCase21" label="Taxonomy of annotation motivations/purposes (use case)">
@@ -1846,7 +1846,7 @@
           <attvalue for="eigencentrality" value="0.06959318282632795"></attvalue>
         </attvalues>
         <viz:size value="11.255045"></viz:size>
-        <viz:position x="1099.3247" y="-10.992642"></viz:position>
+        <viz:position x="233.63019" y="-427.75992"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/UseCase20" label="Taxonomy of annotation types (use case)">
@@ -1865,7 +1865,7 @@
           <attvalue for="eigencentrality" value="0.05681025867075795"></attvalue>
         </attvalues>
         <viz:size value="8.451164"></viz:size>
-        <viz:position x="806.77985" y="-261.83417"></viz:position>
+        <viz:position x="71.205696" y="-435.38123"></viz:position>
         <viz:color r="76" g="70" b="62"></viz:color>
       </node>
       <node id="http://example.org/UseCase27" label="Transcription vs. Access point (use case)">
@@ -1884,7 +1884,7 @@
           <attvalue for="eigencentrality" value="0.0"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="887.6875" y="-599.4563"></viz:position>
+        <viz:position x="-324.1549" y="-159.6317"></viz:position>
         <viz:color r="192" g="192" b="192"></viz:color>
       </node>
       <node id="http://example.org/UsePolicy" label="Use policy">
@@ -1903,7 +1903,7 @@
           <attvalue for="eigencentrality" value="0.08442401946611981"></attvalue>
         </attvalues>
         <viz:size value="8.671336"></viz:size>
-        <viz:position x="-974.8438" y="472.28687"></viz:position>
+        <viz:position x="-23.924025" y="533.2736"></viz:position>
         <viz:color r="0" g="189" b="148"></viz:color>
       </node>
       <node id="http://example.org/Work" label="Work">
@@ -1922,7 +1922,7 @@
           <attvalue for="eigencentrality" value="0.6475668079349074"></attvalue>
         </attvalues>
         <viz:size value="15.534414"></viz:size>
-        <viz:position x="-116.32821" y="-6.9828415"></viz:position>
+        <viz:position x="8.901183" y="-49.982914"></viz:position>
         <viz:color r="223" g="137" b="255"></viz:color>
       </node>
       <node id="http://example.org/Place" label="http://example.org/Place">
@@ -1941,7 +1941,7 @@
           <attvalue for="eigencentrality" value="0.028724312888758024"></attvalue>
         </attvalues>
         <viz:size value="8.0"></viz:size>
-        <viz:position x="525.16406" y="632.97516"></viz:position>
+        <viz:position x="281.6813" y="-297.54343"></viz:position>
         <viz:color r="255" g="85" b="132"></viz:color>
       </node>
     </nodes>
