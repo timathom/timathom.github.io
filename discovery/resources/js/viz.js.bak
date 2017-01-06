@@ -1,0 +1,100 @@
+ var nodeHash = {
+    };
+    for (x in nodes) {
+        nodeHash[nodes[x].id] = nodes[x];
+    }
+    for (x in edges) {
+        edges[x].weight = parseInt(edges[x].weight);
+        edges[x].source = nodeHash[edges[x].source];
+        edges[x].target = nodeHash[edges[x].target];
+    }
+    
+    force = d3.layout.force().charge(-120)
+    //.charge(function(d) {
+    //    return d.weight * -500
+    //})
+    .gravity(.3).linkDistance(35).linkStrength(.5)
+    //.linkStrength(function(d) {
+    //    return 0.1
+    //})
+    .size([1400, 700]).nodes(nodes).links(edges).on("tick", forceTick);
+    
+    d3.select("svg").selectAll("line.link").data(edges, function (d) {
+        return d.source.id + "-" + d.target.id
+    }).enter().append("line").attr("class", "link").style("stroke", "black").style("opacity", .5).style("stroke-width", function (d) {
+        return d.weight
+    });
+    
+    var nodeEnter = d3.select("svg").selectAll("g.node").data(nodes, function (d) {
+        return d.id
+    }).enter().append("g").attr("class", "node").call(force.drag()).on("click", fixNode);
+    
+    
+    function fixNode(d) {
+        d3.select(this).select("circle").style("stroke-width", 4);
+        d.fixed = true;
+    }
+    
+    d3.selectAll("g.node").append("circle");
+    
+    /*d3.selectAll("circle").attr("r", function (d) {
+    return d.weight * 2
+    })*/
+    
+    nodeEnter.append("circle").attr("r", 5).style("fill", "lightgray").style("stroke", "black").style("stroke-width", "1px");
+    
+    nodeEnter.append("text").attr("x", 12).attr("dy", ".35em").text(function (d) {
+        return d.name;
+    });        
+    
+    force.start();
+    
+    function forceTick() {
+        d3.selectAll("line.link").attr("x1", function (d) {
+            return d.source.x
+        }).attr("x2", function (d) {
+            return d.target.x
+        }).attr("y1", function (d) {
+            return d.source.y
+        }).attr("y2", function (d) {
+            return d.target.y
+        });
+        
+        d3.selectAll("g.node").attr("transform", function (d) {
+            return "translate(" + d.x + "," + d.y + ")"
+        })
+    }
+}
+
+d3.select("#controls").append("button").on("click", sizeByDegree).html("Degree Size");
+d3.select("#controls").append("button").on("click", filterNetwork).html("Filter Network");
+
+function sizeByDegree() {
+    force.stop();
+    d3.selectAll("circle").attr("r", function (d) {
+        return d.weight * 2
+    })
+}
+
+function filterNetwork() {
+    force.stop()
+    originalNodes = force.nodes();
+    originalLinks = force.links();
+    influentialNodes = originalNodes.filter(function (d) {
+        return d.cited > 20
+    });
+    influentialLinks = originalLinks.filter(function (d) {
+        return influentialNodes.indexOf(d.source) > -1 && influentialNodes.indexOf(d.target) > -1
+    });
+    
+    d3.selectAll("g.node").data(influentialNodes, function (d) {
+        return d.id
+    }).exit().transition().duration(2000).style("opacity", 0).remove();
+    
+    d3.selectAll("line.link").data(influentialLinks, function (d) {
+        return d.source.id + "-" + d.target.id
+    }).exit().transition().duration(3000).style("opacity", 0).remove();
+    
+    force.nodes(influentialNodes).links(influentialLinks)
+    
+    force.start()
