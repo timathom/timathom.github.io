@@ -1,6 +1,0 @@
-components
-build
-node_modules
-docs/public/
-.nyc_output
-dist
