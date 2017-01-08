@@ -1,0 +1,300 @@
+<cm:component xmlns:cm="http://www.agencexml.com/cm" name="XFControl.js">
+	<cm:author>Alain Couthures</cm:author>
+	<cm:creationdate>2009-04-07</cm:creationdate>
+	<cm:lastupdate>2015-01-25</cm:lastupdate>
+	<cm:licence>
+Copyright (C) 2008-2015 &lt;agenceXML&gt; - Alain COUTHURES
+Contact at : &lt;info@agencexml.com&gt;
+
+Copyright (C) 2006 AJAXForms S.L.
+Contact at: &lt;info@ajaxforms.com&gt;
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+	</cm:licence>
+	<cm:source type="text/javascript">
+		<cm:wiki>
+=== "XsltForms_control" class ===
+Control  Class
+* constructor function : just sets this element as a control</cm:wiki>
+		<![CDATA[
+function XsltForms_control() {
+	this.isControl = true;
+}
+
+XsltForms_control.prototype = new XsltForms_element();
+
+]]>
+		<cm:wiki>
+* '''initFocus''' method : attaches event handlers for "focus" and "blur"</cm:wiki>
+<![CDATA[
+XsltForms_control.prototype.initFocus = function(element, principal) {
+	if (principal) {
+		this.focusControl = element;
+	}
+	XsltForms_browser.events.attach(element, "focus", XsltForms_control.focusHandler);
+	//XsltForms_browser.events.attach(element, "mousein", XsltForms_control.focusHandler);
+	XsltForms_browser.events.attach(element, "blur", XsltForms_control.blurHandler);
+	//XsltForms_browser.events.attach(element, "mouseout", XsltForms_control.blurHandler);
+};
+
+]]>
+		<cm:wiki>
+* '''dispose''' method : calls the parent "dispose()" method</cm:wiki>
+<![CDATA[
+XsltForms_control.prototype.dispose = function() {
+	this.focusControl = null;
+	XsltForms_element.prototype.dispose.call(this);
+};
+
+]]>
+		<cm:wiki>
+* '''focus''' method : manages focus and dispatches the "DOMFocusIn" event</cm:wiki>
+<![CDATA[
+XsltForms_control.prototype.focus = function(focusEvent, evcontext) {
+	if (this.isOutput) {
+		return;
+	}
+	if (XsltForms_globals.focus !== this) {
+		XsltForms_globals.openAction("XsltForms_control.prototype.focus");
+		XsltForms_globals.blur(true);
+		XsltForms_globals.focus = this;
+		XsltForms_browser.setClass(this.element, "xforms-focus", true);
+		XsltForms_browser.setClass(this.element, "xforms-disabled", false);
+		var parent = this.element.parentNode;
+		while (parent.nodeType === Fleur.Node.ELEMENT_NODE) {
+			if (typeof parent.node !== "undefined" && XsltForms_browser.hasClass(parent, "xforms-repeat-item")) {
+				XsltForms_repeat.selectItem(parent);
+			}
+			parent = parent.parentNode;
+		}
+		XsltForms_xmlevents.dispatch(XsltForms_globals.focus, "DOMFocusIn", null, null, null, null, evcontext);
+		XsltForms_globals.closeAction("XsltForms_control.prototype.focus");
+		if (this.full && !focusEvent) { // select full
+			this.focusFirst();
+		}
+	}
+	var fcontrol = this.focusControl;
+	XsltForms_globals.posibleBlur = false;
+	if (fcontrol && !focusEvent) {
+		var control = this.focusControl;
+		var name = control.nodeName.toLowerCase();
+		try {
+			control.focus();
+			control.focus();
+		} catch (e) {
+			XsltForms_browser.debugConsole.write("ERROR: Could not focus on element " + control);
+		}
+		if (name === "input" || name === "textarea") {
+			try {
+				control.select();
+			} catch (e) {
+			}
+		}
+	}
+};
+
+]]>
+		<cm:wiki>
+* '''build_''' method : specific build method updating dependencies</cm:wiki>
+<![CDATA[
+XsltForms_control.prototype.build_ = function(ctx, varresolver) {
+	var result = this.evaluateBinding(this.binding, ctx, varresolver);
+	if (typeof result === "object") {
+		var node = result[0];
+		var element = this.element;
+		var old = element.node;
+		if (old !== node || !XsltForms_globals.ready) {
+			element.node = node;
+			this.nodeChanged = true;
+		}
+		if (node) {
+			this.depsNodesRefresh.push(node);
+		}
+	} else {
+		this.outputValue = result;
+	}
+};
+
+]]>
+		<cm:wiki>
+* '''refresh''' method : refreshes this control according to the value of the corresponding node and dispatches according events</cm:wiki>
+<![CDATA[
+XsltForms_control.prototype.refresh = function() {
+	if (this.controlName === "var") {
+		return;
+	}
+	var element = this.element;
+	var node = element.node;
+	if (this.outputValue !== undefined) {
+		this.setValue(this.outputValue);
+		if (this.controlName !== "var") {
+			this.eventDispatch("xforms-disabled", "xforms-enabled", false);
+		}
+	} else if (node) {
+		var value = this.value instanceof Array ? XsltForms_browser.getValueItemsetCopy(node) : XsltForms_browser.getValue(node, true, this.complex);
+		XsltForms_globals.openAction("XsltForms_control.prototype.refresh");
+		var changed;
+		if (this.currentValue instanceof Array) {
+			changed = false;
+			if (this.currentValue.length !== value.length) {
+				changed = true;
+			} else {
+				for (var i = 0, l = this.currentValue.length; i < l; i++) {
+					if (this.currentValue[i] !== value[i]) {
+						changed = true;
+						break;
+					}
+				}
+			}
+			changed = changed || this.nodeChanged;
+		} else {
+			changed = value !== this.currentValue || this.nodeChanged;
+		}
+		if (this.relevant) {
+			XsltForms_browser.setClass(element, "xforms-disabled", false);
+		}
+		this.changeProp(node, "required", "xforms-required", "xforms-optional", changed, value);
+		this.changeProp(node, "notrelevant", "xforms-disabled", "xforms-enabled", changed, value);
+		this.changeProp(node, "readonly", "xforms-readonly", "xforms-readwrite", changed, value);
+		this.changeProp(node, "notvalid", "xforms-invalid", "xforms-valid", changed, value);
+		this.currentValue = value instanceof Array ? value.slice(0) : value;
+		if (changed) {
+			this.setValue(value);
+			if (!this.nodeChanged && !this.isTrigger) {
+				XsltForms_xmlevents.dispatch(element, "xforms-value-changed");
+			}
+		}
+		XsltForms_globals.closeAction("XsltForms_control.prototype.refresh");
+	} else {
+		this.eventDispatch("xforms-disabled", "xforms-enabled", !this.hasValue);
+	}
+	this.nodeChanged = false;
+};
+
+]]>
+		<cm:wiki>
+* '''eventdispatch''' method : dispatches corresponding event</cm:wiki>
+<![CDATA[
+XsltForms_control.prototype.eventDispatch = function(onTrue, onFalse, value) {
+	if ((!this.nodeChanged || XsltForms_globals.ready) && !this.isTrigger) {
+		XsltForms_xmlevents.dispatch(this.element, (value? onTrue : onFalse));
+	}
+	XsltForms_browser.setClass(this.element, onTrue, value);
+	XsltForms_browser.setClass(this.element, onFalse, !value);
+};
+
+]]>
+		<cm:wiki>
+* '''changeProp''' method : changes a property, such as '''required''', '''relevant''', '''readonly''' and '''valid''', of this control</cm:wiki>
+<![CDATA[
+XsltForms_control.prototype.changeProp = function(node, prop, onTrue, onFalse, changed, nvalue) {
+	var value = (prop === "notvalid" && nvalue === "" && !XsltForms_globals.validationError) ? false : XsltForms_browser.getBoolMeta(node, prop);
+	if (changed || value !== this[prop]) {
+		this.eventDispatch(onTrue, onFalse, value);
+		this[prop] = value;
+		if(prop === "readonly" && this.changeReadonly) {
+			this.changeReadonly();
+		}
+	}
+};
+
+]]>
+		<cm:wiki>
+* '''valueChanged''' method : changes the value of this control and dispatches the "xforms-recalculate" event</cm:wiki>
+<![CDATA[
+XsltForms_control.prototype.valueChanged = function(value, force) {
+	var node = this.element.node;
+	var model = document.getElementById(XsltForms_browser.getDocMeta(node.ownerDocument, "model")).xfElement;
+	var schtyp = XsltForms_schema.getType(XsltForms_browser.getType(node) || "xsd_:string");
+	if (value && !(value instanceof Array) && value.length > 0 && schtyp.parse) {
+		try { value = schtyp.parse(value); } catch(e) { }
+	}
+	var changed;
+	if (value instanceof Array) {
+		var prevvalue = XsltForms_browser.getValueItemsetCopy(node);
+		changed = true;
+		var i = 0, l = value.length;
+		if (prevvalue.length === l) {
+			changed = false;
+			for (; i < l; i++) {
+				if (prevvalue[i] !== value[i]) {
+					changed = true;
+					break;
+				}
+			}
+		}
+	} else {
+		changed = value !== XsltForms_browser.getValue(node);
+	}
+	if (changed || force) {
+		if (value instanceof Array || this.currentValue instanceof Array) {
+			XsltForms_browser.setValue(node, value);
+			model.addChange(node);
+			XsltForms_globals.addChange(model);
+			model.setRebuilded(true);
+		} else {
+			XsltForms_globals.openAction("XsltForms_control.prototype.valueChanged");
+			XsltForms_browser.setValue(node, value);
+			model.addChange(node);
+			XsltForms_xmlevents.dispatch(model, "xforms-recalculate");
+			XsltForms_globals.refresh();
+			XsltForms_globals.closeAction("XsltForms_control.prototype.valueChanged");
+		}
+	}
+};
+
+]]>
+		<cm:wiki>
+* '''getXFElement''' function : gets the ancestor-or-self XFElement value for an element</cm:wiki>
+<![CDATA[
+XsltForms_control.getXFElement = function(element) {
+	var xf = null;
+	while (!xf && element) {
+		xf = element.xfElement;
+		if (xf && !xf.isControl) {
+			xf = null;
+		}
+		element = element.parentNode;
+	}
+	return xf;
+};
+
+]]>
+		<cm:wiki>
+* '''focusHandler''' function : focus handler</cm:wiki>
+<![CDATA[
+XsltForms_control.focusHandler = function() {
+	var xf = XsltForms_control.getXFElement(this);
+	if (XsltForms_globals.focus !== xf) {
+		xf.focus(true);
+	} else {
+		XsltForms_globals.posibleBlur = false;
+	}
+};
+
+]]>
+		<cm:wiki>
+* '''blurHandler''' function : blur handler including a delay</cm:wiki>
+<![CDATA[
+XsltForms_control.blurHandler = function() {
+	if (XsltForms_control.getXFElement(this) === XsltForms_globals.focus) {
+		XsltForms_globals.posibleBlur = true;
+		//setTimeout(function(){XsltForms_globals.blur();}, 200);
+		XsltForms_globals.blur();
+	}
+};
+    ]]>
+	</cm:source>
+</cm:component>
