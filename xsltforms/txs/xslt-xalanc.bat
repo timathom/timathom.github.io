@@ -1,1 +1,0 @@
-c:\Xalan-C_1_10_0-win32-msvc_60\bin\Xalan -o %3 %1 %2

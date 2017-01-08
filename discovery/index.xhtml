@@ -137,6 +137,7 @@
 			<xf:action
 				ev:event="xforms-ready">
 				<xf:setvalue ref="instance('ready')/ready" value="'yes'"></xf:setvalue>
+			    
 				<!--<xf:load
 					resource="javascript:cwb.viz(cwb.init);"></xf:load>-->
 
@@ -155,6 +156,9 @@
                     value="concat('javascript:filter(&quot;', '.Annotation', '&quot;)')"
                 />
             </xf:submission>-->
+		    <xf:action ev:event="mousemove">
+		        <xf:message>Yep</xf:message>
+		    </xf:action>
 		</xf:model>
 	</head>
 	<body>
@@ -164,8 +168,7 @@
 			<h1>Discovery in the Age of Google:</h1>
 			<h1>Challenges and Opportunities for Metadata Librarians</h1>
 			<h3>Tim Thompson</h3>
-			<h4>January 6, 2017</h4>
-			<h5>Test</h5>
+			<h4>January 6, 2017</h4>			
 			<!--<xf:trigger>
 				<xf:label>Books</xf:label>
 				<xf:action ev:event="DOMActivate">
@@ -198,6 +201,7 @@
 				height="{instance('ready')/h}"
 				width="{instance('ready')/w}"
 				xmlns="http://www.w3.org/2000/svg"></svg>-->
+		    
 			<div
 				class="form source target group-container col-md-3 col-xs-4"
 				group="_1"
