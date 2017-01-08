@@ -1,0 +1,2257 @@
+{
+  "name": "ICD10",
+  "children": [
+    {
+      "name": "A41.- Other sepsis",
+      "children": [
+        {
+          "size": 4423,
+          "name": "A41.0 Sepsis due to Staphylococcus aureus",
+          "female": 2255,
+          "male": 2168
+        },
+        {
+          "size": 149,
+          "name": "A41.1 Sepsis due to other specified staphylococcus",
+          "female": 76,
+          "male": 73
+        },
+        {
+          "size": 4469,
+          "name": "A41.2 Sepsis due to unspecified staphylococcus",
+          "female": 2244,
+          "male": 2225
+        },
+        {
+          "size": 49,
+          "name": "A41.3 Sepsis due to Haemophilus influenzae",
+          "female": 32,
+          "male": 17
+        },
+        {
+          "size": 454,
+          "name": "A41.4 Sepsis due to anaerobes",
+          "female": 245,
+          "male": 209
+        },
+        {
+          "size": 4553,
+          "name": "A41.5 Sepsis due to other Gram-negative organisms",
+          "female": 2409,
+          "male": 2144
+        },
+        {
+          "size": 834,
+          "name": "A41.8 Other specified sepsis",
+          "female": 441,
+          "male": 393
+        },
+        {
+          "size": 176811,
+          "name": "A41.9 Sepsis, unspecified",
+          "female": 99585,
+          "male": 77226
+        }
+      ]
+    },
+    {
+      "name": "C15.- Malignant neoplasm of oesophagus",
+      "children": [
+        {
+          "size": 38,
+          "name": "C15.0 Malignant neoplasm: Cervical part of oesophagus",
+          "female": 15,
+          "male": 23
+        },
+        {
+          "size": 10,
+          "name": "C15.1 Malignant neoplasm: Thoracic part of oesophagus",
+          "female": 3,
+          "male": 7
+        },
+        {
+          "size": 2,
+          "name": "C15.2 Malignant neoplasm: Abdominal part of oesophagus",
+          "female": 0,
+          "male": 2
+        },
+        {
+          "size": 35,
+          "name": "C15.3 Malignant neoplasm: Upper third of oesophagus",
+          "female": 11,
+          "male": 24
+        },
+        {
+          "size": 6,
+          "name": "C15.4 Malignant neoplasm: Middle third of oesophagus",
+          "female": 0,
+          "male": 6
+        },
+        {
+          "size": 464,
+          "name": "C15.5 Malignant neoplasm: Lower third of oesophagus",
+          "female": 82,
+          "male": 382
+        },
+        {
+          "size": 1,
+          "name": "C15.8 Malignant neoplasm: Overlapping lesion of oesophagus",
+          "female": 1,
+          "male": 0
+        },
+        {
+          "size": 74708,
+          "name": "C15.9 Malignant neoplasm: Oesophagus, unspecified",
+          "female": 17381,
+          "male": 57327
+        }
+      ]
+    },
+    {
+      "name": "C16.- Malignant neoplasm of stomach",
+      "children": [
+        {
+          "size": 4282,
+          "name": "C16.0 Malignant neoplasm: Cardia",
+          "female": 803,
+          "male": 3479
+        },
+        {
+          "size": 16,
+          "name": "C16.1 Malignant neoplasm: Fundus of stomach",
+          "female": 5,
+          "male": 11
+        },
+        {
+          "size": 9,
+          "name": "C16.2 Malignant neoplasm: Body of stomach",
+          "female": 2,
+          "male": 7
+        },
+        {
+          "size": 47,
+          "name": "C16.3 Malignant neoplasm: Pyloric antrum",
+          "female": 27,
+          "male": 20
+        },
+        {
+          "size": 39,
+          "name": "C16.4 Malignant neoplasm: Pylorus",
+          "female": 21,
+          "male": 18
+        },
+        {
+          "size": 4,
+          "name": "C16.5 Malignant neoplasm: Lesser curvature of stomach, unspecified",
+          "female": 3,
+          "male": 1
+        },
+        {
+          "size": 1,
+          "name": "C16.6 Malignant neoplasm: Greater curvature of stomach, unspecified",
+          "female": 0,
+          "male": 1
+        },
+        {
+          "size": 3,
+          "name": "C16.8 Malignant neoplasm: Overlapping lesion of stomach",
+          "female": 1,
+          "male": 2
+        },
+        {
+          "size": 69441,
+          "name": "C16.9 Malignant neoplasm: Stomach, unspecified",
+          "female": 29856,
+          "male": 39585
+        }
+      ]
+    },
+    {
+      "name": "C18.- Malignant neoplasm of colon",
+      "children": [
+        {
+          "size": 2412,
+          "name": "C18.0 Malignant neoplasm: Caecum",
+          "female": 1472,
+          "male": 940
+        },
+        {
+          "size": 1574,
+          "name": "C18.1 Malignant neoplasm: Appendix",
+          "female": 884,
+          "male": 690
+        },
+        {
+          "size": 2496,
+          "name": "C18.2 Malignant neoplasm: Ascending colon",
+          "female": 1332,
+          "male": 1164
+        },
+        {
+          "size": 61,
+          "name": "C18.3 Malignant neoplasm: Hepatic flexure",
+          "female": 26,
+          "male": 35
+        },
+        {
+          "size": 431,
+          "name": "C18.4 Malignant neoplasm: Transverse colon",
+          "female": 250,
+          "male": 181
+        },
+        {
+          "size": 41,
+          "name": "C18.5 Malignant neoplasm: Splenic flexure",
+          "female": 19,
+          "male": 22
+        },
+        {
+          "size": 544,
+          "name": "C18.6 Malignant neoplasm: Descending colon",
+          "female": 253,
+          "male": 291
+        },
+        {
+          "size": 2947,
+          "name": "C18.7 Malignant neoplasm: Sigmoid colon",
+          "female": 1437,
+          "male": 1510
+        },
+        {
+          "size": 5,
+          "name": "C18.8 Malignant neoplasm: Overlapping lesion of colon",
+          "female": 4,
+          "male": 1
+        },
+        {
+          "size": 273397,
+          "name": "C18.9 Malignant neoplasm: Colon, unspecified",
+          "female": 139249,
+          "male": 134148
+        },
+        {
+          "size": 12730,
+          "name": "C19 Malignant neoplasm of rectosigmoid junction",
+          "female": 5758,
+          "male": 6972
+        },
+        {
+          "size": 38204,
+          "name": "C20 Malignant neoplasm of rectum",
+          "female": 16979,
+          "male": 21225
+        }
+      ]
+    },
+    {
+      "name": "C22.- Malignant neoplasm of liver and intrahepatic bile ducts",
+      "children": [
+        {
+          "size": 34069,
+          "name": "C22.0 Malignant neoplasm: Liver cell carcinoma",
+          "female": 8700,
+          "male": 25369
+        },
+        {
+          "size": 17910,
+          "name": "C22.1 Malignant neoplasm: Intrahepatic bile duct carcinoma",
+          "female": 9115,
+          "male": 8795
+        },
+        {
+          "size": 188,
+          "name": "C22.2 Malignant neoplasm: Hepatoblastoma",
+          "female": 72,
+          "male": 116
+        },
+        {
+          "size": 104,
+          "name": "C22.3 Malignant neoplasm: Angiosarcoma of liver",
+          "female": 36,
+          "male": 68
+        },
+        {
+          "size": 12,
+          "name": "C22.4 Malignant neoplasm: Other sarcomas of liver",
+          "female": 4,
+          "male": 8
+        },
+        {
+          "size": 3,
+          "name": "C22.7 Malignant neoplasm: Other specified carcinomas of liver",
+          "female": 2,
+          "male": 1
+        },
+        {
+          "size": 30437,
+          "name": "C22.9 Malignant neoplasm: Liver, unspecified",
+          "female": 12121,
+          "male": 18316
+        },
+        {
+          "size": 11737,
+          "name": "C23 Malignant neoplasm of gallbladder",
+          "female": 8274,
+          "male": 3463
+        }
+      ]
+    },
+    {
+      "name": "C25.- Malignant neoplasm of pancreas",
+      "children": [
+        {
+          "size": 929,
+          "name": "C25.0 Malignant neoplasm: Head of pancreas",
+          "female": 513,
+          "male": 416
+        },
+        {
+          "size": 34,
+          "name": "C25.1 Malignant neoplasm: Body of pancreas",
+          "female": 12,
+          "male": 22
+        },
+        {
+          "size": 101,
+          "name": "C25.2 Malignant neoplasm: Tail of pancreas",
+          "female": 42,
+          "male": 59
+        },
+        {
+          "size": 102,
+          "name": "C25.3 Malignant neoplasm: Pancreatic duct",
+          "female": 52,
+          "male": 50
+        },
+        {
+          "size": 808,
+          "name": "C25.4 Malignant neoplasm: Endocrine pancreas",
+          "female": 375,
+          "male": 433
+        },
+        {
+          "size": 4,
+          "name": "C25.7 Malignant neoplasm: Other parts of pancreas",
+          "female": 3,
+          "male": 1
+        },
+        {
+          "size": 2,
+          "name": "C25.8 Malignant neoplasm: Overlapping lesion of pancreas",
+          "female": 0,
+          "male": 2
+        },
+        {
+          "size": 179050,
+          "name": "C25.9 Malignant neoplasm: Pancreas, unspecified",
+          "female": 91439,
+          "male": 87611
+        }
+      ]
+    },
+    {
+      "name": "C34.- Malignant neoplasm of bronchus and lung",
+      "children": [
+        {
+          "size": 306,
+          "name": "C34.0 Malignant neoplasm: Main bronchus",
+          "female": 111,
+          "male": 195
+        },
+        {
+          "size": 4278,
+          "name": "C34.1 Malignant neoplasm: Upper lobe, bronchus or lung",
+          "female": 1724,
+          "male": 2554
+        },
+        {
+          "size": 267,
+          "name": "C34.2 Malignant neoplasm: Middle lobe, bronchus or lung",
+          "female": 116,
+          "male": 151
+        },
+        {
+          "size": 1694,
+          "name": "C34.3 Malignant neoplasm: Lower lobe, bronchus or lung",
+          "female": 713,
+          "male": 981
+        },
+        {
+          "size": 27,
+          "name": "C34.8 Malignant neoplasm: Overlapping lesion of bronchus and lung",
+          "female": 11,
+          "male": 16
+        },
+        {
+          "size": 930526,
+          "name": "C34.9 Malignant neoplasm: Bronchus or lung, unspecified",
+          "female": 394633,
+          "male": 535893
+        },
+        {
+          "size": 1021,
+          "name": "C37 Malignant neoplasm of thymus",
+          "female": 438,
+          "male": 583
+        }
+      ]
+    },
+    {
+      "name": "C50.- Malignant neoplasm of breast",
+      "children": [
+        {
+          "size": 36,
+          "name": "C50.0 Malignant neoplasm: Nipple and areola",
+          "female": 29,
+          "male": 7
+        },
+        {
+          "size": 1,
+          "name": "C50.1 Malignant neoplasm: Central portion of breast",
+          "female": 1,
+          "male": 0
+        },
+        {
+          "size": 2,
+          "name": "C50.2 Malignant neoplasm: Upper-inner quadrant of breast",
+          "female": 2,
+          "male": 0
+        },
+        {
+          "size": 4,
+          "name": "C50.4 Malignant neoplasm: Upper-outer quadrant of breast",
+          "female": 4,
+          "male": 0
+        },
+        {
+          "size": 1,
+          "name": "C50.5 Malignant neoplasm: Lower-outer quadrant of breast",
+          "female": 1,
+          "male": 0
+        },
+        {
+          "size": 2,
+          "name": "C50.6 Malignant neoplasm: Axillary tail of breast",
+          "female": 2,
+          "male": 0
+        },
+        {
+          "size": 2,
+          "name": "C50.8 Malignant neoplasm: Overlapping lesion of breast",
+          "female": 2,
+          "male": 0
+        },
+        {
+          "size": 250788,
+          "name": "C50.9 Malignant neoplasm: Breast, unspecified",
+          "female": 248457,
+          "male": 2331
+        }
+      ]
+    },
+    {
+      "name": "C54.- Malignant neoplasm of corpus uteri",
+      "children": [
+        {
+          "size": 5,
+          "name": "C54.0 Malignant neoplasm: Isthmus uteri",
+          "female": 5,
+          "male": 0
+        },
+        {
+          "size": 18955,
+          "name": "C54.1 Malignant neoplasm: Endometrium",
+          "female": 18955,
+          "male": 0
+        },
+        {
+          "size": 6,
+          "name": "C54.2 Malignant neoplasm: Myometrium",
+          "female": 6,
+          "male": 0
+        },
+        {
+          "size": 2,
+          "name": "C54.3 Malignant neoplasm: Fundus uteri",
+          "female": 2,
+          "male": 0
+        },
+        {
+          "size": 198,
+          "name": "C54.9 Malignant neoplasm: Corpus uteri, unspecified",
+          "female": 198,
+          "male": 0
+        },
+        {
+          "size": 21414,
+          "name": "C55 Malignant neoplasm of uterus, part unspecified",
+          "female": 21414,
+          "male": 0
+        },
+        {
+          "size": 86156,
+          "name": "C56 Malignant neoplasm of ovary",
+          "female": 86156,
+          "male": 0
+        }
+      ]
+    },
+    {
+      "name": "C60.- Malignant neoplasm of penis",
+      "children": [
+        {
+          "size": 4,
+          "name": "C60.0 Malignant neoplasm: Prepuce",
+          "female": 0,
+          "male": 4
+        },
+        {
+          "size": 3,
+          "name": "C60.1 Malignant neoplasm: Glans penis",
+          "female": 0,
+          "male": 3
+        },
+        {
+          "size": 3,
+          "name": "C60.2 Malignant neoplasm: Body of penis",
+          "female": 0,
+          "male": 3
+        },
+        {
+          "size": 1304,
+          "name": "C60.9 Malignant neoplasm: Penis, unspecified",
+          "female": 0,
+          "male": 1304
+        },
+        {
+          "size": 182530,
+          "name": "C61 Malignant neoplasm of prostate",
+          "female": 0,
+          "male": 182530
+        }
+      ]
+    },
+    {
+      "name": "C63.- Malignant neoplasm of other and unspecified male genital organs",
+      "children": [
+        {
+          "size": 3,
+          "name": "C63.0 Malignant neoplasm: Epididymis",
+          "female": 0,
+          "male": 3
+        },
+        {
+          "size": 30,
+          "name": "C63.1 Malignant neoplasm: Spermatic cord",
+          "female": 0,
+          "male": 30
+        },
+        {
+          "size": 64,
+          "name": "C63.2 Malignant neoplasm: Scrotum",
+          "female": 0,
+          "male": 64
+        },
+        {
+          "size": 9,
+          "name": "C63.7 Malignant neoplasm: Other specified male genital organs",
+          "female": 0,
+          "male": 9
+        },
+        {
+          "size": 119,
+          "name": "C63.9 Malignant neoplasm: Male genital organ, unspecified",
+          "female": 0,
+          "male": 119
+        },
+        {
+          "size": 70627,
+          "name": "C64 Malignant neoplasm of kidney, except renal pelvis",
+          "female": 26716,
+          "male": 43911
+        },
+        {
+          "size": 1067,
+          "name": "C65 Malignant neoplasm of renal pelvis",
+          "female": 444,
+          "male": 623
+        },
+        {
+          "size": 1895,
+          "name": "C66 Malignant neoplasm of ureter",
+          "female": 889,
+          "male": 1006
+        }
+      ]
+    },
+    {
+      "name": "C67.- Malignant neoplasm of bladder",
+      "children": [
+        {
+          "size": 5,
+          "name": "C67.0 Malignant neoplasm: Trigone of bladder",
+          "female": 1,
+          "male": 4
+        },
+        {
+          "size": 2,
+          "name": "C67.1 Malignant neoplasm: Dome of bladder",
+          "female": 2,
+          "male": 0
+        },
+        {
+          "size": 2,
+          "name": "C67.2 Malignant neoplasm: Lateral wall of bladder",
+          "female": 0,
+          "male": 2
+        },
+        {
+          "size": 1,
+          "name": "C67.3 Malignant neoplasm: Anterior wall of bladder",
+          "female": 0,
+          "male": 1
+        },
+        {
+          "size": 16,
+          "name": "C67.5 Malignant neoplasm: Bladder neck",
+          "female": 4,
+          "male": 12
+        },
+        {
+          "size": 5,
+          "name": "C67.6 Malignant neoplasm: Ureteric orifice",
+          "female": 3,
+          "male": 2
+        },
+        {
+          "size": 99,
+          "name": "C67.7 Malignant neoplasm: Urachus",
+          "female": 42,
+          "male": 57
+        },
+        {
+          "size": 3,
+          "name": "C67.8 Malignant neoplasm: Overlapping lesion of bladder",
+          "female": 1,
+          "male": 2
+        },
+        {
+          "size": 74146,
+          "name": "C67.9 Malignant neoplasm: Bladder, unspecified",
+          "female": 23540,
+          "male": 50606
+        }
+      ]
+    },
+    {
+      "name": "C71.- Malignant neoplasm of brain",
+      "children": [
+        {
+          "size": 1278,
+          "name": "C71.0 Malignant neoplasm: Cerebrum, except lobes and ventricles",
+          "female": 573,
+          "male": 705
+        },
+        {
+          "size": 608,
+          "name": "C71.1 Malignant neoplasm: Frontal lobe",
+          "female": 274,
+          "male": 334
+        },
+        {
+          "size": 601,
+          "name": "C71.2 Malignant neoplasm: Temporal lobe",
+          "female": 241,
+          "male": 360
+        },
+        {
+          "size": 364,
+          "name": "C71.3 Malignant neoplasm: Parietal lobe",
+          "female": 173,
+          "male": 191
+        },
+        {
+          "size": 80,
+          "name": "C71.4 Malignant neoplasm: Occipital lobe",
+          "female": 40,
+          "male": 40
+        },
+        {
+          "size": 68,
+          "name": "C71.5 Malignant neoplasm: Cerebral ventricle",
+          "female": 24,
+          "male": 44
+        },
+        {
+          "size": 999,
+          "name": "C71.6 Malignant neoplasm: Cerebellum",
+          "female": 397,
+          "male": 602
+        },
+        {
+          "size": 1484,
+          "name": "C71.7 Malignant neoplasm: Brain stem",
+          "female": 707,
+          "male": 777
+        },
+        {
+          "size": 202,
+          "name": "C71.8 Malignant neoplasm: Overlapping lesion of brain",
+          "female": 100,
+          "male": 102
+        },
+        {
+          "size": 69409,
+          "name": "C71.9 Malignant neoplasm: Brain, unspecified",
+          "female": 30981,
+          "male": 38428
+        }
+      ]
+    },
+    {
+      "name": "C85.- Other and unspecified types of non-Hodgkin lymphoma",
+      "children": [
+        {
+          "size": 5021,
+          "name": "C85.1 B-cell lymphoma, unspecified",
+          "female": 2453,
+          "male": 2568
+        },
+        {
+          "size": 57,
+          "name": "C85.7 Other specified types of non-Hodgkin lymphoma",
+          "female": 21,
+          "male": 36
+        },
+        {
+          "size": 106276,
+          "name": "C85.9 Non-Hodgkin lymphoma, unspecified",
+          "female": 51514,
+          "male": 54762
+        }
+      ]
+    },
+    {
+      "name": "C90.- Multiple myeloma and malignant plasma cell neoplasms",
+      "children": [
+        {
+          "size": 63637,
+          "name": "C90.0 Multiple myeloma",
+          "female": 31077,
+          "male": 32560
+        },
+        {
+          "size": 429,
+          "name": "C90.1 Plasma cell leukaemia",
+          "female": 218,
+          "male": 211
+        },
+        {
+          "size": 524,
+          "name": "C90.2 Extramedullary plasmacytoma",
+          "female": 238,
+          "male": 286
+        }
+      ]
+    },
+    {
+      "name": "C92.- Myeloid leukaemia",
+      "children": [
+        {
+          "size": 44205,
+          "name": "C92.0 Acute myeloblastic leukaemia [AML]",
+          "female": 20034,
+          "male": 24171
+        },
+        {
+          "size": 9003,
+          "name": "C92.1 Chronic myeloid leukaemia [CML], BCR/ABL-positive",
+          "female": 4008,
+          "male": 4995
+        },
+        {
+          "size": 6,
+          "name": "C92.2 Atypical chronic myeloid leukaemia, BCR/ABL- negative",
+          "female": 3,
+          "male": 3
+        },
+        {
+          "size": 118,
+          "name": "C92.3 Myeloid sarcoma",
+          "female": 61,
+          "male": 57
+        },
+        {
+          "size": 788,
+          "name": "C92.4 Acute promyelocytic leukaemia [PML]",
+          "female": 397,
+          "male": 391
+        },
+        {
+          "size": 1145,
+          "name": "C92.5 Acute myelomonocytic leukaemia",
+          "female": 486,
+          "male": 659
+        },
+        {
+          "size": 2159,
+          "name": "C92.7 Other myeloid leukaemia",
+          "female": 807,
+          "male": 1352
+        },
+        {
+          "size": 1304,
+          "name": "C92.9 Myeloid leukaemia, unspecified",
+          "female": 582,
+          "male": 722
+        }
+      ]
+    },
+    {
+      "name": "E11.- Non-insulin-dependent diabetes mellitus",
+      "children": [
+        {
+          "size": 474,
+          "name": "E11.0 Non-insulin-dependent diabetes mellitus: With coma",
+          "female": 288,
+          "male": 186
+        },
+        {
+          "size": 588,
+          "name": "E11.1 Non-insulin-dependent diabetes mellitus: With ketoacidosis",
+          "female": 344,
+          "male": 244
+        },
+        {
+          "size": 1824,
+          "name": "E11.2 Non-insulin-dependent diabetes mellitus: With renal complications",
+          "female": 981,
+          "male": 843
+        },
+        {
+          "size": 55,
+          "name": "E11.3 Non-insulin-dependent diabetes mellitus: With ophthalmic complications",
+          "female": 29,
+          "male": 26
+        },
+        {
+          "size": 510,
+          "name": "E11.4 Non-insulin-dependent diabetes mellitus: With neurological complications",
+          "female": 250,
+          "male": 260
+        },
+        {
+          "size": 8706,
+          "name": "E11.5 Non-insulin-dependent diabetes mellitus: With peripheral circulatory complications",
+          "female": 4617,
+          "male": 4089
+        },
+        {
+          "size": 329,
+          "name": "E11.6 Non-insulin-dependent diabetes mellitus: With other specified complications",
+          "female": 204,
+          "male": 125
+        },
+        {
+          "size": 976,
+          "name": "E11.7 Non-insulin-dependent diabetes mellitus: With multiple complications",
+          "female": 503,
+          "male": 473
+        },
+        {
+          "size": 25,
+          "name": "E11.8 Non-insulin-dependent diabetes mellitus: With unspecified complications",
+          "female": 12,
+          "male": 13
+        },
+        {
+          "size": 65408,
+          "name": "E11.9 Non-insulin-dependent diabetes mellitus: Without complications",
+          "female": 35978,
+          "male": 29430
+        }
+      ]
+    },
+    {
+      "name": "E14.- Unspecified diabetes mellitus",
+      "children": [
+        {
+          "size": 2825,
+          "name": "E14.0 Unspecified diabetes mellitus: With coma",
+          "female": 1648,
+          "male": 1177
+        },
+        {
+          "size": 9445,
+          "name": "E14.1 Unspecified diabetes mellitus: With ketoacidosis",
+          "female": 4253,
+          "male": 5192
+        },
+        {
+          "size": 7273,
+          "name": "E14.2 Unspecified diabetes mellitus: With renal complications",
+          "female": 3895,
+          "male": 3378
+        },
+        {
+          "size": 142,
+          "name": "E14.3 Unspecified diabetes mellitus: With ophthalmic complications",
+          "female": 83,
+          "male": 59
+        },
+        {
+          "size": 1436,
+          "name": "E14.4 Unspecified diabetes mellitus: With neurological complications",
+          "female": 687,
+          "male": 749
+        },
+        {
+          "size": 32707,
+          "name": "E14.5 Unspecified diabetes mellitus: With peripheral circulatory complications",
+          "female": 16878,
+          "male": 15829
+        },
+        {
+          "size": 1214,
+          "name": "E14.6 Unspecified diabetes mellitus: With other specified complications",
+          "female": 722,
+          "male": 492
+        },
+        {
+          "size": 2687,
+          "name": "E14.7 Unspecified diabetes mellitus: With multiple complications",
+          "female": 1332,
+          "male": 1355
+        },
+        {
+          "size": 642,
+          "name": "E14.8 Unspecified diabetes mellitus: With unspecified complications",
+          "female": 328,
+          "male": 314
+        },
+        {
+          "size": 250095,
+          "name": "E14.9 Unspecified diabetes mellitus: Without complications",
+          "female": 132931,
+          "male": 117164
+        },
+        {
+          "size": 131,
+          "name": "E15 Nondiabetic hypoglycaemic coma",
+          "female": 75,
+          "male": 56
+        }
+      ]
+    },
+    {
+      "name": "F01.- Vascular dementia",
+      "children": [
+        {
+          "size": 123,
+          "name": "F01.1 Multi-infarct dementia",
+          "female": 77,
+          "male": 46
+        },
+        {
+          "size": 2,
+          "name": "F01.2 Subcortical vascular dementia",
+          "female": 1,
+          "male": 1
+        },
+        {
+          "size": 6,
+          "name": "F01.3 Mixed cortical and subcortical vascular dementia",
+          "female": 3,
+          "male": 3
+        },
+        {
+          "size": 13,
+          "name": "F01.8 Other vascular dementia",
+          "female": 8,
+          "male": 5
+        },
+        {
+          "size": 1083,
+          "name": "F01.9 Vascular dementia, unspecified",
+          "female": 685,
+          "male": 398
+        },
+        {
+          "size": 231682,
+          "name": "F03 Unspecified dementia",
+          "female": 163952,
+          "male": 67730
+        },
+        {
+          "size": 2,
+          "name": "F04 Organic amnesic syndrome, not induced by alcohol and other psychoactive substances",
+          "female": 1,
+          "male": 1
+        }
+      ]
+    },
+    {
+      "name": "G12.- Spinal muscular atrophy and related syndromes",
+      "children": [
+        {
+          "size": 226,
+          "name": "G12.0 Infantile spinal muscular atrophy, type I [Werdnig-Hoffman]",
+          "female": 102,
+          "male": 124
+        },
+        {
+          "size": 32,
+          "name": "G12.1 Other inherited spinal muscular atrophy",
+          "female": 9,
+          "male": 23
+        },
+        {
+          "size": 33261,
+          "name": "G12.2 Motor neuron disease",
+          "female": 15551,
+          "male": 17710
+        },
+        {
+          "size": 5,
+          "name": "G12.8 Other spinal muscular atrophies and related syndromes",
+          "female": 2,
+          "male": 3
+        },
+        {
+          "size": 664,
+          "name": "G12.9 Spinal muscular atrophy, unspecified",
+          "female": 306,
+          "male": 358
+        },
+        {
+          "size": 99213,
+          "name": "G20 Parkinson disease",
+          "female": 42909,
+          "male": 56304
+        }
+      ]
+    },
+    {
+      "name": "G30.- Alzheimer disease",
+      "children": [
+        {
+          "size": 35,
+          "name": "G30.0 Alzheimer disease with early onset",
+          "female": 22,
+          "male": 13
+        },
+        {
+          "size": 12633,
+          "name": "G30.1 Alzheimer disease with late onset",
+          "female": 9376,
+          "male": 3257
+        },
+        {
+          "size": 85,
+          "name": "G30.8 Other Alzheimer disease",
+          "female": 60,
+          "male": 25
+        },
+        {
+          "size": 323481,
+          "name": "G30.9 Alzheimer disease, unspecified",
+          "female": 228887,
+          "male": 94594
+        }
+      ]
+    },
+    {
+      "name": "I09.- Other rheumatic heart diseases",
+      "children": [
+        {
+          "size": 155,
+          "name": "I09.0 Rheumatic myocarditis",
+          "female": 103,
+          "male": 52
+        },
+        {
+          "size": 926,
+          "name": "I09.1 Rheumatic diseases of endocardium, valve unspecified",
+          "female": 664,
+          "male": 262
+        },
+        {
+          "size": 24,
+          "name": "I09.8 Other specified rheumatic heart diseases",
+          "female": 13,
+          "male": 11
+        },
+        {
+          "size": 3209,
+          "name": "I09.9 Rheumatic heart disease, unspecified",
+          "female": 2397,
+          "male": 812
+        },
+        {
+          "size": 69316,
+          "name": "I10 Essential (primary) hypertension",
+          "female": 45390,
+          "male": 23926
+        }
+      ]
+    },
+    {
+      "name": "I11.- Hypertensive heart disease",
+      "children": [
+        {
+          "size": 52922,
+          "name": "I11.0 Hypertensive heart disease with (congestive) heart failure",
+          "female": 36772,
+          "male": 16150
+        },
+        {
+          "size": 101711,
+          "name": "I11.9 Hypertensive heart disease without (congestive) heart failure",
+          "female": 51093,
+          "male": 50618
+        }
+      ]
+    },
+    {
+      "name": "I12.- Hypertensive renal disease",
+      "children": [
+        {
+          "size": 48630,
+          "name": "I12.0 Hypertensive renal disease with renal failure",
+          "female": 27871,
+          "male": 20759
+        },
+        {
+          "size": 1621,
+          "name": "I12.9 Hypertensive renal disease without renal failure",
+          "female": 940,
+          "male": 681
+        }
+      ]
+    },
+    {
+      "name": "I21.- Acute myocardial infarction",
+      "children": [
+        {
+          "size": 98,
+          "name": "I21.0 Acute transmural myocardial infarction of anterior wall",
+          "female": 38,
+          "male": 60
+        },
+        {
+          "size": 76,
+          "name": "I21.1 Acute transmural myocardial infarction of inferior wall",
+          "female": 41,
+          "male": 35
+        },
+        {
+          "size": 58,
+          "name": "I21.2 Acute transmural myocardial infarction of other sites",
+          "female": 22,
+          "male": 36
+        },
+        {
+          "size": 146,
+          "name": "I21.3 Acute transmural myocardial infarction of unspecified site",
+          "female": 60,
+          "male": 86
+        },
+        {
+          "size": 1701,
+          "name": "I21.4 Acute subendocardial myocardial infarction",
+          "female": 920,
+          "male": 781
+        },
+        {
+          "size": 1081894,
+          "name": "I21.9 Acute myocardial infarction, unspecified",
+          "female": 516304,
+          "male": 565590
+        }
+      ]
+    },
+    {
+      "name": "I25.- Chronic ischaemic heart disease",
+      "children": [
+        {
+          "size": 408605,
+          "name": "I25.0 Atherosclerotic cardiovascular disease, so described",
+          "female": 193973,
+          "male": 214632
+        },
+        {
+          "size": 1301786,
+          "name": "I25.1 Atherosclerotic heart disease",
+          "female": 667477,
+          "male": 634309
+        },
+        {
+          "size": 1686,
+          "name": "I25.2 Old myocardial infarction",
+          "female": 669,
+          "male": 1017
+        },
+        {
+          "size": 556,
+          "name": "I25.3 Aneurysm of heart",
+          "female": 252,
+          "male": 304
+        },
+        {
+          "size": 80,
+          "name": "I25.4 Coronary artery aneurysm",
+          "female": 45,
+          "male": 35
+        },
+        {
+          "size": 74609,
+          "name": "I25.5 Ischaemic cardiomyopathy",
+          "female": 30210,
+          "male": 44399
+        },
+        {
+          "size": 2,
+          "name": "I25.6 Silent myocardial ischaemia",
+          "female": 0,
+          "male": 2
+        },
+        {
+          "size": 10174,
+          "name": "I25.8 Other forms of chronic ischaemic heart disease",
+          "female": 4964,
+          "male": 5210
+        },
+        {
+          "size": 70135,
+          "name": "I25.9 Chronic ischaemic heart disease, unspecified",
+          "female": 32803,
+          "male": 37332
+        }
+      ]
+    },
+    {
+      "name": "I26.- Pulmonary embolism",
+      "children": [
+        {
+          "size": 120,
+          "name": "I26.0 Pulmonary embolism with mention of acute cor pulmonale",
+          "female": 60,
+          "male": 60
+        },
+        {
+          "size": 51387,
+          "name": "I26.9 Pulmonary embolism without mention of acute cor pulmonale",
+          "female": 29977,
+          "male": 21410
+        }
+      ]
+    },
+    {
+      "name": "I35.- Nonrheumatic aortic valve disorders",
+      "children": [
+        {
+          "size": 60952,
+          "name": "I35.0 Aortic (valve) stenosis",
+          "female": 38453,
+          "male": 22499
+        },
+        {
+          "size": 3462,
+          "name": "I35.1 Aortic (valve) insufficiency",
+          "female": 1824,
+          "male": 1638
+        },
+        {
+          "size": 468,
+          "name": "I35.2 Aortic (valve) stenosis with insufficiency",
+          "female": 253,
+          "male": 215
+        },
+        {
+          "size": 1114,
+          "name": "I35.8 Other aortic valve disorders",
+          "female": 459,
+          "male": 655
+        },
+        {
+          "size": 8469,
+          "name": "I35.9 Aortic valve disorder, unspecified",
+          "female": 4141,
+          "male": 4328
+        }
+      ]
+    },
+    {
+      "name": "I42.- Cardiomyopathy",
+      "children": [
+        {
+          "size": 31124,
+          "name": "I42.0 Dilated cardiomyopathy",
+          "female": 11399,
+          "male": 19725
+        },
+        {
+          "size": 1216,
+          "name": "I42.1 Obstructive hypertrophic cardiomyopathy",
+          "female": 795,
+          "male": 421
+        },
+        {
+          "size": 7200,
+          "name": "I42.2 Other hypertrophic cardiomyopathy",
+          "female": 2624,
+          "male": 4576
+        },
+        {
+          "size": 32,
+          "name": "I42.3 Endomyocardial (eosinophilic) disease",
+          "female": 17,
+          "male": 15
+        },
+        {
+          "size": 537,
+          "name": "I42.4 Endocardial fibroelastosis",
+          "female": 251,
+          "male": 286
+        },
+        {
+          "size": 705,
+          "name": "I42.5 Other restrictive cardiomyopathy",
+          "female": 372,
+          "male": 333
+        },
+        {
+          "size": 2885,
+          "name": "I42.6 Alcoholic cardiomyopathy",
+          "female": 351,
+          "male": 2534
+        },
+        {
+          "size": 105,
+          "name": "I42.7 Cardiomyopathy due to drugs and other external agents",
+          "female": 52,
+          "male": 53
+        },
+        {
+          "size": 268,
+          "name": "I42.8 Other cardiomyopathies",
+          "female": 171,
+          "male": 97
+        },
+        {
+          "size": 117430,
+          "name": "I42.9 Cardiomyopathy, unspecified",
+          "female": 52391,
+          "male": 65039
+        }
+      ]
+    },
+    {
+      "name": "I46.- Cardiac arrest",
+      "children": [
+        {
+          "size": 16454,
+          "name": "I46.1 Sudden cardiac death, so described",
+          "female": 8039,
+          "male": 8415
+        },
+        {
+          "size": 90081,
+          "name": "I46.9 Cardiac arrest, unspecified",
+          "female": 47895,
+          "male": 42186
+        }
+      ]
+    },
+    {
+      "name": "I47.- Paroxysmal tachycardia",
+      "children": [
+        {
+          "size": 14,
+          "name": "I47.0 Re-entry ventricular arrhythmia",
+          "female": 11,
+          "male": 3
+        },
+        {
+          "size": 831,
+          "name": "I47.1 Supraventricular tachycardia",
+          "female": 534,
+          "male": 297
+        },
+        {
+          "size": 2941,
+          "name": "I47.2 Ventricular tachycardia",
+          "female": 1328,
+          "male": 1613
+        },
+        {
+          "size": 10,
+          "name": "I47.9 Paroxysmal tachycardia, unspecified",
+          "female": 7,
+          "male": 3
+        },
+        {
+          "size": 57749,
+          "name": "I48 Atrial fibrillation and flutter",
+          "female": 38293,
+          "male": 19456
+        }
+      ]
+    },
+    {
+      "name": "I49.- Other cardiac arrhythmias",
+      "children": [
+        {
+          "size": 8078,
+          "name": "I49.0 Ventricular fibrillation and flutter",
+          "female": 3527,
+          "male": 4551
+        },
+        {
+          "size": 5,
+          "name": "I49.1 Atrial premature depolarization",
+          "female": 3,
+          "male": 2
+        },
+        {
+          "size": 1,
+          "name": "I49.2 Junctional premature depolarization",
+          "female": 1,
+          "male": 0
+        },
+        {
+          "size": 67,
+          "name": "I49.3 Ventricular premature depolarization",
+          "female": 31,
+          "male": 36
+        },
+        {
+          "size": 3,
+          "name": "I49.4 Other and unspecified premature depolarization",
+          "female": 1,
+          "male": 2
+        },
+        {
+          "size": 2497,
+          "name": "I49.5 Sick sinus syndrome",
+          "female": 1593,
+          "male": 904
+        },
+        {
+          "size": 393,
+          "name": "I49.8 Other specified cardiac arrhythmias",
+          "female": 219,
+          "male": 174
+        },
+        {
+          "size": 49918,
+          "name": "I49.9 Cardiac arrhythmia, unspecified",
+          "female": 26941,
+          "male": 22977
+        }
+      ]
+    },
+    {
+      "name": "I50.- Heart failure",
+      "children": [
+        {
+          "size": 314416,
+          "name": "I50.0 Congestive heart failure",
+          "female": 195147,
+          "male": 119269
+        },
+        {
+          "size": 849,
+          "name": "I50.1 Left ventricular failure",
+          "female": 496,
+          "male": 353
+        },
+        {
+          "size": 23345,
+          "name": "I50.9 Heart failure, unspecified",
+          "female": 12990,
+          "male": 10355
+        }
+      ]
+    },
+    {
+      "name": "I51.- Complications and ill-defined descriptions of heart disease",
+      "children": [
+        {
+          "size": 100,
+          "name": "I51.0 Cardiac septal defect, acquired",
+          "female": 54,
+          "male": 46
+        },
+        {
+          "size": 88,
+          "name": "I51.1 Rupture of chordae tendineae, not elsewhere classified",
+          "female": 51,
+          "male": 37
+        },
+        {
+          "size": 92,
+          "name": "I51.2 Rupture of papillary muscle, not elsewhere classified",
+          "female": 41,
+          "male": 51
+        },
+        {
+          "size": 9,
+          "name": "I51.3 Intracardiac thrombosis, not elsewhere classified",
+          "female": 3,
+          "male": 6
+        },
+        {
+          "size": 3115,
+          "name": "I51.4 Myocarditis, unspecified",
+          "female": 1500,
+          "male": 1615
+        },
+        {
+          "size": 1211,
+          "name": "I51.5 Myocardial degeneration",
+          "female": 660,
+          "male": 551
+        },
+        {
+          "size": 24061,
+          "name": "I51.6 Cardiovascular disease, unspecified",
+          "female": 13381,
+          "male": 10680
+        },
+        {
+          "size": 8622,
+          "name": "I51.7 Cardiomegaly",
+          "female": 3016,
+          "male": 5606
+        },
+        {
+          "size": 4342,
+          "name": "I51.8 Other ill-defined heart diseases",
+          "female": 2290,
+          "male": 2052
+        },
+        {
+          "size": 17641,
+          "name": "I51.9 Heart disease, unspecified",
+          "female": 8745,
+          "male": 8896
+        }
+      ]
+    },
+    {
+      "name": "I61.- Intracerebral haemorrhage",
+      "children": [
+        {
+          "size": 1207,
+          "name": "I61.0 Intracerebral haemorrhage in hemisphere, subcortical",
+          "female": 557,
+          "male": 650
+        },
+        {
+          "size": 799,
+          "name": "I61.1 Intracerebral haemorrhage in hemisphere, cortical",
+          "female": 448,
+          "male": 351
+        },
+        {
+          "size": 254,
+          "name": "I61.2 Intracerebral haemorrhage in hemisphere, unspecified",
+          "female": 147,
+          "male": 107
+        },
+        {
+          "size": 4211,
+          "name": "I61.3 Intracerebral haemorrhage in brain stem",
+          "female": 1889,
+          "male": 2322
+        },
+        {
+          "size": 3625,
+          "name": "I61.4 Intracerebral haemorrhage in cerebellum",
+          "female": 1887,
+          "male": 1738
+        },
+        {
+          "size": 4518,
+          "name": "I61.5 Intracerebral haemorrhage, intraventricular",
+          "female": 2265,
+          "male": 2253
+        },
+        {
+          "size": 10,
+          "name": "I61.6 Intracerebral haemorrhage, multiple localized",
+          "female": 7,
+          "male": 3
+        },
+        {
+          "size": 448,
+          "name": "I61.8 Other intracerebral haemorrhage",
+          "female": 254,
+          "male": 194
+        },
+        {
+          "size": 101618,
+          "name": "I61.9 Intracerebral haemorrhage, unspecified",
+          "female": 56178,
+          "male": 45440
+        }
+      ]
+    },
+    {
+      "name": "I63.- Cerebral infarction",
+      "children": [
+        {
+          "size": 951,
+          "name": "I63.0 Cerebral infarction due to thrombosis of precerebral arteries",
+          "female": 389,
+          "male": 562
+        },
+        {
+          "size": 118,
+          "name": "I63.1 Cerebral infarction due to embolism of precerebral arteries",
+          "female": 63,
+          "male": 55
+        },
+        {
+          "size": 4348,
+          "name": "I63.2 Cerebral infarction due to unspecified occlusion or stenosis of precerebral arteries",
+          "female": 2056,
+          "male": 2292
+        },
+        {
+          "size": 12006,
+          "name": "I63.3 Cerebral infarction due to thrombosis of cerebral arteries",
+          "female": 7875,
+          "male": 4131
+        },
+        {
+          "size": 3938,
+          "name": "I63.4 Cerebral infarction due to embolism of cerebral arteries",
+          "female": 2374,
+          "male": 1564
+        },
+        {
+          "size": 1594,
+          "name": "I63.5 Cerebral infarction due to unspecified occlusion or stenosis of cerebral arteries",
+          "female": 978,
+          "male": 616
+        },
+        {
+          "size": 1,
+          "name": "I63.6 Cerebral infarction due to cerebral venous thrombosis, nonpyogenic",
+          "female": 0,
+          "male": 1
+        },
+        {
+          "size": 618,
+          "name": "I63.8 Other cerebral infarction",
+          "female": 334,
+          "male": 284
+        },
+        {
+          "size": 53055,
+          "name": "I63.9 Cerebral infarction, unspecified",
+          "female": 32462,
+          "male": 20593
+        },
+        {
+          "size": 515932,
+          "name": "I64 Stroke, not specified as haemorrhage or infarction",
+          "female": 324742,
+          "male": 191190
+        }
+      ]
+    },
+    {
+      "name": "I67.- Other cerebrovascular diseases",
+      "children": [
+        {
+          "size": 111,
+          "name": "I67.0 Dissection of cerebral arteries, nonruptured",
+          "female": 51,
+          "male": 60
+        },
+        {
+          "size": 2477,
+          "name": "I67.1 Cerebral aneurysm, nonruptured",
+          "female": 1547,
+          "male": 930
+        },
+        {
+          "size": 7383,
+          "name": "I67.2 Cerebral atherosclerosis",
+          "female": 4884,
+          "male": 2499
+        },
+        {
+          "size": 150,
+          "name": "I67.3 Progressive vascular leukoencephalopathy",
+          "female": 89,
+          "male": 61
+        },
+        {
+          "size": 390,
+          "name": "I67.4 Hypertensive encephalopathy",
+          "female": 240,
+          "male": 150
+        },
+        {
+          "size": 89,
+          "name": "I67.5 Moyamoya disease",
+          "female": 64,
+          "male": 25
+        },
+        {
+          "size": 433,
+          "name": "I67.7 Cerebral arteritis, not elsewhere classified",
+          "female": 284,
+          "male": 149
+        },
+        {
+          "size": 6881,
+          "name": "I67.8 Other specified cerebrovascular diseases",
+          "female": 4177,
+          "male": 2704
+        },
+        {
+          "size": 40031,
+          "name": "I67.9 Cerebrovascular disease, unspecified",
+          "female": 25573,
+          "male": 14458
+        }
+      ]
+    },
+    {
+      "name": "I69.- Sequelae of cerebrovascular disease",
+      "children": [
+        {
+          "size": 417,
+          "name": "I69.0 Sequelae of subarachnoid haemorrhage",
+          "female": 280,
+          "male": 137
+        },
+        {
+          "size": 1100,
+          "name": "I69.1 Sequelae of intracerebral haemorrhage",
+          "female": 642,
+          "male": 458
+        },
+        {
+          "size": 622,
+          "name": "I69.2 Sequelae of other nontraumatic intracranial haemorrhage",
+          "female": 283,
+          "male": 339
+        },
+        {
+          "size": 5061,
+          "name": "I69.3 Sequelae of cerebral infarction",
+          "female": 3020,
+          "male": 2041
+        },
+        {
+          "size": 60742,
+          "name": "I69.4 Sequelae of stroke, not specified as haemorrhage or infarction",
+          "female": 35698,
+          "male": 25044
+        },
+        {
+          "size": 51828,
+          "name": "I69.8 Sequelae of other and unspecified cerebrovascular diseases",
+          "female": 34215,
+          "male": 17613
+        }
+      ]
+    },
+    {
+      "name": "I70.- Atherosclerosis",
+      "children": [
+        {
+          "size": 296,
+          "name": "I70.0 Atherosclerosis of aorta",
+          "female": 166,
+          "male": 130
+        },
+        {
+          "size": 396,
+          "name": "I70.1 Atherosclerosis of renal artery",
+          "female": 252,
+          "male": 144
+        },
+        {
+          "size": 2940,
+          "name": "I70.2 Atherosclerosis of arteries of extremities",
+          "female": 1764,
+          "male": 1176
+        },
+        {
+          "size": 23,
+          "name": "I70.8 Atherosclerosis of other arteries",
+          "female": 14,
+          "male": 9
+        },
+        {
+          "size": 78538,
+          "name": "I70.9 Generalized and unspecified atherosclerosis",
+          "female": 49514,
+          "male": 29024
+        }
+      ]
+    },
+    {
+      "name": "I71.- Aortic aneurysm and dissection",
+      "children": [
+        {
+          "size": 20796,
+          "name": "I71.0 Dissection of aorta [any part]",
+          "female": 8500,
+          "male": 12296
+        },
+        {
+          "size": 6131,
+          "name": "I71.1 Thoracic aortic aneurysm, ruptured",
+          "female": 3164,
+          "male": 2967
+        },
+        {
+          "size": 4368,
+          "name": "I71.2 Thoracic aortic aneurysm, without mention of rupture",
+          "female": 2492,
+          "male": 1876
+        },
+        {
+          "size": 30710,
+          "name": "I71.3 Abdominal aortic aneurysm, ruptured",
+          "female": 10128,
+          "male": 20582
+        },
+        {
+          "size": 13215,
+          "name": "I71.4 Abdominal aortic aneurysm, without mention of rupture",
+          "female": 5088,
+          "male": 8127
+        },
+        {
+          "size": 610,
+          "name": "I71.5 Thoracoabdominal aortic aneurysm, ruptured",
+          "female": 289,
+          "male": 321
+        },
+        {
+          "size": 868,
+          "name": "I71.6 Thoracoabdominal aortic aneurysm, without mention of rupture",
+          "female": 415,
+          "male": 453
+        },
+        {
+          "size": 9111,
+          "name": "I71.8 Aortic aneurysm of unspecified site, ruptured",
+          "female": 3651,
+          "male": 5460
+        },
+        {
+          "size": 4423,
+          "name": "I71.9 Aortic aneurysm of unspecified site, without mention of rupture",
+          "female": 1986,
+          "male": 2437
+        }
+      ]
+    },
+    {
+      "name": "J18.- Pneumonia, organism unspecified",
+      "children": [
+        {
+          "size": 10463,
+          "name": "J18.0 Bronchopneumonia, unspecified",
+          "female": 5473,
+          "male": 4990
+        },
+        {
+          "size": 9549,
+          "name": "J18.1 Lobar pneumonia, unspecified",
+          "female": 4783,
+          "male": 4766
+        },
+        {
+          "size": 405,
+          "name": "J18.2 Hypostatic pneumonia, unspecified",
+          "female": 245,
+          "male": 160
+        },
+        {
+          "size": 286,
+          "name": "J18.8 Other pneumonia, organism unspecified",
+          "female": 144,
+          "male": 142
+        },
+        {
+          "size": 325019,
+          "name": "J18.9 Pneumonia, unspecified",
+          "female": 183840,
+          "male": 141179
+        }
+      ]
+    },
+    {
+      "name": "J43.- Emphysema",
+      "children": [
+        {
+          "size": 6,
+          "name": "J43.0 MacLeod syndrome",
+          "female": 2,
+          "male": 4
+        },
+        {
+          "size": 51,
+          "name": "J43.1 Panlobular emphysema",
+          "female": 15,
+          "male": 36
+        },
+        {
+          "size": 82,
+          "name": "J43.2 Centrilobular emphysema",
+          "female": 31,
+          "male": 51
+        },
+        {
+          "size": 18,
+          "name": "J43.8 Other emphysema",
+          "female": 8,
+          "male": 10
+        },
+        {
+          "size": 94561,
+          "name": "J43.9 Emphysema, unspecified",
+          "female": 45388,
+          "male": 49173
+        }
+      ]
+    },
+    {
+      "name": "J44.- Other chronic obstructive pulmonary disease",
+      "children": [
+        {
+          "size": 1894,
+          "name": "J44.0 Chronic obstructive pulmonary disease with acute lower respiratory infection",
+          "female": 1027,
+          "male": 867
+        },
+        {
+          "size": 195,
+          "name": "J44.1 Chronic obstructive pulmonary disease with acute exacerbation, unspecified",
+          "female": 90,
+          "male": 105
+        },
+        {
+          "size": 22526,
+          "name": "J44.8 Other specified chronic obstructive pulmonary disease",
+          "female": 11713,
+          "male": 10813
+        },
+        {
+          "size": 585828,
+          "name": "J44.9 Chronic obstructive pulmonary disease, unspecified",
+          "female": 298058,
+          "male": 287770
+        }
+      ]
+    },
+    {
+      "name": "J69.- Pneumonitis due to solids and liquids",
+      "children": [
+        {
+          "size": 100874,
+          "name": "J69.0 Pneumonitis due to food and vomit",
+          "female": 49997,
+          "male": 50877
+        },
+        {
+          "size": 28,
+          "name": "J69.1 Pneumonitis due to oils and essences",
+          "female": 17,
+          "male": 11
+        },
+        {
+          "size": 10,
+          "name": "J69.8 Pneumonitis due to other solids and liquids",
+          "female": 6,
+          "male": 4
+        }
+      ]
+    },
+    {
+      "name": "J84.- Other interstitial pulmonary diseases",
+      "children": [
+        {
+          "size": 955,
+          "name": "J84.0 Alveolar and parietoalveolar conditions",
+          "female": 415,
+          "male": 540
+        },
+        {
+          "size": 61801,
+          "name": "J84.1 Other interstitial pulmonary diseases with fibrosis",
+          "female": 29906,
+          "male": 31895
+        },
+        {
+          "size": 205,
+          "name": "J84.8 Other specified interstitial pulmonary diseases",
+          "female": 108,
+          "male": 97
+        },
+        {
+          "size": 13530,
+          "name": "J84.9 Interstitial pulmonary disease, unspecified",
+          "female": 6905,
+          "male": 6625
+        }
+      ]
+    },
+    {
+      "name": "K55.- Vascular disorders of intestine",
+      "children": [
+        {
+          "size": 20092,
+          "name": "K55.0 Acute vascular disorders of intestine",
+          "female": 12823,
+          "male": 7269
+        },
+        {
+          "size": 1155,
+          "name": "K55.1 Chronic vascular disorders of intestine",
+          "female": 760,
+          "male": 395
+        },
+        {
+          "size": 441,
+          "name": "K55.2 Angiodysplasia of colon",
+          "female": 281,
+          "male": 160
+        },
+        {
+          "size": 20,
+          "name": "K55.8 Other vascular disorders of intestine",
+          "female": 16,
+          "male": 4
+        },
+        {
+          "size": 32432,
+          "name": "K55.9 Vascular disorder of intestine, unspecified",
+          "female": 21672,
+          "male": 10760
+        }
+      ]
+    },
+    {
+      "name": "K70.- Alcoholic liver disease",
+      "children": [
+        {
+          "size": 1428,
+          "name": "K70.0 Alcoholic fatty liver",
+          "female": 436,
+          "male": 992
+        },
+        {
+          "size": 5021,
+          "name": "K70.1 Alcoholic hepatitis",
+          "female": 1580,
+          "male": 3441
+        },
+        {
+          "size": 26,
+          "name": "K70.2 Alcoholic fibrosis and sclerosis of liver",
+          "female": 9,
+          "male": 17
+        },
+        {
+          "size": 46070,
+          "name": "K70.3 Alcoholic cirrhosis of liver",
+          "female": 11793,
+          "male": 34277
+        },
+        {
+          "size": 9100,
+          "name": "K70.4 Alcoholic hepatic failure",
+          "female": 2582,
+          "male": 6518
+        },
+        {
+          "size": 11658,
+          "name": "K70.9 Alcoholic liver disease, unspecified",
+          "female": 2991,
+          "male": 8667
+        }
+      ]
+    },
+    {
+      "name": "K74.- Fibrosis and cirrhosis of liver",
+      "children": [
+        {
+          "size": 86,
+          "name": "K74.0 Hepatic fibrosis",
+          "female": 38,
+          "male": 48
+        },
+        {
+          "size": 91,
+          "name": "K74.1 Hepatic sclerosis",
+          "female": 36,
+          "male": 55
+        },
+        {
+          "size": 2450,
+          "name": "K74.3 Primary biliary cirrhosis",
+          "female": 2156,
+          "male": 294
+        },
+        {
+          "size": 22,
+          "name": "K74.4 Secondary biliary cirrhosis",
+          "female": 13,
+          "male": 9
+        },
+        {
+          "size": 575,
+          "name": "K74.5 Biliary cirrhosis, unspecified",
+          "female": 454,
+          "male": 121
+        },
+        {
+          "size": 82949,
+          "name": "K74.6 Other and unspecified cirrhosis of liver",
+          "female": 33453,
+          "male": 49496
+        }
+      ]
+    },
+    {
+      "name": "N18.- Chronic kidney disease",
+      "children": [
+        {
+          "size": 43221,
+          "name": "N18.9 Chronic kidney disease, unspecified",
+          "female": 22099,
+          "male": 21122
+        },
+        {
+          "size": 103016,
+          "name": "N19 Unspecified kidney failure",
+          "female": 54078,
+          "male": 48938
+        }
+      ]
+    },
+    {
+      "name": "N39.- Other disorders of urinary system",
+      "children": [
+        {
+          "size": 83249,
+          "name": "N39.0 Urinary tract infection, site not specified",
+          "female": 57625,
+          "male": 25624
+        },
+        {
+          "size": 2,
+          "name": "N39.1 Persistent proteinuria, unspecified",
+          "female": 2,
+          "male": 0
+        },
+        {
+          "size": 2,
+          "name": "N39.3 Stress incontinence",
+          "female": 2,
+          "male": 0
+        },
+        {
+          "size": 1,
+          "name": "N39.4 Other specified urinary incontinence",
+          "female": 1,
+          "male": 0
+        },
+        {
+          "size": 6,
+          "name": "N39.8 Other specified disorders of urinary system",
+          "female": 1,
+          "male": 5
+        },
+        {
+          "size": 66,
+          "name": "N39.9 Disorder of urinary system, unspecified",
+          "female": 41,
+          "male": 25
+        },
+        {
+          "size": 2722,
+          "name": "N40 Hyperplasia of prostate",
+          "female": 0,
+          "male": 2722
+        }
+      ]
+    },
+    {
+      "name": "R96.- Other sudden death, cause unknown",
+      "children": [
+        {
+          "size": 1960,
+          "name": "R96.0 Instantaneous death",
+          "female": 1015,
+          "male": 945
+        },
+        {
+          "size": 1,
+          "name": "R96.1 Death occurring less than 24 hours from onset of symptoms, not otherwise explained",
+          "female": 0,
+          "male": 1
+        },
+        {
+          "size": 189,
+          "name": "R98 Unattended death",
+          "female": 58,
+          "male": 131
+        },
+        {
+          "size": 91417,
+          "name": "R99 Other ill-defined and unspecified causes of mortality",
+          "female": 40407,
+          "male": 51010
+        }
+      ]
+    },
+    {
+      "name": "V89.- Motor- or nonmotor-vehicle accident, type of vehicle unspecified",
+      "children": [
+        {
+          "size": 480,
+          "name": "V89.0 Person injured in unspecified motor-vehicle accident, nontraffic",
+          "female": 141,
+          "male": 339
+        },
+        {
+          "size": 21,
+          "name": "V89.1 Person injured in unspecified nonmotor-vehicle accident, nontraffic",
+          "female": 7,
+          "male": 14
+        },
+        {
+          "size": 61456,
+          "name": "V89.2 Person injured in unspecified motor-vehicle accident, traffic",
+          "female": 20810,
+          "male": 40646
+        },
+        {
+          "size": 9,
+          "name": "V89.3 Person injured in unspecified nonmotor-vehicle accident, traffic",
+          "female": 3,
+          "male": 6
+        },
+        {
+          "size": 1630,
+          "name": "V89.9 Person injured in unspecified vehicle accident",
+          "female": 490,
+          "male": 1140
+        }
+      ]
+    }
+  ]
+}

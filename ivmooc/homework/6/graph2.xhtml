@@ -1,0 +1,33 @@
+<?xml-stylesheet href="../../../xsltforms/build/xsltforms.xsl" type="text/xsl"?>
+<?xsltforms-options debug="no"?>
+<?css-conversion no?>
+<?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" 
+    schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:cwb="http://bibfram.es/cwb/"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:marc="http://www.loc.gov/MARC21/slim"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:oa="http://www.w3.org/ns/oa#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:trix="http://www.w3.org/2004/03/trix/trix-1/"
+    xmlns:xf="http://www.w3.org/2002/xforms"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <head>
+        <title></title>
+        <xf:model id="graph2-model">
+            <xf:action ev:event="d3">             
+                <xf:load resource="javascript:if (!(typeof d3.selectAll('g.node') == 'undefined')) { d3.selectAll('g.node').remove(); d3.selectAll('line.link').remove(); } { queueD3js('../../../resources/data/nodes2.csv', '../../../resources/data/edges2.csv')}"></xf:load>               
+            </xf:action>
+        </xf:model>
+    </head>
+    <body>
+        <div id="subform-wrapper">
+            
+        </div>
+    </body>
+</html>

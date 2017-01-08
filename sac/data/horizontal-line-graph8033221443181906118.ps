@@ -1,0 +1,542 @@
+%!PS-Adobe-3.0
+%%Pages: 1
+%%Title: (Temporal Bar Graph)
+%%Creator: (Sci2)
+%%CreationDate: (2016-03-13)
+%%BeginFeature: *PageSize Letter
+	letter
+%%EndFeature
+%%EndComments
+		
+%%BeginProlog
+%%EndProlog
+		
+%%BeginSetup
+%%BeginFeature: *PageSize Letter
+	<< /PageSize [792.0 612.0] >> setpagedevice
+%%EndFeature
+%%EndSetup
+	
+%%%%%%%%%%%%%%%%%%%%%%%
+% pageHeading Positioning
+%%%%%%%%%%%%%%%%%%%%%%%
+
+/pageHeadingLeft { 18.0 } def
+/pageHeadingBottom { 594.0 } def
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title - pageHeading
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+/pageHeading {
+
+/pageHeadingTop { pageHeadingBottom } def % HACK until I've rewritten this
+/lineSpacing { 3.0 } def
+/titleFontSize { 14 } def
+/titleFont { /Arial-BoldMT titleFontSize selectfont } def
+/otherFontSize { 10 } def
+/otherFont { /ArialMT otherFontSize selectfont } def
+
+/title { (Temporal Visualization) } def
+/query { ((Generated from CSV file: /tmp/temp/Preprocessed-maximum burst level 15693072774761546565-7832766658626235793.csv)) } def
+/date { (March 13, 2016 | 9:05 PM EDT) } def
+
+gsave
+
+pageHeadingLeft pageHeadingTop translate
+0 0 moveto
+	
+0 titleFontSize neg moveto
+gsave titleFont title show grestore
+0 titleFontSize lineSpacing add neg rmoveto
+
+query length 0 gt % query exists or doesn't
+{ 
+	gsave otherFont query show grestore
+	0 otherFontSize lineSpacing add neg rmoveto
+} 
+if
+
+gsave otherFont date show grestore
+0 otherFontSize lineSpacing add neg rmoveto
+
+grestore
+
+} def
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% areaLegend Positioning
+%%%%%%%%%%%%%%%%%%%%%%%
+
+/areaLegendLeft { 259.2 } def
+/areaLegendBottom { 108.0 } def
+
+%%%%%%%%%%%%%%%%
+%  AreaLegend  %
+%%%%%%%%%%%%%%%%
+/areaLegend {
+	/areaLegendTop { areaLegendBottom } def % HACK.  Sadly I chose the wrong dimentions to specify.  I should have done top and left.  Until I fix that, this is here.
+	/fontSize { 10 } def
+	/barWidth { 50.0 } def
+	/space { 6 } def
+	
+	/draw0Legend { true } def
+	/bigBarHeight { 18.0 } def
+	/medBarHeight { 6.0 } def
+	/smallBarHeight { 2.0 } def
+	
+	/bigBarValue { (521) } def
+	/medBarValue { (174) } def
+	/smallBarValue { (58) } def
+	
+	/yearValue { (9.73 Year(s)) } def
+	
+	/setTitleFont { /Arial-BoldMT 14 selectfont } def
+	/legendText { (Area) } def
+	
+	gsave
+	/ArialMT fontSize selectfont
+	0 0 moveto
+	areaLegendLeft areaLegendTop translate
+	% Draw the title
+	gsave
+		0 0 moveto
+		setTitleFont
+		legendText stringwidth pop 10 add neg legendText textheight neg rmoveto
+		legendText show
+	grestore
+	% Draw the big bar and label
+	0 0 moveto
+		barWidth 0 rlineto
+		0 bigBarHeight neg rlineto
+		barWidth neg 0 rlineto
+	fill
+	barWidth 5 add 0 moveto
+	0 bigBarHeight 2 div neg 1 add rmoveto 
+	bigBarValue centerTextLine bigBarValue show
+	0 bigBarHeight space add neg translate
+	
+	% Draw the med bar and label
+	0 0 moveto
+		barWidth 0 rlineto
+		0 medBarHeight neg rlineto
+		barWidth neg 0 rlineto
+	fill
+	barWidth 5 add 0 moveto
+	0 medBarHeight 2 div neg 1 add rmoveto 
+	medBarValue centerTextLine medBarValue show
+	0 medBarHeight space add neg translate
+	
+	% Draw the small bar and label
+	0 0 moveto
+		barWidth 0 rlineto
+		0 smallBarHeight neg rlineto
+		barWidth neg 0 rlineto
+	fill
+	barWidth 5 add 0 moveto
+	0 smallBarHeight 2 div neg 1 add rmoveto 
+	smallBarValue centerTextLine smallBarValue show
+	0 smallBarHeight space 4 add add neg translate
+	
+	% Draw the 0 bar and lable if needed
+	0 0 moveto
+	  draw0Legend 
+	  {
+		gsave
+	    [2] 0 setdash
+		0 setlinewidth
+		barWidth 0 rlineto
+		stroke
+		barWidth 5 add 0 moveto
+		(0) centerTextLine (0) show
+		grestore
+		0 space neg translate
+	  } 
+	if
+	
+	% Draw the year line
+	%%
+	% This creates a notch, but I don't know how to fix that.
+	%%
+	0 0 moveto
+	0 5 neg rlineto stroke
+	0 0 moveto
+	barWidth 0 rlineto stroke
+	barWidth 0 moveto
+	0 5 neg rlineto stroke
+	% Draw the year label
+	0 fontSize neg translate
+	0 5 neg moveto
+	yearValue show
+	0 fontSize space add neg translate
+	grestore
+
+} def
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% footer Positioning
+%%%%%%%%%%%%%%%%%%%%%%%
+
+/footerLeft { 396.0 } def
+/footerBottom { 18.0 } def
+
+%%%%%%%%%%%%%
+% Footer Area
+%%%%%%%%%%%%%
+
+/footerFontSize { 10.0 } def
+
+/footer { % (footer)
+	gsave
+	0.6 0.6 0.6 setrgbcolor % #999999
+	/Arial-ItalicMT footerFontSize selectfont
+	792.0 2 div footerFontSize footerBottom add center
+	show
+	grestore
+} def 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% legendTitleTop Positioning
+%%%%%%%%%%%%%%%%%%%%%%%
+
+/legendTitleTopLeft { 18.0 } def
+/legendTitleTopBottom { 108.0 } def
+
+%%%%%%%%%%%%%%%
+% Legend Area
+%%%%%%%%%%%%%%%
+/legendTitleTopTop { legendTitleTopBottom } def % HACK until I redo all the postscript to work from the top down.
+
+/legendTitleTopTitle { (Legend) } def
+/legendTitleTopArea { (Area size: Weight) } def
+/legendTitleTopMin { (Minimum = 68) } def
+/legendTitleTopMax { (Maximum = 150) } def
+/legendTitleTopLabel { (Text label: Word) } def
+/legendTitleTopColor1 { () } def
+/legendTitleTopColor2 { () } def
+
+/legendTitleTopTitleFontSize { 14 } def
+/legendTitleTopTitleFont { /Arial-BoldMT legendTitleTopTitleFontSize selectfont } def
+
+/legendTitleTopNormalFontSize { 10 } def
+/legendTitleTopNormalFont { /ArialMT legendTitleTopNormalFontSize selectfont } def
+
+
+/legendTitleTop { % (title) [min] [max] (category) => -
+	gsave
+	0 0 0 setrgbcolor
+	legendTitleTopLeft legendTitleTopTop translate
+	legendTitleTopTitleFontSize neg 0 exch translate
+	
+	0 0 moveto
+	legendTitleTopTitleFont 
+	legendTitleTopTitle show
+	legendTitleTopTitleFontSize neg 0 exch translate
+	
+	0 0 moveto
+	legendTitleTopNormalFont
+	legendTitleTopArea show
+	legendTitleTopNormalFontSize neg 0 exch translate
+	
+	0 0 moveto
+	legendTitleTopMin show
+	legendTitleTopNormalFontSize neg 0 exch translate
+	
+	0 0 moveto
+	legendTitleTopMax show
+	legendTitleTopNormalFontSize neg 0 exch translate
+	
+	0 0 moveto
+	legendTitleTopLabel show
+	legendTitleTopNormalFontSize neg 0 exch translate
+	
+	0 0 moveto 
+	legendTitleTopColor1 show
+	legendTitleTopNormalFontSize neg 0 exch translate
+	
+	0 0 moveto
+	legendTitleTopColor2 show
+	legendTitleTopNormalFontSize neg 0 exch translate
+	grestore
+} def
+	
+%%%%%%%%%%%%%%%%%%%%%%%
+% howto Positioning
+%%%%%%%%%%%%%%%%%%%%%%%
+
+/howtoLeft { 421.2 } def
+/howtoBottom { 108.0 } def
+
+%%%%%%%%%%%
+%  Howto  %
+%%%%%%%%%%%
+/howto {
+	/howtoTop { howtoBottom } def % HACK!  This is a shortcut until I update the code
+	/howtoTitleFontSize { 14 } def
+	/howtoTitleFont { /Arial-BoldMT howtoTitleFontSize selectfont } def
+	/howtoTextFontSize { 10 } def
+	/howtoTextFont { /ArialMT howtoTextFontSize selectfont } def
+	/howtoLineSpacing { 1.0 } def
+	
+	gsave
+	0 0 0 setrgbcolor
+	/ArialMT howtoTextFontSize selectfont
+	howtoLeft howtoBottom translate
+	0 howtoTitleFontSize neg moveto
+	gsave howtoTitleFont (How To Read This Map) show grestore
+	0 howtoTitleFontSize howtoLineSpacing add neg rmoveto
+	
+	howtoTextFont
+	gsave (This ) show /Arial-ItalicMT howtoTextFontSize selectfont (temporal bar graph) show howtoTextFont ( visualization represents each record as a horizontal) show grestore
+	0 howtoTextFontSize howtoLineSpacing add neg rmoveto
+	gsave (bar with a specific start and end date and a text label on its left side. The area) show grestore
+	0 howtoTextFontSize howtoLineSpacing add neg rmoveto
+	gsave (of each bar encodes a numerical attribute value, e.g., total amount of funding.) show grestore
+	0 howtoTextFontSize howtoLineSpacing add neg rmoveto
+	gsave (Bars may be colored to present categorical attribute values of records.) show grestore
+	0 howtoTextFontSize howtoLineSpacing add neg rmoveto
+	grestore
+	
+} def
+
+%%%%%%%%%%%
+% Utilities
+%%%%%%%%%%%
+% Taken from http://stackoverflow.com/questions/518837/how-can-you-get-the-height-metric-of-a-string-in-postscript
+/textheight { % (text) => [text_height]
+    gsave                                  % save graphic context
+    {                            
+        100 100 moveto                     % move to some point 
+        true charpath pathbbox      	   % gets text path bounding box (LLx LLy URx URy)
+        exch pop 3 -1 roll pop             % keeps LLy and URy
+        exch sub                           % URy - LLy
+    }
+    stopped                                % did the last block fail?
+    {
+        pop pop                            % get rid of "stopped" junk
+        currentfont /FontMatrix get 3 get  % gets alternative text height
+    }
+    if
+    grestore                               % restore graphic context
+} bind def
+
+/center { % (text) x y => -
+	moveto dup stringwidth pop -2 div 0 rmoveto
+} def
+
+/concatstrings { % (a) (b) => (ab)
+	exch dup length
+	2 index length add string
+	dup dup 4 2 roll copy length
+	4 -1 roll putinterval
+} bind def
+
+/righttrim { % [x]points (abcde) -> (a...)
+	dup % => [x] (text) (text)
+	stringwidth pop % => [x] (text) [text_width]
+	3 -1 roll % => (text) [text_width] [x]
+	dup % => (text) [text_width] [x] [x]
+	3 1 roll % => (text) [x] [text_width] [x]
+	gt % => (text) [x] 
+	{ 
+	exch dup % => [x] (text) (text)
+	length 1 sub % [x] (text) [text_length - 1]
+	0 exch getinterval % (t)
+	righttrim
+	dup length 3 sub % (text) [text_length - 3]
+	0 exch getinterval % (t)
+	(...) concatstrings % [x] (t...)
+	} 
+	{
+	pop % => (t...)
+	}
+	ifelse
+} def
+
+/centerTextLine { % x y string => - moves to where the text would be centered
+    textheight 0.5 mul neg
+    0 exch rmoveto
+} bind def
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% visualization Positioning
+%%%%%%%%%%%%%%%%%%%%%%%
+
+/visualizationLeft { 54.0 } def
+/visualizationBottom { 133.20000000000002 } def
+
+%%%%%%%%%%%
+% Viz Area 
+%%%%%%%%%%%
+/pointsPerDay { 0.014080375476679377 } def % unused here but useful for legends
+/pointsPerY { 122.62831956842855 } def % unused here but useful for legends
+/topVizPosition { 397.8 } def
+/leftTextMargin { visualizationLeft } def
+
+/bar { % x1 y1 deltaX deltaY => -
+	dup 0.0 eq 
+	{
+	pop % x1 y1 deltaX
+	3 1 roll % deltaX x1 y1
+	moveto % deltaX
+	[2] 0 setdash
+	0 setlinewidth
+	0 rlineto
+	stroke
+	}	
+	{
+	newpath
+	4 2 roll moveto
+	exch dup 0 rlineto 0 3 -1 roll
+	rlineto neg 0 rlineto
+	fill
+	} ifelse
+} def
+/labelbar { % (label) x1 y1 deltaX deltaY color => -
+	gsave
+	visualizationLeft visualizationBottom translate
+	leftTextMargin 0 translate
+	0 0 moveto
+	setrgbcolor
+	5 -1 roll % stack: x1 y1 deltaX deltaY label
+	4 index 4 index 3 index 2 div add % stack: x1 y1 deltaX deltaY label x1 (y1 + deltaY/2)
+	labelbarLabel % draw the label at x1 (y1 + deltaY/2)
+	bar
+	grestore
+} def
+/labelbarSpacing { visualizationLabelBarFontSize } def
+/labelbarLabel { % (label) [x] [y] => -
+	gsave
+	0 0 0 setrgbcolor
+	exch  % [y] [x]
+	dup  % [y] [x] [x]
+	3 -1 roll % [x] [x] [y]
+	moveto
+	leftTextMargin labelbarSpacing sub add exch righttrim
+	dup stringwidth pop neg labelbarSpacing sub % (label) x
+	exch dup textheight 2 div neg % x (label) y
+	3 -1 roll exch % (label) x y
+	rmoveto
+	show
+	grestore
+} def
+
+/datelineLineWidth { 0 } def
+/datelineDashSize { 5 } def
+/dateline { % (label) x => -
+	gsave
+	visualizationLeft visualizationBottom translate
+	leftTextMargin 0 translate
+	dup
+	0 moveto
+	0.3 0.3 0.3 setrgbcolor
+	[datelineDashSize] 0 setdash
+	datelineLineWidth setlinewidth
+	0 topVizPosition rlineto
+	stroke
+	0 0 0 setrgbcolor
+	datelinelabel
+	grestore
+} def
+
+/datelineLabelFont { /ArialMT } def
+/datelineLabelFontSize { 10.0 } def
+/datelinelabel { % (label) x => -
+	datelineLabelFont datelineLabelFontSize selectfont
+	datelineLabelFontSize neg center
+	show
+} def
+
+%%Page: 1 1
+
+pageHeading
+
+(CNS (cns.iu.edu)) footer
+
+gsave
+
+
+(1910) 0.0 dateline
+
+(1918) 41.14285714285714 dateline
+
+(1926) 82.28571428571428 dateline
+
+(1934) 123.42857142857142 dateline
+
+(1942) 164.57142857142856 dateline
+
+(1950) 205.7142857142857 dateline
+
+(1958) 246.85714285714283 dateline
+
+(1966) 288.0 dateline
+
+(1974) 329.1428571428571 dateline
+
+(1982) 370.2857142857143 dateline
+
+(1990) 411.4285714285714 dateline
+
+(1998) 452.57142857142856 dateline
+
+(2006) 493.71428571428567 dateline
+
+(2014) 534.8571428571428 dateline
+
+(2022) 576.0 dateline
+
+/visualizationLabelBarFontSize { 4.520454545454548 } def
+/ArialMT visualizationLabelBarFontSize selectfont
+
+(alien) 0.0 4.520454545454548 401.1358169551188 0.6469481665243104 0.0 0.0 0.0 labelbar
+
+(act) 359.99295981226163 9.687857257433407 51.435611616309764 4.407026445306109 0.0 0.0 0.0 labelbar
+
+(microform) 359.99295981226163 18.615338248194064 41.14285714285714 4.962315847858562 0.0 0.0 0.0 labelbar
+
+(control) 370.2857142857143 28.098108641507174 41.14285714285714 5.2154362273573875 0.0 0.0 0.0 labelbar
+
+(hr) 370.2857142857143 37.83399941431911 41.14285714285714 3.3384130253368767 0.0 0.0 0.0 labelbar
+
+(reform) 370.2857142857143 45.692866985110534 41.14285714285714 5.399604781006541 0.0 0.0 0.0 labelbar
+
+(report) 370.2857142857143 55.61292631157162 61.71428571428571 2.0247229173129813 0.0 0.0 0.0 labelbar
+
+(african) 432.0 62.158103774339146 20.57142857142857 5.66647069018152 0.0 0.0 0.0 labelbar
+
+(ananda) 524.5643883836902 72.3450290099752 5.153417424464652 22.822721080962157 0.0 0.0 0.0 labelbar
+
+(boehm) 524.5643883836902 99.6882046363919 5.153417424464652 24.342564884311912 0.0 0.0 0.0 labelbar
+
+(controversi) 524.5643883836902 128.55122406615837 5.153417424464652 22.907935244687582 0.0 0.0 0.0 labelbar
+
+(deborah) 524.5643883836902 155.97961385630052 5.153417424464652 24.160569303255873 0.0 0.0 0.0 labelbar
+
+(famili) 524.5643883836902 184.66063770501094 20.57142857142857 7.80111071045266 0.0 0.0 0.0 labelbar
+
+(gender) 524.5643883836902 196.98220296091816 5.153417424464652 24.42613460421521 0.0 0.0 0.0 labelbar
+
+(intim) 524.5643883836902 225.92879211058792 5.153417424464652 24.433413750401705 0.0 0.0 0.0 labelbar
+
+(religion) 524.5643883836902 254.8826604064442 5.153417424464652 23.627460960879034 0.0 0.0 0.0 labelbar
+
+(rose) 524.5643883836902 283.03057591277775 5.153417424464652 22.639603805667083 0.0 0.0 0.0 labelbar
+
+(showdown) 524.5643883836902 310.19063426389937 5.153417424464652 22.822721080962157 0.0 0.0 0.0 labelbar
+
+(sonoran) 524.5643883836902 337.53380989031604 5.153417424464652 22.822721080962157 0.0 0.0 0.0 labelbar
+
+(transnat) 524.5643883836902 364.8769855167327 5.153417424464652 23.88210539235817 0.0 0.0 0.0 labelbar
+
+grestore
+
+legendTitleTop
+
+howto
+
+areaLegend
+
+showpage
+
+%%Trailer
