@@ -1,0 +1,61 @@
+<?xml-stylesheet href="/xsltforms/build/xsltforms.xsl" type="text/xsl"?><?xsltforms-options debug="no"?><?css-conversion no?><?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<!--<?xsltforms-options domengine="name=Fleur;url=/static/xphoneforms/build/js/fleur.js;uri=http://www.agencexml.com/Fleur;version=1.0"?>-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:xf="http://www.w3.org/2002/xforms"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <head>
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <title>Test xf:upload control</title>
+        <xf:model>
+            <xf:instance id="result">
+                <data xmlns="">
+                    <result></result>
+                </data>
+            </xf:instance>
+            <xf:instance id="file-upload">
+                <data xmlns="">
+                    <upload filename="">
+                        <fileToConvert></fileToConvert>
+                    </upload>
+                </data>
+            </xf:instance>
+            <xf:submission id="upload-file" method="multipart-post"
+                mode="asynchronous"
+                ref="instance('file-upload')/upload/fileToConvert"
+                replace="instance" targetref="instance('result')/result"
+                resource="http://www.tei-c.org/ege-webservice//Conversions/TEI%3Atext%3Axml/docx%3Aapplication%3Avnd.openxmlformats-officedocument.wordprocessingml.document"
+            />
+        </xf:model>
+    </head>
+    <body>
+        <xf:group ref="instance('file-upload')/upload">
+
+            <h1>Test <code>&lt;xf:upload/&gt;</code> control</h1>
+
+            <xf:group>
+                <xf:upload ref="fileToConvert" mediatype="application/xml"
+                    incremental="true">
+                    <xf:label>Select</xf:label>
+                    <xf:filename ref="instance('file-upload')/upload/@filename"
+                    />
+                </xf:upload>
+                <xf:trigger ref="fileToConvert">
+                    <xf:label>Upload</xf:label>
+                    <xf:action ev:event="DOMActivate">
+                        <xf:send submission="upload-file"/>
+                    </xf:action>
+                </xf:trigger>
+            </xf:group>
+
+            <xf:group>
+                <!--<xf:output value="serialize(instance('file-upload'))"/>-->
+            </xf:group>
+
+            <xf:group>
+                <xf:output value="serialize(instance('result'))"/>
+            </xf:group>
+
+        </xf:group>
+    </body>
+</html>
