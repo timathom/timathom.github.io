@@ -1,8 +1,8 @@
 /*
-XSLTForms rev.638 (638)
-itemset/copy and @appearance='full'
+XSLTForms rev.639 (639)
+itemset/copy initialization
 
-Copyright (C) 2016 agenceXML - Alain COUTHURES
+Copyright (C) 2017 agenceXML - Alain COUTHURES
 Contact at : xsltforms@agencexml.com
 
 This library is free software; you can redistribute it and/or
@@ -146,8 +146,8 @@ var XsltForms_xpathAxis = {
 };
 var XsltForms_context;
 var XsltForms_globals = {
-	fileVersion: "rev.638",
-	fileVersionNumber: 638,
+	fileVersion: "rev.639",
+	fileVersionNumber: 639,
 	language: "navigator",
 	debugMode: false,
 	debugButtons: [
@@ -1710,7 +1710,7 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 	XsltForms_browser.loadDoc = function(dest, xml) {
 		XsltForms_browser.loadNode(dest.documentElement, xml);
 	};
-	XsltForms_browser.saveNode = function(node, mediatype, relevant, indent, related, cdataSectionElements) {
+	XsltForms_browser.saveNode = function(node, mediatype, relevant, indent, method, cdataSectionElements) {
 		if (node.nodeType === Fleur.Node.ATTRIBUTE_NODE) { 
 			return node.nodeValue;
 		} else {
@@ -1754,7 +1754,7 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 				if (indent) {
 					return xmlDoc.transformNode(XsltForms_browser.xsltDocIndent);
 				}
-				if (related) {
+				if (method === "multipart-post") {
 					var z = relevant ? xmlDoc.transformNode(XsltForms_browser.xsltDocRelevantAnyURI) : xmlDoc.transformNode(XsltForms_browser.xsltDocAnyURI);
 					var cids = [];
 					var m1 = z.indexOf("$!$!$!$!$!");
@@ -1919,7 +1919,7 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 		XsltForms_browser.loadDoc = function(dest, srcDoc) {
 			XsltForms_browser.loadNode(dest.documentElement, srcDoc);
 		};
-		XsltForms_browser.saveNode = function(node, mediatype, relevant, indent, related, cdataSectionElements) {
+		XsltForms_browser.saveNode = function(node, mediatype, relevant, indent, method, cdataSectionElements) {
 			if (node.nodeType === Fleur.Node.ATTRIBUTE_NODE) { 
 				return node.nodeValue;
 			} else {
@@ -1930,6 +1930,85 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 						node = node.nextSibling;
 					}
 					return s;
+				} else if (method === "form-data-post") {
+					// for form-data-post, see https://www.w3.org/TR/xforms11/#serialize-form-data
+					// serialize all leaf elements, whether populated or empty
+					var resultDocument = XsltForms_browser.createXMLDocument(XsltForms_browser.serializer.serializeToString(node));
+					if (relevant) {
+						if (resultDocument.selectNodes) {
+							var ns = resultDocument.selectNodes("descendant::*[@xsltforms_notrelevant = 'true']", false, resultDocument.documentElement);
+							for( var i = 0, l = ns.length; i < l ; i++) {
+								var n = ns[i];
+								try {
+									n.parentNode.removeChild(n);
+								} catch (e) {
+								}
+							}
+						}
+					}
+
+					var boundary = "xsltformsrev" + XsltForms_globals.fileVersionNumber;
+					var z = "";
+					// traverse leaf elements
+					var leaves = resultDocument.selectNodes("descendant::*[not(*)]", false, resultDocument.documentElement);
+					for( var iLeaf = 0, numberOfLeaves = leaves.length; iLeaf < numberOfLeaves ; iLeaf++) {
+						var leaf = leaves[iLeaf];
+						try {
+							z += "--" + boundary + "\r\n";
+							z += "Content-Disposition: form-data; name=\"";
+							z += leaf.localName;
+							z += "\"";
+							// serialize element's text content or binary content of named file if type is anyURI
+							var dataType = XsltForms_browser.selectSingleNodeText(
+								"@xsi:type", 
+								leaf,
+								""
+							);
+							if (dataType === "xsd:anyURI") {
+								// TODO also implement xsd:base64Binary and xsd:hexBinary
+								var uriAndContentId = leaf.firstChild.nodeValue;
+								var contentId = uriAndContentId.substr(uriAndContentId.indexOf("?id=") + 4);
+								var filename = uriAndContentId.replace(/(.*\/)*([^\?]+)(\?.*)/, "$2");
+								var zc = "";
+								if (XsltForms_browser.isSafari) {
+									var zc0 = XsltForms_upload.contents[contentId];
+									for (var zci = 0, zcl = zc0.length; zci < zcl; zci++) {
+										var zcc = zc0.charCodeAt(zci);
+										if (zcc < 128) {
+											zc += String.fromCharCode(zcc);
+										} else {
+											if ((zcc > 191) && (zcc < 224)) {
+												zc += String.fromCharCode(((zcc & 31) << 6) | (zc0.charCodeAt(++zci) & 63));
+											} else {
+												zc += String.fromCharCode(((zcc & 15) << 12) | ((zc0.charCodeAt(++zci) & 63) << 6) | (zc0.charCodeAt(++zci) & 63));
+											}
+										}
+									}
+								} else {
+									var zc0b = new Uint8Array(XsltForms_upload.contents[contentId]);
+									for (var zcib = 0, zclb = zc0b.length; zcib < zclb; zcib++) {
+										zc += String.fromCharCode(zc0b[zcib]);
+									}
+								}
+								z += "; filename=\"" + filename + "\"";
+								// TODO set specific content type (if known)
+								//z += "Content-Type: application/octet-stream\r\nContent-Transfer-Encoding: binary\r\n\r\n";
+								z += "Content-Type: text/xml\r\n\r\n";
+								z += zc;
+								z += "\r\n";
+							} else {
+								// string value of element
+								z += "; filename=\"" + "tei-identity.xml" + "\"\r\n";
+								z += "Content-Type: text/xml\r\n\r\n";
+								
+								z += leaf.firstChild.nodeValue;
+								z += "\r\n";
+							}
+						} catch (e3) {
+						}
+					}
+					z += "--" + boundary + "--\r\n";
+					return z;					
 				} else {
 					var resultDocument = XsltForms_browser.createXMLDocument(XsltForms_browser.serializer.serializeToString(node));
 					if (relevant) {
@@ -1944,8 +2023,8 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 							}
 						}
 					}
-					if (related) {
-						var ns3 = resultDocument.selectNodes("descendant::*[(substring-after(@xsltforms_type,':') = 'anyURI' or substring-after(@*[local-name() = 'type' and namespace-uri='http://www.w3.org/2001/XMLSchema-instance'],':') = 'anyURI') and . != '']", false, resultDocument.documentElement);
+					if (method === "multipart-post") {
+						var ns3 = resultDocument.selectNodes("descendant::*[(substring-after(@xsltforms_type,':') = 'anyURI' or substring-after(@*[local-name() = 'type' and namespace-uri()='http://www.w3.org/2001/XMLSchema-instance'],':') = 'anyURI') and . != '']", false, resultDocument.documentElement);
 						for( var i3 = 0, l3 = ns3.length; i3 < l3 ; i3++) {
 							var n3 = ns3[i3];
 							try {
@@ -1992,7 +2071,7 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 							}
 						}
 					}
-					if (related) {
+					if (method === "multipart-post") {
 						var z = XsltForms_browser.serializer.serializeToString(resultDocument);
 						var cids = [];
 						var m1 = z.indexOf("$!$!$!$!$!");
@@ -2052,8 +2131,13 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 				}
 			}
 		};
-		XsltForms_browser.saveDoc = function(doc, mediatype, relevant, indent, related, cdataSectionElements) {
-			return XsltForms_browser.saveNode(doc.documentElement, mediatype, relevant, indent, related, cdataSectionElements);
+		// changed by conal.tuohy@gmail.com:
+		// previously, saveDoc was declared as a function with 6 parameters, but it is never called with any other than 2 or 3:
+		// XsltForms_browser.saveDoc = function(doc, mediatype, relevant, indent, related, cdataSectionElements) 
+		// I am changing the 5th parameter of saveNode, so I'm trimming the parameter lists of both saveDoc and saveNode
+		// here to avoid propagating that change from saveNode to saveDoc.
+		XsltForms_browser.saveDoc = function(doc, mediatype, relevant) {
+			return XsltForms_browser.saveNode(doc.documentElement, mediatype, relevant);
 		};
 		XsltForms_browser.selectMeta = function(node, selection) {
 			var i, li;
@@ -2102,7 +2186,7 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 			}
 		};
 		XsltForms_browser.loadDoc = XsltForms_browser.loadNode;
-		XsltForms_browser.saveNode = function(node, mediatype, relevant, indent, related, cdataSectionElements) {
+		XsltForms_browser.saveNode = function(node, mediatype, relevant, indent, method, cdataSectionElements) {
 			return XsltForms_browser.serializer.serializeToString(node, mediatype, indent === "yes");
 		};
 		XsltForms_browser.saveDoc = XsltForms_browser.saveNode;
@@ -3153,8 +3237,12 @@ XsltForms_browser.splitNode = function(node, separator, leftTrim, rightTrim) {
 XsltForms_browser.getValueItemsetCopy = function(node) {
 	XsltForms_browser.assert(node);
 	var value = [];
-	for (var i = 0, l = node.children.length; i < l ; i++) {
-		value.push(XsltForms_browser.saveNode(node.children[i], "application/xml"));
+	if (node.childNodes) {
+		for (var i = 0, l = node.childNodes.length; i < l ; i++) {
+			if (node.childNodes[i].nodeType === Fleur.Node.ELEMENT_NODE) {
+				value.push(XsltForms_browser.saveNode(node.childNodes[i], "application/xml"));
+			}
+		}
 	}
 	return value;
 };
@@ -7696,7 +7784,7 @@ XsltForms_submission.prototype.xml2data = function(node, method) {
 		}
 		return XsltForms_browser.xml2zip(instance.archive, this.mediatype);
 	}
-	var ser = node ? typeof node === "string" ? node : method === "urlencoded-post" ? XsltForms_submission.toUrl_(node, this.separator) : XsltForms_browser.saveNode(node, "application/xml", this.relevant, false, method === "multipart-post", this.cdataSectionElements) : "";
+	var ser = node ? typeof node === "string" ? node : method === "urlencoded-post" ? XsltForms_submission.toUrl_(node, this.separator) : XsltForms_browser.saveNode(node, "application/xml", this.relevant, false, method, this.cdataSectionElements) : "";
 	if (this.mediatype === "text/csv" && typeof node !== "string") { 
 		return XsltForms_browser.xml2csv(ser, this.separator);
 	}
@@ -8029,6 +8117,8 @@ XsltForms_submission.prototype.submit = function() {
 				var mt;
 				if (method === "multipart-post") {
 					mt = "multipart/related; boundary=xsltformsrev" + XsltForms_globals.fileVersionNumber + '; type="application/xml"; start="<xsltforms_main>"';
+				} else if (method === "form-data-post") {
+					mt = "multipart/form-data; boundary=xsltformsrev" + XsltForms_globals.fileVersionNumber;
 				} else {
 					mt = (media || "application/xml") + (this.charset? ";charset=" + this.charset : "");
 				}
@@ -9449,6 +9539,9 @@ XsltForms_control.prototype.refresh = function() {
 			this.eventDispatch("xforms-disabled", "xforms-enabled", false);
 		}
 	} else if (node) {
+		if (!this.value) {
+			this.value = this.hasCopy ? [] : "";
+		}
 		var value = this.value instanceof Array ? XsltForms_browser.getValueItemsetCopy(node) : XsltForms_browser.getValue(node, true, this.complex);
 		XsltForms_globals.openAction("XsltForms_control.prototype.refresh");
 		var changed;
@@ -10240,6 +10333,7 @@ XsltForms_item.prototype.build_ = function(ctx) {
 	}
 	var nodeCopy = this.copyBinding ? this.evaluateBinding(this.copyBinding, ctx)[0] : null;
 	if (this.copyBinding && nodeCopy) {
+		element.parentNode.parentNode.parentNode.parentNode.xfElement.hasCopy = true;
 		this.depsNodesRefresh.push(nodeCopy);
 		try {
 			element.copy = XsltForms_browser.saveNode(nodeCopy, "application/xml");
@@ -10403,6 +10497,7 @@ XsltForms_itemset.prototype.refresh_ = function(element, cont) {
 	}
 	var nodeCopy = this.copyBinding ? this.evaluateBinding(this.copyBinding, ctx)[0] : null;
 	if (this.copyBinding && nodeCopy) {
+		element.parentNode.parentNode.parentNode.xfElement.hasCopy = true;
 		this.depsNodesRefresh.push(nodeCopy);
 		try {
 			element.value = element.copy = XsltForms_browser.saveNode(nodeCopy, "application/xml");
@@ -12909,7 +13004,7 @@ if (typeof xsltforms_d0 === "undefined") {
 			document.getElementsByTagName("body")[0].appendChild(conselt);
 			XsltForms_browser.dialog.show('statusPanel');
 			if (!(document.documentElement.childNodes[0].nodeType === 8 || (XsltForms_browser.isIE && document.documentElement.childNodes[0].childNodes[1] && document.documentElement.childNodes[0].childNodes[1].nodeType === 8))) {
-				var comment = document.createComment("HTML elements and Javascript instructions generated by XSLTForms rev.638 (638) - Copyright (C) 2016 <agenceXML> - Alain COUTHURES - http://www.agencexml.com");
+				var comment = document.createComment("HTML elements and Javascript instructions generated by XSLTForms rev.639 (639) - Copyright (C) 2017 <agenceXML> - Alain COUTHURES - http://www.agencexml.com");
 				document.documentElement.insertBefore(comment, document.documentElement.firstChild);
 			}
 			var initelts2 = document.getElementsByTagName("script");

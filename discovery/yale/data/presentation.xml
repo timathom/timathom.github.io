@@ -1,0 +1,837 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<TriX xmlns='http://www.w3.org/2004/03/trix/trix-1/'>
+	<graph>
+		<uri>file:/home/tat2/apps/basex/webapp/static/yale/data/presentation.ttl</uri>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/presentation</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Document</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/presentation</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slideshow</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/presentation</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/spar/fabio/Presentation</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/spar/doco/Section</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section1</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>An Ordinary Evening</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section1</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/presentation</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section1</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>1</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide1.1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide1.1</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>An Ordinary Evening in New Haven</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide1.1</uri>
+			<uri>http://schema.org/image</uri>
+			<uri>http://timathom.github.io/discovery/resource/stevens.jpg</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide1.1</uri>
+			<uri>http://purl.org/spar/cito/includesExcerptFrom</uri>
+			<uri>http://timathom.github.io/discovery/resource/stevens</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide1.1</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/section1</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide1.1</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>1</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/stevens.jpg</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://schema.org/ImageObject</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/stevens.jpg</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Image</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/stevens.jpg</uri>
+			<uri>http://xmlns.com/foaf/0.1/depicts</uri>
+			<uri>http://viaf.org/viaf/61562486</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/stevens.jpg</uri>
+			<uri>http://purl.org/dc/terms/description</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/stevens</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/spar/fabio/Work</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/stevens</uri>
+			<uri>http://purl.org/dc/terms/creator</uri>
+			<uri>http://viaf.org/viaf/61562486</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/stevens</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>An Ordinary Evening in New Haven</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/stevens</uri>
+			<uri>http://xmlns.com/foaf/0.1/primaryTopic</uri>
+			<uri>http://viaf.org/viaf/249011574</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/stevens</uri>
+			<uri>http://purl.org/dc/terms/hasPart</uri>
+			<uri>http://timathom.github.io/discovery/resource/excerpt1</uri>
+		</triple>
+		<triple>
+			<uri>http://viaf.org/viaf/249011574</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://schema.org/Place</uri>
+		</triple>
+		<triple>
+			<uri>http://viaf.org/viaf/249011574</uri>
+			<uri>http://www.w3.org/2004/02/skos/core#prefLabel</uri>
+			<plainLiteral>New Haven (Conn.)</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://viaf.org/viaf/61562486</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Person</uri>
+		</triple>
+		<triple>
+			<uri>http://viaf.org/viaf/61562486</uri>
+			<uri>http://www.w3.org/2004/02/skos/core#prefLabel</uri>
+			<plainLiteral>Wallace Stevens</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/excerpt1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/spar/fabio/Excerpt</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/excerpt1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'>&lt;blockquote&gt;
+            &lt;p&gt;We keep coming back and coming back&lt;br /&gt; To the real: to the
+                hotel instead of the hymns&lt;br /&gt; That fall upon it out of the
+                wind. We seek &lt;/p&gt;
+
+            &lt;p&gt;The poem of pure reality, untouched&lt;br /&gt; By trope or deviation,
+                straight to the word,&lt;br /&gt; Straight to the transfixing object,
+                to the object &lt;/p&gt;
+
+            &lt;p&gt;At the exactest point at which it is itself,&lt;br /&gt; Transfixing by
+                being purely what it is,&lt;br /&gt; A view of New Haven, say, through
+                the certain eye, &lt;/p&gt;
+
+            &lt;p&gt;The eye made clear of uncertainty, with the sight&lt;br /&gt; Of simple
+                seeing, without reflection. We seek&lt;br /&gt; Nothing beyond
+                reality.&lt;br /&gt; &amp;#8211;Wallace Stevens &lt;/p&gt;
+        &lt;/blockquote&gt;</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section2</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/spar/doco/Section</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section2</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>A Moment of Geek</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section2</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/presentation</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section2</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>2</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide2.1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide2.1</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Technologies and standards used in this presentation</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide2.1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide2.1</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/section2</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide2.1</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>1</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section3</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/spar/doco/Section</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section3</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Our Data, Ourselves</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section3</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section3</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/presentation</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section3</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>3</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.1</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>In the Hospital</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.1</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/section3</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.1</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>1</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.2</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.2</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>(Meta)data in Science</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.2</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.2</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/section3</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.2</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>2</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.3</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.3</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>(Meta)data Science</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.3</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.3</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/section3</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide3.3</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>3</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section4</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/spar/doco/Section</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section4</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Retrieval versus Discovery</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section4</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section4</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/presentation</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section4</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>4</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.1</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>The Rules of Retrieval</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.1</uri>
+			<uri>http://schema.org/image</uri>
+			<uri>http://timathom.github.io/discovery/resource/cutter.png</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.1</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/section4</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.1</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>1</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/cutter.png</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://schema.org/ImageObject</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/cutter.png</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Image</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/cutter.png</uri>
+			<uri>http://xmlns.com/foaf/0.1/depicts</uri>
+			<uri>http://viaf.org/viaf/69723405</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/cutter.png</uri>
+			<uri>http://purl.org/dc/terms/description</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://viaf.org/viaf/69723405</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Person</uri>
+		</triple>
+		<triple>
+			<uri>http://viaf.org/viaf/69723405</uri>
+			<uri>http://www.w3.org/2004/02/skos/core#prefLabel</uri>
+			<plainLiteral>Charles Ammi Cutter</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.2</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.2</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Functional Requirements</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.2</uri>
+			<uri>http://xmlns.com/foaf/0.1/primaryTopic</uri>
+			<uri>http://id.loc.gov/authorities/subjects/sh2007002541</uri>
+		</triple>
+		<triple>
+			<uri>http://id.loc.gov/authorities/subjects/sh2007002541</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://www.loc.gov/mads/rdf/v1#Topic</uri>
+		</triple>
+		<triple>
+			<uri>http://id.loc.gov/authorities/subjects/sh2007002541</uri>
+			<uri>http://www.w3.org/2004/02/skos/core#prefLabel</uri>
+			<plainLiteral>FRBR (Conceptual model)</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.3</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.3</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>FRBR: Retrieval or Discovery?</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.3</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide4.3</uri>
+			<uri>http://schema.org/image</uri>
+			<uri>http://timathom.github.io/discovery/resource/coyle.jpg</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/coyle.jpg</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://schema.org/ImageObject</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/coyle.jpg</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Image</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/coyle.jpg</uri>
+			<uri>http://xmlns.com/foaf/0.1/depicts</uri>
+			<uri>http://viaf.org/viaf/195531823</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/coyle.jpg</uri>
+			<uri>http://purl.org/dc/terms/description</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://viaf.org/viaf/195531823</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Person</uri>
+		</triple>
+		<triple>
+			<uri>http://viaf.org/viaf/195531823</uri>
+			<uri>http://www.w3.org/2004/02/skos/core#prefLabel</uri>
+			<plainLiteral>Karen Coyle</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section5</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/spar/doco/Section</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section5</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Connections: the Key to Discovery</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section5</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section5</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/presentation</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section5</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>5</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.1</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Connection = Collaboration</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.1</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/section5</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.1</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>1</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.2</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.2</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Collaborating with Archivists</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.2</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.2</uri>
+			<uri>http://xmlns.com/foaf/0.1/primaryTopic</uri>
+			<uri>http://dbpedia.org/resource/Encoded_Archival_Context</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.2</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/section5</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.2</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>2</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Connecting the Dots: Using EAC-CPF to Reunite Samuel Johnson and His Circle</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://purl.org/dc/terms/relation</uri>
+			<uri>http://timathom.github.io/discovery/resource/johnson-circle</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://schema.org/image</uri>
+			<uri>http://timathom.github.io/discovery/resource/johnson.svg</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://xmlns.com/foaf/0.1/primaryTopic</uri>
+			<uri>http://timathom.github.io/discovery/resource/project1</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>3</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/johnson.svg</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://schema.org/ImageObject</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/johnson.svg</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Image</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/johnson.svg</uri>
+			<uri>http://xmlns.com/foaf/0.1/depicts</uri>
+			<uri>http://viaf.org/viaf/7406725</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/johnson.svg</uri>
+			<uri>http://purl.org/dc/terms/description</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://viaf.org/viaf/7406725</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Person</uri>
+		</triple>
+		<triple>
+			<uri>http://viaf.org/viaf/7406725</uri>
+			<uri>http://www.w3.org/2004/02/skos/core#prefLabel</uri>
+			<plainLiteral>Samuel Johnson</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/johnson-circle</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://schema.org/WebPage</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/johnson-circle</uri>
+			<uri>http://purl.org/dc/terms/description</uri>
+			<plainLiteral>Gephi graph of relations encoded in the EAC-CPF records produced by the Connecting the Dots project</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/johnson-circle</uri>
+			<uri>http://purl.org/dc/terms/relation</uri>
+			<uri>http://timathom.github.io/discovery/resource/project2</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/project1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Project</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/project1</uri>
+			<uri>http://www.w3.org/2004/02/skos/core#prefLabel</uri>
+			<plainLiteral>Connecting the Dots: Using EAC-CPF to Reunite Samuel Johnson and His Circle</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/project1</uri>
+			<uri>http://schema.org/sameAs</uri>
+			<uri>https://osc.hul.harvard.edu/liblab/projects/connecting-dots-using-eac-cpf-reunite-samuel-johnson-and-his-circle</uri>
+		</triple>
+		<triple>
+			<uri>http://dbpedia.org/resource/Encoded_Archival_Context</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/spar/fabio/Metadata</uri>
+		</triple>
+		<triple>
+			<uri>http://dbpedia.org/resource/Encoded_Archival_Context</uri>
+			<uri>http://www.w3.org/2004/02/skos/core#prefLabel</uri>
+			<plainLiteral>Encoded Archival Context--Corporate Bodies, Persons, Families</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Collaborating with Wikipedians</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://xmlns.com/foaf/0.1/primaryTopic</uri>
+			<uri>http://timathom.github.io/discovery/resource/project2</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/section5</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.3</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>3</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/project2</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Project</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/project2</uri>
+			<uri>http://www.w3.org/2004/02/skos/core#prefLabel</uri>
+			<plainLiteral>Remixing Archival Metadata Project</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/project2</uri>
+			<uri>http://schema.org/image</uri>
+			<uri>http://timathom.github.io/discovery/resource/ramp2-logo.png</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/project2</uri>
+			<uri>http://schema.org/sameAs</uri>
+			<uri>https://tools.wmflabs.org/ramp/</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.4</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.4</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Linked Data for Production (LD4P)</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.4</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.4</uri>
+			<uri>http://xmlns.com/foaf/0.1/primaryTopic</uri>
+			<uri>http://timathom.github.io/discovery/resource/project3</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.4</uri>
+			<uri>http://purl.org/dc/terms/isPartOf</uri>
+			<uri>http://timathom.github.io/discovery/resource/section5</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.4</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>4</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/project3</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://xmlns.com/foaf/0.1/Project</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/project3</uri>
+			<uri>http://www.w3.org/2004/02/skos/core#prefLabel</uri>
+			<plainLiteral>Linked Data for Production (LD4P)</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/project3</uri>
+			<uri>http://schema.org/sameAs</uri>
+			<uri>https://www.ld4l.org/ld4p</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.5</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.5</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>LD4PUL</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.5</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.5</uri>
+			<uri>http://schema.org/image</uri>
+			<uri>http://timathom.github.io/discovery/resource/derrida.jpg</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.5</uri>
+			<uri>http://purl.org/dc/terms/references</uri>
+			<uri>http://timathom.github.io/discovery/resource/article1</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/article1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/spar/fabio/Article</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/article1</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>From Notes to Annotations: Dedications as Data in the Library of Jacques Derrida at Princeton University</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.6</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.6</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Know your data, query your data, encode your data</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide5.6</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section6</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/spar/doco/Section</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section6</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Thank you!</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section6</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/section6</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#integer'>6</typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide6.1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</uri>
+			<uri>http://purl.org/ontology/bibo/Slide</uri>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide6.1</uri>
+			<uri>http://purl.org/dc/terms/title</uri>
+			<plainLiteral>Thank you!</plainLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide6.1</uri>
+			<uri>http://www.w3.org/1999/02/22-rdf-syntax-ns#value</uri>
+			<typedLiteral datatype='http://www.w3.org/1999/02/22-rdf-syntax-ns#HTML'> </typedLiteral>
+		</triple>
+		<triple>
+			<uri>http://timathom.github.io/discovery/resource/slide6.1</uri>
+			<uri>http://vivoweb.org/ontology/core#rank</uri>
+			<typedLiteral datatype='http://www.w3.org/2001/XMLSchema#decimal'>6.1</typedLiteral>
+		</triple>
+	</graph>
+</TriX>

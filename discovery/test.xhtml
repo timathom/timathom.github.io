@@ -1,0 +1,72 @@
+<?xml-stylesheet type="text/xsl" href="../xsltforms/build/xsltforms.xsl"?><?css-conversion no?><?xsltforms-options debug="no"?><?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<!--<?xsltforms-options domengine="name=Fleur;url=xphoneforms/build/js/fleur.js;uri=http://www.agencexml.com/Fleur;version=1.0"?>-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:bf="http://id.loc.gov/ontologies/bibframe/"
+    xmlns:cwb="http://libserv6.princeton.edu/cwb/"
+    xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:trix="http://www.w3.org/2004/03/trix/trix-1/"
+    xmlns:xf="http://www.w3.org/2002/xforms"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <head>
+        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+        <title>TriX in XForms</title>
+        <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+            rel="stylesheet" />
+        <!-- Optional theme -->
+        <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+            rel="stylesheet" />
+        <link href="resources/css/cwb2.css" rel="stylesheet" />
+        <style type="text/css">
+            *:focus{
+                outline: 0;
+            }</style>
+        <xf:model id="trix-model">
+
+            <xf:instance id="ready">
+                <data xmlns="">
+                    <ready>no</ready>
+                    <w></w>
+                    <h></h>
+                </data>
+            </xf:instance>
+
+            <xf:action ev:event="xforms-ready">
+                <xf:setvalue ref="instance('ready')/ready" value="'yes'"/>
+                <!--<xf:dispatch name="keydown" targetid="test"/>-->
+                <xf:setfocus control="test"/>
+            </xf:action>
+
+            <xf:instance id="style">
+                <data xmlns="">
+                    <mouse>
+                        <x>0</x>
+                        <y>0</y>
+                        <state>up</state>
+                    </mouse>
+                </data>
+            </xf:instance>
+
+
+        </xf:model>
+    </head>
+    <body>
+
+
+        <xf:group id="test" ref="instance('ready')/ready" navindex="1">
+            <xf:label>Testing</xf:label>
+
+            <xf:action ev:event="keydown">
+                <xf:message>Test</xf:message>
+                <xf:setvalue ref="." value="'yep'"/>
+            </xf:action>
+
+
+            <div id="canvas"
+                style="{choose(instance('ready')/ready = 'no', 'display: none;', choose(instance('ready')/ready = 'loading', 'visibility: hidden; position: relative;', ''))}"> </div>
+
+        </xf:group>
+    </body>
+</html>

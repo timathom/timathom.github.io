@@ -1,0 +1,105 @@
+<?xml-stylesheet type="text/xsl" href="../xsltforms/build/xsltforms.xsl"?><?css-conversion no?><?xsltforms-options debug="no"?><?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xf="http://www.w3.org/2002/xforms"
+    xmlns:ev="http://www.w3.org/2001/xml-events">
+    <head>
+        <title>Mouse Events in XForms</title>
+
+        <style type="text/css">
+            body{
+                margin: 2em;
+                font-size: 300%
+            }
+            pre{
+                color: blue
+            }
+            label{
+                font-weight: bold;
+                width: 7em;
+                display: inline-block;
+                text-align: right;
+                padding-right: 0.5em
+            }
+            .xforms-value{
+                width: 10em
+            }
+            .xforms-select1{
+                width: 20em;
+                display: inline-block;
+                margin: 0;
+                padding: 0
+            }
+            .xforms-input,
+            .xforms-secret{
+                width: 20em;
+                display: inline-block;
+                margin: 0;
+                padding: 0
+            }
+            .xforms-select1 .xforms-value{
+                width: 10.5em
+            }
+            .xforms-submit{
+                margin-left: 1em
+            }
+            .xforms-invalid .xforms-alert-value{
+                display: block;
+                color: red
+            }
+            span.xforms-alert-value{
+                background-color: rgba(255, 238, 238, 0.5);
+                margin-top: 3em;
+                margin-left: 5em
+            }
+            
+            .crop{
+                height: 30em;
+                width: 30em;
+                float: left;
+                margin: .5em 10px .5em 0;
+                border: 1px solid #ccc;
+                overflow: scroll;
+            }</style>
+
+        <model xmlns="http://www.w3.org/2002/xforms">
+            <instance id="style">
+                <data xmlns="">
+                    <mouse>
+                        <x>0</x>
+                        <y>0</y>
+                        <state>up</state>
+                    </mouse>
+                </data>
+            </instance>
+            <action ev:event="xforms-ready">
+                
+            </action>
+        </model>
+    </head>
+
+    <body>
+        <group id="test" class="crop" xmlns="http://www.w3.org/2002/xforms">
+            <label>Move mouse here</label>
+            <action ev:event="DOMActivate">
+                <action ev:event="keydown">
+                    <xf:message>Yes</xf:message>
+                </action>    
+            </action>
+            
+            <action ev:event="mousemove">
+                <setvalue ref="mouse/x" value="event('clientX')"/>
+                <setvalue ref="mouse/y" value="event('clientY')"/>
+            </action>
+            <action ev:event="mousedown">
+                <setvalue ref="mouse/state">down</setvalue>
+            </action>
+            <action ev:event="mouseup">
+                <setvalue ref="mouse/state">up</setvalue>
+            </action> x: <output ref="mouse/x"/> y: <output ref="mouse/y"/>
+            state: <output ref="mouse/state"/>
+        </group>
+
+    </body>
+
+</html>

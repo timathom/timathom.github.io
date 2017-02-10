@@ -1,0 +1,232 @@
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doco: <http://purl.org/spar/doco/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tat2: <http://timathom.github.io/discovery/resource/> .
+@prefix vivo: <http://vivoweb.org/ontology/core#> .
+
+tat2:presentation a foaf:Document , bibo:Slideshow , fabio:Presentation .
+
+tat2:section1 a doco:Section ;
+			  dcterms:title "An Ordinary Evening" ;
+			  dcterms:isPartOf tat2:presentation ;
+			  vivo:rank 1 .
+
+tat2:slide1.1 a bibo:Slide ;
+			dcterms:title "An Ordinary Evening in New Haven" ;
+			schema:image tat2:stevens.jpg ;
+			cito:includesExcerptFrom tat2:stevens ;
+			dcterms:isPartOf tat2:section1 ;
+			vivo:rank 1 .
+
+tat2:stevens.jpg a schema:ImageObject , foaf:Image ;
+				 foaf:depicts <http://viaf.org/viaf/61562486> ;
+				 dcterms:description """ """^^rdf:HTML .
+
+tat2:stevens a fabio:Work ;
+			 dcterms:creator <http://viaf.org/viaf/61562486> ;
+			 dcterms:title "An Ordinary Evening in New Haven" ;
+			 foaf:primaryTopic <http://viaf.org/viaf/249011574> ;
+			 dcterms:hasPart tat2:excerpt1 .
+
+<http://viaf.org/viaf/249011574> a schema:Place ; 
+								 skos:prefLabel "New Haven (Conn.)" .
+
+<http://viaf.org/viaf/61562486> a foaf:Person ;
+								skos:prefLabel "Wallace Stevens" .
+
+tat2:excerpt1 a fabio:Excerpt ;
+			  rdf:value """<blockquote>
+            <p>We keep coming back and coming back<br /> To the real: to the
+                hotel instead of the hymns<br /> That fall upon it out of the
+                wind. We seek </p>
+
+            <p>The poem of pure reality, untouched<br /> By trope or deviation,
+                straight to the word,<br /> Straight to the transfixing object,
+                to the object </p>
+
+            <p>At the exactest point at which it is itself,<br /> Transfixing by
+                being purely what it is,<br /> A view of New Haven, say, through
+                the certain eye, </p>
+
+            <p>The eye made clear of uncertainty, with the sight<br /> Of simple
+                seeing, without reflection. We seek<br /> Nothing beyond
+                reality.<br /> &#8211;Wallace Stevens </p>
+        </blockquote>"""^^rdf:HTML .
+
+tat2:section2 a doco:Section ;
+			  dcterms:title "A Moment of Geek" ;
+			  dcterms:isPartOf tat2:presentation ;
+			  vivo:rank 2 .
+
+tat2:slide2.1 a bibo:Slide ;
+		      dcterms:title "Technologies and standards used in this presentation" ;
+		      rdf:value """ """^^rdf:HTML ;
+			  dcterms:isPartOf tat2:section2 ;
+			  vivo:rank 1 .
+
+tat2:section3 a doco:Section ;
+			  dcterms:title "Our Data, Ourselves" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  dcterms:isPartOf tat2:presentation ;
+			  vivo:rank 3 .
+
+tat2:slide3.1 a bibo:Slide ;
+			  dcterms:title "In the Hospital" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  dcterms:isPartOf tat2:section3 ;
+			  vivo:rank 1 .
+
+tat2:slide3.2 a bibo:Slide ;
+			  dcterms:title "(Meta)data in Science" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  dcterms:isPartOf tat2:section3 ;
+			  vivo:rank 2 .
+
+tat2:slide3.3 a bibo:Slide ;
+			  dcterms:title "(Meta)data Science" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  dcterms:isPartOf tat2:section3 ;
+			  vivo:rank 3 .
+
+tat2:section4 a doco:Section ;
+			  dcterms:title "Retrieval versus Discovery" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  dcterms:isPartOf tat2:presentation ;
+			  vivo:rank 4 .
+
+tat2:slide4.1 a bibo:Slide ;
+			  dcterms:title "The Rules of Retrieval" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  schema:image tat2:cutter.png ;
+			  dcterms:isPartOf tat2:section4 ;
+			  vivo:rank 1 .
+
+tat2:cutter.png a schema:ImageObject , foaf:Image ;
+				foaf:depicts <http://viaf.org/viaf/69723405> ;
+				dcterms:description """ """^^rdf:HTML .
+
+<http://viaf.org/viaf/69723405> a foaf:Person ;
+								skos:prefLabel "Charles Ammi Cutter" .
+
+tat2:slide4.2 a bibo:Slide ;
+			  dcterms:title "Functional Requirements" ;
+			  foaf:primaryTopic <http://id.loc.gov/authorities/subjects/sh2007002541> .
+
+<http://id.loc.gov/authorities/subjects/sh2007002541> a madsrdf:Topic ;
+													  skos:prefLabel "FRBR (Conceptual model)" .
+
+tat2:slide4.3 a bibo:Slide ;
+			  dcterms:title "FRBR: Retrieval or Discovery?" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  schema:image tat2:coyle.jpg .
+
+tat2:coyle.jpg a schema:ImageObject , foaf:Image ;
+			   foaf:depicts <http://viaf.org/viaf/195531823> ;
+			   dcterms:description """ """^^rdf:HTML .
+
+<http://viaf.org/viaf/195531823> a foaf:Person ;
+								 skos:prefLabel "Karen Coyle" .
+
+tat2:section5 a doco:Section ;
+			  dcterms:title "Connections: the Key to Discovery" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  dcterms:isPartOf tat2:presentation ;
+			  vivo:rank 5 .
+
+tat2:slide5.1 a bibo:Slide ;
+			dcterms:title "Connection = Collaboration" ;
+			rdf:value """ """^^rdf:HTML ;
+			dcterms:isPartOf tat2:section5 ;
+			vivo:rank 1 .
+
+tat2:slide5.2 a bibo:Slide ;
+			  dcterms:title "Collaborating with Archivists" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  foaf:primaryTopic <http://dbpedia.org/resource/Encoded_Archival_Context> ;
+			  dcterms:isPartOf tat2:section5 ;
+			  vivo:rank 2 .
+
+tat2:slide5.3 a bibo:Slide ;
+			  dcterms:title "Connecting the Dots: Using EAC-CPF to Reunite Samuel Johnson and His Circle" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  dcterms:relation tat2:johnson-circle ;
+			  schema:image tat2:johnson.svg ;
+			  foaf:primaryTopic tat2:project1 ;
+			  vivo:rank 3 .
+
+tat2:johnson.svg a schema:ImageObject , foaf:Image ;
+			     foaf:depicts <http://viaf.org/viaf/7406725> ;
+			     dcterms:description """ """^^rdf:HTML .
+
+<http://viaf.org/viaf/7406725> a foaf:Person ;
+							   skos:prefLabel "Samuel Johnson" .
+
+tat2:johnson-circle a schema:WebPage ;
+				    dcterms:description "Gephi graph of relations encoded in the EAC-CPF records produced by the Connecting the Dots project" ;
+				    dcterms:relation tat2:project2 .
+
+tat2:project1 a foaf:Project ;
+			  skos:prefLabel "Connecting the Dots: Using EAC-CPF to Reunite Samuel Johnson and His Circle" ;
+			  schema:sameAs <https://osc.hul.harvard.edu/liblab/projects/connecting-dots-using-eac-cpf-reunite-samuel-johnson-and-his-circle> .
+
+<http://dbpedia.org/resource/Encoded_Archival_Context> a fabio:Metadata ;
+													   skos:prefLabel "Encoded Archival Context--Corporate Bodies, Persons, Families" .
+
+tat2:slide5.3 a bibo:Slide ;
+			  dcterms:title "Collaborating with Wikipedians" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  foaf:primaryTopic tat2:project2 ;
+			  dcterms:isPartOf tat2:section5 ;
+			  vivo:rank 3 .
+
+tat2:project2 a foaf:Project ;
+			  skos:prefLabel "Remixing Archival Metadata Project" ;
+			  schema:image tat2:ramp2-logo.png ;
+			  schema:sameAs <https://tools.wmflabs.org/ramp/> .
+
+tat2:ramp2-logo.png a schema:ImageObject , foaf:Image .
+
+tat2:slide5.4 a bibo:Slide ;
+			  dcterms:title "Linked Data for Production (LD4P)" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  foaf:primaryTopic tat2:project3 ;
+			  dcterms:isPartOf tat2:section5 ;
+			  vivo:rank 4 .
+
+tat2:project3 a foaf:Project ;
+			  skos:prefLabel "Linked Data for Production (LD4P)" ;
+			  schema:sameAs <https://www.ld4l.org/ld4p> .
+
+tat2:slide5.5 a bibo:Slide ;
+			  dcterms:title "LD4PUL" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  schema:image tat2:derrida.jpg ;
+			  dcterms:isPartOf tat2:section5 ;
+			  dcterms:references tat2:article1 .
+
+tat2:article1 a fabio:Article ;
+			  dcterms:title "From Notes to Annotations: Dedications as Data in the Library of Jacques Derrida at Princeton University" .
+
+tat2:slide5.6 a bibo:Slide ;
+			  dcterms:title "Know your data, query your data, encode your data" ;
+			  dcterms:isPartOf tat2:section5 ;
+			  rdf:value """ """^^rdf:HTML .
+
+tat2:section6 a doco:Section ;
+			  dcterms:title "Thank you!" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  vivo:rank 6 .
+
+tat2:slide6.1 a bibo:Slide ;
+			  dcterms:title "Thank you!" ;
+			  rdf:value """ """^^rdf:HTML ;
+			  dcterms:isPartOf tat2:section6 ;
+			  vivo:rank 6.1 .

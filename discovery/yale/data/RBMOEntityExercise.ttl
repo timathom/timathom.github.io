@@ -1,0 +1,606 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix rbmo: <http://example.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Concept scheme
+rbmo:EntityExercise a skos:ConceptScheme ;
+	skos:prefLabel "RBMO entity exercise"@en ;
+	skos:changeNote [
+  		rdf:value "Identified and categorized entities from use cases."@en ;  		
+ 		dct:date "2016-08-22" 
+	] ;
+	skos:changeNote [
+  		rdf:value "Linked entities to use cases."@en ;  		
+ 		dct:date "2016-08-29" 
+	] ;	
+	skos:hasTopConcept rbmo:AgentEntities ;
+	skos:hasTopConcept rbmo:RelationEntities ;
+	skos:hasTopConcept rbmo:ManagementEntities ;
+	skos:hasTopConcept rbmo:PhysicalCharacteristicEntities ;
+	skos:hasTopConcept rbmo:ProvenanceEntities ;
+	skos:hasTopConcept rbmo:UseCases .
+
+# Top concepts
+rbmo:AgentEntities a skos:Concept ; 
+	skos:inScheme rbmo:EntityExercise ;
+	skos:prefLabel "Agent entities"@en .
+
+rbmo:RelationEntities a skos:Concept ; 
+	skos:inScheme rbmo:EntityExercise ;
+	skos:prefLabel "Relation entities"@en .
+
+rbmo:ManagementEntities a skos:Concept ; 
+	skos:inScheme rbmo:EntityExercise ;
+	skos:prefLabel "Management entities"@en .
+
+rbmo:PhysicalCharacteristicEntities a skos:Concept ; 
+	skos:inScheme rbmo:EntityExercise ;
+	skos:prefLabel "Physical characteristic entities"@en .
+
+rbmo:ProvenanceEntities a skos:Concept ; 
+	skos:inScheme rbmo:EntityExercise ;
+	skos:prefLabel "Provenance entities"@en .
+	
+rbmo:UseCases a skos:Concept ;
+	skos:inScheme rbmo:EntityExercise ;
+	skos:prefLabel "Use cases"@en .
+
+# Agent entities
+rbmo:Agent a skos:Concept ;
+	skos:prefLabel "Agent"@en ;
+	skos:broader rbmo:AgentEntities .
+	
+rbmo:CorporateBody a skos:Concept ;
+	skos:prefLabel "Corporate body"@en ;
+	skos:broader rbmo:Agent .
+
+rbmo:Family a skos:Concept ;
+	skos:prefLabel "Family"@en ;
+	skos:broader rbmo:Agent .
+
+rbmo:Motivation a skos:Concept ;
+	skos:prefLabel "Motivation"@en ;
+	skos:broader rbmo:AgentEntities .
+
+rbmo:Person a skos:Concept ;
+	skos:prefLabel "Person"@en ;
+	skos:broader rbmo:Agent .
+	
+rbmo:Purpose a skos:Concept ;
+	skos:prefLabel "Purpose"@en ;
+	skos:broader rbmo:AgentEntities .
+
+# Relation entities
+rbmo:Collection a skos:Concept ;
+	skos:prefLabel "Collection"@en ;
+	skos:broader rbmo:RelationEntities, rbmo:ProvenanceEntities .
+
+rbmo:Insertion a skos:Concept ;
+	skos:prefLabel "Insertion"@en ;
+	skos:broader rbmo:Item .
+
+rbmo:Instance a skos:Concept ;
+	skos:prefLabel "Instance"@en ;
+	skos:broader rbmo:RelationEntities, rbmo:ProvenanceEntities .
+	
+rbmo:Item a skos:Concept ;
+	skos:prefLabel "Item"@en ;
+	skos:broader rbmo:RelationEntities, rbmo:ProvenanceEntities .
+	
+rbmo:Work a skos:Concept ;
+	skos:prefLabel "Work"@en ;
+	skos:broader rbmo:RelationEntities, rbmo:ProvenanceEntities .
+
+# Management entities
+rbmo:AccessPolicy a skos:Concept ;
+	skos:prefLabel "Access policy"@en ;
+	skos:broader rbmo:Policy .
+	
+rbmo:AdminMetadata a skos:Concept ;
+	skos:prefLabel "Administrative metadata"@en ;
+	skos:broader rbmo:ManagementEntities .
+
+rbmo:Chronology a skos:Concept ;
+	skos:prefLabel "Chronology"@en ;
+	skos:broader rbmo:ManagementEntities .
+
+rbmo:Citation a skos:Concept ;
+	skos:prefLabel "Citation"@en ;
+	skos:broader rbmo:Identifier .
+
+rbmo:ContactInformation a skos:Concept ;
+	skos:prefLabel "Contact information"@en ;
+	skos:broader rbmo:ManagementEntities .
+
+rbmo:CopyNumber a skos:Concept ;
+	skos:prefLabel "Copy number"@en ;
+	skos:broader rbmo:Identifier .
+
+rbmo:Enumeration a skos:Concept ;
+	skos:prefLabel "Enumeration"@en ;
+	skos:broader rbmo:ManagementEntities .
+
+rbmo:Fingerprint a skos:Concept ;
+	skos:prefLabel "Fingerprint"@en ;
+	skos:broader rbmo:Identifier .
+
+rbmo:Identifier a skos:Concept ;
+	skos:prefLabel "Identifier"@en ;
+	skos:broader rbmo:ManagementEntities .
+
+rbmo:Note a skos:Concept ;
+	skos:prefLabel "Note"@en ;
+	skos:broader rbmo:ManagementEntities .
+
+rbmo:NumberingPeculiarities a skos:Concept ;
+	skos:prefLabel "Numbering peculiarities"@en ;
+	skos:broader rbmo:ManagementEntities .
+
+rbmo:PhysicalLocation a skos:Concept ;
+	skos:prefLabel "Physical location"@en ;
+	skos:broader rbmo:ManagementEntities, rbmo:ProvenanceEntities .	
+
+rbmo:Policy a skos:Concept ;
+	skos:prefLabel "Policy"@en ;
+	skos:broader rbmo:ManagementEntities .
+
+rbmo:PreservationEvent a skos:Concept ;
+	skos:prefLabel "Preservation event"@en ;
+	skos:broader rbmo:ManagementEntities .
+
+rbmo:RetentionPolicy a skos:Concept ;
+	skos:prefLabel "Retention policy"@en ;
+	skos:broader rbmo:Policy .
+
+rbmo:RightsMetadata a skos:Concept ;
+	skos:prefLabel "Rights metadata"@en ;
+	skos:broader rbmo:ManagementEntities .	
+
+rbmo:ShelfMark a skos:Concept ;
+	skos:prefLabel "Shelf mark"@en ;
+	skos:broader rbmo:Identifier .
+
+rbmo:Status a skos:Concept ;
+	skos:prefLabel "Status"@en ;
+	skos:broader rbmo:ManagementEntities .
+
+rbmo:UsePolicy a skos:Concept ;
+	skos:prefLabel "Use policy"@en ;
+	skos:broader rbmo:Policy .
+
+# Physical characteristic entities
+rbmo:Binding a skos:Concept ;
+	skos:prefLabel "Binding"@en ;
+	skos:broader rbmo:PhysicalCharacteristicEntities, rbmo:ProvenanceEntities .
+
+rbmo:Bookplate a skos:Concept ;
+	skos:prefLabel "Bookplate"@en ;
+	skos:broader rbmo:PhysicalCharacteristicEntities, rbmo:ProvenanceEntities .
+
+rbmo:Component a skos:Concept ;
+	skos:prefLabel "Component"@en ;
+	skos:broader rbmo:PhysicalCharacteristicEntities .
+
+rbmo:Condition a skos:Concept ;
+	skos:prefLabel "Condition"@en ;
+	skos:broader rbmo:PhysicalCharacteristicEntities .
+
+rbmo:Container a skos:Concept ;
+	skos:prefLabel "Container"@en ;
+	skos:broader rbmo:PhysicalCharacteristicEntities .
+
+rbmo:Illustration a skos:Concept ;
+	skos:prefLabel "Illustration"@en ;
+	skos:broader rbmo:PhysicalCharacteristicEntities .
+
+rbmo:Label a skos:Concept ;
+	skos:prefLabel "Label"@en ;
+	skos:broader rbmo:Component .
+
+rbmo:Leaf a skos:Concept ;
+	skos:prefLabel "Leaf"@en ;
+	skos:broader rbmo:Component .
+
+rbmo:Page a skos:Concept ;
+	skos:prefLabel "Page"@en ;
+	skos:broader rbmo:Component .
+
+rbmo:Rubrication a skos:Concept ;
+	skos:prefLabel "Rubrication"@en ;
+	skos:broader rbmo:PhysicalCharacteristicEntities .
+
+rbmo:Signature a skos:Concept ;
+	skos:prefLabel "Signature"@en;
+	skos:broader rbmo:PhysicalCharacteristicEntities .
+
+# Provenance entities
+rbmo:Annotation a skos:Concept ;
+	skos:prefLabel "Annotation"@en ;
+	skos:broader rbmo:Marking .
+
+rbmo:Arrangement a skos:Concept ;
+	skos:prefLabel "Arrangement"@en ;
+	skos:broader rbmo:ProvenanceEntities .
+
+rbmo:CustodialHistory a skos:Concept ;
+	skos:prefLabel "Custodial history"@en ;
+	skos:broader rbmo:ProvenanceEntities .
+
+rbmo:Date a skos:Concept ;
+	skos:prefLabel "Date"@en ;
+	skos:broader rbmo:ProvenanceEntities .
+
+rbmo:Event a skos:Concept ;
+	skos:prefLabel "Event"@en ;
+	skos:broader rbmo:ProvenanceEntities .
+
+rbmo:ImmediateSourceOfAcquisition a skos:Concept ;
+	skos:prefLabel "Immediate source of acquisition"@en ;
+	skos:broader rbmo:CustodialHistory .
+
+rbmo:Inscription a skos:Concept ;
+	skos:prefLabel "Inscription"@en ;
+	skos:broader rbmo:Marking .
+	
+rbmo:Marking a skos:Concept ;
+	skos:prefLabel "Marking"@en ;
+	skos:broader rbmo:ProvenanceEntities .
+
+rbmo:Seal a skos:Concept ;
+	skos:prefLabel "Seal"@en ;
+	skos:broader rbmo:Marking .
+
+# Use cases
+rbmo:UseCase1 a skos:Concept ;
+	skos:prefLabel "Provenance tracing (persons, institutions, bookplates)"@en ;
+	dct:identifier "1"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Agent ;
+	skos:related rbmo:Bookplate ;
+	skos:related rbmo:CustodialHistory ;
+	skos:related rbmo:Marking .
+
+rbmo:UseCase2 a skos:Concept ;
+	skos:prefLabel "Contextualizing provenance"@en ;
+	dct:identifier "2"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Agent ;
+	skos:related rbmo:Bookplate ;
+	skos:related rbmo:CustodialHistory ;
+	skos:related rbmo:Event .
+	
+rbmo:UseCase3 a skos:Concept ;
+	skos:prefLabel "Annotations"@en ;
+	dct:identifier "3"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Marking ;
+	skos:related rbmo:Insertion .
+
+rbmo:UseCase4 a skos:Concept ;
+	skos:prefLabel "Help for Cryptic Annotations"@en ;
+	dct:identifier "4"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Marking ;
+	skos:related rbmo:Insertion .
+
+rbmo:UseCase5 a skos:Concept ;
+	skos:prefLabel "Altered work"@en ;
+	dct:identifier "5"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Instance ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:Work .
+	
+rbmo:UseCase6 a skos:Concept ;
+	skos:prefLabel "Embedded Work IDs, Instance IDs"@en ;
+	dct:identifier "6"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Identifier ;
+	skos:related rbmo:Instance ;
+	skos:related rbmo:Work .
+
+rbmo:UseCase7 a skos:Concept ;
+	skos:prefLabel "Discarded accompanying material"@en ;
+	dct:identifier "7"^^xsd:integer ;	
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Insertion ;
+	skos:related rbmo:Instance ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:ProvenanceEntities ;
+	skos:related rbmo:Work .
+
+rbmo:UseCase8 a skos:Concept ;
+	skos:prefLabel "Letters of transmittal"@en ;
+	dct:identifier "8"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AdminMetadata ;
+	skos:related rbmo:Identifier ;
+	skos:related rbmo:Instance ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:ProvenanceEntities ;
+	skos:related rbmo:Work .
+
+rbmo:UseCase9 a skos:Concept ;
+	skos:prefLabel "Association of an item with a particular event"@en ;
+	dct:identifier "9"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AdminMetadata ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:Event ;
+	skos:related rbmo:ProvenanceEntities .
+
+rbmo:UseCase10 a skos:Concept ;
+	skos:prefLabel "English Short Title Catalogue and Other Links"@en ;
+	dct:identifier "10"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Citation .	
+
+rbmo:UseCase11 a skos:Concept ;
+	skos:prefLabel "Binding descriptions and binder"@en ;
+	dct:identifier "11"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Agent ;
+	skos:related rbmo:Binding .		
+
+rbmo:UseCase12 a skos:Concept ;
+	skos:prefLabel "Containers"@en ;
+	dct:identifier "12"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Container ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:PreservationEvent .
+	
+rbmo:UseCase13 a skos:Concept ;
+	skos:prefLabel "Original Shelf Order; Physical Location; Former Call Numbers"@en ;
+	dct:identifier "13"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Arrangement ;
+	skos:related rbmo:PhysicalLocation ;
+	skos:related rbmo:ProvenanceEntities .
+	
+rbmo:UseCase14 a skos:Concept ;
+	skos:prefLabel "Contact Info for Related Collections/Items"@en ;
+	dct:identifier "14"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AdminMetadata ;
+	skos:related rbmo:Agent ;
+	skos:related rbmo:Collection ;
+	skos:related rbmo:ContactInformation ;
+	skos:related rbmo:Item .	
+
+rbmo:UseCase15 a skos:Concept ;
+	skos:prefLabel "Copy number"@en ;
+	dct:identifier "15"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:CopyNumber ;
+	skos:related rbmo:Item .	
+
+rbmo:UseCase16 a skos:Concept ;
+	skos:prefLabel "Bound-withs"@en ;
+	dct:identifier "16"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Instance ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:Work .
+	
+rbmo:UseCase17 a skos:Concept ;
+	skos:prefLabel "Rubrication, illumination, other hand coloring"@en ;
+	dct:identifier "17"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Agent ;
+	skos:related rbmo:Instance ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:Rubrication ;
+	skos:related rbmo:Work .	
+
+rbmo:UseCase18 a skos:Concept ;
+	skos:prefLabel "Special features or imperfections of the copy being described"@en ;
+	dct:identifier "18"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AccessPolicy ;
+	skos:related rbmo:Condition ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:RetentionPolicy ;
+	skos:related rbmo:UsePolicy .
+
+rbmo:UseCase19 a skos:Concept ;
+	skos:prefLabel "Meta-annotations"@en ;
+	dct:identifier "19"^^xsd:integer ;
+	skos:scopeNote "A researcher is interested in layers of annotations added to a source and the relationships/chronology among them." ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Annotation .
+
+rbmo:UseCase20 a skos:Concept ;
+	skos:prefLabel "Taxonomy of annotation types"@en ;
+	dct:identifier "20"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Annotation ;
+	skos:related rbmo:Insertion .	
+
+rbmo:UseCase21 a skos:Concept ;
+	skos:prefLabel "Taxonomy of annotation motivations/purposes"@en ;
+	dct:identifier "21"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Annotation ;
+	skos:related rbmo:Insertion ;
+	skos:related rbmo:Motivation ;
+	skos:related rbmo:Purpose .
+
+rbmo:UseCase22 a skos:Concept ;
+	skos:prefLabel "Parsing data within annotations"@en ;
+	dct:identifier "22"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Agent ;
+	skos:related rbmo:Date ;
+	skos:related rbmo:Event ;
+	skos:related rbmo:Place ;
+	skos:related rbmo:Work .
+
+rbmo:UseCase23 a skos:Concept ;
+	skos:prefLabel "Component-level resource description"@en ;
+	dct:identifier "23"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Component ;
+	skos:related rbmo:Item .	
+
+rbmo:UseCase24 a skos:Concept ;
+	skos:prefLabel "In-house processing & tracking data"@en ;
+	dct:identifier "24"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AdminMetadata ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:PhysicalLocation ;
+	skos:related rbmo:Status .
+
+rbmo:UseCase25 a skos:Concept ;
+	skos:prefLabel "Bibliographic citation(s)"@en ;
+	dct:identifier "25"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Citation .	
+
+rbmo:UseCase26 a skos:Concept ;
+	skos:prefLabel "Access restriction"@en ;
+	dct:identifier "26"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AccessPolicy ;
+	skos:related rbmo:AdminMetadata ;
+	skos:related rbmo:RightsMetadata ;
+	skos:related rbmo:UsePolicy .	
+
+rbmo:UseCase27 a skos:Concept ;
+	skos:prefLabel "Transcription vs. Access point"@en ;
+	dct:identifier "27"^^xsd:integer ;
+	skos:broader rbmo:UseCases .	
+
+rbmo:UseCase28 a skos:Concept ;
+	skos:prefLabel "Restriction on use"@en ;
+	dct:identifier "28"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AccessPolicy ;
+	skos:related rbmo:AdminMetadata ;
+	skos:related rbmo:RightsMetadata ;
+	skos:related rbmo:UsePolicy .		
+
+rbmo:UseCase29 a skos:Concept ;
+	skos:prefLabel "Accompanying/inserted material"@en ;
+	dct:identifier "29"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Insertion ;
+	skos:related rbmo:Instance ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:Work .	
+
+rbmo:UseCase30 a skos:Concept ;
+	skos:prefLabel "Actions taken or to be taken"@en ;
+	dct:identifier "30"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AdminMetadata ;
+	skos:related rbmo:PreservationEvent .	
+
+rbmo:UseCase31 a skos:Concept ;
+	skos:prefLabel "Agent of action taken or to be taken"@en ;
+	dct:identifier "31"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AdminMetadata ;
+	skos:related rbmo:PreservationEvent .
+
+rbmo:UseCase32 a skos:Concept ;
+	skos:prefLabel "Date of action taken or to be taken"@en ;
+	dct:identifier "32"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AdminMetadata ;
+	skos:related rbmo:PreservationEvent .
+
+rbmo:UseCase33 a skos:Concept ;
+	skos:prefLabel "Material acted upon"@en ;
+	dct:identifier "9"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AdminMetadata ;
+	skos:related rbmo:Collection ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:PreservationEvent ;
+	skos:related rbmo:Status .
+
+rbmo:UseCase34 a skos:Concept ;
+	skos:prefLabel "Immediate source of acquisition"@en ;
+	dct:identifier "34"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:AdminMetadata ;
+	skos:related rbmo:Agent ;
+	skos:related rbmo:ImmediateSourceOfAcquisition .
+
+rbmo:UseCase35 a skos:Concept ;
+	skos:prefLabel "Bibliographic details/history"@en ;
+	dct:identifier "35"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Instance ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:Work .
+	
+rbmo:UseCase36 a skos:Concept ;
+	skos:prefLabel "Numbering peculiarities"@en ;
+	dct:identifier "36"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Chronology ;
+	skos:related rbmo:Enumeration ;
+	skos:related rbmo:Instance ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:NumberingPeculiarities .	
+	
+rbmo:UseCase37 a skos:Concept ;
+	skos:prefLabel "Fingerprints"@en ;
+	dct:identifier "37"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Fingerprint ;
+	skos:related rbmo:Item .
+	
+rbmo:UseCase38 a skos:Concept ;
+	skos:prefLabel "Sub-groups of materials within a collection"@en ;
+	dct:identifier "38"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Arrangement ;
+	skos:related rbmo:Collection .
+	
+rbmo:UseCase39 a skos:Concept ;
+	skos:prefLabel "Collecting area that unites distinct collections"@en ;
+	dct:identifier "39"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Collection .
+	
+rbmo:UseCase40 a skos:Concept ;
+	skos:prefLabel "Additional physical details note (instance level)"@en ;
+	dct:identifier "40"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Instance ;
+	skos:related rbmo:Note .
+	
+rbmo:UseCase41 a skos:Concept ;
+	skos:prefLabel "Note on significant contents"@en ;
+	dct:identifier "41"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;	
+	skos:related rbmo:Work .
+	
+rbmo:UseCase42 a skos:Concept ;
+	skos:prefLabel "Bibliographic history note"@en ;
+	dct:identifier "42"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Instance ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:Work .
+	
+rbmo:UseCase43 a skos:Concept ;
+	skos:prefLabel "Custodial history note"@en ;
+	dct:identifier "43"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:CustodialHistory ;
+	skos:related rbmo:Item .
+	
+rbmo:UseCase44 a skos:Concept ;
+	skos:prefLabel "Signatures"@en ;
+	dct:identifier "44"^^xsd:integer ;
+	skos:broader rbmo:UseCases ;
+	skos:related rbmo:Item ;
+	skos:related rbmo:Signature .
