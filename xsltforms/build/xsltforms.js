@@ -1999,8 +1999,7 @@ if (XsltForms_domEngine === "" && (XsltForms_browser.isIE || XsltForms_browser.i
 							} else {
 								// string value of element
 								z += "; filename=\"" + "tei-identity.xml" + "\"\r\n";
-								z += "Content-Type: text/xml\r\n\r\n";
-								
+								z += "Content-Type: text/plain\r\n\r\n";								
 								z += leaf.firstChild.nodeValue;
 								z += "\r\n";
 							}
