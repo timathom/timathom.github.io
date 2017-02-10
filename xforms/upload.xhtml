@@ -1,4 +1,4 @@
-<?xml-stylesheet href="/xsltforms/xsltforms.xsl" type="text/xsl"?><?xsltforms-options debug="no"?><?css-conversion no?><?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-stylesheet href="/xsltforms/build/xsltforms.xsl" type="text/xsl"?><?xsltforms-options debug="no"?><?css-conversion no?><?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <!--<?xsltforms-options domengine="name=Fleur;url=/static/xphoneforms/build/js/fleur.js;uri=http://www.agencexml.com/Fleur;version=1.0"?>-->
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ev="http://www.w3.org/2001/xml-events"
@@ -23,7 +23,7 @@
                 resource="http://www.tei-c.org/ege-webservice//Conversions/TEI%3Atext%3Axml/xml%3Aapplication%3Axml/conversion?properties=%3Cconversions%3E%3Cconversion%20index=%220%22%3E%3Cproperty%20id=%22oxgarage.getImages%22%3Efalse%3C/property%3E%3Cproperty%20id=%22oxgarage.getOnlineImages%22%3Efalse%3C/property%3E%3Cproperty%20id=%22oxgarage.lang%22%3Een%3C/property%3E%3Cproperty%20id=%22oxgarage.textOnly%22%3Etrue%3C/property%3E%3Cproperty%20id=%22pl.psnc.dl.ege.tei.profileNames%22%3Edefault%3C/property%3E%3C/conversion%3E%3C/conversions%3E">
                 <xf:action ev:event="xforms-submit-done">
                     <xf:insert context="instance('result')/result"
-                        origin="event('response-body')"/>
+                        origin="event('response-body')"/>dd
                 </xf:action>
             </xf:submission>
             <xf:instance id="serialize">
