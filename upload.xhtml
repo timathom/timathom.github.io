@@ -1,37 +1,493 @@
-<?xml-stylesheet href="/xsltforms/build/xsltforms.xsl" type="text/xsl"?><?xsltforms-options debug="no"?><?css-conversion no?><?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<?xml-stylesheet href="/static/Muscovy/xsltforms/xsltforms.xsl" type="text/xsl"?><?xsltforms-options debug="no"?><?css-conversion no?><?xml-model href="http://www.oxygenxml.com/1999/xhtml/xhtml-xforms.nvdl" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
 <!--<?xsltforms-options domengine="name=Fleur;url=/static/xphoneforms/build/js/fleur.js;uri=http://www.agencexml.com/Fleur;version=1.0"?>-->
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ev="http://www.w3.org/2001/xml-events"
     xmlns:xf="http://www.w3.org/2002/xforms"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:mml="http://www.w3.org/1998/Math/MathML"
+    xmlns:tei="http://www.tei-c.org/ns/1.0"
+    tei:firefox="yes"
+    mml:firefox="yes">
     <head>
         <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-        <title>Test xf:upload control</title>
+        <title>P507 Homework Template</title>
         <xf:model>
-            <xf:instance id="result">
+            <xf:instance id="template" resource="template.xml">
                 <data xmlns="">
-                    <result></result>
+                    <TEI xmlns="http://www.tei-c.org/ns/1.0">
+                        <teiHeader>
+                            <fileDesc>
+                                <titleStmt>
+                                    <title>Question 2</title>
+                                    <author>Student</author>
+                                </titleStmt>
+                                <editionStmt>
+                                    <edition>
+                                        <date>2017-01-13</date>
+                                    </edition>
+                                </editionStmt>
+                                <publicationStmt>
+                                    <p>unknown</p>
+                                </publicationStmt>
+                                <sourceDesc>
+                                    <p>Converted from a Word document</p>
+                                </sourceDesc>
+                            </fileDesc>
+                            <encodingDesc>
+                                <appInfo>
+                                    <application xml:id="docxtotei" ident="TEI_fromDOCX"
+                                        version="2.15.0">
+                                        <label>DOCX to TEI</label>
+                                    </application>
+                                </appInfo>
+                            </encodingDesc>
+                            <revisionDesc>
+                                <listChange>
+                                    <change>
+                                        <date>2017-02-15T13:52:21Z</date>
+                                        <name>Student</name>
+                                    </change>
+                                </listChange>
+                            </revisionDesc>
+                        </teiHeader>
+                        <text>
+                            <body>
+                                <p>
+                                    <hi rendition="simple:bold">
+                                        <hi rendition="simple:italic">P507 Homework Exercise Template</hi>
+                                    </hi>
+                                </p>
+                                <div type="level1">
+                                    <head>[Your Name]</head>
+                                    <p n="1" rend="Normal">[Partner’s Name]</p>
+                                    <p n="2" rend="Normal">P507 Connect HW [#]</p>
+                                    <p n="3" rend="Normal"/>
+                                    <div type="level2">
+                                        <p n="4">
+                                            <hi rendition="simple:bold">(Q#)</hi>
+                                        </p>
+                                        <figure>
+                                            <graphic n="1001" width="11.303cm" height="13.222111111111111cm"
+                                                url="media/image3.png" rend="inline">
+                                                <desc/>
+                                            </graphic>
+                                        </figure>
+                                        <p n="5" rend="Normal">
+                                            <hi rend="bold underline">Regression Equation</hi>
+                                        </p>
+                                        <p n="6" rend="Normal">
+                                            <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                                                <mover xmlns="http://www.w3.org/1998/Math/MathML"
+                                                    accent="true">
+                                                    <mrow>
+                                                        <mi>Y</mi>
+                                                    </mrow>
+                                                    <mo>^</mo>
+                                                </mover>
+                                                <mo xmlns="http://www.w3.org/1998/Math/MathML">=</mo>
+                                                <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                                    <mrow>
+                                                        <mi>β</mi>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mn>1</mn>
+                                                    </mrow>
+                                                </msub>
+                                                <mo xmlns="http://www.w3.org/1998/Math/MathML">+</mo>
+                                                <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                                    <mrow>
+                                                        <mi>β</mi>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mn>2</mn>
+                                                    </mrow>
+                                                </msub>
+                                                <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                                    <mrow>
+                                                        <mi>X</mi>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mn>2</mn>
+                                                    </mrow>
+                                                </msub>
+                                                <mo xmlns="http://www.w3.org/1998/Math/MathML">+</mo>
+                                                <mo xmlns="http://www.w3.org/1998/Math/MathML">…</mo>
+                                                <mo xmlns="http://www.w3.org/1998/Math/MathML">+</mo>
+                                                <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                                    <mrow>
+                                                        <mi>β</mi>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi>i</mi>
+                                                    </mrow>
+                                                </msub>
+                                                <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                                    <mrow>
+                                                        <mi>X</mi>
+                                                    </mrow>
+                                                    <mrow>
+                                                        <mi>i</mi>
+                                                    </mrow>
+                                                </msub>
+                                            </mml:math>
+                                        </p>
+                                        <p n="7" rend="Normal">
+                                            <hi rend="bold underline">Definitions (Include Units of Measurement)</hi>
+                                        </p>
+                                        <p n="8" rend="Normal"> Ŷ = [DV name]</p>
+                                        <p n="9" rend="Normal"> X<hi rend="subscript">2</hi> = [IV (2) name]</p>
+                                        <p n="10" rend="Normal"> …</p>
+                                        <p n="11" rend="Normal"> X<hi rend="italic subscript">k</hi> = [IV (<hi rend="italic">k</hi>) name]</p>
+                                        <p n="12" rend="Normal">
+                                            <hi rend="bold underline">(F) Significance Test</hi>
+                                        </p>
+                                        <p n="13" rend="Normal">H<hi rend="subscript">0</hi>:
+                                            β<hi rend="subscript" xml:space="preserve">2 </hi>=
+                                            β<hi rend="subscript" xml:space="preserve">3 </hi>= … =
+                                            β<hi rend="subscript" xml:space="preserve">k </hi>= 0</p>
+                                        <p n="14" rend="Normal">H<hi rend="subscript">1</hi>:
+                                            β<hi rend="subscript" xml:space="preserve">2 </hi>≠ β<hi
+                                                rend="subscript">3</hi> ≠ … ≠
+                                            β<hi rend="subscript" xml:space="preserve">k </hi>≠ 0</p>
+                                        <p n="15" rend="Normal">Given an F value of <hi rend="italic bold"
+                                                >[f-value]</hi>, and a p-value of <hi rend="bold">[</hi><hi
+                                                rend="italic bold">p-value</hi><hi rend="bold">]</hi>, we
+                                            can reject H<hi rend="subscript">0</hi> at the <hi rend="bold"
+                                                >[α]</hi> level of significance, indicating that there is
+                                            statistically significant evidence of a relationship between Y
+                                            and the independent variables. </p>
+                                        <p n="16" rend="Normal">
+                                            <hi rend="bold underline">Coefficient of Determination</hi>
+                                        </p>
+                                        <p n="17" rend="Normal"><hi rend="subscript">R2</hi> = <hi rend="bold"
+                                                >[</hi><hi rend="italic bold">Value</hi><hi rend="bold"
+                                                >]</hi>. This value suggests that <hi rend="bold">[</hi><hi
+                                                rend="italic bold">Value * 100</hi><hi rend="bold">]</hi>
+                                            percent of the variation in <hi rend="bold">[</hi><hi
+                                                rend="italic bold">Ŷ</hi><hi rend="bold">]</hi> is due to
+                                            changes in the independent variables.</p>
+                                        <p n="18" rend="Normal"><mml:math
+                                                xmlns:mml="http://www.w3.org/1998/Math/MathML"><msup
+                                                    xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mover
+                                                            accent="true"
+                                                            ><mrow><mi>R</mi></mrow><mi>´</mi></mover></mrow><mrow><mn>2</mn></mrow></msup></mml:math>
+                                            = <hi rend="bold">[</hi><hi rend="italic bold">Value</hi><hi
+                                                rend="bold">]</hi>. This value suggests that <hi rend="bold"
+                                                >[</hi><hi rend="italic bold">Value * 100</hi><hi
+                                                rend="bold">]</hi> percent of the variation in <hi
+                                                rend="bold">[</hi><hi rend="italic bold">Ŷ</hi><hi
+                                                rend="bold">]</hi> is due to changes in the independent
+                                            variables, after adjusting for the number of independent
+                                            variables.</p>
+                                        <p n="19" rend="Normal">
+                                            <hi rend="bold underline">(T) Significance Tests</hi>
+                                        </p>
+                                        <p n="20" rend="Normal">H<hi rend="subscript">0</hi>: β<hi rend="subscript"
+                                                >2</hi> = 0</p>
+                                        <p n="21" rend="Normal">H<hi rend="subscript">1</hi>: β<hi rend="subscript"
+                                                >2</hi> ≠ 0</p>
+                                        <p n="22" rend="Normal">Given a t-value of <hi rend="bold">[</hi><hi
+                                                rend="italic bold">t-value</hi><hi rend="bold">]</hi> and a
+                                            p-value of <hi rend="bold">[</hi><hi rend="italic bold"
+                                                >p-value</hi><hi rend="bold">]</hi>, we can reject H<hi
+                                                rend="subscript">0</hi> at the <hi rend="bold">[α]</hi>
+                                            level of significance, indicating that there is statistically
+                                            significant evidence of a relationship between <hi rend="bold"
+                                                >[</hi><hi rend="italic bold">Y variable name</hi><hi
+                                                rend="bold">]</hi> and <hi rend="bold">[</hi><hi
+                                                rend="italic bold">X</hi><hi rend="italic bold subscript"
+                                                >2</hi><hi rend="italic bold" xml:space="preserve"> variable name</hi><hi
+                                                rend="bold">]</hi> holding the effects of other independent
+                                            variables constant. The standard error of β<hi rend="subscript"
+                                                >2</hi> indicates the average error in estimating β<hi
+                                                rend="subscript">2</hi> is <hi rend="bold">[</hi><hi
+                                                rend="italic bold">value</hi><hi rend="bold">]</hi>.</p>
+                                        <p n="23" rend="Normal">H<hi rend="subscript">0</hi>: β<hi rend="subscript"
+                                                >3</hi> = 0</p>
+                                        <p n="24" rend="Normal">H<hi rend="subscript">1</hi>: β<hi rend="subscript"
+                                                >3</hi> ≠ 0</p>
+                                        <p n="25" rend="Normal">Given a t-value of <hi rend="bold">[</hi><hi
+                                                rend="italic bold">t-value</hi><hi rend="bold">]</hi> and a
+                                            p-value of <hi rend="bold">[</hi><hi rend="italic bold"
+                                                >p-value</hi><hi rend="bold">]</hi>, we can reject H<hi
+                                                rend="subscript">0</hi> at the <hi rend="bold">[α]</hi>
+                                            level of significance, indicating that there is statistically
+                                            significant evidence of a relationship between <hi rend="bold"
+                                                >[</hi><hi rend="italic bold">Y variable name</hi><hi
+                                                rend="bold">]</hi> and <hi rend="bold">[</hi><hi
+                                                rend="italic bold">X</hi><hi rend="italic bold subscript"
+                                                >3</hi><hi rend="italic bold" xml:space="preserve"> variable name</hi><hi
+                                                rend="bold">]</hi> holding the effects of other independent
+                                            variables constant. The standard error of β<hi rend="subscript"
+                                                >3</hi> indicates the average error in estimating β<hi
+                                                rend="subscript">3</hi> is <hi rend="bold">[</hi><hi
+                                                rend="italic bold">value</hi><hi rend="bold">]</hi>.</p>
+                                        <p n="26" rend="Normal">…</p>
+                                        <p n="27" rend="Normal">H<hi rend="subscript">0</hi>: β<hi rend="subscript"
+                                                >k</hi> = 0</p>
+                                        <p n="28" rend="Normal">H<hi rend="subscript">1</hi>: β<hi rend="subscript"
+                                                >k</hi> ≠ 0</p>
+                                        <p n="29" rend="Normal">Given a t-value of <hi rend="bold">[</hi><hi
+                                                rend="italic bold">t-value</hi><hi rend="bold">]</hi> and a
+                                            p-value of <hi rend="bold">[</hi><hi rend="italic bold"
+                                                >p-value</hi><hi rend="bold">]</hi>, we can reject H<hi
+                                                rend="subscript">0</hi> at the <hi rend="bold">[α]</hi>
+                                            level of significance, indicating that there is statistically
+                                            significant evidence of a relationship between <hi rend="bold"
+                                                >[</hi><hi rend="italic bold">Y variable name</hi><hi
+                                                rend="bold">]</hi> and <hi rend="bold">[</hi><hi
+                                                rend="italic bold">X</hi><hi rend="italic bold subscript"
+                                                >k</hi><hi rend="italic bold" xml:space="preserve"> variable name</hi><hi
+                                                rend="bold">]</hi> holding the effects of other independent
+                                            variables constant. The standard error of β<hi rend="subscript"
+                                                >k</hi> indicates the average error in estimating β<hi
+                                                rend="subscript">k</hi> is <hi rend="bold">[</hi><hi
+                                                rend="italic bold">value</hi><hi rend="bold">]</hi>.</p>
+                                        <p n="30" rend="Normal">
+                                            <hi rend="bold underline">Interpretation of Parameter
+                                                Estimates</hi>
+                                        </p>
+                                        <p rend="Normal"><mml:math
+                                                xmlns:mml="http://www.w3.org/1998/Math/MathML"><msub
+                                                    xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mover
+                                                            accent="true"
+                                                            ><mrow><mi>β</mi></mrow><mo>^</mo></mover></mrow><mrow><mn>1</mn></mrow></msub></mml:math>
+                                            = <hi rend="bold">[</hi><mml:math
+                                                xmlns:mml="http://www.w3.org/1998/Math/MathML"><msub
+                                                    xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mover
+                                                            accent="true"
+                                                            ><mrow><mi>β</mi></mrow><mo>^</mo></mover></mrow><mrow><mn>1</mn></mrow></msub></mml:math><hi
+                                                rend="bold">value]</hi> is the intercept where the
+                                            regression plane crosses the Y-axis. However, because this
+                                            represents the estimated value of <hi rend="bold">[</hi><hi
+                                                rend="italic bold">Y variable name</hi><hi rend="bold"
+                                                >]</hi> when all independent variables are equal to zero,
+                                            this interpretation is reliable only when the data contains
+                                            values of zero for each independent variable.</p>
+                                        <p rend="Normal"><mml:math
+                                                xmlns:mml="http://www.w3.org/1998/Math/MathML"><msub
+                                                    xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mover
+                                                            accent="true"
+                                                            ><mrow><mi>β</mi></mrow><mo>^</mo></mover></mrow><mrow><mn>2</mn></mrow></msub></mml:math>
+                                            = A one unit increase in [<hi rend="italic bold"
+                                                >X</hi><hi rend="italic bold subscript" xml:space="preserve">2 </hi><hi
+                                                rend="italic bold">(use variable name)</hi>] would result in
+                                            a <hi rend="bold">[</hi><mml:math
+                                                xmlns:mml="http://www.w3.org/1998/Math/MathML"><msub
+                                                    xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mover
+                                                            accent="true"
+                                                            ><mrow><mi>β</mi></mrow><mo>^</mo></mover></mrow><mrow><mn>2</mn></mrow></msub></mml:math>
+                                            <hi rend="italic bold">value</hi><hi rend="bold">]</hi> change
+                                            in <hi rend="bold">[</hi><hi rend="italic bold">Ŷ</hi><hi
+                                                rend="bold">]</hi>, holding the effects of other independent
+                                            variables constant.</p>
+                                        <p rend="Normal"> …</p>
+                                        <p rend="Normal"><mml:math
+                                                xmlns:mml="http://www.w3.org/1998/Math/MathML"><msub
+                                                    xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mover
+                                                            accent="true"
+                                                            ><mrow><mi>β</mi></mrow><mo>^</mo></mover></mrow><mrow><mi>k</mi></mrow></msub></mml:math>
+                                            = A one unit increase in <hi rend="bold">[</hi><hi
+                                                rend="italic bold">X</hi><hi rend="italic bold subscript"
+                                                >k</hi><hi rend="italic bold" xml:space="preserve"> (use variable name)</hi><hi
+                                                rend="bold">]</hi> would result in a <hi rend="bold"
+                                                >[</hi><mml:math
+                                                xmlns:mml="http://www.w3.org/1998/Math/MathML"><msub
+                                                    xmlns="http://www.w3.org/1998/Math/MathML"><mrow><mover
+                                                            accent="true"
+                                                            ><mrow><mi>β</mi></mrow><mo>^</mo></mover></mrow><mrow><mi>k</mi></mrow></msub></mml:math>
+                                            <hi rend="italic bold">value</hi><hi rend="bold">]</hi> change
+                                            in <hi rend="italic bold">[Ŷ]</hi>, holding the effects of other
+                                            independent variables constant.</p>
+                                        <p rend="Normal">
+                                            <hi rend="bold underline">Standardized Regression Coefficients
+                                                (STBs)</hi>
+                                        </p>
+                                        <p rend="Normal">The standardized regression coefficients indicate
+                                            that <hi rend="bold">[</hi><hi rend="italic bold"
+                                                >variable</hi><hi rend="bold">]</hi> is contributing the
+                                            greatest change/effect on our dependent variable</p>
+                                        <p rend="Normal">
+                                            <hi rend="bold underline" xml:space="preserve">Standard Error of the Regression (Root MSE) </hi>
+                                        </p>
+                                        <p rend="Normal">The standard error of the regression indicates that
+                                            the average error in predicting Y using the regression equation
+                                            is <hi rend="bold">[</hi><hi rend="italic bold">value</hi><hi
+                                                rend="bold">]</hi>. Comparing this value to the dependent
+                                            variable mean of <hi rend="bold">[</hi><hi rend="italic bold"
+                                                >value</hi><hi rend="bold">]</hi> demonstrates that the
+                                            regression equation is doing a <hi rend="bold">[</hi><hi
+                                                rend="italic bold"
+                                                >poor/mediocre/moderate/good/excellent</hi><hi rend="bold"
+                                                >]</hi> job in predicting Y.</p>
+                                        <p rend="Normal">
+                                            <hi rend="bold underline">Coefficient of Variation</hi>
+                                        </p>
+                                        <p rend="Normal">Our coefficient of variation indicates that our
+                                            model will have <hi rend="bold">[</hi><hi rend="italic bold"
+                                                >x%</hi><hi rend="bold" xml:space="preserve">] </hi>error
+                                            when predicting the value of our dependent variable. This value
+                                            indicates the model is doing a <hi rend="bold">[</hi><hi
+                                                rend="italic bold"
+                                                >poor/mediocre/moderate/good/excellent</hi><hi rend="bold"
+                                                >]</hi> job of predicting the value of our dependent
+                                            variable given our independent variables.</p>
+                                        <p rend="Normal">
+                                            <hi rend="bold underline">Plot Interpretation</hi>
+                                        </p>
+                                        <figure>
+                                            <graphic n="1002" width="5.790847222222222cm"
+                                                height="5.646208333333333cm" url="media/image4.png"
+                                                rend="inline">
+                                                <desc/>
+                                            </graphic>
+                                        </figure>
+                                        <p rend="Normal">There <hi rend="bold">[</hi><hi rend="italic bold"
+                                                >is/is not</hi><hi rend="bold">]</hi> an obvious pattern.
+                                            This might indicate …</p>
+                                        <p rend="Normal">
+                                            <hi rend="bold underline">Tests for Multicollinearity and Other
+                                                Issues (i.e. VIFs)</hi>
+                                        </p>
+                                    </div>
+                                </div>
+                            </body>
+                        </text>
+                    </TEI>       
                 </data>
             </xf:instance>
+            
+            <xf:bind ref="instance('template')//tei:p[@n=3]" type="xsd:date"/>
+            
+            <xf:submission id="save-to-file" method="put" resource="file://" replace="none"/>
+            
+            <xf:submission id="load-from-file" method="get" serialization="none" replace="instance" resource="file://"/>
+            
             <xf:instance id="file-upload">
                 <data xmlns="">
                     <upload filename="">
-                        <fileToConvert></fileToConvert>
+                        <fileToConvert><![CDATA[]]></fileToConvert>
                     </upload>
                 </data>
             </xf:instance>
-            <xf:submission id="upload-file" method="multipart-post"
-                mode="asynchronous"
-                ref="instance('file-upload')/upload/fileToConvert"
-                replace="instance" targetref="instance('result')/result"
-                resource="http://www.tei-c.org/ege-webservice//Conversions/TEI%3Atext%3Axml/docx%3Aapplication%3Avnd.openxmlformats-officedocument.wordprocessingml.document"
-            />
+            <!--<xf:submission id="upload-file" method="form-data-post"
+                mode="asynchronous" ref="instance('file-upload')/upload"
+                cdata-section-elements="fileToConvert"
+                mediatype="multipart/form-data" omit-xml-declaration="true"
+                replace="" instance=""
+                resource="http://www.tei-c.org/ege-webservice/Conversions/TEI%3Atext%3Axml/xml%3Aapplication%3Axml/conversion?properties=%3Cconversions%3E%3Cconversion%20index=%220%22%3E%3Cproperty%20id=%22oxgarage.getImages%22%3Efalse%3C/property%3E%3Cproperty%20id=%22oxgarage.getOnlineImages%22%3Efalse%3C/property%3E%3Cproperty%20id=%22oxgarage.lang%22%3Een%3C/property%3E%3Cproperty%20id=%22oxgarage.textOnly%22%3Etrue%3C/property%3E%3Cproperty%20id=%22pl.psnc.dl.ege.tei.profileNames%22%3Edefault%3C/property%3E%3C/conversion%3E%3C/conversions%3E"> </xf:submission>-->
+
         </xf:model>
     </head>
     <body>
-        <xf:group ref="instance('file-upload')/upload">
-
-            <h1>Test <code>&lt;xf:upload/&gt;</code> control</h1>
+        
+        <xf:group ref="instance('template')/tei:TEI/tei:text/tei:body">
+            <h1>
+                <xf:output ref="tei:p/tei:hi/tei:hi"/>
+            </h1>
+            <xf:group ref="tei:div">
+                <xf:label>Header</xf:label>
+                <xf:input ref="tei:head" incremental="true">
+                    <xf:label>Name: </xf:label>
+                </xf:input>
+                <xf:input ref="tei:p[@n=1]" incremental="true">
+                    <xf:label>Partner's name: </xf:label>
+                </xf:input>
+                <xf:input ref="tei:p[@n=2]" incremental="true">
+                    <xf:label>Homework #: </xf:label>
+                </xf:input>
+                <xf:input ref="tei:p[@n=3]" incremental="true">
+                    <xf:label>Date: </xf:label>
+                </xf:input>
+            </xf:group>
+            <xf:group ref="tei:div">
+                <xf:label>Body</xf:label>
+                <xf:repeat ref="tei:div">
+                    <xf:input ref="tei:p/tei:hi">
+                        <xf:label>Question #: </xf:label>
+                    </xf:input>
+                    <xf:group ref="tei:figure">
+                        <xf:label>Table from SAS</xf:label>
+                    </xf:group>
+                    <xf:group>
+                        <xf:label>Answer</xf:label>
+                        <xf:output ref="tei:p[@n=5]"/>
+                        <br/>
+                        <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML">
+                            <mover xmlns="http://www.w3.org/1998/Math/MathML"
+                                accent="true">
+                                <mrow>
+                                    <mi>Y</mi>
+                                </mrow>
+                                <mo>^</mo>
+                            </mover>
+                            <mo xmlns="http://www.w3.org/1998/Math/MathML">=</mo>
+                            <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>β</mi>
+                                </mrow>
+                                <mrow>
+                                    <mn>1</mn>
+                                </mrow>
+                            </msub>
+                            <mo xmlns="http://www.w3.org/1998/Math/MathML">+</mo>
+                            <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>β</mi>
+                                </mrow>
+                                <mrow>
+                                    <mn>2</mn>
+                                </mrow>
+                            </msub>
+                            <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>X</mi>
+                                </mrow>
+                                <mrow>
+                                    <mn>2</mn>
+                                </mrow>
+                            </msub>
+                            <mo xmlns="http://www.w3.org/1998/Math/MathML">+</mo>
+                            <mo xmlns="http://www.w3.org/1998/Math/MathML">…</mo>
+                            <mo xmlns="http://www.w3.org/1998/Math/MathML">+</mo>
+                            <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>β</mi>
+                                </mrow>
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </msub>
+                            <msub xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>X</mi>
+                                </mrow>
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </msub>
+                        </mml:math>
+                        <br/>
+                        <xf:output ref="tei:p[@n=7]"/>
+                        <br/>
+                        <xf:input ref="tei:p[@n=8]">
+                            <xf:label>Dependent variable: </xf:label>
+                        </xf:input>
+                    </xf:group>
+                </xf:repeat>
+            </xf:group>
+            
+            
+        
+        
+        </xf:group>
+        
+        <br/>
+        <br/>
+        
+        
+        <xf:group ref="instance('file-upload')/upload">           
 
             <xf:group>
                 <xf:upload ref="fileToConvert" mediatype="application/xml"
@@ -40,22 +496,25 @@
                     <xf:filename ref="instance('file-upload')/upload/@filename"
                     />
                 </xf:upload>
-                <xf:trigger ref="fileToConvert">
-                    <xf:label>Upload</xf:label>
+                
+                <xf:trigger>
+                    <xf:label>Submit</xf:label>
                     <xf:action ev:event="DOMActivate">
-                        <xf:send submission="upload-file"/>
+                        <xf:insert origin="instance('result')/result/*" context="instance('file-upload')/upload/fileToConvert"/>
+                        <!--<xf:send submission="upload-file"/>-->
                     </xf:action>
                 </xf:trigger>
+                
+                <xf:submit submission="save-to-file">
+                    <xf:label>Save</xf:label>
+                </xf:submit>
+                
+                <xf:submit submission="load-from-file">
+                    <xf:label>Load</xf:label>
+                </xf:submit>
+                
             </xf:group>
-
-            <xf:group>
-                <!--<xf:output value="serialize(instance('file-upload'))"/>-->
-            </xf:group>
-
-            <xf:group>
-                <xf:output value="serialize(instance('result'))"/>
-            </xf:group>
-
+            
         </xf:group>
     </body>
 </html>
