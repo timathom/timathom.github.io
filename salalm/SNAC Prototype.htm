@@ -1,0 +1,917 @@
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<!-- saved from url=(0050)http://socialarchive.iath.virginia.edu/snac/search -->
+<html lang="en" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+      
+      
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="icon" type="image/ico" data-xsl-asset="images/favicon.ico" href="http://bioghist.s3-website-us-east-1.amazonaws.com/build/images/favicon.ico">
+      
+      <title>SNAC Prototype</title>
+      
+      <link data-xsl-asset="stylesheets/index.css" href="./SNAC Prototype_files/index.css" media="all" rel="stylesheet" type="text/css">
+      
+      
+      <link rel="stylesheet" href="./SNAC Prototype_files/icons.data.svg.css"><script type="application/javascript" async="" defer="" src="./SNAC Prototype_files/track.js"></script><script type="text/javascript" async="" src="./SNAC Prototype_files/linkid.js"></script><script type="text/javascript" async="" src="./SNAC Prototype_files/2eBaPQxM1wF52g2x50bi0A.js"></script><script async="" src="./SNAC Prototype_files/analytics.js"></script><script data-xsl-asset="javascripts/modernizr.js" src="./SNAC Prototype_files/modernizr.js" charset="utf-8" type="text/javascript"></script>
+      
+      
+      <style>
+         h3 { color: black; }
+         .csscolumns .list-comments {
+         column-width: 15em;
+         -moz-column-width: 15em;
+         -webkit-column-width: 15em;
+         column-gap: .5em;
+         -moz-column-gap: .5em;
+         -webkit-column-gap: .5em; 
+         }
+         
+         .csscolumns .thumbnail {
+         display: inline-block;
+         margin:  .5em;
+         padding:  0; 
+         width:98%;
+         }
+         
+         .no-csscolumns .thumbnail {
+         width: 15em;
+         margin:  .5em;
+         height: 25em;
+         float: left;
+         }
+         
+         .thumbnail img:hover {
+         opacity: 0.66;
+         filter: alpha(opacity=66); 
+         }
+         
+         .wikicredit {
+         color: #fff;
+         background: rgba(0, 0, 0, 0.4);
+         padding: 0.33em;
+         }
+         
+         a.wikicreditlink { color: #fff; }
+         a.wikicreditlink:hover div { text-decoration: underline; }
+         
+      </style>
+      
+      <script type="text/javascript">
+         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+         
+         ga('create', 'UA-19136667-2', 'virginia.edu');
+         ga('require', 'linkid', 'linkid.js');
+         ga('require', 'displayfeatures');
+         ga('set', 'anonymizeIp', true);
+         ga('send', 'pageview');
+         
+      </script>
+      <script>
+         // Include the UserVoice JavaScript SDK (only needed once on a page)
+         UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/2eBaPQxM1wF52g2x50bi0A.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+         
+         //
+         // UserVoice Javascript SDK developer documentation:
+         // https://www.uservoice.com/o/javascript-sdk
+         //
+         
+         // Set colors
+         UserVoice.push(['set', {
+         accent_color: '#448dd6',
+         trigger_color: 'white',
+         trigger_background_color: 'rgba(46, 49, 51, 0.6)'
+         }]);
+         
+         // Add default trigger to the bottom-right corner of the window:
+         UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+         
+         // Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+         UserVoice.push(['autoprompt', {}]);
+         
+      </script>
+      
+   <style type="text/css" media="screen">.uv-icon{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;display:inline-block;cursor:pointer;position:relative;-moz-transition:all 300ms;-o-transition:all 300ms;-webkit-transition:all 300ms;transition:all 300ms;width:39px;height:39px;position:fixed;z-index:100002;opacity:0.8;-moz-transition:opacity 100ms;-o-transition:opacity 100ms;-webkit-transition:opacity 100ms;transition:opacity 100ms}.uv-icon.uv-bottom-right{bottom:10px;right:12px}.uv-icon.uv-top-right{top:10px;right:12px}.uv-icon.uv-bottom-left{bottom:10px;left:12px}.uv-icon.uv-top-left{top:10px;left:12px}.uv-icon.uv-is-selected{opacity:1}.uv-icon svg{width:39px;height:39px}.uv-popover{font-family:sans-serif;font-weight:100;font-size:13px;color:black;position:fixed;z-index:100001}.uv-popover-content{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;background:white;position:relative;width:325px;height:325px;-moz-transition:background 200ms;-o-transition:background 200ms;-webkit-transition:background 200ms;transition:background 200ms}.uv-bottom .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-top .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-left .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-right .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-ie8 .uv-popover-content{position:relative}.uv-ie8 .uv-popover-content .uv-popover-content-shadow{display:block;background:black;content:'';position:absolute;left:-15px;top:-15px;width:100%;height:100%;filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius=15,MakeShadow=true,ShadowOpacity=0.30);z-index:-1}.uv-popover-tail{border:9px solid transparent;width:0;z-index:10;position:absolute;-moz-transition:border-top-color 200ms;-o-transition:border-top-color 200ms;-webkit-transition:border-top-color 200ms;transition:border-top-color 200ms}.uv-top .uv-popover-tail{bottom:-20px;border-top:11px solid white}.uv-bottom .uv-popover-tail{top:-20px;border-bottom:11px solid white}.uv-left .uv-popover-tail{right:-20px;border-left:11px solid white}.uv-right .uv-popover-tail{left:-20px;border-right:11px solid white}.uv-popover-loading{background:white;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;position:absolute;width:100%;height:100%;left:0;top:0}.uv-popover-loading-text{position:absolute;top:50%;margin-top:-0.5em;width:100%;text-align:center}.uv-popover-iframe-container{height:100%}.uv-popover-iframe{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;overflow:hidden}.uv-is-hidden{display:none}.uv-is-invisible{display:block !important;visibility:hidden !important}.uv-is-transitioning{display:block !important}.uv-no-transition{-moz-transition:none !important;-webkit-transition:none !important;-o-transition:color 0 ease-in !important;transition:none !important}.uv-fade{opacity:1;-moz-transition:opacity 200ms ease-out;-o-transition:opacity 200ms ease-out;-webkit-transition:opacity 200ms ease-out;transition:opacity 200ms ease-out}.uv-fade.uv-is-hidden{opacity:0}.uv-scale-top,.uv-scale-top-left,.uv-scale-top-right,.uv-scale-bottom,.uv-scale-bottom-left,.uv-scale-bottom-right,.uv-scale-right,.uv-scale-right-top,.uv-scale-right-bottom,.uv-scale-left,.uv-scale-left-top,.uv-scale-left-bottom,.uv-slide-top,.uv-slide-bottom,.uv-slide-left,.uv-slide-right{opacity:1;-moz-transition:all 80ms ease-out;-o-transition:all 80ms ease-out;-webkit-transition:all 80ms ease-out;transition:all 80ms ease-out}.uv-scale-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%);-ms-transform:scale(0.8) translateY(-15%);-webkit-transform:scale(0.8) translateY(-15%);transform:scale(0.8) translateY(-15%)}.uv-scale-top-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%) translateX(-10%);-ms-transform:scale(0.8) translateY(-15%) translateX(-10%);-webkit-transform:scale(0.8) translateY(-15%) translateX(-10%);transform:scale(0.8) translateY(-15%) translateX(-10%)}.uv-scale-top-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%) translateX(10%);-ms-transform:scale(0.8) translateY(-15%) translateX(10%);-webkit-transform:scale(0.8) translateY(-15%) translateX(10%);transform:scale(0.8) translateY(-15%) translateX(10%)}.uv-scale-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%);-ms-transform:scale(0.8) translateY(15%);-webkit-transform:scale(0.8) translateY(15%);transform:scale(0.8) translateY(15%)}.uv-scale-bottom-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%) translateX(-10%);-ms-transform:scale(0.8) translateY(15%) translateX(-10%);-webkit-transform:scale(0.8) translateY(15%) translateX(-10%);transform:scale(0.8) translateY(15%) translateX(-10%)}.uv-scale-bottom-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%) translateX(10%);-ms-transform:scale(0.8) translateY(15%) translateX(10%);-webkit-transform:scale(0.8) translateY(15%) translateX(10%);transform:scale(0.8) translateY(15%) translateX(10%)}.uv-scale-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%);-ms-transform:scale(0.8) translateX(15%);-webkit-transform:scale(0.8) translateX(15%);transform:scale(0.8) translateX(15%)}.uv-scale-right-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%) translateY(-10%);-ms-transform:scale(0.8) translateX(15%) translateY(-10%);-webkit-transform:scale(0.8) translateX(15%) translateY(-10%);transform:scale(0.8) translateX(15%) translateY(-10%)}.uv-scale-right-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%) translateY(10%);-ms-transform:scale(0.8) translateX(15%) translateY(10%);-webkit-transform:scale(0.8) translateX(15%) translateY(10%);transform:scale(0.8) translateX(15%) translateY(10%)}.uv-scale-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%);-ms-transform:scale(0.8) translateX(-15%);-webkit-transform:scale(0.8) translateX(-15%);transform:scale(0.8) translateX(-15%)}.uv-scale-left-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%) translateY(-10%);-ms-transform:scale(0.8) translateX(-15%) translateY(-10%);-webkit-transform:scale(0.8) translateX(-15%) translateY(-10%);transform:scale(0.8) translateX(-15%) translateY(-10%)}.uv-scale-left-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%) translateY(10%);-ms-transform:scale(0.8) translateX(-15%) translateY(10%);-webkit-transform:scale(0.8) translateX(-15%) translateY(10%);transform:scale(0.8) translateX(-15%) translateY(10%)}.uv-slide-top.uv-is-hidden{-moz-transform:translateY(-100%);-ms-transform:translateY(-100%);-webkit-transform:translateY(-100%);transform:translateY(-100%)}.uv-slide-bottom.uv-is-hidden{-moz-transform:translateY(100%);-ms-transform:translateY(100%);-webkit-transform:translateY(100%);transform:translateY(100%)}.uv-slide-left.uv-is-hidden{-moz-transform:translateX(-100%);-ms-transform:translateX(-100%);-webkit-transform:translateX(-100%);transform:translateX(-100%)}.uv-slide-right.uv-is-hidden{-moz-transform:translateX(100%);-ms-transform:translateX(100%);-webkit-transform:translateX(100%);transform:translateX(100%)}
+</style><style type="text/css" media="screen">.uv-icon:hover{opacity:1}</style><style type="text/css" media="print">#uvTab,.uv-tray,.uv-icon,.uv-popover,.uv-bubble{display:none!important}</style></head>
+   
+   
+   
+   <body class="search search_index">
+      
+      
+      
+      
+      <div id="snacnav" role="navigation" class="headroom headroom--pinned headroom--top">
+         
+         
+         <div>
+            
+            
+            <div class="navbar-header">
+               
+               
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  
+                  
+                  <span class="sr-only">Toggle navigation</span>
+                  
+                  
+                  <span class="icon-bar"></span>
+                  
+                  
+                  <span class="icon-bar"></span>
+                  
+                  
+                  <span class="icon-bar"></span>
+                  
+                  
+               </button>
+               
+               
+               <a class="navbar-brand" id="snacnav-logo-right" href="http://socialarchive.iath.virginia.edu/">
+                        
+                        <img data-xsl-asset="images/snac_spelled_out_300.svg" src="./SNAC Prototype_files/snac_spelled_out_300.svg" style="margin-bottom: 4px; padding-bottom: 4px;" alt="Social Networks and Archival Context">
+                        
+                     </a>
+               
+               
+            </div>
+            
+            
+            <div class="navbar-collapse collapse">
+               
+               
+               <ul class="nav navbar-nav">
+                  
+                  
+                  <li>
+                     
+                     <a href="http://socialarchive.iath.virginia.edu/snac/search" id="newsearch-link">PROTOTYPE HOME</a>
+                     
+                  </li>
+                  
+                  
+                  <li>
+                     
+                     <a href="http://socialarchive.iath.virginia.edu/home_prototype.html">ABOUT PROTOTYPE</a>
+                     
+                  </li>
+                  
+                  
+               </ul>
+               
+               
+               <ul class="nav navbar-nav navbar-right hidden-sm hidden-xs">
+                  
+                  
+                  <li>
+                     
+                     
+                     <a class="navbar-brand" id="snacnav-logo-left" href="http://socialarchive.iath.virginia.edu/" style="padding: 0px;">
+                  
+                  <img data-xsl-asset="images/snac_logo_small.svg" src="./SNAC Prototype_files/snac_logo_small.svg" alt="SNAC">
+                  
+               </a>
+                     
+                     
+                  </li>
+                  
+                  
+               </ul>
+               
+               
+            </div>
+            
+            
+            
+         </div>
+         
+         
+      </div>
+      
+      
+      
+      <div class="main_content">
+         
+         
+         <div id="search_by">
+            
+            
+            <h3>Search by:</h3>
+            
+            
+            <ul data-xsl="navigation">
+               
+               
+               <li class="active">
+                  
+                  <a href="http://socialarchive.iath.virginia.edu/snac/search#home" data-toggle="tab">All</a>
+                  
+               </li>
+               
+               
+               <li>
+                  
+                  <a href="http://socialarchive.iath.virginia.edu/snac/search?facet-entityType=person">
+                     
+                     <span class="icon-ind x2"></span>Person
+                     
+                  </a>
+                  
+               </li>
+               
+               
+               <li>
+                  
+                  <a href="http://socialarchive.iath.virginia.edu/snac/search?facet-entityType=family">
+                     
+                     <span class="icon-fam x2"></span>Family
+                     
+                  </a>
+                  
+               </li>
+               
+               
+               <li>
+                  
+                  <a href="http://socialarchive.iath.virginia.edu/snac/search?facet-entityType=corporateBody">
+                     
+                     <span class="icon-org x2"></span>Organization
+                     
+                  </a>
+                  
+               </li>
+               
+               
+               
+               
+            </ul>
+            
+            
+            <form method="GET" action="http://socialarchive.iath.virginia.edu/snac/search">
+               
+               
+               <div>
+                  
+                  
+                  <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;"><input type="text" style="width: 100%; position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; opacity: 1; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" title="enter a name or keywords" value="" class="ui-autocomplete-input tt-hint" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" data-xsl="search" readonly="" spellcheck="false" tabindex="-1"><input id="userInput" type="text" style="width: 100%; position: relative; vertical-align: top; background-color: transparent;" title="enter a name or keywords" placeholder="enter a name or keywords" name="text" value="" class="ui-autocomplete-input tt-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" data-xsl="search" spellcheck="false" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 17.16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-0"></div></span></span>
+                  
+                  
+                  <input class="button" style="margin-top: 5px;" title="full text" type="submit" value="search">
+                  
+                  
+                  <label class="advancedSearch" title="Advanced Search" style="display: none;">
+                     
+                     
+                     <i>advanced</i>… limit to
+                     
+                     
+                     <a title="EAC tag library" class="noarrow" href="https://spreadsheets.google.com/pub?key=0AmlczcEUr8GxdGRjeEJ6S2tBU0lmMjlDaWZZdFNiQmc&amp;hl=en&amp;output=html">section</a>
+                     
+                     
+                     <select name="sectionType">
+                        
+                        
+                        <option value="" selected="selected">eac-cpf</option>
+                        
+                        
+                        <option value="control">&nbsp;&nbsp;control</option>
+                        
+                        
+                        <option value="cpfdescription" title="default" class="default" selected="selected">&nbsp;&nbsp;cpfDescription</option>
+                        
+                        
+                        <option value="identity">&nbsp;&nbsp;&nbsp;&nbsp;identity</option>
+                        
+                        
+                        <option value="description">&nbsp;&nbsp;&nbsp;&nbsp;description</option>
+                        
+                        
+                        <option value="existdates">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;existDates</option>
+                        
+                        
+                        <option value="bioghist">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;biogHist</option>
+                        
+                        
+                        <option value="generalcontext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;generalContext</option>
+                        
+                        
+                        <option value="occupation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;occupation</option>
+                        
+                        
+                        <option value="localdescription">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;localDescription</option>
+                        
+                        
+                        <option value="relation">&nbsp;&nbsp;&nbsp;&nbsp;relations</option>
+                        
+                        
+                        <option value="cpfrelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cpfRelation</option>
+                        
+                        
+                        <option value="resourcerelation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resourceRelation</option>
+                        
+                        
+                     </select>
+                     
+                     
+                  </label>
+                  
+               </div>
+               
+               <div data-xsl="spelling"></div> 
+               
+            </form>
+            
+            
+         </div>
+         
+         
+         
+         
+         <div class="azgrid" style="position: relative;"> 
+             
+            
+            <div style="padding: 1em; ">
+               <a href="http://socialarchive.iath.virginia.edu/snac/search" id="explore-fr">
+                  <button type="button" class="btn btn-warning btn-lg">
+                     <span class="glyphicon glyphicon-refresh"></span>
+                     Explore featured identities
+                     
+                  </button>
+               </a>
+            </div>
+            <div class="row list-comments">
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125w0g">
+                        <img src="./SNAC Prototype_files/Agnew_Harold_1955_LAT1383.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Agnew_Harold_1955_LAT1383.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">8 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125w0g">Agnew, Harold M.</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61265f0">
+                        <img src="./SNAC Prototype_files/Fisher_Ames_-_Project_Gutenberg_eText_15391.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Fisher_Ames_-_Project_Gutenberg_eText_15391.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">48 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61265f0">Ames, Fisher, 1758-1808</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61267pz">
+                        <img src="./SNAC Prototype_files/DBP_278_Leo_Baeck_20_Pf_1957.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:DBP_278_Leo_Baeck_20_Pf_1957.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">33 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61267pz">Baeck, Leo, 1873-1956</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w612603f">
+                        <img src="./SNAC Prototype_files/Picture_of_Bishop_Charles_Brent.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Picture_of_Bishop_Charles_Brent.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">32 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w612603f">Brent, Charles Henry, 1862-1929</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125vhs">
+                        <img src="./SNAC Prototype_files/Portrait_of_Henry_Billings_Brown.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Portrait_of_Henry_Billings_Brown.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">18 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125vhs">Brown, Henry Billings, 1836-1913</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61266jr">
+                        <img src="./SNAC Prototype_files/John_Corbin.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:John_Corbin.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">20 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61266jr">Corbin, John, 1870-1959</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6126dqg">
+                        <img src="./SNAC Prototype_files/James_H._R._Cromwell2.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:James_H._R._Cromwell2.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">15 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6126dqg">Cromwell, James H. R. (James Henry Roberts), 1896-</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w612605b">
+                        <img src="./SNAC Prototype_files/Anna_Elizabeth_Dickinson_-_Brady-Handy.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Anna_Elizabeth_Dickinson_-_Brady-Handy.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">65 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w612605b">Dickinson, Anna E. (Anna Elizabeth), 1842-1932</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125vkp">
+                        <img src="./SNAC Prototype_files/Freeman_Dyson.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Freeman_Dyson.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">17 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125vkp">Dyson, Freeman J.</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6126668">
+                        <img src="./SNAC Prototype_files/Mickey_Edwards_at_OETA.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Mickey_Edwards_at_OETA.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">3 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6126668">Edwards, Mickey, 1937-....</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61269wg">
+                        <img src="./SNAC Prototype_files/Jan_Ingenhousz.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Jan_Ingenhousz.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">33 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61269wg">Ingenhousz, Jan, 1730-1799</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125z7f">
+                        <img src="./SNAC Prototype_files/Amos_kendall_by_mathew_brady.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Amos_kendall_by_mathew_brady.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">100 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125z7f">Kendall, Amos, 1789-1869</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61262zg">
+                        <img src="./SNAC Prototype_files/Fitzhugh_Lee_cph.3b04429.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Fitzhugh_Lee_cph.3b04429.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">134 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61262zg">Lee, Fitzhugh, 1835-1905</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61263w0">
+                        <img src="./SNAC Prototype_files/William_George_Maton_1774-1835.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:William_George_Maton_1774-1835.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">3 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61263w0">Maton, William George, 1774-1835</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6126dj7">
+                        <img src="./SNAC Prototype_files/Mignard-autoportrait.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Mignard-autoportrait.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">11 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6126dj7">Mignard, Pierre, 1612-1695</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61263kz">
+                        <img src="./SNAC Prototype_files/Elsie_Clews_Parsons_aboard_Malabar_V.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Elsie_Clews_Parsons_aboard_Malabar_V.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">30 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61263kz">Parsons, Elsie Worthington Clews, 1874-1941</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125zr5">
+                        <img src="./SNAC Prototype_files/Marco_Polo_portrait.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Marco_Polo_portrait.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">15 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125zr5">Polo, Marco, 1254-1323?</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61262v4">
+                        <img src="./SNAC Prototype_files/James_Roosevelt-crop.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:James_Roosevelt-crop.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">118 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61262v4">Roosevelt, James, 1907-</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125vrx">
+                        <img src="./SNAC Prototype_files/John_Sedgwick.png" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:John_Sedgwick.png" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">49 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6125vrx">Sedgwick, John, 1813-1864</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6126cvv">
+                        <img src="./SNAC Prototype_files/George-Robertson-Sinclair.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:George-Robertson-Sinclair.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">4 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6126cvv">Sinclair, G. R. (George Robertson), 1863-1917</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6126cmq">
+                        <img src="./SNAC Prototype_files/Slayton.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Slayton.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">7 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w6126cmq">Slayton, Donald K., 1924-1993</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61261st">
+                        <img src="./SNAC Prototype_files/WFSmith_MGEN.JPG" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:WFSmith_MGEN.JPG" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">33 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61261st">Smith, William Farrar, 1824-1903</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61266xp">
+                        <img src="./SNAC Prototype_files/Sumner.gif" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Sumner.gif" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">43 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w61266xp">Sumner, William Graham, 1840-1910</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w612647w">
+                        <img src="./SNAC Prototype_files/Governor_Monrad_Charles_Wallgren.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Governor_Monrad_Charles_Wallgren.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">18 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w612647w">Wallgren, Monrad C. (Monrad Charles), 1891-1961</a>
+                     </h4>
+                  </div>
+               </div>
+               <div class="thumbnail">
+                  <div style="float: none;">
+                     <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w612662g">
+                        <img src="./SNAC Prototype_files/Beverly_Page_Yates.jpg" alt="[thumbnail of person]">
+                     </a>
+                     <a href="http://en.wikipedia.org/wiki/File:Beverly_Page_Yates.jpg" class="wikicreditlink">
+                        <p class="text-center" style="margin-top: -1.5em;">
+                           <span class="wikicredit">Image from Wikipedia</span>
+                        </p>
+                     </a>
+                  </div>
+                  <div class="caption">
+                     <div class="text-muted">2 related collections</div>
+                     <h4>
+                        <a href="http://socialarchive.iath.virginia.edu/ark:/99166/w612662g">Yates, Beverly Page, approximately 1811-approximately 1883</a>
+                     </h4>
+                  </div>
+               </div>
+            </div>
+            
+         </div>
+         
+         
+         
+         
+         
+      </div>
+      
+      <div class="container">
+         
+         <div class="row" style="padding-top: 1em; padding-bottom: 0em;">
+            
+            <div class="col-xs-2">
+               
+               <a href="http://socialarchive.iath.virginia.edu/snac/search?rmode=terms">Terms and Privacy</a>
+               
+            </div>
+            
+            <div class="col-xs-4 text-center">
+               
+               <a class="qt-trigger" href="http://socialarchive.iath.virginia.edu/sponsors.html" data-hasqtip="0">Sponsors</a>
+               
+               <div class="sr-only">
+                  
+                  <div class="text-center">
+                     <a href="http://www.mellon.org/">Andrew W. Mellon Foundation</a>
+                  </div>
+                  
+                  <div class="text-center">
+                     <a href="http://www.imls.gov/">The Institute for Museum and Library Services</a>
+                  </div>
+                  
+                  <div class="text-center">
+                     <a href="http://www.neh.gov/">National Endowment for the Humanities</a>
+                  </div>
+                  
+               </div>
+               
+            </div>
+            
+            <div class="col-xs-4 text-center">
+               
+               <a class="qt-trigger" href="http://socialarchive.iath.virginia.edu/collaborators.html" data-hasqtip="1">Collaborators</a>
+               
+               <div class="sr-only">
+                  
+                  <div class="text-center">
+                     <a href="http://iath.virginia.edu/">Institute for Advanced Technology in the Humanities</a>
+                  </div>
+                  
+                  <div class="text-center">
+                     <a href="http://www.ischool.berkeley.edu/">UC Berkeley School of Information</a>
+                  </div>
+                  
+                  <div class="text-center">
+                     <a href="http://www.cdlib.org/">California Digital Library</a>
+                  </div>
+                  
+                  <div class="text-center">
+                     <a href="http://www.archives.gov/">National Archives and Records Administration</a>
+                  </div>
+                  
+               </div>
+               
+            </div>
+            
+            <div class="col-xs-2 text-right">
+               
+               <a href="http://socialarchive.iath.virginia.edu/about.html">About
+                  
+                  <abbr class="initialism">SNAC</abbr>
+                  
+               </a>
+               
+            </div>
+            
+         </div>
+         
+      </div>
+      
+      
+      
+      <script data-xsl-asset="javascripts/all.js" src="./SNAC Prototype_files/all.js" charset="utf-8" type="text/javascript"></script><div data-html2canvas-ignore="true" class="uv-icon uv-bottom-right"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="39px" height="39px" viewBox="0 0 39 39" enable-background="new 0 0 39 39" xml:space="preserve">
+<g>
+	<path class="uv-bubble-background" fill="rgba(46, 49, 51, 0.6)" d="M31.425,34.514c-0.432-0.944-0.579-2.007-0.591-2.999c4.264-3.133,7.008-7.969,7.008-13.409
+		C37.842,8.658,29.594,1,19.421,1S1,8.658,1,18.105c0,9.446,7.932,16.79,18.105,16.79c1.845,0,3.94,0.057,5.62-0.412
+		c0.979,1.023,2.243,2.3,2.915,2.791c3.785,2.759,7.571,0,7.571,0S32.687,37.274,31.425,34.514z" style="fill: rgba(46, 49, 51, 0.6);"></path>
+	<g>
+		<g>
+			<path class="uv-bubble-foreground" fill="#FFFFFF" d="M16.943,19.467c0-3.557,4.432-3.978,4.432-6.058c0-0.935-0.723-1.721-2.383-1.721
+				c-1.508,0-2.773,0.725-3.709,1.87l-2.441-2.743c1.598-1.9,4.01-2.924,6.602-2.924c3.891,0,6.271,1.959,6.271,4.765
+				c0,4.4-5.037,4.732-5.037,7.265c0,0.481,0.243,0.994,0.574,1.266l-3.316,0.965C17.303,21.459,16.943,20.522,16.943,19.467z
+				 M16.943,26.19c0-1.326,1.114-2.441,2.44-2.441c1.327,0,2.442,1.115,2.442,2.441c0,1.327-1.115,2.441-2.442,2.441
+				C18.058,28.632,16.943,27.518,16.943,26.19z" style="fill: white;"></path>
+		</g>
+	</g>
+</g>
+</svg>
+</div>
+      
+      
+      
+      <script data-xsl-asset="javascripts/sample.js" src="./SNAC Prototype_files/sample.js" charset="utf-8" type="text/javascript"></script>
+      
+      
+      <script data-xsl-asset="javascripts/results.js" src="./SNAC Prototype_files/results.js" charset="utf-8" type="text/javascript"></script>
+      
+      
+      
+      
+   
+   
+   
+
+<!--
+        url: http://socialarchive.iath.virginia.edu:8888/xtf/search
+        xslt: file:/home/snac2/twincat/xtf8888/webapps/xtf/cpf2html/featured-stats.xsl--></body></html>
