@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Black Bibliography Project Data Model Overview</title>
+    <style media="all" type="text/css">
+      @font-face {
+        font-family: "YaleNew-Bold";
+        src: url("Yale_typeface/YaleNew-Bold.otf");
+      }
+      @font-face {
+        font-family: "YaleNew-Italic";
+        src: url("Yale_typeface/YaleNew-Italic.otf");
+      }
+      @font-face {
+        font-family: "YaleNew-Roman";
+        src: url("Yale_typeface/YaleNew-Roman.otf");
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      #outer {
+        min-height: 100%;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: Mallory, sans-serif;
+      }
+      .yale {
+        font-family: "YaleNew-Roman", "Times New Roman", serif;
+        text-align: center;
+      }
+      .center {
+        margin: 0;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      #prev {
+        margin: 0;
+        top: 10px;
+        left: 10px;
+        position: absolute;
+      }
+      #next {
+        margin: 0;
+        top: 10px;
+        right: 10px;
+        position: absolute;
+      }
+      .title {
+        border-top: solid black 1px;
+        border-bottom: solid black 1px;
+        padding: 20px;
+      }
+      .larger {
+        font-size: larger;
+      }
+      .body-text {
+        font-size: 24px;
+        line-height: 2em;
+      }
+      .yale-text {
+        font-family: "YaleNew-Bold", "Times New Roman", serif;
+        font-size: 32px;
+      }</style>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="prev">
+        <form action="/basex2/static/bbp/princeton/princeton-page6c.html" method="post">
+          <button type="submit">Prev</button>
+        </form>
+      </div>
+      <div id="next">
+        <form action="/basex2/static/bbp/princeton/princeton-page7.html" method="post">
+          <button type="submit">Next</button>
+        </form>
+      </div>
+      <div class="yale title larger">
+        <h1>Black Bibliography Project Database Platform</h1>
+        
+      </div>
+      <br/>
+      <iframe style="width: 100%; height: 700px;" src="http://10.5.32.142:8282/embed.html#%23%20%20Just%20the%20Frontispieces%0A%23%20How%20many%20titles%20have%20frontispieces%3F%0A%0A%0ASELECT%20%3FworkLabel%20%3FfrontispieceLabel%0A%28GROUP_CONCAT%28distinct%20%3Fnote%3B%20SEPARATOR%3D%22%3B%20%22%29%20as%20%3FfrontispieceNote%29%0A%28count%28distinct%20%3Fedition%29%20as%20%3FeditionCount%29%20%0A%28GROUP_CONCAT%28distinct%20%3FeditionLabel%3B%20SEPARATOR%3D%22%3B%20%22%29%20as%20%3Feditions%29%0A%28GROUP_CONCAT%28distinct%20%3FauthorLabel%3B%20SEPARATOR%3D%22%3B%20%22%29%20as%20%3Fauthors%29%0A%28min%28%3Fyear%29%20as%20%3FearliestPublicationDate%29%0A%0AWHERE%20%7B%20%0A%20%20%3Fedition%20wdt%3AP35%20wd%3AQ35%20%3B%20wdt%3AP13%20%3Fwork%20%3B%20rdfs%3Alabel%20%3FeditionLabel%20.%0A%20%20wd%3AQ35%20rdfs%3Alabel%20%3FfrontispieceLabel%20.%0A%20%20%3Fwork%20rdfs%3Alabel%20%3FworkLabel%20.%0A%20%20OPTIONAL%20%7B%20%3Fedition%20p%3AP35%20%3Fstatement%20.%20%3Fstatement%20pq%3AP64%20%3Fnote%20.%7D%0A%20%20OPTIONAL%20%7B%20%3Fedition%20p%3AP29%7Cp%3AP32%20%3FpubStatement%20.%20%3FpubStatement%20pq%3AP31%20%3Fdate%20.%20BIND%28str%28YEAR%28%3Fdate%29%29%20AS%20%3Fyear%29%20%20%7D%20%0A%20%20OPTIONAL%20%7B%20%3Fwork%20wdt%3AP90%20%3Fauthor%20.%20%3Fauthor%20rdfs%3Alabel%20%3FauthorLabel%20%7D%0A%7D%0Agroup%20by%20%3FworkLabel%20%3FfrontispieceLabel%0Aorder%20by%20%3FworkLabel" referrerpolicy="origin" sandbox="allow-scripts allow-same-origin allow-popups" ></iframe>
+      
+
+      
+    </div>
+  </body>
+</html>

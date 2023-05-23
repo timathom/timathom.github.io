@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-480.5 177 1271 586.5" width="1271" height="586.5">
+  <defs>
+    <font-face font-family="Helvetica Neue" font-size="32" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.9958" descent="-212.99744" font-weight="400">
+      <font-face-src>
+        <font-face-name name="HelveticaNeue"/>
+      </font-face-src>
+    </font-face>
+  </defs>
+  <metadata> Produced by OmniGraffle 7.18.4\n2021-03-23 15:28:21 +0000</metadata>
+  <g id="Canvas_2" fill="none" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-dasharray="none">
+    <title>Canvas 2</title>
+    <g id="Canvas_2_Layer_1">
+      <title>Layer 1</title>
+      <g id="Group_11">
+        <g id="Graphic_2">
+          <rect x="-480" y="243" width="1270" height="520" id="path"/>
+          <clipPath id="clip_path">
+            <use xl:href="#path"/>
+          </clipPath>
+          <g clip-path="url(#clip_path)">
+            <image xl:href="image4.png" width="1270" height="520" transform="translate(-480 243)"/>
+          </g>
+          <rect x="-480" y="243" width="1270" height="520" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_3">
+          <path d="M -469.05055 259.14982 L 245.94945 259.14982 C 248.71088 259.14982 250.94945 261.3884 250.94945 264.14982 L 250.94945 354.1498 C 250.94945 356.91124 248.71088 359.1498 245.94945 359.1498 L -469.05055 359.1498 C -471.81197 359.1498 -474.05055 356.91124 -474.05055 354.1498 L -474.05055 264.14982 C -474.05055 261.3884 -471.81197 259.14982 -469.05055 259.14982 Z" fill="#ffff80"/>
+          <path d="M -469.05055 259.14982 L 245.94945 259.14982 C 248.71088 259.14982 250.94945 261.3884 250.94945 264.14982 L 250.94945 354.1498 C 250.94945 356.91124 248.71088 359.1498 245.94945 359.1498 L -469.05055 359.1498 C -471.81197 359.1498 -474.05055 356.91124 -474.05055 354.1498 L -474.05055 264.14982 C -474.05055 261.3884 -471.81197 259.14982 -469.05055 259.14982 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_6">
+          <text transform="translate(118.28 182)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="32" font-weight="400" fill="black" x="0" y="30">Work</tspan>
+          </text>
+        </g>
+        <g id="Graphic_8">
+          <path d="M -469.05055 532.6498 L 245.94945 532.6498 C 248.71088 532.6498 250.94945 534.8884 250.94945 537.6498 L 250.94945 554.6498 C 250.94945 557.41124 248.71088 559.6498 245.94945 559.6498 L -469.05055 559.6498 C -471.81197 559.6498 -474.05055 557.41124 -474.05055 554.6498 L -474.05055 537.6498 C -474.05055 534.8884 -471.81197 532.6498 -469.05055 532.6498 Z" fill="#ffff80"/>
+          <path d="M -469.05055 532.6498 L 245.94945 532.6498 C 248.71088 532.6498 250.94945 534.8884 250.94945 537.6498 L 250.94945 554.6498 C 250.94945 557.41124 248.71088 559.6498 245.94945 559.6498 L -469.05055 559.6498 C -471.81197 559.6498 -474.05055 557.41124 -474.05055 554.6498 L -474.05055 537.6498 C -474.05055 534.8884 -471.81197 532.6498 -469.05055 532.6498 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <g id="Graphic_9">
+          <path d="M -469.05055 614.5 L 245.94945 614.5 C 248.71088 614.5 250.94945 616.7386 250.94945 619.5 L 250.94945 636.5 C 250.94945 639.2614 248.71088 641.5 245.94945 641.5 L -469.05055 641.5 C -471.81197 641.5 -474.05055 639.2614 -474.05055 636.5 L -474.05055 619.5 C -474.05055 616.7386 -471.81197 614.5 -469.05055 614.5 Z" fill="#ffff80"/>
+          <path d="M -469.05055 614.5 L 245.94945 614.5 C 248.71088 614.5 250.94945 616.7386 250.94945 619.5 L 250.94945 636.5 C 250.94945 639.2614 248.71088 641.5 245.94945 641.5 L -469.05055 641.5 C -471.81197 641.5 -474.05055 639.2614 -474.05055 636.5 L -474.05055 619.5 C -474.05055 616.7386 -471.81197 614.5 -469.05055 614.5 Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
