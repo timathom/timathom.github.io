@@ -16,7 +16,7 @@ GexfJS.setParams({
         /*
             Default state of the "use lens" button. Set to null to disable button.
         */
-    zoomLevel : 1,
+    zoomLevel : 2,
         /*
             Default zoom level. At zoom = 0, the graph should fill a 800x700px zone
          */
@@ -25,7 +25,7 @@ GexfJS.setParams({
             False for curved edges, true for straight edges
             this setting can't be changed from the User Interface
         */
-    edgeWidthFactor : 1,
+    edgeWidthFactor : 2,
         /*
             Change this parameter for wider or narrower edges
             this setting can't be changed from the User Interface
@@ -64,7 +64,7 @@ GexfJS.setParams({
             Show the edge arrows when the edge is directed
             this setting can't be changed from the User Interface
         */
-    language: false,
+    language: en,
         /*
             Set to an ISO language code to switch the interface to that language.
             Available languages are:
